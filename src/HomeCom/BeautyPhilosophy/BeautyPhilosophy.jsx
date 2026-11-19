@@ -9,7 +9,7 @@ import {
   Sparkles,
   ArrowRight,
 } from "lucide-react";
-
+import physiohero from '../../assets/image/philohero.png'
 import "./BeautyPhilosophy.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -96,7 +96,7 @@ function BeautyPhilosophy() {
         <div className="philosophy-model">
           <div className="philosophy-model-frame">
             <img
-              src="/public/images/home/philohero.png"
+              src={physiohero}
               alt="AURELLE beauty philosophy model portrait"
               loading="lazy"
             />

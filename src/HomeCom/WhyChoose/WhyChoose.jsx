@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import "./WhyChoose.css";
-
+import whyhero from '../../assets/image/whyhero.png'
 gsap.registerPlugin(ScrollTrigger);
 
 const features = [
@@ -112,7 +112,7 @@ function WhyChoose() {
         <div className="why-visual">
           <div className="why-image-frame">
             <img
-              src="/public/images/home/whyhero.png"
+              src={whyhero}
               alt="Luxury AURELLE beauty studio interior"
               loading="lazy"
             />
