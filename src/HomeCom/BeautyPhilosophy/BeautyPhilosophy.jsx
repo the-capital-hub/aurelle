@@ -104,7 +104,7 @@ function BeautyPhilosophy() {
             <div className="philosophy-model-shade" />
 
             <div className="philosophy-model-caption">
-              <span>AURELLE</span>
+              <span>AURELLE </span>
               <small>BEAUTY BEGINS WITH YOU</small>
             </div>
           </div>
