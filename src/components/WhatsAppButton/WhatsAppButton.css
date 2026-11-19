@@ -1,0 +1,167 @@
+
+/* =========================================
+   AURELLE WHATSAPP FLOATING BUTTON
+========================================= */
+
+.aurelle-whatsapp-widget {
+  position: fixed;
+  right: 28px;
+  bottom: 105px;
+  z-index: 9997;
+
+  display: flex;
+  align-items: center;
+}
+
+/* BUTTON */
+
+.aurelle-whatsapp-button {
+  position: relative;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: #20c76a;
+
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+
+  box-shadow:
+    0 6px 25px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(37, 211, 102, 0.2);
+
+  text-decoration: none;
+
+  transition: all 0.4s ease;
+}
+
+.aurelle-whatsapp-button:hover {
+  background: #19a957;
+  transform: translateY(-5px) scale(1.06);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(37, 211, 102, 0.35);
+}
+
+/* ICON */
+
+.aurelle-whatsapp-icon {
+  position: relative;
+  z-index: 2;
+
+  width: 29px;
+  height: 29px;
+
+  transition: transform 0.4s ease;
+}
+
+.aurelle-whatsapp-button:hover .aurelle-whatsapp-icon {
+  transform: rotate(-10deg) scale(1.1);
+}
+
+/* PULSE */
+
+.aurelle-whatsapp-pulse {
+  position: absolute;
+  inset: -6px;
+
+  border: 1px solid rgba(37, 211, 102, 0.7);
+  border-radius: 50%;
+
+  animation: aurelleWhatsappPulse 2.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes aurelleWhatsappPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* TOOLTIP */
+
+.aurelle-whatsapp-tooltip {
+  position: absolute;
+  right: 72px;
+
+  min-height: 42px;
+  padding: 12px 15px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #ffffff;
+  background: #111111;
+
+  border: 1px solid rgba(192, 192, 192, 0.4);
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+
+  transition: all 0.3s ease;
+}
+
+.aurelle-whatsapp-tooltip svg {
+  color: #25d366;
+}
+
+.aurelle-whatsapp-widget:hover .aurelle-whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .aurelle-whatsapp-widget {
+    right: 18px;
+    bottom: 94px;
+  }
+
+  .aurelle-whatsapp-button {
+    width: 54px;
+    height: 54px;
+  }
+
+  .aurelle-whatsapp-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .aurelle-whatsapp-tooltip {
+    display: none;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .aurelle-whatsapp-pulse {
+    animation: none;
+  }
+
+  .aurelle-whatsapp-button {
+    transition: none;
+  }
+}

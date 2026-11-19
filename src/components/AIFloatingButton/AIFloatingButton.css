@@ -1,0 +1,579 @@
+
+/* =========================================
+   AURELLE AI FLOATING WIDGET
+========================================= */
+
+.aurelle-ai-widget {
+  position: fixed;
+  right: 28px;
+  bottom: 25px;
+  z-index: 9998;
+
+  font-family: "DM Sans", sans-serif;
+}
+
+/* =========================================
+   FLOATING BUTTON
+========================================= */
+
+.aurelle-ai-floating {
+  position: relative;
+
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #080808;
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #c0c0c0
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(192, 192, 192, 0.22);
+
+  transition: all 0.4s ease;
+}
+
+.aurelle-ai-floating:hover {
+  transform: translateY(-5px) scale(1.05);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(192, 192, 192, 0.4);
+}
+
+.aurelle-ai-button-icon {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.4s ease;
+}
+
+.aurelle-ai-floating:hover .aurelle-ai-button-icon {
+  transform: rotate(12deg);
+}
+
+.ai-button-active {
+  color: #ffffff;
+  background: #151515;
+  border-color: #777777;
+}
+
+/* =========================================
+   PULSE EFFECT
+========================================= */
+
+.aurelle-ai-pulse {
+  position: absolute;
+  inset: -6px;
+
+  border: 1px solid rgba(192, 192, 192, 0.7);
+  border-radius: 50%;
+
+  animation: aurelleAiPulse 2.5s infinite;
+  pointer-events: none;
+}
+
+@keyframes aurelleAiPulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   TOOLTIP
+========================================= */
+
+.aurelle-ai-tooltip {
+  position: absolute;
+  right: 78px;
+  bottom: 17px;
+
+  padding: 12px 15px;
+
+  color: #ffffff;
+  background: #151515;
+
+  border: 1px solid rgba(192, 192, 192, 0.35);
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+
+  transition: all 0.3s ease;
+}
+
+.aurelle-ai-widget:hover .aurelle-ai-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* =========================================
+   CHAT PANEL
+========================================= */
+
+.aurelle-ai-panel {
+  position: absolute;
+  right: 0;
+  bottom: 88px;
+
+  width: 370px;
+  max-width: calc(100vw - 32px);
+  height: min(540px, calc(100dvh - 125px));
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  color: #ffffff;
+  background: #101010;
+
+  border: 1px solid rgba(192, 192, 192, 0.35);
+  border-radius: 14px;
+
+  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(20px) scale(0.96);
+  transform-origin: bottom right;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease,
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.aurelle-ai-panel.ai-panel-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateY(0) scale(1);
+}
+
+/* =========================================
+   CHAT HEADER
+========================================= */
+
+.aurelle-ai-header {
+  min-height: 76px;
+  padding: 12px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #080808;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.aurelle-ai-header-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aurelle-ai-avatar {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #080808;
+  background: #c0c0c0;
+
+  border-radius: 50%;
+}
+
+.aurelle-ai-header-info h3 {
+  color: #ffffff;
+
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.aurelle-ai-header-info span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 5px;
+
+  color: #aaaaaa;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.ai-status-dot {
+  width: 7px;
+  height: 7px;
+
+  background: #bcbcbc;
+  border-radius: 50%;
+
+  box-shadow: 0 0 8px #c0c0c0;
+}
+
+.aurelle-ai-close {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: transparent;
+
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.aurelle-ai-close:hover {
+  color: #c0c0c0;
+}
+
+/* =========================================
+   CHAT BODY
+========================================= */
+
+.aurelle-ai-body {
+  flex: 1;
+  min-height: 0;
+
+  padding: 16px;
+
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: #555555 transparent;
+}
+
+.aurelle-ai-intro {
+  padding: 12px;
+  text-align: center;
+
+  background: linear-gradient(
+    145deg,
+    rgba(192, 192, 192, 0.09),
+    rgba(255, 255, 255, 0.015)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+}
+
+.aurelle-ai-welcome-icon {
+  width: 46px;
+  height: 46px;
+
+  margin: 0 auto 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #080808;
+  background: #c0c0c0;
+
+  border-radius: 50%;
+}
+
+.aurelle-ai-intro h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  font-weight: 400;
+
+  color: #ffffff;
+}
+
+.aurelle-ai-intro p {
+  margin-top: 6px;
+
+  color: #aaaaaa;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   CHAT MESSAGES
+========================================= */
+
+.aurelle-ai-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.aurelle-chat-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  animation: aurelleMessageIn 0.35s ease;
+}
+
+@keyframes aurelleMessageIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.aurelle-chat-message p {
+  max-width: 85%;
+  padding: 12px;
+
+  color: #e5e5e5;
+  background: #202020;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.assistant-message {
+  justify-content: flex-start;
+}
+
+.user-message {
+  justify-content: flex-end;
+}
+
+.user-message p {
+  color: #080808;
+  background: #c0c0c0;
+  border-color: #c0c0c0;
+}
+
+.aurelle-message-avatar {
+  width: 27px;
+  height: 27px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #080808;
+  background: #c0c0c0;
+
+  border-radius: 50%;
+}
+
+/* =========================================
+   QUICK ACTIONS
+========================================= */
+
+.aurelle-ai-quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  margin-top: 18px;
+}
+
+.aurelle-ai-quick-actions > span {
+  margin-bottom: 3px;
+
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.aurelle-ai-quick-actions a {
+  min-height: 45px;
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #dddddd;
+  background: #191919;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+
+  font-size: 13px;
+
+  transition: all 0.3s ease;
+}
+
+.aurelle-ai-quick-actions a:hover {
+  color: #ffffff;
+  border-color: #c0c0c0;
+  background: #252525;
+}
+
+.aurelle-ai-quick-actions a svg:last-child {
+  margin-left: auto;
+}
+
+/* =========================================
+   INPUT AREA
+========================================= */
+
+.aurelle-ai-input-area {
+  min-height: 65px;
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  background: #080808;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.aurelle-ai-input-area input {
+  min-width: 0;
+  min-height: 42px;
+  flex: 1;
+
+  padding: 12px;
+
+  color: #ffffff;
+  background: #1b1b1b;
+
+  border: 1px solid #383838;
+  border-radius: 6px;
+
+  font-size: 12px;
+}
+
+.aurelle-ai-input-area input::placeholder {
+  color: #999999;
+}
+
+.aurelle-ai-input-area button {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #080808;
+  background: #c0c0c0;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.aurelle-ai-input-area button:hover:not(:disabled) {
+  background: #ffffff;
+}
+
+.aurelle-ai-input-area button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   CHAT FOOTER
+========================================= */
+
+.aurelle-ai-footer-note {
+  padding: 10px 12px;
+
+  color: #777777;
+  background: #080808;
+
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .aurelle-ai-widget {
+    right: 18px;
+    bottom: 20px;
+  }
+
+  .aurelle-ai-floating {
+    width: 58px;
+    height: 58px;
+  }
+
+  .aurelle-ai-panel {
+    right: 0;
+    bottom: 76px;
+
+    width: min(370px, calc(100vw - 24px));
+    height: min(530px, calc(100dvh - 110px));
+  }
+
+  .aurelle-ai-tooltip {
+    display: none;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .aurelle-ai-widget *,
+  .aurelle-ai-widget *::before,
+  .aurelle-ai-widget *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
