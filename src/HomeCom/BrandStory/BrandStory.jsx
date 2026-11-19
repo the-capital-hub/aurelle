@@ -5,9 +5,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   Flower2,
-  Gem,
   Sparkles,
-  ArrowUpRight,
+  Heart,
+  ArrowRight,
 } from "lucide-react";
 
 import "./BrandStory.css";
@@ -17,104 +17,60 @@ gsap.registerPlugin(ScrollTrigger);
 const brandValues = [
   {
     icon: Flower2,
-    title: "PERSONALISED CARE",
-  },
-  {
-    icon: Gem,
-    title: "PREMIUM EXPERTISE",
+    title: "Expert Care",
   },
   {
     icon: Sparkles,
-    title: "LASTING CONFIDENCE",
+    title: "Modern Techniques",
+  },
+  {
+    icon: Heart,
+    title: "Personalised Attention",
   },
 ];
 
-export default function BrandStory() {
+function BrandStory() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const timeline = gsap.timeline({
+      gsap.from(".brand-story-visual", {
+        x: -55,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 72%",
+          start: "top 75%",
           once: true,
-        },
-        defaults: {
-          ease: "power3.out",
         },
       });
 
-      timeline
-        .from(".story-image-frame", {
-          opacity: 0,
-          x: -55,
-          duration: 1.1,
-        })
-        .from(
-          ".story-eyebrow",
-          {
-            opacity: 0,
-            y: 20,
-            duration: 0.7,
-          },
-          "-=0.65"
-        )
-        .from(
-          ".story-heading span",
-          {
-            opacity: 0,
-            y: 45,
-            stagger: 0.15,
-            duration: 0.9,
-          },
-          "-=0.4"
-        )
-        .from(
-          ".story-description",
-          {
-            opacity: 0,
-            y: 20,
-            duration: 0.8,
-          },
-          "-=0.5"
-        )
-        .from(
-          ".story-cta",
-          {
-            opacity: 0,
-            y: 15,
-            duration: 0.7,
-          },
-          "-=0.4"
-        )
-        .from(
-          ".story-value",
-          {
-            opacity: 0,
-            y: 20,
-            stagger: 0.15,
-            duration: 0.7,
-          },
-          "-=0.3"
-        );
-
-      gsap.fromTo(
-        ".story-image",
-        {
-          scale: 1.12,
+      gsap.from(".brand-story-content > *", {
+        y: 30,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.14,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 75%",
+          once: true,
         },
-        {
-          scale: 1,
-          duration: 1.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
-            once: true,
-          },
-        }
-      );
+      });
+
+      gsap.from(".brand-story-value", {
+        y: 25,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.18,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".brand-story-values",
+          start: "top 90%",
+          once: true,
+        },
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -122,83 +78,93 @@ export default function BrandStory() {
 
   return (
     <section
-      className="aurelle-story"
-      id="story"
+      className="brand-story-section"
       ref={sectionRef}
     >
-      <div className="story-container">
+      <div className="brand-story-container">
 
-        {/* LEFT IMAGE */}
+        {/* LEFT VISUAL */}
 
-        <div className="story-visual">
-          <div className="story-image-frame">
+        <div className="brand-story-visual">
+          <div className="brand-story-image-frame">
             <img
-              className="story-image"
-              src="/public/images/home/story.png"
-              alt="AURELLE luxury beauty editorial portrait"
+              src="/images/stroy/hero.png"
+              alt="AURELLE luxury beauty studio interior"
               loading="lazy"
             />
 
-            <div className="story-image-shade" />
+            <div className="brand-story-image-shade" />
 
-            <span className="story-image-label">
-              THE BEAUTY OF BEING YOU
-            </span>
+            <div className="brand-story-image-brand">
+              <Flower2 size={43} strokeWidth={1} />
+              <span>AURELLE</span>
+              <small>BEAUTY STUDIO</small>
+            </div>
+
+            <div className="brand-story-image-caption">
+              <span>BEAUTY WITH PURPOSE</span>
+            </div>
           </div>
         </div>
 
         {/* RIGHT CONTENT */}
 
-        <div className="story-content">
+        <div className="brand-story-content">
 
-          <div className="story-eyebrow">
-            <span>THE AURELLE EXPERIENCE</span>
-            <span className="story-eyebrow-line" />
+          <div className="brand-story-eyebrow">
+            <span />
+            OUR STORY
+            <span />
           </div>
 
-          <h2 className="story-heading">
-            <span>Beauty is an art.</span>
-            <span className="story-heading-italic">
-              Make it yours.
-            </span>
+          <h2>
+            THE AURELLE
+            <em>STORY</em>
           </h2>
 
-          <p className="story-description">
-            At AURELLE, beauty is more than a service.
-            It is an experience built around elegance,
-            confidence and individuality.
+          <div className="brand-story-underline">
+            <span />
+          </div>
+
+          <p className="brand-story-description">
+            AURELLE was born from a simple belief that beauty
+            is a form of self care, confidence and personal
+            expression. We created a space where expert care,
+            modern techniques and a calming ambience come
+            together to bring out the best version of you.
           </p>
 
-          <Link to="/about" className="story-cta">
-            <span>DISCOVER OUR STORY</span>
-            <ArrowUpRight size={19} strokeWidth={1.5} />
-          </Link>
-
-          {/* BRAND VALUES */}
-
-          <div className="story-values">
-            {brandValues.map((item, index) => {
-              const Icon = item.icon;
+          <div className="brand-story-values">
+            {brandValues.map((value) => {
+              const Icon = value.icon;
 
               return (
                 <div
-                  className="story-value"
-                  key={item.title}
+                  className="brand-story-value"
+                  key={value.title}
                 >
                   <Icon
-                    className="story-value-icon"
-                    size={34}
+                    size={35}
                     strokeWidth={1.2}
                   />
-
-                  <span>{item.title}</span>
+                  <span>{value.title}</span>
                 </div>
               );
             })}
           </div>
+
+          <Link
+            to="/about"
+            className="brand-story-button"
+          >
+            <span>DISCOVER OUR JOURNEY</span>
+            <ArrowRight size={21} />
+          </Link>
 
         </div>
       </div>
     </section>
   );
 }
+
+export default BrandStory;

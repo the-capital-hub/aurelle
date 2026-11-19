@@ -148,6 +148,9 @@
   object-fit: cover;
   object-position: center 30%;
   filter: saturate(0.82);
+    filter: grayscale(70%);
+
+
   transition:
     transform 0.8s ease,
     filter 0.5s ease;

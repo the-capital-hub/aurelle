@@ -5,9 +5,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   Flower2,
-  Gem,
+  Heart,
   Sparkles,
-  ArrowUpRight,
+  ArrowRight,
 } from "lucide-react";
 
 import "./BeautyPhilosophy.css";
@@ -17,21 +17,21 @@ gsap.registerPlugin(ScrollTrigger);
 const philosophyItems = [
   {
     icon: Flower2,
-    title: "Individuality",
+    title: "ENHANCE NATURAL BEAUTY",
     description:
-      "Celebrating your unique features, style and personality.",
+      "We highlight your unique features, not change them.",
   },
   {
-    icon: Gem,
-    title: "Elegance",
+    icon: Heart,
+    title: "NURTURE SELF CARE",
     description:
-      "Timeless beauty with modern refinement and care.",
+      "A space to relax, refresh and focus on you.",
   },
   {
     icon: Sparkles,
-    title: "Confidence",
+    title: "INSPIRE CONFIDENCE",
     description:
-      "Helping you look and feel your absolute best.",
+      "Beauty that makes you feel empowered every day.",
   },
 ];
 
@@ -40,9 +40,9 @@ function BeautyPhilosophy() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(".philosophy-portrait", {
+      gsap.from(".philosophy-model", {
+        x: -55,
         opacity: 0,
-        x: -45,
         duration: 1.2,
         ease: "power3.out",
         scrollTrigger: {
@@ -52,40 +52,28 @@ function BeautyPhilosophy() {
         },
       });
 
-      gsap.from(".philosophy-heading > *", {
+      gsap.from(".philosophy-content > *", {
+        y: 28,
         opacity: 0,
-        y: 25,
-        duration: 0.9,
-        stagger: 0.15,
+        duration: 0.85,
+        stagger: 0.13,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 70%",
+          start: "top 75%",
           once: true,
         },
       });
 
       gsap.from(".philosophy-item", {
-        opacity: 0,
         y: 25,
-        duration: 0.8,
-        stagger: 0.18,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".philosophy-items",
-          start: "top 85%",
-          once: true,
-        },
-      });
-
-      gsap.from(".philosophy-action", {
         opacity: 0,
-        y: 18,
         duration: 0.8,
+        stagger: 0.17,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ".philosophy-action",
-          start: "top 95%",
+          trigger: ".philosophy-values",
+          start: "top 85%",
           once: true,
         },
       });
@@ -99,57 +87,54 @@ function BeautyPhilosophy() {
       className="beauty-philosophy"
       ref={sectionRef}
     >
-      <div className="philosophy-topline">
-        <span className="philosophy-brand">AURELLE</span>
-        <span className="philosophy-studio">
-          LUXURY BEAUTY STUDIO
-        </span>
-      </div>
+      <div className="philosophy-background" />
 
-      <div className="philosophy-layout">
+      <div className="philosophy-container">
 
-        <div className="philosophy-portrait">
-          <img
-            src="/images/aurelle-philosophy.jpg"
-            alt="AURELLE beauty editorial portrait"
-          />
+        {/* MODEL IMAGE */}
 
-          <div className="portrait-shade" />
+        <div className="philosophy-model">
+          <div className="philosophy-model-frame">
+            <img
+              src="/public/images/home/philohero.png"
+              alt="AURELLE beauty philosophy model portrait"
+              loading="lazy"
+            />
 
-          <div className="portrait-caption">
-            <span>THE AURELLE EXPERIENCE</span>
-            <p>Elegance in every detail.</p>
+            <div className="philosophy-model-shade" />
+
+            <div className="philosophy-model-caption">
+              <span>AURELLE</span>
+              <small>BEAUTY BEGINS WITH YOU</small>
+            </div>
           </div>
         </div>
 
-        <div className="philosophy-information">
+        {/* PHILOSOPHY CONTENT */}
 
-          <div className="philosophy-heading">
-            <div className="philosophy-eyebrow">
-              <span />
-              OUR BEAUTY PHILOSOPHY
-              <span />
-            </div>
+        <div className="philosophy-content">
 
-            <h2>
-              THE ART OF
-              <em> BEAUTY</em>
-            </h2>
-
-            <p className="philosophy-description">
-              Beauty is not about changing who you are.
-              <br />
-              It is about revealing your finest self.
-            </p>
-
-            <div className="philosophy-separator">
-              <span />
-              <Sparkles size={17} strokeWidth={1.2} />
-              <span />
-            </div>
+          <div className="philosophy-eyebrow">
+            <span />
+            OUR BEAUTY
+            <span />
           </div>
 
-          <div className="philosophy-items">
+          <h2>
+            BEAUTY <em>PHILOSOPHY</em>
+          </h2>
+
+          <div className="philosophy-heading-line">
+            <span />
+          </div>
+
+          <p className="philosophy-intro">
+            At AURELLE, beauty goes beyond appearance.
+            It is about confidence, self care and feeling
+            truly good in your own skin.
+          </p>
+
+          <div className="philosophy-values">
             {philosophyItems.map((item) => {
               const Icon = item.icon;
 
@@ -158,10 +143,10 @@ function BeautyPhilosophy() {
                   className="philosophy-item"
                   key={item.title}
                 >
-                  <div className="philosophy-item-icon">
+                  <div className="philosophy-icon">
                     <Icon
-                      size={25}
-                      strokeWidth={1.2}
+                      size={43}
+                      strokeWidth={1.25}
                     />
                   </div>
 
@@ -173,14 +158,18 @@ function BeautyPhilosophy() {
             })}
           </div>
 
-          <div className="philosophy-action">
+          <div className="philosophy-bottom">
+            <span />
+
             <Link
-              to="/booking"
-              className="philosophy-book-button"
+              to="/about"
+              className="philosophy-button"
             >
-              <span>BOOK YOUR APPOINTMENT</span>
-              <ArrowUpRight size={19} />
+              OUR PHILOSOPHY
+              <ArrowRight size={21} />
             </Link>
+
+            <span />
           </div>
 
         </div>

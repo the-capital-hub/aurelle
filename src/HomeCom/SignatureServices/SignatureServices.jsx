@@ -1,9 +1,15 @@
 
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  Flower2,
+  Scissors,
+  Brush,
+  Sparkles,
+  ArrowRight,
+} from "lucide-react";
 
 import "./SignatureServices.css";
 
@@ -11,116 +17,85 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    id: "01",
-    title: "Makeup",
-    subtitle: "Artistry",
-    description: "Flawless looks for every occasion.",
-    image: "/images/service-makeup/service-makeup.jpg",
-    link: "/services/makeup",
-  },
-  {
-    id: "02",
-    title: "Hair",
-    subtitle: "Care",
-    description: "Professional care for healthy, beautiful hair.",
-    image: "/images/service-makeup/service-hair.jpg",
-    link: "/services/hair",
-  },
-  {
-    id: "03",
-    title: "Skin",
-    subtitle: "Care",
-    description: "Advanced treatments for radiant skin.",
+    id: 1,
+    title: "SKIN CARE",
+    description:
+      "Personalised facials and advanced skin treatments for healthy, radiant skin.",
     image: "/images/service-makeup/service-skin.jpg",
-    link: "/services/skin",
+    icon: Flower2,
+    category: "skin",
   },
   {
-    id: "04",
-    title: "Nail",
-    subtitle: "Studio",
-    description: "Stylish and long lasting nail care.",
+    id: 2,
+    title: "HAIR CARE",
+    description:
+      "Expert hair styling, colouring and care treatments for every look.",
+    image: "/images/service-makeup/service-hair.jpg",
+    icon: Scissors,
+    category: "hair",
+  },
+  {
+    id: 3,
+    title: "MAKEUP",
+    description:
+      "From everyday glam to bridal perfection, makeup that feels like you.",
+    image: "/images/service-makeup/service-makeup.jpg",
+    icon: Brush,
+    category: "makeup",
+  },
+  {
+    id: 4,
+    title: "NAIL CARE",
+    description:
+      "Professional nail care and artistic designs for a polished look.",
     image: "/images/service-makeup/service-nails.jpg",
-    link: "/services/nails",
+    icon: Sparkles,
+    category: "nails",
   },
 ];
 
-export default function SignatureServices() {
+function SignatureServices() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const timeline = gsap.timeline({
+      gsap.from(".signature-heading > *", {
+        y: 30,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.14,
+        ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 75%",
           once: true,
         },
-        defaults: {
-          ease: "power3.out",
+      });
+
+      gsap.from(".signature-card", {
+        y: 45,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.16,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".signature-grid",
+          start: "top 80%",
+          once: true,
         },
       });
 
-      timeline
-        .from(".services-eyebrow", {
-          opacity: 0,
-          y: 20,
-          duration: 0.7,
-        })
-        .from(
-          ".services-heading",
-          {
-            opacity: 0,
-            y: 35,
-            duration: 0.9,
-          },
-          "-=0.35"
-        )
-        .from(
-          ".services-subtitle",
-          {
-            opacity: 0,
-            y: 20,
-            duration: 0.7,
-          },
-          "-=0.45"
-        )
-        .from(
-          ".service-card",
-          {
-            opacity: 0,
-            y: 55,
-            stagger: 0.16,
-            duration: 0.9,
-          },
-          "-=0.25"
-        )
-        .from(
-          ".services-bottom-cta",
-          {
-            opacity: 0,
-            y: 20,
-            duration: 0.7,
-          },
-          "-=0.35"
-        );
-
-      gsap.fromTo(
-        ".service-image",
-        {
-          scale: 1.12,
+      gsap.from(".signature-bottom", {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".signature-bottom",
+          start: "top 95%",
+          once: true,
         },
-        {
-          scale: 1,
-          duration: 1.6,
-          stagger: 0.12,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 75%",
-            once: true,
-          },
-        }
-      );
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -128,89 +103,94 @@ export default function SignatureServices() {
 
   return (
     <section
-      className="aurelle-services"
-      id="services"
+      className="signature-services"
       ref={sectionRef}
     >
-      <div className="services-background" />
+      <div className="signature-bg-decoration" />
 
-      <div className="services-container">
+      <div className="signature-container">
 
-        {/* SECTION HEADER */}
-
-        <div className="services-header">
-          <div className="services-eyebrow">
-            <span className="services-line" />
-            <span>OUR SIGNATURE SERVICES</span>
-            <span className="services-line" />
+        <div className="signature-heading">
+          <div className="signature-eyebrow">
+            <span />
+            OUR SIGNATURE
+            <span />
           </div>
 
-          <h2 className="services-heading">
-            Curated Beauty Services
+          <h2>
+            SIGNATURE <em>SERVICES</em>
           </h2>
 
-          <p className="services-subtitle">
-            A refined range of beauty and grooming
-            experiences designed to enhance your natural elegance.
+          <div className="signature-heading-line">
+            <span />
+          </div>
+
+          <p>
+            A curated range of premium beauty services designed
+            to rejuvenate, enhance and celebrate your natural beauty.
           </p>
         </div>
 
-        {/* SERVICE CARDS */}
+        <div className="signature-grid">
+          {services.map((service) => {
+            const Icon = service.icon;
 
-        <div className="services-grid">
-          {services.map((service) => (
-            <Link
-              to={service.link}
-              className="service-card"
-              key={service.id}
-            >
-              <img
-                className="service-image"
-                src={service.image}
-                alt={`${service.title} ${service.subtitle} at AURELLE`}
-                loading="lazy"
-              />
+            return (
+              <Link
+                to={`/services?category=${service.category}`}
+                className="signature-card"
+                key={service.id}
+              >
+                <div className="signature-card-image">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    loading="lazy"
+                  />
 
-              <div className="service-card-shade" />
-
-              <div className="service-card-content">
-                <div className="service-card-number">
-                  {service.id}
+                  <div className="signature-card-image-shade" />
                 </div>
 
-                <div className="service-card-info">
-                  <h3>
-                    {service.title}
-                    <br />
-                    {service.subtitle}
-                  </h3>
+                <div className="signature-card-content">
 
-                  <span className="service-card-line" />
+                  <div className="signature-card-icon">
+                    <Icon
+                      size={28}
+                      strokeWidth={1.3}
+                    />
+                  </div>
+
+                  <h3>{service.title}</h3>
 
                   <p>{service.description}</p>
-                </div>
 
-                <span className="service-arrow">
-                  <ArrowRight size={20} strokeWidth={1.5} />
-                </span>
-              </div>
-            </Link>
-          ))}
+                  <div className="signature-card-arrow">
+                    <ArrowRight size={27} strokeWidth={1.3} />
+                  </div>
+
+                </div>
+              </Link>
+            );
+          })}
         </div>
 
-        {/* BOTTOM CTA */}
+        <div className="signature-bottom">
+          <span />
 
-        <div className="services-bottom-cta">
           <Link
             to="/services"
-            className="services-explore-button"
+            className="signature-explore-button"
           >
-            <span>EXPLORE ALL SERVICES</span>
-            <ArrowUpRight size={20} strokeWidth={1.5} />
+            EXPLORE ALL SERVICES
+            <ArrowRight size={21} />
           </Link>
+
+          <span />
         </div>
 
       </div>
     </section>
   );
 }
+
+export default SignatureServices;

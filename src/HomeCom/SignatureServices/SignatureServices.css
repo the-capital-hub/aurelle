@@ -1,9 +1,5 @@
 
-/* =========================================
-   AURELLE SIGNATURE SERVICES
-========================================= */
-
-.aurelle-services {
+.signature-services {
   position: relative;
   isolation: isolate;
   width: 100%;
@@ -13,234 +9,182 @@
   background: #080808;
 }
 
-.services-background {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(8, 8, 8, 0.36),
-      rgba(8, 8, 8, 0.72)
-    ),
-    url("/public/images/service-makeup/bg.png")
-    center / cover no-repeat;
-  opacity: 0.85;
-}
-
-.aurelle-services::after {
-  content: "";
+.signature-bg-decoration {
   position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
   background:
     radial-gradient(
-      ellipse at center,
-      transparent 20%,
-      rgba(0, 0, 0, 0.36) 100%
-    );
+      ellipse at 50% 45%,
+      rgba(100, 100, 100, 0.13),
+      transparent 65%
+    ),
+    url("/images/aurelle-services-bg.png") center / cover no-repeat;
+  opacity: 0.55;
 }
 
-/* MAIN CONTAINER */
-
-.services-container {
-  width: min(1500px, calc(100% - 100px));
+.signature-container {
+  width: min(1440px, calc(100% - 60px));
   margin: 0 auto;
 }
 
-/* HEADER */
+/* HEADING */
 
-.services-header {
+.signature-heading {
   text-align: center;
-  margin-bottom: 38px;
+  padding: 5px 0 20px;
 }
 
-.services-eyebrow {
+.signature-eyebrow {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 22px;
-  margin-bottom: 20px;
-}
-
-.services-eyebrow span:not(.services-line) {
-  color: #e0e0e0;
-  font-family: "DM Sans", sans-serif;
+  color: #c0c0c0;
   font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 5px;
+  letter-spacing: 7px;
 }
 
-.services-line {
-  display: block;
+.signature-eyebrow span {
   width: 55px;
   height: 1px;
-  background: #c0c0c0;
+  background: #929292;
 }
 
-.services-heading {
-  margin: 0;
+.signature-heading h2 {
+  margin: 12px 0 0;
   color: #ffffff;
   font-family: "Playfair Display", serif;
-  font-size: clamp(46px, 5.2vw, 76px);
+  font-size: clamp(38px, 5vw, 67px);
   font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -1.5px;
+  line-height: 1.1;
+  letter-spacing: 1px;
 }
 
-.services-subtitle {
-  max-width: 850px;
-  margin: 14px auto 0;
-  color: #d1d1d1;
-  font-family: "Playfair Display", serif;
-  font-size: 19px;
-  font-style: italic;
-  line-height: 1.6;
+.signature-heading h2 em {
+  color: #c0c0c0;
+  font-weight: 400;
+}
+
+.signature-heading-line {
+  width: 100%;
+  height: 13px;
+  margin: 0 auto 12px;
+  overflow: hidden;
+}
+
+.signature-heading-line span {
+  display: block;
+  width: 30%;
+  height: 20px;
+  margin: auto;
+  border-top: 2px solid #c0c0c0;
+  border-radius: 50%;
+  transform: rotate(-2deg);
+}
+
+.signature-heading > p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #d0d0d0;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 /* SERVICE GRID */
 
-.services-grid {
+.signature-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  gap: 22px;
+  align-items: stretch;
+  padding: 0;
 }
 
-/* CARD */
+/* SERVICE CARD */
 
-.service-card {
+.signature-card {
   position: relative;
-  isolation: isolate;
-  display: block;
-  width: 100%;
-  height: 510px;
-  overflow: hidden;
-  text-decoration: none;
-  color: #ffffff;
-  background: #171717;
-  border: 1px solid rgba(192, 192, 192, 0.5);
-  transition:
-    border-color 0.4s ease,
-    transform 0.4s ease;
-}
-
-.service-card:hover {
-  border-color: #ffffff;
-  transform: translateY(-5px);
-}
-
-/* CARD IMAGE */
-
-.service-image {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-.service-card:hover .service-image {
-  transform: scale(1.075);
-}
-
-/* IMAGE SHADE */
-
-.service-card-shade {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.03) 0%,
-    rgba(0, 0, 0, 0.03) 30%,
-    rgba(0, 0, 0, 0.32) 53%,
-    rgba(0, 0, 0, 0.93) 100%
-  );
-  transition: background 0.4s ease;
-}
-
-.service-card:hover .service-card-shade {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.1),
-    rgba(0, 0, 0, 0.78) 100%
-  );
-}
-
-/* CARD CONTENT */
-
-.service-card-content {
-  position: absolute;
-  inset: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.service-card-number {
-  align-self: flex-end;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 50%;
+  min-width: 0;
+  min-height: 490px;
+  overflow: hidden;
+  border: 1px solid rgba(192, 192, 192, 0.65);
+  border-radius: 48% 48% 7px 7px;
+  background: #101010;
   color: #ffffff;
-  font-family: "DM Sans", sans-serif;
-  font-size: 12px;
+  text-decoration: none;
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
 }
 
-.service-card-info {
-  position: relative;
-  padding-right: 35px;
+.signature-card:hover {
+  transform: translateY(-7px);
+  border-color: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
 }
 
-.service-card-info h3 {
-  margin: 0;
-  color: #ffffff;
-  font-family: "Playfair Display", serif;
-  font-size: clamp(28px, 2.5vw, 37px);
-  font-weight: 400;
-  line-height: 1.12;
-  letter-spacing: -0.5px;
-}
-
-.service-card-line {
-  display: block;
-  width: 52px;
-  height: 1px;
-  margin: 18px 0 14px;
-  background: #d0d0d0;
-}
-
-.service-card-info p {
-  max-width: 250px;
-  margin: 0;
-  color: #ededed;
-  font-family: "DM Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.65;
-}
-
-.service-arrow {
+.signature-card-image {
   position: absolute;
-  right: 0;
-  bottom: 10px;
-  width: 42px;
-  height: 42px;
+  inset: 0;
+  overflow: hidden;
+}
+
+.signature-card-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: grayscale(100%);
+  transition:
+    transform 0.9s ease,
+    filter 0.6s ease;
+}
+
+.signature-card:hover .signature-card-image img {
+  transform: scale(1.07);
+  filter: grayscale(65%);
+}
+
+.signature-card-image-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.04) 0%,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.83) 58%,
+    #080808 100%
+  );
+}
+
+.signature-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.signature-card-icon {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid #c0c0c0;
   border-radius: 50%;
+  background: rgba(8, 8, 8, 0.85);
   color: #ffffff;
   transition:
     background 0.35s ease,
@@ -248,197 +192,209 @@
     transform 0.35s ease;
 }
 
-.service-card:hover .service-arrow {
-  background: #ffffff;
+.signature-card:hover .signature-card-icon {
+  background: #c0c0c0;
   color: #080808;
-  transform: translateX(4px);
+  transform: translateY(-4px);
 }
 
-/* EXPLORE BUTTON */
+.signature-card-content h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
 
-.services-bottom-cta {
+.signature-card-content p {
+  max-width: 250px;
+  min-height: 65px;
+  margin: 0;
+  color: #e0e0e0;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.signature-card-arrow {
+  margin-top: 12px;
+  color: #ffffff;
+  transition: transform 0.35s ease;
+}
+
+.signature-card:hover .signature-card-arrow {
+  transform: translateX(7px);
+}
+
+/* BOTTOM BUTTON */
+
+.signature-bottom {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 38px;
+  gap: 35px;
+  padding: 20px 0 0;
 }
 
-.services-explore-button {
-  min-height: 56px;
-  min-width: 310px;
-  padding: 0 25px;
+.signature-bottom > span {
+  width: 14%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #777777
+  );
+}
+
+.signature-bottom > span:last-child {
+  transform: rotate(180deg);
+}
+
+.signature-explore-button {
+  min-width: 350px;
+  min-height: 54px;
+  padding: 10px 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 28px;
+  gap: 25px;
+  border: 1px solid #c0c0c0;
+  background: #c0c0c0;
   color: #080808;
-  background: #ffffff;
-  border: 1px solid #ffffff;
   text-decoration: none;
-  font-family: "DM Sans", sans-serif;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 1.6px;
+  letter-spacing: 1.8px;
   transition: all 0.35s ease;
 }
 
-.services-explore-button:hover {
+.signature-explore-button:hover {
   color: #ffffff;
   background: transparent;
+  border-color: #ffffff;
 }
 
 /* TABLET */
 
-@media (max-width: 1100px) {
-  .services-container {
-    width: calc(100% - 60px);
+@media (max-width: 1050px) {
+  .signature-container {
+    width: calc(100% - 40px);
   }
 
-  .services-grid {
+  .signature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
 
-  .service-card {
-    height: 470px;
+  .signature-card {
+    min-height: 460px;
   }
 
-  .service-card-info h3 {
-    font-size: 34px;
-  }
-
-  .services-heading {
-    font-size: 60px;
+  .signature-card-content h3 {
+    font-size: 25px;
   }
 }
 
 /* MOBILE */
 
-@media (max-width: 600px) {
-  .aurelle-services {
+@media (max-width: 700px) {
+  .signature-services {
     padding: 20px 0;
   }
 
-  .services-container {
-    width: calc(100% - 32px);
+  .signature-container {
+    width: calc(100% - 30px);
   }
 
-  .services-header {
-    margin-bottom: 25px;
+  .signature-heading {
+    padding: 5px 0 20px;
   }
 
-  .services-eyebrow {
-    gap: 10px;
-    margin-bottom: 15px;
-  }
-
-  .services-eyebrow span:not(.services-line) {
+  .signature-eyebrow {
+    gap: 12px;
     font-size: 12px;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
   }
 
-  .services-line {
-    width: 25px;
+  .signature-eyebrow span {
+    width: 28px;
   }
 
-  .services-heading {
-    font-size: clamp(37px, 9vw, 49px);
-    line-height: 1.12;
+  .signature-heading h2 {
+    font-size: 39px;
   }
 
-  .services-subtitle {
-    max-width: 350px;
-    margin-top: 12px;
-    font-size: 15px;
+  .signature-heading > p {
+    font-size: 13px;
   }
 
-  .services-grid {
+  .signature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
-  .service-card {
-    height: 390px;
+  .signature-card {
+    min-height: 365px;
+    border-radius: 42% 42% 7px 7px;
   }
 
-  .service-card-content {
-    padding: 12px;
+  .signature-card-content {
+    padding: 15px 9px;
   }
 
-  .service-card-number {
-    width: 31px;
-    height: 31px;
+  .signature-card-icon {
+    width: 47px;
+    height: 47px;
+    margin-bottom: 10px;
   }
 
-  .service-card-info {
-    padding-right: 0;
+  .signature-card-icon svg {
+    width: 22px;
   }
 
-  .service-card-info h3 {
-    font-size: clamp(22px, 6vw, 30px);
+  .signature-card-content h3 {
+    font-size: 19px;
+    letter-spacing: 0;
   }
 
-  .service-card-line {
-    width: 35px;
-    margin: 12px 0 9px;
-  }
-
-  .service-card-info p {
+  .signature-card-content p {
+    min-height: 75px;
     font-size: 12px;
-    line-height: 1.5;
-    padding-right: 3px;
+    line-height: 1.55;
   }
 
-  .service-arrow {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    margin-top: 12px;
-    width: 34px;
-    height: 34px;
+  .signature-card-arrow {
+    margin-top: 10px;
   }
 
-  .service-arrow svg {
-    width: 17px;
-    height: 17px;
+  .signature-bottom {
+    gap: 0;
+    padding-top: 20px;
   }
 
-  .services-bottom-cta {
-    padding-top: 25px;
+  .signature-bottom > span {
+    display: none;
   }
 
-  .services-explore-button {
+  .signature-explore-button {
     width: 100%;
-    max-width: 310px;
     min-width: 0;
-    min-height: 52px;
-    gap: 15px;
+    gap: 12px;
+    padding: 10px 12px;
+    letter-spacing: 1px;
   }
 }
-
-/* SMALL MOBILE */
 
 @media (max-width: 380px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+  .signature-card {
+    min-height: 340px;
   }
 
-  .service-card {
-    height: 430px;
+  .signature-card-content h3 {
+    font-size: 17px;
   }
 
-  .service-card-info h3 {
-    font-size: 34px;
-  }
-}
-
-/* ACCESSIBILITY */
-
-@media (prefers-reduced-motion: reduce) {
-  .service-card,
-  .service-image,
-  .service-arrow,
-  .services-explore-button {
-    transition: none;
+  .signature-card-content p {
+    font-size: 12px;
   }
 }
