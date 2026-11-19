@@ -1,0 +1,417 @@
+
+.meet-experts {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(65, 65, 65, 0.13),
+      transparent 65%
+    ),
+    #080808;
+  color: #ffffff;
+}
+
+.experts-container {
+  width: min(1440px, calc(100% - 60px));
+  margin: 0 auto;
+}
+
+/* HEADING */
+
+.experts-heading {
+  text-align: center;
+  padding: 10px 0 20px;
+}
+
+.experts-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  color: #ffffff;
+  font-size: 23px;
+  letter-spacing: 7px;
+  font-weight: 400;
+}
+
+.experts-brand span {
+  width: 55px;
+  height: 1px;
+  background: #929292;
+}
+
+.experts-eyebrow {
+  margin: 12px 0 5px;
+  color: #c0c0c0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.experts-heading h2 {
+  margin: 8px 0 10px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 5vw, 66px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.experts-heading h2 em {
+  color: #c0c0c0;
+  font-weight: 400;
+}
+
+.experts-intro {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #c5c5c5;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* TEAM GRID */
+
+.experts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  align-items: stretch;
+  padding: 0;
+}
+
+/* EXPERT CARD */
+
+.expert-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(192, 192, 192, 0.48);
+  border-radius: 22px;
+  background: #101010;
+  transition:
+    border-color 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.expert-card:hover {
+  transform: translateY(-7px);
+  border-color: #e0e0e0;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* PORTRAIT */
+
+.expert-photo {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+  background: #202020;
+}
+
+.expert-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 28%;
+  filter: saturate(0.75);
+  transition: transform 0.8s ease;
+}
+
+.expert-card:hover .expert-photo img {
+  transform: scale(1.055);
+}
+
+.expert-photo-overlay {
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.94)
+  );
+  pointer-events: none;
+}
+
+.expert-profile {
+  position: absolute;
+  left: 20px;
+  right: 15px;
+  bottom: 13px;
+  z-index: 2;
+}
+
+.expert-profile h3 {
+  margin: 0 0 7px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.expert-profile span {
+  color: #dddddd;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+/* EXPERT DETAILS */
+
+.expert-details {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 15px 17px;
+  min-height: 120px;
+}
+
+.expert-services {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  min-width: 0;
+}
+
+.expert-service {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #d4d4d4;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.expert-service svg {
+  flex-shrink: 0;
+  color: #c0c0c0;
+}
+
+.expert-instagram {
+  flex-shrink: 0;
+  width: 43px;
+  height: 43px;
+  border: 1px solid #999999;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 19px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.expert-instagram:hover {
+  background: #c0c0c0;
+  color: #080808;
+  border-color: #c0c0c0;
+  transform: scale(1.08);
+}
+
+/* BOOKING */
+
+.experts-booking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  padding: 20px 0 0;
+}
+
+.booking-line {
+  width: 14%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #777777
+  );
+}
+
+.booking-line:last-child {
+  transform: rotate(180deg);
+}
+
+.experts-book-button {
+  min-height: 54px;
+  min-width: 350px;
+  padding: 10px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  border: 1px solid #c0c0c0;
+  color: #ffffff;
+  background: transparent;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  transition: all 0.35s ease;
+}
+
+.experts-book-button:hover {
+  color: #080808;
+  background: #c0c0c0;
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+  .experts-container {
+    width: calc(100% - 40px);
+  }
+
+  .experts-grid {
+    gap: 15px;
+  }
+
+  .expert-photo {
+    height: 310px;
+  }
+
+  .expert-profile {
+    left: 13px;
+  }
+
+  .expert-profile h3 {
+    font-size: 21px;
+  }
+
+  .expert-profile span {
+    letter-spacing: 2px;
+  }
+
+  .expert-details {
+    padding: 15px 11px;
+  }
+
+  .expert-service {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .expert-instagram {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .meet-experts {
+    padding: 20px 0;
+  }
+
+  .experts-container {
+    width: calc(100% - 30px);
+  }
+
+  .experts-heading {
+    padding: 5px 0 20px;
+  }
+
+  .experts-brand {
+    font-size: 18px;
+    letter-spacing: 5px;
+    gap: 13px;
+  }
+
+  .experts-brand span {
+    width: 30px;
+  }
+
+  .experts-eyebrow {
+    letter-spacing: 3px;
+  }
+
+  .experts-heading h2 {
+    font-size: 40px;
+  }
+
+  .experts-intro {
+    font-size: 13px;
+  }
+
+  .experts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .expert-card {
+    border-radius: 16px;
+  }
+
+  .expert-photo {
+    height: 390px;
+  }
+
+  .expert-profile {
+    left: 18px;
+    bottom: 13px;
+  }
+
+  .expert-profile h3 {
+    font-size: 25px;
+  }
+
+  .expert-details {
+    min-height: 0;
+    padding: 15px;
+  }
+
+  .expert-services {
+    gap: 12px;
+  }
+
+  .expert-service {
+    font-size: 13px;
+  }
+
+  .expert-instagram {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .experts-booking {
+    gap: 0;
+    padding-top: 20px;
+  }
+
+  .booking-line {
+    display: none;
+  }
+
+  .experts-book-button {
+    width: 100%;
+    min-width: 0;
+    gap: 12px;
+    padding: 10px 12px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 380px) {
+  .expert-photo {
+    height: 340px;
+  }
+
+  .expert-details {
+    gap: 7px;
+    padding: 15px 10px;
+  }
+
+  .expert-service {
+    font-size: 12px;
+  }
+}
