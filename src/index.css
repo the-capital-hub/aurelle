@@ -169,6 +169,11 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+  border-radius: 30px !important;
+}
+a{
+    border-radius: 30px !important;
+
 }
 
 button:focus-visible,
