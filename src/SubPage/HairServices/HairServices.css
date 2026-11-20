@@ -1,0 +1,858 @@
+
+.hair-page {
+  --hair-black: #080808;
+  --hair-card: #151515;
+  --hair-white: #ffffff;
+  --hair-silver: #c0c0c0;
+  --hair-border: rgba(255, 255, 255, 0.19);
+  background: var(--hair-black);
+  color: var(--hair-white);
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+}
+
+.hair-page * {
+  box-sizing: border-box;
+}
+
+.hair-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hair-page img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hair-page h1,
+.hair-page h2,
+.hair-page h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+
+.hair-page p {
+  line-height: 1.7;
+}
+
+.hair-page button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* COMMON */
+
+.hair-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #d0c8bc;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.hair-eyebrow i {
+  display: inline-block;
+  width: 34px;
+  height: 1px;
+  background: #d0c8bc;
+}
+
+.hair-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 17px;
+}
+
+.hair-section-heading h2 {
+  margin: 7px 0 0;
+  font-size: clamp(25px, 3vw, 35px);
+}
+
+.hair-section-heading > p {
+  max-width: 450px;
+  margin: 0;
+  color: #aaa;
+  font-size: 13px;
+  text-align: right;
+}
+
+.hair-primary-btn,
+.hair-outline-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  min-height: 42px;
+  padding: 9px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hair-primary-btn {
+  background: linear-gradient(110deg, #e5dfd5, #fff, #c6beb2);
+  color: #111 !important;
+}
+
+.hair-primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.12);
+}
+
+.hair-outline-btn {
+  border: 1px solid #aaa;
+  color: #fff;
+}
+
+.hair-outline-btn:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* HERO */
+
+.hair-hero {
+  min-height: 285px;
+  padding: 12px 6%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background:
+    linear-gradient(90deg, #080808 0%, rgba(8,8,8,.94) 36%, rgba(8,8,8,.12) 100%),
+    url("/images/aurelle-hair-hero.jpg") right center / auto 120% no-repeat,
+    #080808;
+  border-bottom: 1px solid var(--hair-border);
+}
+
+.hair-hero-content {
+  max-width: 620px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.hair-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #aaa;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
+.hair-breadcrumb a:hover {
+  color: white;
+}
+
+.hair-breadcrumb span:last-child {
+  color: white;
+}
+
+.hair-hero .hair-eyebrow {
+  margin-bottom: 12px;
+}
+
+.hair-hero h1 {
+  font-size: clamp(39px, 5.2vw, 62px);
+  line-height: 1.06;
+  margin: 0;
+}
+
+.hair-hero h1 em,
+.hair-why-content h2 em,
+.hair-final-cta h2 em {
+  display: block;
+  font-weight: 400;
+}
+
+.hair-hero-content > p {
+  max-width: 440px;
+  color: #c4c4c4;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+.hair-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.hair-hero-trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.hair-hero-trust > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #ddd;
+  font-size: 12px;
+}
+
+.hair-hero-trust svg {
+  width: 18px;
+  color: var(--hair-silver);
+}
+
+/* SERVICE GRID */
+
+.hair-services-section {
+  padding: 20px 4%;
+  border-bottom: 1px solid var(--hair-border);
+}
+
+.hair-service-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.hair-service-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #484848;
+  border-radius: 13px;
+  background: var(--hair-card);
+  transition: 0.3s;
+}
+
+.hair-service-card:hover {
+  border-color: #e2d7c4;
+  transform: translateY(-4px);
+}
+
+.hair-service-image {
+  height: 145px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hair-service-image img {
+  transition: transform 0.5s;
+}
+
+.hair-service-card:hover .hair-service-image img {
+  transform: scale(1.08);
+}
+
+.hair-service-icon {
+  position: absolute;
+  bottom: 9px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(8, 8, 8, 0.82);
+  border: 1px solid #aaa;
+}
+
+.hair-service-info {
+  padding: 10px;
+}
+
+.hair-service-info h3 {
+  font-size: 15px;
+  margin: 0 0 5px;
+}
+
+.hair-service-info p {
+  color: #aaa;
+  font-size: 12px;
+  margin: 0 0 9px;
+}
+
+.hair-service-info > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ddd1bd;
+  font-size: 12px;
+}
+
+/* WHY CHOOSE */
+
+.hair-why-section {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  border-bottom: 1px solid var(--hair-border);
+}
+
+.hair-why-image {
+  min-height: 250px;
+  overflow: hidden;
+}
+
+.hair-why-image img {
+  transition: transform 0.7s;
+}
+
+.hair-why-image:hover img {
+  transform: scale(1.04);
+}
+
+.hair-why-content {
+  padding: 18px 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hair-why-content h2 {
+  font-size: clamp(28px, 3.3vw, 39px);
+  line-height: 1.12;
+  margin: 10px 0;
+}
+
+.hair-why-content > p {
+  max-width: 480px;
+  font-size: 13px;
+  color: #aaa;
+  margin: 0 0 12px;
+}
+
+.hair-why-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.hair-why-features > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  color: #e3e3e3;
+}
+
+.hair-why-features > div > span {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #b8ad9e;
+  border-radius: 50%;
+}
+
+.hair-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 16px;
+  color: #e0d3c0 !important;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* PROCESS */
+
+.hair-process-section {
+  padding: 20px 4%;
+  border-bottom: 1px solid var(--hair-border);
+}
+
+.hair-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.hair-process-item {
+  position: relative;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.hair-process-number {
+  display: block;
+  color: #888;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
+}
+
+.hair-process-icon {
+  width: 49px;
+  height: 49px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #c4b9a7;
+  border-radius: 50%;
+  color: #e4d9c7;
+  margin: auto;
+}
+
+.hair-process-icon svg {
+  width: 21px;
+}
+
+.hair-process-item h3 {
+  font-size: 17px;
+  margin: 8px 0 5px;
+}
+
+.hair-process-item p {
+  max-width: 190px;
+  margin: auto;
+  color: #aaa;
+  font-size: 12px;
+}
+
+.hair-process-arrow {
+  position: absolute;
+  top: 49%;
+  right: -13px;
+  width: 19px;
+  color: #aaa;
+}
+
+/* PRICING */
+
+.hair-pricing-section {
+  padding: 20px 4%;
+  border-bottom: 1px solid var(--hair-border);
+}
+
+.hair-package-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.hair-package-card {
+  position: relative;
+  padding: 18px;
+  border: 1px solid #555;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #181818, #0d0d0d);
+  transition: 0.3s;
+}
+
+.hair-package-card:hover {
+  border-color: #d9cbb7;
+  transform: translateY(-4px);
+}
+
+.hair-package-card.popular {
+  border-color: #d9cbb7;
+}
+
+.hair-popular-label {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: #e9dfd0;
+  color: #111;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hair-package-subtitle {
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.hair-package-card h3 {
+  font-size: 22px;
+  margin: 9px 0 5px;
+}
+
+.hair-package-card > p {
+  font-size: 12px;
+  color: #aaa;
+  margin: 0;
+}
+
+.hair-package-price {
+  font-family: "Playfair Display", serif;
+  font-size: 31px;
+  margin: 12px 0;
+}
+
+.hair-package-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.hair-package-features > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ddd;
+  font-size: 12px;
+}
+
+.hair-package-features svg {
+  color: #ded1bd;
+  flex: 0 0 auto;
+}
+
+.hair-package-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  min-height: 40px;
+  border: 1px solid #b9b0a2;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hair-package-button:hover {
+  color: #111;
+  background: #eee5d5;
+}
+
+.hair-price-note {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  margin: 13px 0 0;
+}
+
+/* RESULTS AND EXPERT */
+
+.hair-results-section {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  padding: 20px 4%;
+  border-bottom: 1px solid var(--hair-border);
+  gap: 22px;
+}
+
+.hair-results-gallery {
+  min-width: 0;
+}
+
+.hair-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.hair-comparison-image {
+  height: 175px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 13px;
+  border: 1px solid #555;
+}
+
+.hair-comparison-image img {
+  transition: transform 0.5s;
+}
+
+.hair-comparison-image:hover img {
+  transform: scale(1.06);
+}
+
+.hair-comparison-image > span {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 6px 12px;
+  background: #eee5d5;
+  color: #111;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hair-expert-card {
+  border-left: 1px solid var(--hair-border);
+  padding-left: 22px;
+}
+
+.hair-expert-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 17px;
+}
+
+.hair-expert-profile > img {
+  width: 95px;
+  height: 95px;
+  flex: 0 0 95px;
+  border-radius: 50%;
+  border: 2px solid #b9ad9b;
+}
+
+.hair-expert-profile h3 {
+  font-size: 20px;
+  margin: 0 0 5px;
+}
+
+.hair-expert-profile p {
+  color: #aaa;
+  font-size: 12px;
+  margin: 0 0 10px;
+}
+
+.hair-experience {
+  display: block;
+  font-size: 12px;
+  color: #ddd;
+}
+
+.hair-rating {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 9px;
+}
+
+.hair-rating > span {
+  color: #e4c27a;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.hair-rating small {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* FAQ */
+
+.hair-faq-section {
+  padding: 20px 4%;
+  border-bottom: 1px solid var(--hair-border);
+}
+
+.hair-faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hair-faq-item {
+  border: 1px solid #444;
+  border-radius: 10px;
+  background: #121212;
+  overflow: hidden;
+}
+
+.hair-faq-item button {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 13px;
+  background: transparent;
+  border: 0;
+  color: white;
+  text-align: left;
+  font-size: 12px;
+}
+
+.hair-faq-item button svg {
+  flex: 0 0 auto;
+  transition: transform 0.3s;
+}
+
+.hair-faq-item.active button svg {
+  transform: rotate(180deg);
+}
+
+.hair-faq-answer {
+  padding: 0 13px 12px;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* FINAL CTA */
+
+.hair-final-cta {
+  padding: 20px;
+  min-height: 205px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background:
+    linear-gradient(rgba(8,8,8,.70), rgba(8,8,8,.82)),
+    url("/images/aurelle-contact-bg.png") center / cover;
+}
+
+.hair-final-cta-content {
+  max-width: 700px;
+}
+
+.hair-final-cta .hair-eyebrow {
+  justify-content: center;
+}
+
+.hair-final-cta h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.1;
+  margin: 10px 0;
+}
+
+.hair-final-cta-content > p {
+  color: #ccc;
+  font-size: 13px;
+  margin: 0 0 13px;
+}
+
+.hair-final-cta .hair-primary-btn {
+  margin-top: 3px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+  .hair-service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hair-service-image {
+    height: 165px;
+  }
+
+  .hair-section-heading {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .hair-hero {
+    min-height: 390px;
+    padding: 15px 5%;
+    background:
+      linear-gradient(90deg, rgba(8,8,8,.96), rgba(8,8,8,.67)),
+      url("/images/aurelle-hair-hero.jpg") 65% center / cover no-repeat,
+      #080808;
+  }
+
+  .hair-hero h1 {
+    font-size: clamp(37px, 9vw, 54px);
+  }
+
+  .hair-hero-trust {
+    gap: 12px;
+  }
+
+  .hair-section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  .hair-section-heading > p {
+    text-align: left;
+  }
+
+  .hair-why-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hair-why-image {
+    min-height: 230px;
+    height: 230px;
+  }
+
+  .hair-why-content {
+    padding: 18px 5%;
+  }
+
+  .hair-results-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hair-expert-card {
+    border-left: 0;
+    border-top: 1px solid var(--hair-border);
+    padding: 17px 0 0;
+  }
+
+  .hair-faq-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hair-package-grid {
+    gap: 13px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hair-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hair-service-image {
+    height: 135px;
+  }
+
+  .hair-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+  }
+
+  .hair-process-arrow {
+    display: none;
+  }
+
+  .hair-package-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .hair-package-card {
+    padding: 17px;
+  }
+
+  .hair-comparison-image {
+    height: 140px;
+  }
+
+  .hair-why-features {
+    grid-template-columns: 1fr;
+  }
+
+  .hair-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hair-hero-trust {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hair-breadcrumb {
+    flex-wrap: wrap;
+  }
+
+  .hair-final-cta {
+    min-height: 220px;
+  }
+}

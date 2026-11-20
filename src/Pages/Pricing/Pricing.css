@@ -1,0 +1,1063 @@
+
+.aurelle-pricing-page {
+  --pricing-black: #080808;
+  --pricing-white: #ffffff;
+  --pricing-silver: #c0c0c0;
+  --pricing-border: rgba(192, 192, 192, 0.4);
+  width: 100%;
+  overflow: hidden;
+  background: var(--pricing-black);
+  color: var(--pricing-white);
+  font-family: "DM Sans", sans-serif;
+}
+
+.aurelle-pricing-page * {
+  box-sizing: border-box;
+}
+
+.aurelle-pricing-page img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.pricing-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--pricing-silver);
+  font-size: 13px;
+  letter-spacing: 5px;
+  font-weight: 500;
+}
+
+.pricing-eyebrow > span {
+  width: 35px;
+  height: 1px;
+  background: var(--pricing-silver);
+}
+
+.pricing-centered-eyebrow {
+  justify-content: center;
+}
+
+/* HERO */
+
+.pricing-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 420px;
+  padding: 20px 0;
+  overflow: hidden;
+  background: #080808;
+}
+
+.pricing-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 8, 8, 0.97),
+      rgba(8, 8, 8, 0.66) 50%,
+      rgba(8, 8, 8, 0.1)
+    ),
+    url("/public/images/pricing/aurelle-pricing-bg.png") center / cover no-repeat;
+}
+
+.pricing-hero-container {
+  width: min(1440px, calc(100% - 60px));
+  min-height: 380px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.pricing-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 10px 0;
+}
+
+.pricing-hero-content h1 {
+  margin: 18px 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(55px, 6vw, 80px);
+  line-height: 1;
+  font-weight: 400;
+}
+
+.pricing-hero-content h1 em {
+  display: block;
+  color: var(--pricing-silver);
+  font-weight: 400;
+}
+
+.pricing-hero-content > p {
+  max-width: 470px;
+  margin: 0 0 18px;
+  color: #dedede;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.pricing-hero-button {
+  min-height: 48px;
+  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-radius: 30px;
+  background: #eeeeee;
+  color: #080808;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.35s ease;
+}
+
+.pricing-hero-button:hover {
+  background: var(--pricing-silver);
+  transform: translateY(-3px);
+}
+
+.pricing-hero-image {
+  height: 390px;
+  align-self: end;
+  overflow: hidden;
+}
+
+.pricing-hero-image img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: grayscale(45%);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 25%);
+  mask-image: linear-gradient(to right, transparent, black 25%);
+}
+
+/* CATEGORY NAVIGATION */
+
+.pricing-categories {
+  padding: 20px 0;
+  border-top: 1px solid rgba(192, 192, 192, 0.2);
+  border-bottom: 1px solid rgba(192, 192, 192, 0.2);
+  background: #0b0b0b;
+}
+
+.pricing-category-list {
+  width: min(1050px, calc(100% - 40px));
+  margin: 15px auto 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.pricing-category {
+  min-height: 78px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid var(--pricing-border);
+  border-radius: 12px;
+  background: transparent;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pricing-category:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pricing-category.active {
+  background: #e8e8e8;
+  color: #080808;
+  border-color: #e8e8e8;
+}
+
+/* PRICE LIST */
+
+.pricing-list-section {
+  padding: 20px 0;
+  background: #080808;
+}
+
+.pricing-section-heading {
+  text-align: center;
+  padding: 0 15px;
+}
+
+.pricing-section-heading h2 {
+  margin: 10px 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(37px, 4.5vw, 54px);
+  font-weight: 400;
+}
+
+.pricing-section-heading h2 em {
+  color: var(--pricing-silver);
+  font-weight: 400;
+}
+
+.pricing-section-heading > p {
+  margin: 0;
+  color: #d4d4d4;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pricing-service-grid {
+  width: min(1250px, calc(100% - 60px));
+  margin: 20px auto 0;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.pricing-service-card,
+.pricing-info-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--pricing-border);
+  border-radius: 13px;
+  background: #111111;
+}
+
+.pricing-service-image {
+  height: 145px;
+  overflow: hidden;
+}
+
+.pricing-service-image img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.pricing-service-content {
+  padding: 10px 18px 15px;
+}
+
+.pricing-service-content h3 {
+  margin: 0 0 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.pricing-service-row {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.25);
+  color: #eeeeee;
+  font-size: 13px;
+}
+
+.pricing-service-row strong {
+  flex-shrink: 0;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pricing-service-link {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--pricing-silver);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pricing-info-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-info-image {
+  height: 145px;
+  overflow: hidden;
+}
+
+.pricing-info-image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.pricing-info-content {
+  flex: 1;
+  padding: 12px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pricing-info-content > svg {
+  color: var(--pricing-silver);
+  margin-bottom: 8px;
+}
+
+.pricing-info-content h3 {
+  margin: 0 0 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.pricing-info-content p {
+  margin: 0 0 12px;
+  color: #d0d0d0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.pricing-info-content a {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/* BRIDAL PACKAGES */
+
+.pricing-bridal-section {
+  display: grid;
+  grid-template-columns: 0.85fr 1.5fr;
+  align-items: stretch;
+  background: #101010;
+  border-top: 1px solid var(--pricing-border);
+  border-bottom: 1px solid var(--pricing-border);
+}
+
+.pricing-bridal-image {
+  min-height: 350px;
+  overflow: hidden;
+}
+
+.pricing-bridal-image img {
+  height: 100%;
+  min-height: 350px;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.pricing-bridal-content {
+  min-width: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pricing-bridal-content h2 {
+  margin: 10px 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 4vw, 49px);
+  font-weight: 400;
+}
+
+.pricing-bridal-content h2 em {
+  color: var(--pricing-silver);
+  font-weight: 400;
+}
+
+.pricing-bridal-content > p {
+  margin: 0 0 15px;
+  color: #d4d4d4;
+  font-size: 13px;
+}
+
+.pricing-bridal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pricing-bridal-card {
+  position: relative;
+  min-width: 0;
+  padding: 15px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid var(--pricing-border);
+  border-radius: 12px;
+  background: #0b0b0b;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.pricing-bridal-card:hover {
+  transform: translateY(-4px);
+  border-color: #ffffff;
+}
+
+.pricing-bridal-card.featured {
+  background: #e7e7e7;
+  color: #080808;
+  border-color: #ffffff;
+}
+
+.pricing-bridal-card h3 {
+  margin: 0 0 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.pricing-bridal-card > strong {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.pricing-bridal-card > p {
+  min-height: 52px;
+  margin: 8px 0;
+  color: #d0d0d0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.pricing-bridal-card.featured > p {
+  color: #444444;
+}
+
+.pricing-bridal-card ul {
+  width: 100%;
+  margin: 5px 0 12px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.pricing-bridal-card li {
+  margin: 7px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  color: #dedede;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.pricing-bridal-card.featured li {
+  color: #222222;
+}
+
+.pricing-bridal-card li svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pricing-bridal-card > a {
+  width: 100%;
+  min-height: 38px;
+  margin-top: auto;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #c0c0c0;
+  border-radius: 25px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pricing-bridal-card.featured > a {
+  background: #080808;
+  color: #ffffff;
+  border-color: #080808;
+}
+
+.pricing-popular-label {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 5px 8px;
+  border-radius: 15px;
+  background: #080808;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* MEMBERSHIPS */
+
+.pricing-membership-section {
+  padding: 20px 0;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(110, 110, 110, 0.1),
+      transparent 70%
+    ),
+    #080808;
+}
+
+.pricing-membership-grid {
+  width: min(1150px, calc(100% - 60px));
+  margin: 20px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.pricing-membership-card {
+  position: relative;
+  min-width: 0;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--pricing-border);
+  border-radius: 15px;
+  background: rgba(15, 15, 15, 0.9);
+  text-align: center;
+  transition: transform 0.35s ease;
+}
+
+.pricing-membership-card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-membership-card.featured {
+  background: linear-gradient(145deg, #f0f0f0, #bcbcbc);
+  color: #080808;
+  border-color: #ffffff;
+}
+
+.membership-plan-icon {
+  margin-bottom: 8px;
+  color: inherit;
+}
+
+.pricing-membership-card h3 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.membership-subtitle {
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.membership-price {
+  width: 100%;
+  margin: 12px 0;
+  padding: 10px 0;
+  border-top: 1px solid var(--pricing-border);
+  border-bottom: 1px solid var(--pricing-border);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.membership-price span {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.pricing-membership-card ul {
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.pricing-membership-card li {
+  margin: 10px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #dedede;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pricing-membership-card.featured li {
+  color: #171717;
+}
+
+.pricing-membership-card li svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pricing-membership-card > a {
+  width: 100%;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pricing-membership-card > a:hover {
+  background: #ffffff;
+  color: #080808;
+}
+
+.pricing-membership-card.featured > a {
+  border-color: #080808;
+  background: #080808;
+  color: #ffffff;
+}
+
+/* BENEFITS STRIP */
+
+.pricing-benefits {
+  padding: 15px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--pricing-border);
+  border-bottom: 1px solid var(--pricing-border);
+  background: #111111;
+}
+
+.pricing-benefit {
+  min-width: 0;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-right: 1px solid var(--pricing-border);
+  color: #ffffff;
+}
+
+.pricing-benefit:last-child {
+  border-right: none;
+}
+
+.pricing-benefit svg {
+  flex-shrink: 0;
+  color: var(--pricing-silver);
+}
+
+.pricing-benefit span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* FINAL CTA */
+
+.pricing-final-cta {
+  position: relative;
+  isolation: isolate;
+  padding: 20px 0;
+  overflow: hidden;
+  background: #080808;
+  text-align: center;
+}
+
+.pricing-cta-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      rgba(8, 8, 8, 0.28),
+      rgba(8, 8, 8, 0.28)
+    ),
+    url("/public/images/pricing/aurelle-pricing-cta-bg.png") center / cover no-repeat;
+}
+
+.pricing-cta-content {
+  width: min(1000px, calc(100% - 40px));
+  margin: auto;
+  padding: 10px 0;
+}
+
+.pricing-cta-content h2 {
+  margin: 12px 0 18px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(36px, 4.5vw, 58px);
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+.pricing-cta-content h2 em {
+  display: block;
+  color: var(--pricing-silver);
+  font-weight: 400;
+}
+
+.pricing-cta-button {
+  min-width: 285px;
+  min-height: 52px;
+  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  border-radius: 35px;
+  background: #eeeeee;
+  color: #080808;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.35s ease;
+}
+
+.pricing-cta-button:hover {
+  background: #c0c0c0;
+  transform: translateY(-3px);
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .pricing-hero-container {
+    width: calc(100% - 40px);
+    grid-template-columns: 1fr 0.9fr;
+  }
+
+  .pricing-hero-content h1 {
+    font-size: 59px;
+  }
+
+  .pricing-hero-image {
+    height: 340px;
+  }
+
+  .pricing-service-grid {
+    width: calc(100% - 40px);
+  }
+
+  .pricing-bridal-section {
+    grid-template-columns: 0.7fr 1.3fr;
+  }
+
+  .pricing-bridal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-bridal-card {
+    padding: 15px;
+  }
+
+  .pricing-bridal-card > p {
+    min-height: 0;
+  }
+
+  .pricing-membership-grid {
+    width: calc(100% - 40px);
+    gap: 10px;
+  }
+
+  .pricing-membership-card {
+    padding: 20px 12px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .pricing-eyebrow {
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .pricing-eyebrow > span {
+    width: 24px;
+  }
+
+  .pricing-hero {
+    padding: 20px 0;
+  }
+
+  .pricing-hero-container {
+    width: calc(100% - 30px);
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .pricing-hero-content {
+    padding: 10px 0;
+  }
+
+  .pricing-hero-content h1 {
+    font-size: clamp(48px, 11vw, 64px);
+  }
+
+  .pricing-hero-content > p {
+    font-size: 14px;
+  }
+
+  .pricing-hero-image {
+    height: 320px;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 15%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 15%
+    );
+  }
+
+  .pricing-hero-image img {
+    -webkit-mask-image: none;
+    mask-image: none;
+    object-position: center 20%;
+  }
+
+  .pricing-categories {
+    padding: 20px 0;
+  }
+
+  .pricing-category-list {
+    width: calc(100% - 25px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .pricing-category {
+    min-height: 76px;
+    padding: 9px 5px;
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .pricing-category svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .pricing-list-section {
+    padding: 20px 0;
+  }
+
+  .pricing-section-heading h2 {
+    font-size: 37px;
+  }
+
+  .pricing-section-heading > p {
+    font-size: 13px;
+  }
+
+  .pricing-service-grid {
+    width: calc(100% - 30px);
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pricing-service-image {
+    height: 165px;
+  }
+
+  .pricing-service-content {
+    padding: 10px 13px 15px;
+  }
+
+  .pricing-service-content h3 {
+    font-size: 23px;
+  }
+
+  .pricing-service-row {
+    min-height: 37px;
+    font-size: 12px;
+  }
+
+  .pricing-service-row strong {
+    font-size: 13px;
+  }
+
+  .pricing-info-card {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+
+  .pricing-info-image {
+    height: 100%;
+    min-height: 190px;
+  }
+
+  .pricing-info-content {
+    padding: 12px;
+  }
+
+  .pricing-info-content h3 {
+    font-size: 19px;
+  }
+
+  .pricing-info-content p {
+    font-size: 12px;
+  }
+
+  .pricing-bridal-section {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-bridal-image {
+    height: 270px;
+    min-height: 270px;
+  }
+
+  .pricing-bridal-image img {
+    min-height: 270px;
+    object-position: center 25%;
+  }
+
+  .pricing-bridal-content {
+    padding: 20px 15px;
+  }
+
+  .pricing-bridal-content h2 {
+    font-size: 37px;
+  }
+
+  .pricing-bridal-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pricing-bridal-card {
+    padding: 18px;
+  }
+
+  .pricing-bridal-card h3 {
+    font-size: 22px;
+  }
+
+  .pricing-bridal-card > strong {
+    font-size: 25px;
+  }
+
+  .pricing-bridal-card > p {
+    font-size: 13px;
+  }
+
+  .pricing-bridal-card li {
+    font-size: 13px;
+  }
+
+  .pricing-bridal-card > a {
+    min-height: 42px;
+    font-size: 13px;
+  }
+
+  .pricing-membership-section {
+    padding: 20px 0;
+  }
+
+  .pricing-membership-grid {
+    width: calc(100% - 30px);
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .pricing-membership-card {
+    padding: 20px;
+  }
+
+  .pricing-membership-card h3 {
+    font-size: 30px;
+  }
+
+  .pricing-membership-card li {
+    font-size: 13px;
+  }
+
+  .pricing-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 10px;
+    row-gap: 8px;
+  }
+
+  .pricing-benefit {
+    padding: 10px 5px;
+    justify-content: flex-start;
+    border-right: none;
+  }
+
+  .pricing-benefit:nth-child(odd) {
+    border-right: 1px solid var(--pricing-border);
+  }
+
+  .pricing-benefit span {
+    font-size: 12px;
+  }
+
+  .pricing-benefit svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .pricing-final-cta {
+    padding: 20px 0;
+  }
+
+  .pricing-cta-content {
+    width: calc(100% - 30px);
+  }
+
+  .pricing-cta-content h2 {
+    font-size: clamp(35px, 8.5vw, 46px);
+  }
+
+  .pricing-cta-button {
+    width: 100%;
+    min-width: 0;
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .pricing-category-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pricing-info-card {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-info-image {
+    height: 150px;
+    min-height: 150px;
+  }
+
+  .pricing-hero-content h1 {
+    font-size: 46px;
+  }
+}
