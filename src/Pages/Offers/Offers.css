@@ -48,7 +48,7 @@
   position: relative;
   isolation: isolate;
   min-height: 420px;
-  padding: 20px 0;
+  padding: 60px 0;
   overflow: hidden;
   background: #080808;
 }
@@ -742,7 +742,7 @@
   }
 
   .offers-hero {
-    padding: 20px 0;
+    padding: 70px 0;
   }
 
   .offers-hero-container {

@@ -32,7 +32,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 20px 6.3%;
+  padding: 80px 40px;
   background:
     linear-gradient(90deg, rgba(5, 5, 5, 0.98) 0%, rgba(5, 5, 5, 0.88) 43%, rgba(5, 5, 5, 0.12) 100%),
     url("/public/images/contact/aurelle-contact-hero.jpg") right 28% / auto 125% no-repeat,
@@ -849,7 +849,7 @@
 @media (max-width: 760px) {
   .booking-hero {
     min-height: 390px;
-    padding: 20px 6%;
+    padding: 70px 6%;
     background:
       linear-gradient(90deg, rgba(5,5,5,0.96), rgba(5,5,5,0.65)),
       url("/public/images/contact/aurelle-contact-hero.jpg") 65% center / cover no-repeat,
