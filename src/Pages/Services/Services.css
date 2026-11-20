@@ -673,6 +673,7 @@
   }
 
   .services-grid {
+    padding-bottom: 20px;
     width: calc(100% - 30px);
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;

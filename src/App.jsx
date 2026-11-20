@@ -14,11 +14,13 @@ import Offers from './Pages/Offers/Offers'
 import Contact from './Pages/Contact/Contact'
 import Booking from './Pages/Booking/Booking'
 import HairServices from './SubPage/HairServices/HairServices'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 const App = () => {
   return (
     <>
     <Navbar/>
+    <ScrollToTop/>
 
     <main>
       <Routes>

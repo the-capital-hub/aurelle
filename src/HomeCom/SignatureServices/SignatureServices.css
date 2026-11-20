@@ -251,6 +251,7 @@
 }
 
 .signature-explore-button {
+  margin-top: 35px;
   min-width: 350px;
   min-height: 54px;
   padding: 10px 22px;

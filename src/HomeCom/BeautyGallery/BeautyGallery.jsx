@@ -135,9 +135,7 @@ function BeautyGallery() {
             <span />
           </div>
 
-          <p className="gallery-eyebrow">
-            OUR BEAUTY GALLERY
-          </p>
+          
 
           <h2>
             A GLIMPSE OF <em>OUR WORK</em>

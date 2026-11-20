@@ -1,25 +1,38 @@
 
+/* =========================================
+   AURELLE MEET OUR EXPERTS
+   Luxury Editorial Design
+========================================= */
+
 .meet-experts {
+  --experts-black: #080808;
+  --experts-white: #ffffff;
+  --experts-silver: #c0c0c0;
+  --experts-border: rgba(192, 192, 192, 0.35);
+
   position: relative;
+  isolation: isolate;
   width: 100%;
   overflow: hidden;
   padding: 20px 0;
   background:
     radial-gradient(
-      ellipse at 50% 45%,
-      rgba(65, 65, 65, 0.13),
+      ellipse at 50% 40%,
+      rgba(125, 125, 125, 0.12),
       transparent 65%
     ),
     #080808;
-  color: #ffffff;
+  color: var(--experts-white);
 }
 
 .experts-container {
-  width: min(1440px, calc(100% - 60px));
+  width: min(1380px, calc(100% - 60px));
   margin: 0 auto;
 }
 
-/* HEADING */
+/* =========================================
+   HEADING
+========================================= */
 
 .experts-heading {
   text-align: center;
@@ -32,6 +45,7 @@
   justify-content: center;
   gap: 22px;
   color: #ffffff;
+  font-family: "DM Sans", sans-serif;
   font-size: 23px;
   letter-spacing: 7px;
   font-weight: 400;
@@ -45,9 +59,10 @@
 
 .experts-eyebrow {
   margin: 12px 0 5px;
-  color: #c0c0c0;
+  color: var(--experts-silver);
   font-size: 12px;
   letter-spacing: 5px;
+  font-weight: 500;
 }
 
 .experts-heading h2 {
@@ -60,7 +75,7 @@
 }
 
 .experts-heading h2 em {
-  color: #c0c0c0;
+  color: var(--experts-silver);
   font-weight: 400;
 }
 
@@ -72,25 +87,30 @@
   line-height: 1.7;
 }
 
-/* TEAM GRID */
+/* =========================================
+   TEAM GRID
+========================================= */
 
 .experts-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 25px;
+  gap: 24px;
   align-items: stretch;
-  padding: 0;
 }
 
-/* EXPERT CARD */
+/* =========================================
+   EXPERT CARD
+========================================= */
 
 .expert-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   overflow: hidden;
-  border: 1px solid rgba(192, 192, 192, 0.48);
-  border-radius: 22px;
-  background: #101010;
+  border: 1px solid var(--experts-border);
+  border-radius: 16px;
+  background: #111111;
   transition:
     border-color 0.4s ease,
     transform 0.4s ease,
@@ -98,16 +118,19 @@
 }
 
 .expert-card:hover {
-  transform: translateY(-7px);
+  transform: translateY(-6px);
   border-color: #e0e0e0;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
 }
 
-/* PORTRAIT */
+/* =========================================
+   PORTRAIT
+========================================= */
 
 .expert-photo {
   position: relative;
-  height: 360px;
+  width: 100%;
+  height: 370px;
   overflow: hidden;
   background: #202020;
 }
@@ -118,9 +141,8 @@
   display: block;
   object-fit: cover;
   object-position: center 28%;
-  filter: saturate(0.75);
-  transition: transform 0.8s ease;
   filter: grayscale(100%);
+  transform: scale(1);
   transition:
     transform 0.9s ease,
     filter 0.6s ease;
@@ -128,17 +150,17 @@
 
 .expert-card:hover .expert-photo img {
   transform: scale(1.055);
-  filter: grayscale(65%);
-
+  filter: grayscale(55%);
 }
 
 .expert-photo-overlay {
   position: absolute;
-  inset: 35% 0 0;
+  inset: 25% 0 0;
   background: linear-gradient(
     to bottom,
-    transparent,
-    rgba(0, 0, 0, 0.94)
+    transparent 5%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.95) 100%
   );
   pointer-events: none;
 }
@@ -147,7 +169,7 @@
   position: absolute;
   left: 20px;
   right: 15px;
-  bottom: 13px;
+  bottom: 17px;
   z-index: 2;
 }
 
@@ -158,37 +180,48 @@
   font-size: clamp(20px, 2vw, 28px);
   font-weight: 400;
   font-style: italic;
+  line-height: 1.2;
 }
 
 .expert-profile span {
+  display: inline-block;
   color: #dddddd;
   font-size: 12px;
   letter-spacing: 3px;
+  font-weight: 500;
 }
 
-/* EXPERT DETAILS */
+/* =========================================
+   EXPERT DETAILS
+========================================= */
 
 .expert-details {
   position: relative;
+  flex: 1;
+  min-height: 125px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 12px;
   padding: 15px 17px;
-  min-height: 120px;
+  background: linear-gradient(
+    145deg,
+    #151515,
+    #0d0d0d
+  );
 }
 
 .expert-services {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 12px;
   min-width: 0;
 }
 
 .expert-service {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 11px;
   color: #d4d4d4;
   font-size: 13px;
   line-height: 1.4;
@@ -196,32 +229,44 @@
 
 .expert-service svg {
   flex-shrink: 0;
-  color: #c0c0c0;
+  color: var(--experts-silver);
+  transition: transform 0.3s ease;
+}
+
+.expert-card:hover .expert-service svg {
+  transform: scale(1.1);
 }
 
 .expert-instagram {
   flex-shrink: 0;
-  width: 43px;
-  height: 43px;
-  border: 1px solid #999999;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #777777;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
+  background: transparent;
   font-size: 19px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .expert-instagram:hover {
-  background: #c0c0c0;
+  background: var(--experts-silver);
   color: #080808;
-  border-color: #c0c0c0;
+  border-color: var(--experts-silver);
   transform: scale(1.08);
 }
 
-/* BOOKING */
+/* =========================================
+   BOOKING
+========================================= */
 
 .experts-booking {
   display: flex;
@@ -246,7 +291,8 @@
 }
 
 .experts-book-button {
-  min-height: 54px;
+  margin-top:30px;
+  min-height: 52px;
   min-width: 350px;
   padding: 10px 22px;
   display: inline-flex;
@@ -257,18 +303,25 @@
   color: #ffffff;
   background: transparent;
   text-decoration: none;
+  font-family: "DM Sans", sans-serif;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 2px;
-  transition: all 0.35s ease;
+  transition:
+    color 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .experts-book-button:hover {
   color: #080808;
   background: #c0c0c0;
+  border-color: #c0c0c0;
 }
 
-/* TABLET */
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 1050px) {
   .experts-container {
@@ -280,11 +333,12 @@
   }
 
   .expert-photo {
-    height: 310px;
+    height: 320px;
   }
 
   .expert-profile {
-    left: 13px;
+    left: 14px;
+    right: 10px;
   }
 
   .expert-profile h3 {
@@ -297,6 +351,11 @@
 
   .expert-details {
     padding: 15px 11px;
+    gap: 7px;
+  }
+
+  .expert-services {
+    gap: 11px;
   }
 
   .expert-service {
@@ -311,7 +370,9 @@
   }
 }
 
-/* MOBILE */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 700px) {
   .meet-experts {
@@ -341,29 +402,31 @@
   }
 
   .experts-heading h2 {
-    font-size: 40px;
+    font-size: clamp(34px, 9vw, 40px);
   }
 
   .experts-intro {
     font-size: 13px;
+    line-height: 1.65;
   }
 
   .experts-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 18px;
   }
 
   .expert-card {
-    border-radius: 16px;
+    border-radius: 15px;
   }
 
   .expert-photo {
-    height: 390px;
+    height: clamp(320px, 100vw, 420px);
   }
 
   .expert-profile {
     left: 18px;
-    bottom: 13px;
+    right: 15px;
+    bottom: 15px;
   }
 
   .expert-profile h3 {
@@ -407,7 +470,15 @@
   }
 }
 
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
 @media (max-width: 380px) {
+  .experts-container {
+    width: calc(100% - 24px);
+  }
+
   .expert-photo {
     height: 340px;
   }
@@ -419,5 +490,208 @@
 
   .expert-service {
     font-size: 12px;
+    gap: 7px;
+  }
+
+  .expert-instagram {
+    width: 36px;
+    height: 36px;
+  }
+
+  .experts-book-button {
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .expert-card,
+  .expert-photo img,
+  .expert-service svg,
+  .expert-instagram,
+  .experts-book-button {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* =========================================
+   EXPERT CARD OVERLAP FIX
+========================================= */
+
+.meet-experts .experts-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+.meet-experts .expert-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.meet-experts .expert-photo {
+  position: relative;
+  display: block;
+  flex: 0 0 370px;
+  width: 100%;
+  height: 370px;
+  min-height: 370px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.meet-experts .expert-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.meet-experts .expert-photo-overlay {
+  position: absolute;
+  inset: 20% 0 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.meet-experts .expert-profile {
+  position: absolute;
+  left: 18px;
+  right: 15px;
+  bottom: 16px;
+  z-index: 2;
+  margin: 0;
+}
+
+.meet-experts .expert-profile h3 {
+  margin: 0 0 7px;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.meet-experts .expert-profile span {
+  display: block;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.meet-experts .expert-details {
+  position: relative;
+  z-index: 2;
+  flex: 1 0 auto;
+  min-height: 140px;
+  width: 100%;
+  margin: 0;
+  padding: 16px 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #111111;
+}
+
+.meet-experts .expert-services {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  min-width: 0;
+}
+
+.meet-experts .expert-service {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.meet-experts .expert-instagram {
+  position: relative;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+.meet-experts .experts-booking {
+  position: relative;
+  z-index: 5;
+  clear: both;
+  width: 100%;
+  margin-top: 10px;
+  padding: 20px 0 0;
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+  .meet-experts .expert-photo {
+    flex-basis: 320px;
+    height: 320px;
+    min-height: 320px;
+  }
+
+  .meet-experts .expert-details {
+    min-height: 145px;
+    padding: 15px 11px;
+  }
+
+  .meet-experts .expert-profile h3 {
+    font-size: 21px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .meet-experts .experts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .meet-experts .expert-photo {
+    flex-basis: 380px;
+    height: 380px;
+    min-height: 380px;
+  }
+
+  .meet-experts .expert-details {
+    min-height: 135px;
+    padding: 16px;
+  }
+
+  .meet-experts .expert-profile h3 {
+    font-size: 25px;
+  }
+
+  .meet-experts .experts-booking {
+    margin-top: 5px;
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .meet-experts .expert-photo {
+    flex-basis: 340px;
+    height: 340px;
+    min-height: 340px;
+  }
+
+  .meet-experts .expert-details {
+    padding: 14px 10px;
   }
 }
