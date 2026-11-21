@@ -1,0 +1,746 @@
+
+/* =========================================
+   PK UNISEX SALON
+   NAIL STUDIO PRICING PAGE
+   MONOCHROME LUXURY
+========================================= */
+
+.pk-nail-page {
+  --nail-black: #080808;
+  --nail-panel: #151515;
+  --nail-white: #ffffff;
+  --nail-silver: #c0c0c0;
+  --nail-muted: #bdbdbd;
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--nail-black);
+  color: var(--nail-white);
+  font-family: "DM Sans", sans-serif;
+}
+
+.pk-nail-page *,
+.pk-nail-page *::before,
+.pk-nail-page *::after {
+  box-sizing: border-box;
+}
+
+.pk-nail-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pk-nail-page h1,
+.pk-nail-page h2,
+.pk-nail-page h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.pk-nail-page p {
+  margin: 0;
+}
+
+.nail-container {
+  width: min(1380px, calc(100% - 60px));
+  margin: 0 auto;
+}
+
+/* EYEBROW */
+
+.nail-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #ededed;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.nail-eyebrow > span {
+  width: 25px;
+  height: 1px;
+  background: var(--nail-silver);
+}
+
+.nail-centered {
+  justify-content: center;
+}
+
+/* HERO */
+
+.nail-hero {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  border-bottom: 1px solid #414141;
+}
+
+.nail-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .98) 0%,
+      rgba(0, 0, 0, .86) 34%,
+      rgba(0, 0, 0, .30) 72%,
+      rgba(0, 0, 0, .12) 100%
+    ),
+    url("/images/pricing/nail-hero.jpg")
+      center 40% / cover no-repeat;
+}
+
+.nail-hero-inner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.nail-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 17px;
+  color: #ddd !important;
+  font-size: 12px;
+  transition: color .3s ease;
+}
+
+.nail-back-link:hover {
+  color: #fff !important;
+}
+
+.nail-hero-content {
+  max-width: 530px;
+}
+
+.nail-hero-content h1 {
+  margin: 12px 0;
+  font-size: clamp(50px, 5.5vw, 76px);
+  line-height: .97;
+  letter-spacing: -2px;
+}
+
+.nail-hero-content h1 em {
+  display: block;
+  font-weight: 400;
+}
+
+.nail-hero-content > p {
+  max-width: 420px;
+  margin-bottom: 18px;
+  color: #dedede;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.nail-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 42px;
+  padding: 10px 21px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  background: #fff;
+  color: #080808 !important;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.nail-primary-button:hover {
+  background: transparent;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* HIGHLIGHTS */
+
+.nail-highlights {
+  padding: 12px 0;
+  border-bottom: 1px solid #414141;
+  background: #111;
+}
+
+.nail-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.nail-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 5px 12px;
+  border-right: 1px solid #555;
+}
+
+.nail-highlight:last-child {
+  border-right: 0;
+}
+
+.nail-highlight > svg {
+  flex-shrink: 0;
+  color: #e5e5e5;
+}
+
+.nail-highlight h3 {
+  margin: 0 0 3px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nail-highlight p {
+  color: #c3c3c3;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* SERVICES SECTION */
+
+.nail-services-section {
+  padding: 20px 0;
+  background:
+    radial-gradient(
+      ellipse at top,
+      #202020 0%,
+      #111 45%,
+      #080808 100%
+    );
+}
+
+.nail-section-heading {
+  max-width: 850px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.nail-section-heading h2 {
+  margin: 8px 0;
+  font-size: clamp(32px, 4vw, 47px);
+  line-height: 1.12;
+}
+
+.nail-section-heading h2 em {
+  font-weight: 400;
+}
+
+.nail-section-heading > p {
+  color: #c7c7c7;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* SERVICE GRID */
+
+.nail-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* SERVICE CARD */
+
+.nail-service-card {
+  min-width: 0;
+  min-height: 205px;
+  display: grid;
+  grid-template-columns: 47% 53%;
+  overflow: hidden;
+  border: 1px solid #626262;
+  border-radius: 15px;
+  background: #111;
+  transition: border-color .3s ease,
+    transform .3s ease;
+}
+
+.nail-service-card:hover {
+  border-color: #ddd;
+  transform: translateY(-3px);
+}
+
+.nail-card-image {
+  position: relative;
+  min-height: 205px;
+  overflow: hidden;
+  background: #222;
+}
+
+.nail-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 205px;
+  object-fit: cover;
+  filter: grayscale(65%);
+  transition: transform .6s ease, filter .5s ease;
+}
+
+.nail-service-card:hover .nail-card-image img {
+  transform: scale(1.06);
+  filter: grayscale(20%);
+}
+
+.nail-card-image-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 55%,
+    rgba(0, 0, 0, .42)
+  );
+}
+
+.nail-card-number {
+  position: absolute;
+  top: 12px;
+  left: 13px;
+  color: rgba(255,255,255,.85);
+  font-family: "Playfair Display", serif;
+  font-size: 27px;
+}
+
+.nail-card-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px 15px;
+}
+
+.nail-card-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+}
+
+.nail-card-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 7px;
+}
+
+.nail-card-title svg {
+  flex-shrink: 0;
+  color: var(--nail-silver);
+}
+
+.nail-card-title h3 {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.15;
+}
+
+.nail-card-content > p {
+  min-height: 55px;
+  margin-bottom: 9px;
+  color: #ccc;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.nail-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nail-card-bottom strong {
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  white-space: nowrap;
+}
+
+.nail-book-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+  min-height: 33px;
+  padding: 7px 13px;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  color: #fff !important;
+  font-size: 12px;
+  font-weight: 600;
+  transition: .3s ease;
+}
+
+.nail-book-link:hover {
+  color: #080808 !important;
+  background: #fff;
+  border-color: #fff;
+}
+
+/* NAIL EXPERIENCE */
+
+.nail-experience {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-top: 14px;
+  padding: 15px 20px;
+  border: 1px solid #555;
+  border-radius: 15px;
+  background: linear-gradient(110deg, #191919, #101010);
+}
+
+.nail-experience-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #777;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.nail-experience > div:last-child > span {
+  display: block;
+  margin-bottom: 3px;
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.nail-experience h3 {
+  margin: 0 0 4px;
+  font-size: 21px;
+}
+
+.nail-experience p {
+  color: #ccc;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* PRICING INFORMATION */
+
+.nail-pricing-info {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  align-items: center;
+  gap: 15px;
+  margin-top: 13px;
+  padding: 13px 20px;
+  border: 1px solid #777;
+  border-radius: 15px;
+  background: #111;
+}
+
+.nail-info-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.nail-info-heading h3 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.nail-info-details {
+  padding-left: 22px;
+  border-left: 1px solid #666;
+}
+
+.nail-info-details p {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 4px 0;
+  color: #ddd;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.nail-info-details svg {
+  flex-shrink: 0;
+}
+
+/* FINAL CTA */
+
+.nail-final-cta {
+  position: relative;
+  min-height: 230px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid #383838;
+  isolation: isolate;
+}
+
+.nail-final-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .12) 0%,
+      rgba(0, 0, 0, .78) 38%,
+      rgba(0, 0, 0, .96) 100%
+    ),
+    url("/images/pricing/nail-cta.jpg")
+      center / cover no-repeat;
+}
+
+.nail-final-inner {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.nail-final-content {
+  width: 57%;
+  max-width: 650px;
+}
+
+.nail-final-content h2 {
+  margin: 9px 0;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.08;
+}
+
+.nail-final-content h2 em {
+  display: block;
+  font-weight: 400;
+}
+
+.nail-final-content > p {
+  max-width: 420px;
+  margin-bottom: 14px;
+  color: #ddd;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .nail-highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 10px;
+  }
+
+  .nail-highlight:nth-child(2) {
+    border-right: 0;
+  }
+
+  .nail-service-card {
+    grid-template-columns: 42% 58%;
+  }
+
+  .nail-card-content {
+    padding: 11px;
+  }
+
+  .nail-card-title h3 {
+    font-size: 20px;
+  }
+
+  .nail-card-bottom strong {
+    font-size: 22px;
+  }
+
+  .nail-pricing-info {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .nail-info-details {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .nail-container {
+    width: calc(100% - 28px);
+  }
+
+  .nail-hero {
+    min-height: 360px;
+  }
+
+  .nail-hero-background {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.94),
+        rgba(0,0,0,.66)
+      ),
+      url("/images/pricing/nail-hero.jpg")
+      center / cover no-repeat;
+  }
+
+  .nail-hero-content h1 {
+    font-size: 49px;
+  }
+
+  .nail-hero-content > p {
+    max-width: 340px;
+    font-size: 13px;
+  }
+
+  .nail-highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 0;
+  }
+
+  .nail-highlight {
+    justify-content: flex-start;
+    padding: 5px 8px;
+  }
+
+  .nail-highlight:nth-child(2) {
+    border-right: 0;
+  }
+
+  .nail-highlight h3,
+  .nail-highlight p {
+    font-size: 12px;
+  }
+
+  .nail-services-section {
+    padding: 20px 0;
+  }
+
+  .nail-section-heading {
+    margin-bottom: 15px;
+  }
+
+  .nail-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .nail-section-heading > p {
+    font-size: 12px;
+  }
+
+  .nail-services-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .nail-service-card {
+    grid-template-columns: 40% 60%;
+    min-height: 155px;
+  }
+
+  .nail-card-image,
+  .nail-card-image img {
+    min-height: 155px;
+  }
+
+  .nail-card-content {
+    padding: 10px;
+  }
+
+  .nail-card-label {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .nail-card-title {
+    gap: 6px;
+    margin-bottom: 5px;
+  }
+
+  .nail-card-title h3 {
+    font-size: 19px;
+  }
+
+  .nail-card-title svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .nail-card-content > p {
+    min-height: auto;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .nail-card-bottom strong {
+    font-size: 20px;
+  }
+
+  .nail-book-link {
+    min-height: 30px;
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+
+  .nail-experience {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .nail-experience-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nail-experience h3 {
+    font-size: 18px;
+  }
+
+  .nail-pricing-info {
+    padding: 12px;
+  }
+
+  .nail-info-heading h3 {
+    font-size: 17px;
+  }
+
+  .nail-final-cta {
+    min-height: 240px;
+  }
+
+  .nail-final-background {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.96)
+      ),
+      url("/images/pricing/nail-cta.jpg")
+      center / cover no-repeat;
+  }
+
+  .nail-final-inner {
+    justify-content: flex-start;
+  }
+
+  .nail-final-content {
+    width: 100%;
+  }
+
+  .nail-final-content h2 {
+    font-size: 35px;
+  }
+
+  .nail-final-content > p {
+    font-size: 12px;
+  }
+}

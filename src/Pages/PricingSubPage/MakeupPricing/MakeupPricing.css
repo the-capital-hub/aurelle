@@ -1,0 +1,691 @@
+
+/* =========================================
+   PK UNISEX SALON
+   MAKEUP PRICING SUBPAGE
+   MONOCHROME LUXURY
+========================================= */
+
+.pk-makeup-page {
+  --makeup-black: #080808;
+  --makeup-panel: #151515;
+  --makeup-white: #ffffff;
+  --makeup-silver: #c0c0c0;
+  --makeup-muted: #bdbdbd;
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--makeup-black);
+  color: var(--makeup-white);
+  font-family: "DM Sans", sans-serif;
+}
+
+.pk-makeup-page *,
+.pk-makeup-page *::before,
+.pk-makeup-page *::after {
+  box-sizing: border-box;
+}
+
+.pk-makeup-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pk-makeup-page h1,
+.pk-makeup-page h2,
+.pk-makeup-page h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.pk-makeup-page p {
+  margin: 0;
+}
+
+.makeup-container {
+  width: min(1380px, calc(100% - 60px));
+  margin: 0 auto;
+}
+
+/* EYEBROW */
+
+.makeup-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #ededed;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.makeup-eyebrow > span {
+  width: 25px;
+  height: 1px;
+  background: var(--makeup-silver);
+}
+
+.makeup-centered {
+  justify-content: center;
+}
+
+/* HERO */
+
+.makeup-hero {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  border-bottom: 1px solid #414141;
+}
+
+.makeup-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .98) 0%,
+      rgba(0, 0, 0, .86) 34%,
+      rgba(0, 0, 0, .30) 72%,
+      rgba(0, 0, 0, .12) 100%
+    ),
+    url("/images/pricing/makeup-hero.jpg")
+      center 38% / cover no-repeat;
+}
+
+.makeup-hero-inner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.makeup-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 17px;
+  color: #ddd !important;
+  font-size: 12px;
+  transition: color .3s ease;
+}
+
+.makeup-back-link:hover {
+  color: #fff !important;
+}
+
+.makeup-hero-content {
+  max-width: 520px;
+}
+
+.makeup-hero-content h1 {
+  margin: 12px 0;
+  font-size: clamp(50px, 5.5vw, 76px);
+  line-height: .97;
+  letter-spacing: -2px;
+}
+
+.makeup-hero-content h1 em {
+  display: block;
+  font-weight: 400;
+}
+
+.makeup-hero-content > p {
+  max-width: 410px;
+  margin-bottom: 18px;
+  color: #dedede;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.makeup-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 42px;
+  padding: 10px 21px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  background: #fff;
+  color: #080808 !important;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.makeup-primary-button:hover {
+  background: transparent;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* HIGHLIGHTS */
+
+.makeup-highlights {
+  padding: 12px 0;
+  border-bottom: 1px solid #414141;
+  background: #111;
+}
+
+.makeup-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.makeup-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 5px 12px;
+  border-right: 1px solid #555;
+}
+
+.makeup-highlight:last-child {
+  border-right: 0;
+}
+
+.makeup-highlight > svg {
+  flex-shrink: 0;
+  color: #e5e5e5;
+}
+
+.makeup-highlight h3 {
+  margin: 0 0 3px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.makeup-highlight p {
+  color: #c3c3c3;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* SERVICES SECTION */
+
+.makeup-services-section {
+  padding: 20px 0;
+  background:
+    radial-gradient(
+      ellipse at top,
+      #202020 0%,
+      #111 45%,
+      #080808 100%
+    );
+}
+
+.makeup-section-heading {
+  max-width: 850px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.makeup-section-heading h2 {
+  margin: 8px 0;
+  font-size: clamp(32px, 4vw, 47px);
+  line-height: 1.12;
+}
+
+.makeup-section-heading h2 em {
+  font-weight: 400;
+}
+
+.makeup-section-heading > p {
+  color: #c7c7c7;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* SERVICE GRID */
+
+.makeup-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* SERVICE CARD */
+
+.makeup-service-card {
+  min-width: 0;
+  min-height: 200px;
+  display: grid;
+  grid-template-columns: 48% 52%;
+  overflow: hidden;
+  border: 1px solid #626262;
+  border-radius: 15px;
+  background: #111;
+  transition: border-color .3s ease,
+    transform .3s ease;
+}
+
+.makeup-service-card:hover {
+  border-color: #ddd;
+  transform: translateY(-3px);
+}
+
+.makeup-card-image {
+  position: relative;
+  min-height: 200px;
+  overflow: hidden;
+  background: #222;
+}
+
+.makeup-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  filter: grayscale(65%);
+  transition: transform .6s ease, filter .5s ease;
+}
+
+.makeup-service-card:hover .makeup-card-image img {
+  transform: scale(1.06);
+  filter: grayscale(20%);
+}
+
+.makeup-card-image-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 55%,
+    rgba(0, 0, 0, .42)
+  );
+}
+
+.makeup-card-number {
+  position: absolute;
+  top: 12px;
+  left: 13px;
+  color: rgba(255,255,255,.85);
+  font-family: "Playfair Display", serif;
+  font-size: 27px;
+}
+
+.makeup-card-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px 15px;
+}
+
+.makeup-card-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+}
+
+.makeup-card-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 7px;
+}
+
+.makeup-card-title svg {
+  flex-shrink: 0;
+  color: var(--makeup-silver);
+}
+
+.makeup-card-title h3 {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.15;
+}
+
+.makeup-card-content > p {
+  min-height: 55px;
+  margin-bottom: 9px;
+  color: #ccc;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.makeup-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.makeup-card-bottom strong {
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  white-space: nowrap;
+}
+
+.makeup-book-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+  min-height: 33px;
+  padding: 7px 13px;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  color: #fff !important;
+  font-size: 12px;
+  font-weight: 600;
+  transition: .3s ease;
+}
+
+.makeup-book-link:hover {
+  color: #080808 !important;
+  background: #fff;
+  border-color: #fff;
+}
+
+/* PRICING INFORMATION */
+
+.makeup-pricing-info {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  padding: 13px 20px;
+  border: 1px solid #777;
+  border-radius: 15px;
+  background: #111;
+}
+
+.makeup-info-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.makeup-info-heading h3 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.makeup-info-details {
+  padding-left: 22px;
+  border-left: 1px solid #666;
+}
+
+.makeup-info-details p {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 4px 0;
+  color: #ddd;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.makeup-info-details svg {
+  flex-shrink: 0;
+}
+
+/* FINAL CTA */
+
+.makeup-final-cta {
+  position: relative;
+  min-height: 230px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid #383838;
+  isolation: isolate;
+}
+
+.makeup-final-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .12) 0%,
+      rgba(0, 0, 0, .78) 38%,
+      rgba(0, 0, 0, .96) 100%
+    ),
+    url("/images/pricing/makeup-cta.jpg")
+      center / cover no-repeat;
+}
+
+.makeup-final-inner {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.makeup-final-content {
+  width: 57%;
+  max-width: 650px;
+}
+
+.makeup-final-content h2 {
+  margin: 9px 0;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.08;
+}
+
+.makeup-final-content h2 em {
+  display: block;
+  font-weight: 400;
+}
+
+.makeup-final-content > p {
+  max-width: 420px;
+  margin-bottom: 14px;
+  color: #ddd;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .makeup-highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 10px;
+  }
+
+  .makeup-highlight:nth-child(2) {
+    border-right: 0;
+  }
+
+  .makeup-service-card {
+    grid-template-columns: 42% 58%;
+  }
+
+  .makeup-card-content {
+    padding: 11px;
+  }
+
+  .makeup-card-title h3 {
+    font-size: 20px;
+  }
+
+  .makeup-card-bottom strong {
+    font-size: 22px;
+  }
+
+  .makeup-pricing-info {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .makeup-info-details {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .makeup-container {
+    width: calc(100% - 28px);
+  }
+
+  .makeup-hero {
+    min-height: 360px;
+  }
+
+  .makeup-hero-background {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.94),
+        rgba(0,0,0,.66)
+      ),
+      url("/images/pricing/makeup-hero.jpg")
+      center / cover no-repeat;
+  }
+
+  .makeup-hero-content h1 {
+    font-size: 49px;
+  }
+
+  .makeup-hero-content > p {
+    max-width: 340px;
+    font-size: 13px;
+  }
+
+  .makeup-highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 0;
+  }
+
+  .makeup-highlight {
+    justify-content: flex-start;
+    padding: 5px 8px;
+  }
+
+  .makeup-highlight:nth-child(2) {
+    border-right: 0;
+  }
+
+  .makeup-highlight h3 {
+    font-size: 12px;
+  }
+
+  .makeup-highlight p {
+    font-size: 12px;
+  }
+
+  .makeup-services-section {
+    padding: 20px 0;
+  }
+
+  .makeup-section-heading {
+    margin-bottom: 15px;
+  }
+
+  .makeup-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .makeup-section-heading > p {
+    font-size: 12px;
+  }
+
+  .makeup-services-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .makeup-service-card {
+    grid-template-columns: 40% 60%;
+    min-height: 155px;
+  }
+
+  .makeup-card-image,
+  .makeup-card-image img {
+    min-height: 155px;
+  }
+
+  .makeup-card-content {
+    padding: 10px;
+  }
+
+  .makeup-card-label {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .makeup-card-title {
+    gap: 6px;
+    margin-bottom: 5px;
+  }
+
+  .makeup-card-title h3 {
+    font-size: 19px;
+  }
+
+  .makeup-card-title svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .makeup-card-content > p {
+    min-height: auto;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .makeup-card-bottom strong {
+    font-size: 20px;
+  }
+
+  .makeup-book-link {
+    min-height: 30px;
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+
+  .makeup-pricing-info {
+    padding: 12px;
+  }
+
+  .makeup-info-heading h3 {
+    font-size: 17px;
+  }
+
+  .makeup-final-cta {
+    min-height: 240px;
+  }
+
+  .makeup-final-background {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.96)
+      ),
+      url("/images/pricing/makeup-cta.jpg")
+      center / cover no-repeat;
+  }
+
+  .makeup-final-inner {
+    justify-content: flex-start;
+  }
+
+  .makeup-final-content {
+    width: 100%;
+  }
+
+  .makeup-final-content h2 {
+    font-size: 35px;
+  }
+
+  .makeup-final-content > p {
+    font-size: 12px;
+  }
+}

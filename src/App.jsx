@@ -15,6 +15,14 @@ import Contact from './Pages/Contact/Contact'
 import Booking from './Pages/Booking/Booking'
 import HairServices from './SubPage/HairServices/HairServices'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import HairPricing from './Pages/PricingSubPage/HairPricing/HairPricing'
+import FacialPricing from './Pages/PricingSubPage/FacialPricing/FacialPricing'
+import MakeupPricing from './Pages/PricingSubPage/MakeupPricing/MakeupPricing'
+import NailPricing from './Pages/PricingSubPage/NailPricing/NailPricing'
+import WaxingPricing from './Pages/PricingSubPage/WaxingPricing/WaxingPricing'
+import PedicureManicurePricing from './Pages/PricingSubPage/PedicureManicurePricing/PedicureManicurePricing'
+import BodyTreatmentsPricing from './Pages/PricingSubPage/BodyTreatmentsPricing/BodyTreatmentsPricing'
+import PackagesPricing from './Pages/PricingSubPage/PackagesPricing/PackagesPricing'
 
 const App = () => {
   return (
@@ -30,6 +38,27 @@ const App = () => {
             <Route path="/team" element={<Team />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/pricing" element={<Pricing />} />
+              <Route path="/pricing/hair" element={<HairPricing />} />
+              <Route path="/pricing/skin" element={<FacialPricing />} />
+              <Route path="/pricing/makeup" element={<MakeupPricing />} />
+              <Route path="/pricing/nails" element={<NailPricing />} />
+              <Route
+  path="/pricing/waxing-threading"
+  element={<WaxingPricing />}
+/>
+<Route
+  path="/pricing/pedicure-manicure"
+  element={<PedicureManicurePricing />}
+/>
+<Route
+  path="/pricing/body-treatments"
+  element={<BodyTreatmentsPricing />}
+
+/>
+<Route
+  path="/pricing/packages"
+  element={<PackagesPricing />}
+/>
               <Route path="/offers" element={<Offers />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/booking" element={<Booking />} />

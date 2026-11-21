@@ -1,0 +1,781 @@
+
+/* =========================================
+   PK UNISEX SALON
+   WAXING AND THREADING
+   MONOCHROME LUXURY
+========================================= */
+
+.pk-waxing-page {
+  --wax-black: #080808;
+  --wax-panel: #151515;
+  --wax-white: #ffffff;
+  --wax-silver: #c0c0c0;
+  --wax-muted: #bdbdbd;
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--wax-black);
+  color: var(--wax-white);
+  font-family: "DM Sans", sans-serif;
+}
+
+.pk-waxing-page *,
+.pk-waxing-page *::before,
+.pk-waxing-page *::after {
+  box-sizing: border-box;
+}
+
+.pk-waxing-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pk-waxing-page h1,
+.pk-waxing-page h2,
+.pk-waxing-page h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.pk-waxing-page p {
+  margin: 0;
+}
+
+.wax-container {
+  width: min(1380px, calc(100% - 60px));
+  margin: 0 auto;
+}
+
+/* EYEBROW */
+
+.wax-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #ededed;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.wax-eyebrow > span {
+  width: 25px;
+  height: 1px;
+  background: var(--wax-silver);
+}
+
+.wax-centered {
+  justify-content: center;
+}
+
+/* HERO */
+
+.wax-hero {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  border-bottom: 1px solid #414141;
+}
+
+.wax-hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .98) 0%,
+      rgba(0, 0, 0, .86) 34%,
+      rgba(0, 0, 0, .30) 72%,
+      rgba(0, 0, 0, .12) 100%
+    ),
+    url("/images/pricing/waxing-hero.jpg")
+      center 40% / cover no-repeat;
+}
+
+.wax-hero-inner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.wax-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 17px;
+  color: #ddd !important;
+  font-size: 12px;
+  transition: color .3s ease;
+}
+
+.wax-back-link:hover {
+  color: #fff !important;
+}
+
+.wax-hero-content {
+  max-width: 530px;
+}
+
+.wax-hero-content h1 {
+  margin: 12px 0;
+  font-size: clamp(50px, 5.5vw, 76px);
+  line-height: .97;
+  letter-spacing: -2px;
+}
+
+.wax-hero-content h1 em {
+  display: block;
+  font-weight: 400;
+}
+
+.wax-hero-content > p {
+  max-width: 420px;
+  margin-bottom: 18px;
+  color: #dedede;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.wax-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 42px;
+  padding: 10px 21px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  background: #fff;
+  color: #080808 !important;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.wax-primary-button:hover {
+  background: transparent;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* HIGHLIGHTS */
+
+.wax-highlights {
+  padding: 12px 0;
+  border-bottom: 1px solid #414141;
+  background: #111;
+}
+
+.wax-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.wax-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 5px 12px;
+  border-right: 1px solid #555;
+}
+
+.wax-highlight:last-child {
+  border-right: 0;
+}
+
+.wax-highlight > svg {
+  flex-shrink: 0;
+  color: #e5e5e5;
+}
+
+.wax-highlight h3 {
+  margin: 0 0 3px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.wax-highlight p {
+  color: #c3c3c3;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* SERVICES SECTION */
+
+.wax-services-section {
+  padding: 20px 0;
+  background:
+    radial-gradient(
+      ellipse at top,
+      #202020 0%,
+      #111 45%,
+      #080808 100%
+    );
+}
+
+.wax-section-heading {
+  max-width: 850px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.wax-section-heading h2 {
+  margin: 8px 0;
+  font-size: clamp(32px, 4vw, 47px);
+  line-height: 1.12;
+}
+
+.wax-section-heading h2 em {
+  font-weight: 400;
+}
+
+.wax-section-heading > p {
+  color: #c7c7c7;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* CATEGORY HEADING */
+
+.wax-category-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #555;
+  scroll-margin-top: 90px;
+}
+
+.wax-category-heading > div > span {
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.wax-category-heading h3 {
+  margin: 4px 0 0;
+  font-size: 28px;
+}
+
+.wax-category-heading > svg {
+  color: var(--wax-silver);
+}
+
+.wax-threading-heading {
+  margin-top: 22px;
+}
+
+/* SERVICE GRID */
+
+.wax-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* SERVICE CARD */
+
+.wax-service-card {
+  min-width: 0;
+  min-height: 190px;
+  display: grid;
+  grid-template-columns: 43% 57%;
+  overflow: hidden;
+  border: 1px solid #626262;
+  border-radius: 15px;
+  background: #111;
+  transition: border-color .3s ease,
+    transform .3s ease;
+}
+
+.wax-service-card:hover {
+  border-color: #ddd;
+  transform: translateY(-3px);
+}
+
+.wax-card-image {
+  position: relative;
+  min-height: 190px;
+  overflow: hidden;
+  background: #222;
+}
+
+.wax-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 190px;
+  object-fit: cover;
+  filter: grayscale(65%);
+  transition: transform .6s ease, filter .5s ease;
+}
+
+.wax-service-card:hover .wax-card-image img {
+  transform: scale(1.06);
+  filter: grayscale(20%);
+}
+
+.wax-card-image-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 55%,
+    rgba(0, 0, 0, .42)
+  );
+}
+
+.wax-card-number {
+  position: absolute;
+  top: 12px;
+  left: 13px;
+  color: rgba(255,255,255,.85);
+  font-family: "Playfair Display", serif;
+  font-size: 27px;
+}
+
+.wax-card-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13px 15px;
+}
+
+.wax-card-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+}
+
+.wax-card-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 7px;
+}
+
+.wax-card-title svg {
+  flex-shrink: 0;
+  color: var(--wax-silver);
+}
+
+.wax-card-title h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.wax-card-content > p {
+  min-height: 55px;
+  margin-bottom: 9px;
+  color: #ccc;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.wax-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.wax-card-bottom strong {
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.wax-book-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex-shrink: 0;
+  min-height: 33px;
+  padding: 7px 12px;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+  color: #fff !important;
+  font-size: 12px;
+  font-weight: 600;
+  transition: .3s ease;
+}
+
+.wax-book-link:hover {
+  color: #080808 !important;
+  background: #fff;
+  border-color: #fff;
+}
+
+/* EXPERIENCE */
+
+.wax-experience {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-top: 15px;
+  padding: 15px 20px;
+  border: 1px solid #555;
+  border-radius: 15px;
+  background: linear-gradient(110deg, #191919, #101010);
+}
+
+.wax-experience-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #777;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.wax-experience > div:last-child > span {
+  display: block;
+  margin-bottom: 3px;
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.wax-experience h3 {
+  margin: 0 0 4px;
+  font-size: 21px;
+}
+
+.wax-experience p {
+  color: #ccc;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* PRICING INFORMATION */
+
+.wax-pricing-info {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  align-items: center;
+  gap: 15px;
+  margin-top: 13px;
+  padding: 13px 20px;
+  border: 1px solid #777;
+  border-radius: 15px;
+  background: #111;
+}
+
+.wax-info-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.wax-info-heading h3 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.wax-info-details {
+  padding-left: 22px;
+  border-left: 1px solid #666;
+}
+
+.wax-info-details p {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 4px 0;
+  color: #ddd;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.wax-info-details svg {
+  flex-shrink: 0;
+}
+
+/* FINAL CTA */
+
+.wax-final-cta {
+  position: relative;
+  min-height: 230px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid #383838;
+  isolation: isolate;
+}
+
+.wax-final-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .12) 0%,
+      rgba(0, 0, 0, .78) 38%,
+      rgba(0, 0, 0, .96) 100%
+    ),
+    url("/images/pricing/waxing-cta.jpg")
+      center / cover no-repeat;
+}
+
+.wax-final-inner {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.wax-final-content {
+  width: 57%;
+  max-width: 650px;
+}
+
+.wax-final-content h2 {
+  margin: 9px 0;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.08;
+}
+
+.wax-final-content h2 em {
+  display: block;
+  font-weight: 400;
+}
+
+.wax-final-content > p {
+  max-width: 420px;
+  margin-bottom: 14px;
+  color: #ddd;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .wax-highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 10px;
+  }
+
+  .wax-highlight:nth-child(2) {
+    border-right: 0;
+  }
+
+  .wax-service-card {
+    grid-template-columns: 40% 60%;
+  }
+
+  .wax-card-content {
+    padding: 11px;
+  }
+
+  .wax-card-title h3 {
+    font-size: 19px;
+  }
+
+  .wax-pricing-info {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .wax-info-details {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .wax-container {
+    width: calc(100% - 28px);
+  }
+
+  .wax-hero {
+    min-height: 360px;
+  }
+
+  .wax-hero-background {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.94),
+        rgba(0,0,0,.66)
+      ),
+      url("/images/pricing/waxing-hero.jpg")
+      center / cover no-repeat;
+  }
+
+  .wax-hero-content h1 {
+    font-size: 49px;
+  }
+
+  .wax-hero-content > p {
+    max-width: 340px;
+    font-size: 13px;
+  }
+
+  .wax-highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 0;
+  }
+
+  .wax-highlight {
+    justify-content: flex-start;
+    padding: 5px 8px;
+  }
+
+  .wax-highlight:nth-child(2) {
+    border-right: 0;
+  }
+
+  .wax-highlight h3,
+  .wax-highlight p {
+    font-size: 12px;
+  }
+
+  .wax-services-section {
+    padding: 20px 0;
+  }
+
+  .wax-section-heading {
+    margin-bottom: 15px;
+  }
+
+  .wax-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .wax-section-heading > p {
+    font-size: 12px;
+  }
+
+  .wax-category-heading {
+    margin-top: 16px;
+  }
+
+  .wax-category-heading h3 {
+    font-size: 24px;
+  }
+
+  .wax-services-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .wax-service-card {
+    grid-template-columns: 40% 60%;
+    min-height: 155px;
+  }
+
+  .wax-card-image,
+  .wax-card-image img {
+    min-height: 155px;
+  }
+
+  .wax-card-content {
+    padding: 10px;
+  }
+
+  .wax-card-label {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .wax-card-title {
+    gap: 6px;
+    margin-bottom: 5px;
+  }
+
+  .wax-card-title h3 {
+    font-size: 18px;
+  }
+
+  .wax-card-title svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .wax-card-content > p {
+    min-height: auto;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .wax-card-bottom strong {
+    font-size: 17px;
+  }
+
+  .wax-book-link {
+    min-height: 30px;
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+
+  .wax-experience {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .wax-experience-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .wax-experience h3 {
+    font-size: 18px;
+  }
+
+  .wax-pricing-info {
+    padding: 12px;
+  }
+
+  .wax-info-heading h3 {
+    font-size: 17px;
+  }
+
+  .wax-final-cta {
+    min-height: 240px;
+  }
+
+  .wax-final-background {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.96)
+      ),
+      url("/images/pricing/waxing-cta.jpg")
+      center / cover no-repeat;
+  }
+
+  .wax-final-inner {
+    justify-content: flex-start;
+  }
+
+  .wax-final-content {
+    width: 100%;
+  }
+
+  .wax-final-content h2 {
+    font-size: 35px;
+  }
+
+  .wax-final-content > p {
+    font-size: 12px;
+  }
+}
