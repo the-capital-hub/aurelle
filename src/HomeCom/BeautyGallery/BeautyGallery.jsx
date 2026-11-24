@@ -10,53 +10,53 @@ gsap.registerPlugin(ScrollTrigger);
 
 const categories = [
   "All Work",
-  "Makeup",
-  "Bridal",
   "Hair Styling",
-  "Skincare",
+  "Men's Grooming",
+  "Makeup & Bridal",
+  "Skin & Facials",
 ];
 
 const galleryItems = [
   {
     id: 1,
-    category: "Bridal",
+    category: "Makeup & Bridal",
     image: "/images/beauty/gallery-bridal.jpg",
-    alt: "Luxury Indian bridal beauty look",
+    alt: "Indian bride with elegant professional bridal makeup",
     size: "tall",
   },
   {
     id: 2,
-    category: "Skincare",
+    category: "Skin & Facials",
     image: "/images/beauty/gallery-facial.jpg",
-    alt: "Luxury facial skincare treatment",
+    alt: "Professional facial skincare treatment",
     size: "small",
   },
   {
     id: 3,
     category: "Hair Styling",
     image: "/images/beauty/gallery-hair.jpg",
-    alt: "Elegant professional hair styling",
+    alt: "Professional hairstyling and hair transformation",
     size: "small",
   },
   {
     id: 4,
-    category: "Bridal",
-    image: "/images/beauty/gallery-bride.jpg",
-    alt: "Premium Indian bridal makeup",
+    category: "Men's Grooming",
+    image: "/images/beauty/gallery-grooming.jpg",
+    alt: "Indian man with premium haircut and beard styling",
     size: "tall",
   },
   {
     id: 5,
-    category: "Makeup",
+    category: "Makeup & Bridal",
     image: "/images/beauty/gallery-makeup.jpg",
-    alt: "Professional makeup application",
+    alt: "Professional makeup look created by salon experts",
     size: "small",
   },
   {
     id: 6,
-    category: "Skincare",
+    category: "Hair Styling",
     image: "/images/beauty/gallery-hairwash.jpg",
-    alt: "Relaxing luxury hair wash treatment",
+    alt: "Relaxing professional hair wash and hair care service",
     size: "small",
   },
 ];
@@ -105,7 +105,13 @@ function BeautyGallery() {
   }, []);
 
   useEffect(() => {
-    const cards = gsap.utils.toArray(".gallery-card");
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const cards = gsap.utils.toArray(
+      ".gallery-card",
+      section
+    );
 
     gsap.fromTo(
       cards,
@@ -135,19 +141,26 @@ function BeautyGallery() {
             <span />
           </div>
 
-          
+          <p className="gallery-eyebrow">
+            THE AURELLE COLLECTION
+          </p>
 
           <h2>
             A GLIMPSE OF <em>OUR WORK</em>
           </h2>
 
           <p className="gallery-intro">
-            Explore our signature looks, transformations and
-            beauty moments crafted with care and expertise.
+            Explore our signature hairstyles, men's grooming,
+            bridal transformations and personalised beauty
+            experiences, all crafted with passion and expertise.
           </p>
         </div>
 
-        <div className="gallery-filters">
+        <div
+          className="gallery-filters"
+          role="group"
+          aria-label="Filter gallery by service"
+        >
           {categories.map((category) => (
             <button
               type="button"

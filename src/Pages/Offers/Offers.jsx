@@ -1,8 +1,9 @@
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import {
   Scissors,
   Flower2,
@@ -16,7 +17,6 @@ import {
   Gem,
   UserRound,
   Sparkles,
-  Check,
   Percent,
 } from "lucide-react";
 
@@ -24,14 +24,26 @@ import "./Offers.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* =========================================
+   EXCLUSIVE OFFERS
+========================================= */
+
 const exclusiveOffers = [
   {
     title: "Hair Care Offer",
-    subtitle: "Hair Cut + Hair Spa",
+    subtitle: "Haircut + Hair Spa",
     discount: "Save 20%",
     category: "hair",
     image: "/images/pricing/service-hair.jpg",
     icon: Scissors,
+  },
+  {
+    title: "Men's Grooming Offer",
+    subtitle: "Haircut + Beard Styling",
+    discount: "Save 20%",
+    category: "grooming",
+    image: "/images/pricing/mens-grooming.png",
+    icon: UserRound,
   },
   {
     title: "Skin Care Offer",
@@ -58,6 +70,10 @@ const exclusiveOffers = [
     icon: Hand,
   },
 ];
+
+/* =========================================
+   SEASONAL PACKAGES
+========================================= */
 
 const seasonalPackages = [
   {
@@ -87,6 +103,10 @@ const seasonalPackages = [
   },
 ];
 
+/* =========================================
+   MEMBERSHIP BENEFITS
+========================================= */
+
 const membershipBenefits = [
   {
     icon: Gem,
@@ -110,11 +130,18 @@ const membershipBenefits = [
   },
 ];
 
+/* =========================================
+   OFFERS PAGE
+========================================= */
+
 function Offers() {
   const pageRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+
+      /* HERO ANIMATION */
+
       gsap
         .timeline()
         .from(".offers-hero-content > *", {
@@ -135,6 +162,8 @@ function Offers() {
           "-=0.55"
         );
 
+      /* GENERAL REVEAL */
+
       gsap.utils.toArray(".offers-reveal").forEach((element) => {
         gsap.from(element, {
           opacity: 0,
@@ -149,6 +178,8 @@ function Offers() {
         });
       });
 
+      /* EXCLUSIVE OFFER CARDS */
+
       gsap.from(".exclusive-offer-card", {
         opacity: 0,
         y: 30,
@@ -162,6 +193,8 @@ function Offers() {
         },
       });
 
+      /* SEASONAL PACKAGES */
+
       gsap.from(".seasonal-package", {
         opacity: 0,
         y: 25,
@@ -174,6 +207,7 @@ function Offers() {
           once: true,
         },
       });
+
     }, pageRef);
 
     return () => ctx.revert();
@@ -182,35 +216,43 @@ function Offers() {
   return (
     <main className="aurelle-offers-page" ref={pageRef}>
 
-      {/* HERO */}
+      {/* =====================================
+          HERO SECTION
+      ===================================== */}
 
       <section className="offers-hero">
+
         <div className="offers-hero-background" />
 
         <div className="offers-hero-container">
 
           <div className="offers-hero-content">
+
             <div className="offers-eyebrow">
               <span />
-              SPECIAL OFFERS
+              EXCLUSIVE AURELLE OFFERS
             </div>
 
             <h1>
-              Beauty Moments
-              <em>Special Prices</em>
+              Exceptional Style
+              <em>Exclusive Offers</em>
             </h1>
 
             <p>
-              Exclusive salon offers, seasonal packages
-              and membership benefits designed just for you.
+              Discover special salon offers, carefully
+              curated packages and exclusive membership
+              benefits. Premium hair styling, men's
+              grooming and beauty experiences for everyone.
             </p>
 
             <div className="offers-hero-actions">
+
               <a
                 href="#exclusive-offers"
                 className="offers-primary-button"
               >
                 Explore Offers
+                <ArrowRight size={18} />
               </a>
 
               <Link
@@ -220,27 +262,36 @@ function Offers() {
                 Book Your Service
                 <ArrowRight size={18} />
               </Link>
+
             </div>
+
           </div>
 
           <div className="offers-hero-image">
+
             <img
-              src="/images/about/hero.png"
-              alt="Luxury beauty editorial portrait"
+              src="/images/offer/hero.png"
+              alt="AURELLE luxury unisex salon experience"
               fetchPriority="high"
             />
+
           </div>
 
         </div>
+
       </section>
 
-      {/* EXCLUSIVE OFFERS */}
+      {/* =====================================
+          EXCLUSIVE OFFERS
+      ===================================== */}
 
       <section
         className="offers-exclusive-section"
         id="exclusive-offers"
       >
+
         <div className="offers-section-heading offers-reveal">
+
           <div className="offers-eyebrow offers-centered-eyebrow">
             <span />
             EXCLUSIVE OFFERS
@@ -248,11 +299,18 @@ function Offers() {
           </div>
 
           <h2>
-            Our Best <em>Beauty Deals</em>
+            Special Offers for <em>Everyone</em>
           </h2>
+
+          <p>
+            Explore exclusive deals across our hair,
+            grooming and beauty services.
+          </p>
+
         </div>
 
         <div className="offers-exclusive-grid">
+
           {exclusiveOffers.map((offer) => {
             const Icon = offer.icon;
 
@@ -261,29 +319,36 @@ function Offers() {
                 className="exclusive-offer-card"
                 key={offer.category}
               >
+
                 <Link
                   to={`/booking?service=${offer.category}`}
                   className="exclusive-offer-image"
                   aria-label={`Book ${offer.title}`}
                 >
+
                   <img
                     src={offer.image}
                     alt={offer.title}
                     loading="lazy"
                   />
+
                 </Link>
 
                 <div className="exclusive-offer-content">
+
                   <div className="exclusive-offer-title">
+
                     <Icon size={25} strokeWidth={1.4} />
 
                     <div>
                       <h3>{offer.title}</h3>
                       <p>{offer.subtitle}</p>
                     </div>
+
                   </div>
 
                   <div className="exclusive-offer-bottom">
+
                     <strong>{offer.discount}</strong>
 
                     <Link
@@ -292,32 +357,48 @@ function Offers() {
                     >
                       <ArrowRight size={20} />
                     </Link>
+
                   </div>
+
                 </div>
+
               </article>
             );
           })}
+
         </div>
+
       </section>
 
-      {/* SEASONAL PACKAGES */}
+      {/* =====================================
+          SEASONAL PACKAGES
+      ===================================== */}
 
       <section className="offers-packages-section">
+
         <div className="offers-packages-background" />
 
         <div className="offers-section-heading offers-reveal">
+
           <div className="offers-eyebrow offers-centered-eyebrow">
             <span />
-            SEASONAL PACKAGES
+            SPECIAL PACKAGES
             <span />
           </div>
 
           <h2>
-            Special Beauty <em>Packages</em>
+            Curated Care <em>Packages</em>
           </h2>
+
+          <p>
+            Enjoy thoughtfully combined salon services
+            with our special packages.
+          </p>
+
         </div>
 
         <div className="offers-packages-grid">
+
           {seasonalPackages.map((plan) => {
             const Icon = plan.icon;
 
@@ -328,19 +409,26 @@ function Offers() {
                 }`}
                 key={plan.title}
               >
+
                 <div className="seasonal-package-heading">
+
                   <Icon size={34} strokeWidth={1.35} />
 
                   <div>
                     <h3>{plan.title}</h3>
                     <p>{plan.subtitle}</p>
                   </div>
+
                 </div>
 
                 <div className="seasonal-package-price">
+
                   <strong>{plan.price}</strong>
+
                   <del>{plan.oldPrice}</del>
+
                   <span>{plan.saving}</span>
+
                 </div>
 
                 <Link
@@ -350,80 +438,104 @@ function Offers() {
                   Claim Package
                   <ArrowRight size={17} />
                 </Link>
+
               </article>
             );
           })}
+
         </div>
+
       </section>
 
-      {/* LIMITED TIME DEALS */}
+      {/* =====================================
+          LIMITED TIME DEALS
+      ===================================== */}
 
       <section className="offers-limited-section">
 
         <div className="offers-section-heading offers-reveal">
+
           <div className="offers-eyebrow offers-centered-eyebrow">
             <span />
-            LIMITED TIME DEALS
+            SPECIAL PROMOTIONS
             <span />
           </div>
 
           <h2>
-            Grab Before <em>It's Gone</em>
+            Exclusive <em>Salon Deals</em>
           </h2>
+
         </div>
 
         <div className="offers-limited-bar">
 
           <div className="limited-deal">
+
             <Percent size={35} strokeWidth={1.3} />
+
             <div>
               <h3>Flat 30% Off</h3>
               <p>On Selected Services</p>
             </div>
+
           </div>
 
           <div className="limited-deal">
+
             <Gift size={35} strokeWidth={1.3} />
+
             <div>
-              <h3>Festival Beauty Offer</h3>
+              <h3>Special Combo Offer</h3>
               <p>Up to 25% Off on Combos</p>
             </div>
+
           </div>
 
           <div className="limited-deal">
+
             <Clock3 size={35} strokeWidth={1.3} />
+
             <div>
               <h3>Limited Period Only</h3>
               <p>Book Your Slot Today</p>
             </div>
+
           </div>
 
         </div>
 
         <div className="offers-limited-action">
+
           <Link to="/booking">
             Claim Your Offer
             <ArrowRight size={18} />
           </Link>
+
         </div>
+
       </section>
 
-      {/* MEMBERSHIP OFFERS */}
+      {/* =====================================
+          MEMBERSHIP OFFERS
+      ===================================== */}
 
       <section className="offers-membership-section">
 
         <div className="offers-membership-image">
+
           <img
             src="/images/offer/card.png"
-            alt="AURELLE Silver Gold and Platinum membership cards"
+            alt="AURELLE membership cards"
             loading="lazy"
           />
+
         </div>
 
         <div className="offers-membership-content">
+
           <div className="offers-eyebrow">
             <span />
-            MEMBERSHIP OFFERS
+            AURELLE MEMBERSHIP
           </div>
 
           <h2>
@@ -432,12 +544,13 @@ function Offers() {
           </h2>
 
           <p>
-            Join our exclusive membership plans and enjoy
-            special discounts, priority bookings and
-            birthday benefits.
+            Become an AURELLE member and enjoy exclusive
+            benefits, priority bookings and special
+            experiences for your regular salon visits.
           </p>
 
           <div className="offers-membership-benefits">
+
             {membershipBenefits.map((benefit) => {
               const Icon = benefit.icon;
 
@@ -446,12 +559,17 @@ function Offers() {
                   className="offers-membership-benefit"
                   key={benefit.title}
                 >
+
                   <Icon size={25} strokeWidth={1.4} />
+
                   <span>{benefit.title}</span>
+
                   <small>{benefit.subtitle}</small>
+
                 </div>
               );
             })}
+
           </div>
 
           <Link
@@ -461,26 +579,36 @@ function Offers() {
             View Membership Plans
             <ArrowRight size={18} />
           </Link>
+
         </div>
+
       </section>
 
-      {/* FINAL CTA */}
+      {/* =====================================
+          FINAL CTA
+      ===================================== */}
 
       <section className="offers-final-cta">
+
         <div className="offers-cta-image">
+
           <img
             src="/images/offer/aurelle-offers-cta-bg.png"
             alt=""
             loading="lazy"
           />
+
         </div>
 
         <div className="offers-cta-content">
-          <h2>Ready to Avail Your Offer?</h2>
+
+          <h2>
+            Your Next Great Look Starts Here
+          </h2>
 
           <p>
-            Book now and experience premium beauty care
-            at special prices.
+            Explore our special offers and enjoy expert
+            styling, grooming and personalised salon care.
           </p>
 
           <Link
@@ -491,7 +619,9 @@ function Offers() {
             Book Your Appointment
             <ArrowRight size={19} />
           </Link>
+
         </div>
+
       </section>
 
     </main>

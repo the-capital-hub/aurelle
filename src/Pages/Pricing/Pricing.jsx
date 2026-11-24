@@ -1,5 +1,7 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   Scissors,
   Sparkles,
@@ -13,34 +15,48 @@ import {
   CalendarDays,
   Check,
   Info,
+  UserRound,
 } from "lucide-react";
 
 import "./Pricing.css";
 
+/* =========================================
+   PRICING CATEGORIES
+========================================= */
+
 const categories = [
   {
     id: "hair",
-    title: "Hair Services",
+    title: "Hair Styling",
     description:
-      "Hair cut, spa, colouring, rebonding, treatments and head massage.",
+      "Professional haircuts, hair spa, colouring, rebonding and personalised hair treatments for everyone.",
     image: "/images/pricing/hair-services.jpg",
     icon: Scissors,
     link: "/pricing/hair",
   },
   {
-    id: "skin",
-    title: "Facial & Skin Care",
+    id: "grooming",
+    title: "Men's Grooming",
     description:
-      "Facials, clean up, detan, hydra facial and advanced skin treatments.",
+      "Men's haircuts, beard styling, shaving, hair treatments and complete grooming services.",
+    image: "/images/pricing/mens-grooming.png",
+    icon: UserRound,
+    link: "/pricing/grooming",
+  },
+  {
+    id: "skin",
+    title: "Skin & Facial Care",
+    description:
+      "Professional facials, cleanups, detan, hydra facial and personalised skincare treatments.",
     image: "/images/pricing/skin-care.jpg",
     icon: Sparkles,
     link: "/pricing/skin",
   },
   {
     id: "makeup",
-    title: "Makeup",
+    title: "Makeup & Bridal",
     description:
-      "Party makeup, bridal makeup, hair do, saree drape and special occasions.",
+      "Professional party makeup, bridal makeup, hairstyling and occasion ready looks.",
     image: "/images/pricing/makeup.jpg",
     icon: Palette,
     link: "/pricing/makeup",
@@ -49,7 +65,7 @@ const categories = [
     id: "nails",
     title: "Nail Studio",
     description:
-      "Gel polish, acrylic extension, gel extension, gel overlay and nail art.",
+      "Gel polish, acrylic extensions, gel extensions, overlays and creative nail art.",
     image: "/images/pricing/nail-studio.jpg",
     icon: Gem,
     link: "/pricing/nails",
@@ -58,25 +74,25 @@ const categories = [
     id: "waxing",
     title: "Waxing & Threading",
     description:
-      "Full body waxing, face waxing and precise threading services.",
+      "Professional waxing, face waxing and precise threading services.",
     image: "/images/pricing/waxing.jpg",
     icon: Feather,
     link: "/pricing/waxing-threading",
   },
   {
     id: "pedicure",
-    title: "Pedicure & Manicure",
+    title: "Manicure & Pedicure",
     description:
-      "Classic and premium pedicure and manicure treatments for beautiful hands and feet.",
+      "Classic and premium hand and foot care treatments for a refreshed experience.",
     image: "/images/pricing/pedicure.jpg",
     icon: Footprints,
     link: "/pricing/pedicure-manicure",
   },
   {
     id: "body",
-    title: "Body Treatments",
+    title: "Body & Spa Treatments",
     description:
-      "Full body massage, body polishing and rejuvenating spa treatments.",
+      "Relaxing body massages, body polishing and rejuvenating spa experiences.",
     image: "/images/pricing/body-treatment.jpg",
     icon: Flower2,
     link: "/pricing/body-treatments",
@@ -85,33 +101,43 @@ const categories = [
     id: "packages",
     title: "Bridal & Groom Packages",
     description:
-      "Complete bridal and groom makeup packages for your special day.",
+      "Specially curated bridal and groom packages for weddings and memorable occasions.",
     image: "/images/pricing/bridal-groom.jpg",
     icon: Crown,
     link: "/pricing/packages",
   },
 ];
 
+/* =========================================
+   PRICING CATEGORY CARD
+========================================= */
+
 function PricingCategoryCard({ category }) {
   const Icon = category.icon;
 
   return (
     <article className="pk-pricing-card">
-      <a
-        href={category.link}
+
+      <Link
+        to={category.link}
         className="pk-pricing-card-link"
         aria-label={`Explore ${category.title} pricing`}
       >
+
         <div className="pk-pricing-card-image">
+
           <img
             src={category.image}
-            alt={category.title}
+            alt={`${category.title} at AURELLE`}
             loading="lazy"
           />
+
           <div className="pk-pricing-card-image-overlay" />
+
         </div>
 
         <div className="pk-pricing-card-content">
+
           <div className="pk-pricing-card-icon">
             <Icon size={30} strokeWidth={1.5} />
           </div>
@@ -124,117 +150,155 @@ function PricingCategoryCard({ category }) {
             View Pricing
             <ArrowRight size={17} />
           </span>
+
         </div>
-      </a>
+
+      </Link>
+
     </article>
   );
 }
+
+/* =========================================
+   PRICING PAGE
+========================================= */
 
 export default function Pricing() {
   return (
     <main className="pk-pricing-page">
 
-      {/* HERO SECTION */}
+      {/* =====================================
+          HERO SECTION
+      ===================================== */}
 
       <section className="pk-pricing-hero">
+
         <div className="pk-pricing-hero-bg" />
 
         <div className="pk-pricing-container pk-pricing-hero-inner">
+
           <div className="pk-pricing-hero-content">
 
             <div className="pk-pricing-eyebrow">
               <span />
-              PRICING
+              AURELLE PRICE MENU
             </div>
 
             <h1>
-              Our Salon
-              <em>Price Menu</em>
+              The Art of
+              <em>Premium Care</em>
             </h1>
 
             <p>
-              Explore our complete range of premium salon
-              services and transparent pricing, designed for
-              your beauty, grooming and wellness needs.
+              Discover our range of premium salon services
+              with transparent pricing. From expert hair
+              styling and men's grooming to skincare,
+              makeup and complete beauty experiences.
             </p>
 
             <a
               href="#pricing-categories"
               className="pk-pricing-primary-btn"
             >
-              Browse Services
+              Explore Our Services
               <ArrowRight size={19} />
             </a>
 
           </div>
+
         </div>
+
       </section>
 
-      {/* CATEGORY SECTION */}
+      {/* =====================================
+          CATEGORY SECTION
+      ===================================== */}
 
       <section
         className="pk-pricing-categories"
         id="pricing-categories"
       >
+
         <div className="pk-pricing-container">
 
           <div className="pk-pricing-section-heading">
 
             <div className="pk-pricing-eyebrow centered">
               <span />
-              OUR SERVICE CATEGORIES
+              EXPLORE OUR SERVICES
               <span />
             </div>
 
             <h2>
-              Choose a Service & <em>View Pricing</em>
+              Find Your Perfect <em>Experience</em>
             </h2>
 
             <p>
-              Select a category below to explore detailed
-              services and prices.
+              Explore our service categories and discover
+              the treatments designed around your personal
+              style and grooming needs.
             </p>
 
           </div>
 
+          {/* SERVICE CATEGORY GRID */}
+
           <div className="pk-pricing-grid">
+
             {categories.map((category) => (
               <PricingCategoryCard
                 category={category}
                 key={category.id}
               />
             ))}
+
           </div>
 
-          {/* INFORMATION */}
+          {/* =====================================
+              PRICING INFORMATION
+          ===================================== */}
 
           <div className="pk-pricing-information">
 
             <div className="pk-pricing-info-title">
+
               <Info size={25} strokeWidth={1.5} />
+
               <h3>Important Information</h3>
+
             </div>
 
             <div className="pk-pricing-info-details">
+
               <p>
                 <Check size={16} />
-                All listed prices are subject to 18% GST as per salon menu.
+                Prices are subject to applicable taxes as per the salon menu.
               </p>
 
               <p>
                 <Check size={16} />
-                Final pricing may vary based on hair length, density and consultation.
+                Final service pricing may vary depending on hair length, density and treatment requirements.
               </p>
+
+              <p>
+                <Check size={16} />
+                Our professionals can help you select the right service during consultation.
+              </p>
+
             </div>
 
           </div>
 
         </div>
+
       </section>
 
-      {/* APPOINTMENT CTA */}
+      {/* =====================================
+          APPOINTMENT CTA
+      ===================================== */}
 
       <section className="pk-pricing-cta">
+
         <div className="pk-pricing-cta-bg" />
 
         <div className="pk-pricing-container pk-pricing-cta-inner">
@@ -243,30 +307,32 @@ export default function Pricing() {
 
             <div className="pk-pricing-eyebrow">
               <span />
-              EXPERIENCE PREMIUM CARE
+              STYLE BEYOND ORDINARY
             </div>
 
             <h2>
-              Book Your Appointment Today
+              Your AURELLE Experience Awaits
             </h2>
 
             <p>
-              Get expert care, personalised services and a
-              relaxing salon experience at PK Unisex Salon.
+              Enjoy expert styling, personalised grooming
+              and exceptional care. Book your appointment
+              and experience the AURELLE difference.
             </p>
 
-            <a
-              href="/contact"
+            <Link
+              to="/booking"
               className="pk-pricing-primary-btn"
             >
               <CalendarDays size={18} />
-              Book Appointment
+              Book Your Appointment
               <ArrowRight size={18} />
-            </a>
+            </Link>
 
           </div>
 
         </div>
+
       </section>
 
     </main>

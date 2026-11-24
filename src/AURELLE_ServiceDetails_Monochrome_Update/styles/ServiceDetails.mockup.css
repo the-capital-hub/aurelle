@@ -1,0 +1,426 @@
+
+/* =========================================================
+   AURELLE SERVICE DETAILS — MONOCHROME MOCKUP REFINEMENTS
+   Load after the existing ServiceDetails.css
+========================================================= */
+
+.aurelle-service-hero-redesign {
+  min-height: 430px;
+  background: #080808;
+}
+.aurelle-service-hero-redesign .service-hero-container {
+  min-height: 430px;
+  padding: 18px 0;
+}
+.aurelle-service-hero-redesign .service-hero-content {
+  max-width: 570px;
+  padding: 30px 0 45px;
+}
+.aurelle-service-hero-redesign .service-hero-image img {
+  opacity: .82;
+  object-position: center 38%;
+}
+.aurelle-service-hero-redesign .service-hero-overlay {
+  background: linear-gradient(90deg, rgba(8,8,8,.98) 0%, rgba(8,8,8,.84) 38%, rgba(8,8,8,.18) 100%);
+}
+.aurelle-service-hero-redesign .service-breadcrumb {
+  margin-bottom: 25px;
+}
+.aurelle-service-hero-redesign .service-hero-content h1 {
+  font-size: clamp(42px, 5.2vw, 68px);
+}
+.aurelle-service-hero-redesign .service-hero-actions {
+  margin-top: 24px;
+}
+.aurelle-service-hero-redesign .service-hero-bottom {
+  display: none;
+}
+
+/* Image led intro */
+.aurelle-intro-redesign {
+  padding: 20px 0;
+  background: #0b0b0b;
+}
+.aurelle-intro-redesign .service-intro-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(24px, 4vw, 55px);
+}
+.service-intro-visual {
+  position: relative;
+  min-height: 270px;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #393939;
+  background: #151515;
+}
+.service-intro-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  opacity: .88;
+}
+.service-intro-image-caption {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 16px;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0,0,0,.82));
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+.service-intro-copy .service-section-eyebrow {
+  margin-bottom: 12px;
+}
+.service-intro-copy h2 {
+  max-width: 520px;
+  margin: 0 0 14px;
+  color: #fff;
+  font: 400 clamp(30px, 3.4vw, 44px)/1.12 "Playfair Display", serif;
+}
+.service-intro-lead {
+  max-width: 560px;
+  margin: 0 0 18px;
+  color: #c3c3c3;
+  font: 14px/1.8 "DM Sans", sans-serif;
+}
+.aurelle-intro-redesign .service-intro-highlights {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.aurelle-intro-redesign .service-highlight-item {
+  min-height: 72px;
+  padding: 10px 8px;
+}
+.aurelle-intro-redesign .service-highlight-icon {
+  width: 36px;
+  height: 36px;
+}
+
+/* Service category navigation */
+.aurelle-service-categories {
+  padding: 18px 0;
+  background: #080808;
+}
+.aurelle-service-categories .service-categories-heading {
+  margin-bottom: 16px;
+}
+.aurelle-service-categories .service-categories-heading h2 {
+  font-size: clamp(25px, 3vw, 34px);
+}
+.aurelle-service-categories .service-category-pill {
+  min-height: 39px;
+}
+
+/* Image treatment cards */
+.aurelle-treatments-redesign {
+  padding: 22px 0 26px;
+  background: #101010;
+}
+.service-treatments-heading-centered {
+  display: block;
+  text-align: center;
+  margin: 0 auto 22px;
+}
+.service-treatments-heading-centered > p {
+  max-width: 620px;
+  margin: 9px auto 0;
+}
+.service-treatments-heading-centered h2 {
+  margin-top: 7px;
+  font-size: clamp(30px, 3.5vw, 42px);
+}
+.service-treatment-grid-images {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+}
+.service-treatment-image-card {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111;
+}
+.treatment-card-image {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  background: #222;
+}
+.treatment-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform .55s ease, opacity .3s ease;
+}
+.service-treatment-image-card:hover .treatment-card-image img {
+  transform: scale(1.05);
+  opacity: .85;
+}
+.treatment-image-number {
+  position: absolute;
+  top: 10px;
+  left: 11px;
+  padding: 5px 8px;
+  color: #fff;
+  background: rgba(0,0,0,.65);
+  border: 1px solid rgba(255,255,255,.35);
+  font-size: 12px;
+}
+.service-treatment-image-card .treatment-card-content {
+  min-height: 160px;
+  padding: 14px 14px 13px;
+}
+.service-treatment-image-card .treatment-card-category {
+  font-size: 12px;
+}
+.service-treatment-image-card .treatment-card-content h3 {
+  margin: 7px 0;
+  font-size: 19px;
+}
+.service-treatment-image-card .treatment-card-content > p {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.service-treatment-image-card .treatment-card-bottom {
+  padding-top: 13px;
+}
+.service-treatment-image-card .treatment-card-price span {
+  font-size: 12px;
+}
+.service-treatment-image-card .treatment-book-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #777;
+  color: #fff;
+  background: transparent;
+}
+.service-treatment-image-card .treatment-book-btn:hover {
+  color: #080808;
+  background: #fff;
+}
+.aurelle-treatments-redesign .service-treatments-footer {
+  margin-top: 18px;
+  padding-top: 14px;
+}
+
+/* Journey strip */
+.aurelle-process-redesign {
+  padding: 20px 0;
+  background: #090909;
+}
+.aurelle-process-redesign .service-process-heading {
+  margin-bottom: 18px;
+}
+.aurelle-process-redesign .service-process-heading h2 {
+  margin: 7px 0;
+  font-size: clamp(27px, 3vw, 36px);
+}
+.aurelle-process-redesign .service-process-heading > p {
+  margin-top: 7px;
+}
+.aurelle-process-redesign .service-process-grid {
+  display: flex;
+  align-items: center;
+  border: 0;
+  gap: 12px;
+}
+.aurelle-process-redesign .service-process-card {
+  flex: 1;
+  min-width: 0;
+  min-height: 115px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 13px;
+  padding: 13px;
+  border: 0;
+  background: transparent;
+}
+.aurelle-process-redesign .service-process-card:hover {
+  background: #151515;
+}
+.aurelle-process-redesign .process-card-icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+}
+.aurelle-process-redesign .process-card-content {
+  margin: 0;
+}
+.aurelle-process-redesign .process-card-content h3 {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.aurelle-process-redesign .process-card-content p {
+  font-size: 12px;
+  line-height: 1.55;
+}
+.process-journey-arrow {
+  flex: 0 0 auto;
+  color: #aaa;
+}
+
+/* Split image + benefits */
+.aurelle-why-redesign {
+  padding: 20px 0;
+  background: #101010;
+}
+.aurelle-why-redesign .why-choose-container {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  align-items: stretch;
+  gap: 28px;
+}
+.why-choose-visual {
+  min-height: 270px;
+  overflow: hidden;
+  border: 1px solid #383838;
+  background: #181818;
+}
+.why-choose-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  opacity: .85;
+}
+.aurelle-why-redesign .why-choose-header {
+  display: block;
+  margin-bottom: 16px;
+}
+.aurelle-why-redesign .why-choose-header h2 {
+  margin-top: 7px;
+  font-size: clamp(30px, 3.2vw, 42px);
+}
+.aurelle-why-redesign .why-choose-header > p {
+  margin-top: 9px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.aurelle-why-redesign .why-choose-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  border: 0;
+}
+.aurelle-why-redesign .why-choose-card {
+  min-height: 105px;
+  padding: 13px;
+  border: 1px solid #383838;
+  background: #0c0c0c;
+}
+.aurelle-why-redesign .why-choose-card-top span {
+  font-size: 16px;
+}
+.aurelle-why-redesign .why-choose-card-bottom h3 {
+  font-size: 15px;
+}
+.aurelle-why-redesign .why-choose-footer {
+  display: none;
+}
+
+/* CTA and FAQ finish */
+.aurelle-service-cta {
+  background: #111;
+}
+.aurelle-service-cta .service-cta-container {
+  min-height: 220px;
+}
+.aurelle-service-faq {
+  padding: 20px 0;
+}
+.aurelle-service-faq .service-faq-heading {
+  margin-bottom: 18px;
+}
+.aurelle-service-faq .service-faq-heading h2 {
+  font-size: clamp(29px, 3.5vw, 40px);
+}
+.aurelle-service-faq .service-faq-question {
+  min-height: 60px;
+}
+.aurelle-service-faq .service-faq-title {
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .service-treatment-grid-images {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .aurelle-process-redesign .service-process-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .process-journey-arrow {
+    display: none;
+  }
+  .aurelle-process-redesign .service-process-card {
+    border: 1px solid #383838;
+  }
+}
+@media (max-width: 700px) {
+  .aurelle-intro-redesign .service-intro-container,
+  .aurelle-why-redesign .why-choose-container {
+    grid-template-columns: 1fr;
+  }
+  .service-intro-visual,
+  .service-intro-visual img {
+    min-height: 220px;
+    max-height: 280px;
+  }
+  .why-choose-visual,
+  .why-choose-visual img {
+    min-height: 220px;
+    max-height: 280px;
+  }
+  .aurelle-service-hero-redesign,
+  .aurelle-service-hero-redesign .service-hero-container {
+    min-height: 520px;
+  }
+  .aurelle-service-hero-redesign .service-hero-image img {
+    object-position: 62% center;
+  }
+  .aurelle-service-hero-redesign .service-hero-overlay {
+    background: linear-gradient(90deg, rgba(8,8,8,.95), rgba(8,8,8,.58));
+  }
+}
+@media (max-width: 520px) {
+  .service-treatment-grid-images {
+    grid-template-columns: 1fr;
+  }
+  .treatment-card-image {
+    height: 190px;
+  }
+  .aurelle-intro-redesign .service-intro-highlights,
+  .aurelle-why-redesign .why-choose-grid {
+    grid-template-columns: 1fr;
+  }
+  .aurelle-process-redesign .service-process-grid {
+    grid-template-columns: 1fr;
+  }
+  .aurelle-process-redesign .service-process-card {
+    min-height: 90px;
+  }
+  .service-intro-image-caption {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .treatment-card-image img {
+    transition: none;
+  }
+}

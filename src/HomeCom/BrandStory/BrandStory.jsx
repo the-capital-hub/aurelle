@@ -3,8 +3,9 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import {
-  Flower2,
+  Scissors,
   Sparkles,
   Heart,
   ArrowRight,
@@ -16,8 +17,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const brandValues = [
   {
-    icon: Flower2,
-    title: "Expert Care",
+    icon: Scissors,
+    title: "Expert Stylists",
   },
   {
     icon: Sparkles,
@@ -25,7 +26,7 @@ const brandValues = [
   },
   {
     icon: Heart,
-    title: "Personalised Attention",
+    title: "Personalised Care",
   },
 ];
 
@@ -34,6 +35,7 @@ function BrandStory() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+
       gsap.from(".brand-story-visual", {
         x: -55,
         opacity: 0,
@@ -71,6 +73,7 @@ function BrandStory() {
           once: true,
         },
       });
+
     }, sectionRef);
 
     return () => ctx.revert();
@@ -81,30 +84,31 @@ function BrandStory() {
       className="brand-story-section"
       ref={sectionRef}
     >
+
       <div className="brand-story-container">
 
         {/* LEFT VISUAL */}
 
         <div className="brand-story-visual">
+
           <div className="brand-story-image-frame">
+
             <img
               src="/images/stroy/hero.png"
-              alt="AURELLE luxury beauty studio interior"
+              alt="AURELLE luxury Indian unisex salon"
               loading="lazy"
             />
 
             <div className="brand-story-image-shade" />
 
-            <div className="brand-story-image-brand">
-              <Flower2 size={43} strokeWidth={1} />
-              <span>AURELLE</span>
-              <small>BEAUTY STUDIO</small>
-            </div>
+            
 
             <div className="brand-story-image-caption">
-              <span>BEAUTY WITH PURPOSE</span>
+              <span>STYLE BEYOND ORDINARY</span>
             </div>
+
           </div>
+
         </div>
 
         {/* RIGHT CONTENT */}
@@ -127,14 +131,23 @@ function BrandStory() {
           </div>
 
           <p className="brand-story-description">
-            AURELLE was born from a simple belief that beauty
-            is a form of self care, confidence and personal
-            expression. We created a space where expert care,
-            modern techniques and a calming ambience come
-            together to bring out the best version of you.
+            AURELLE is an Indian luxury unisex salon built
+            around the belief that personal style is an
+            expression of confidence and individuality.
+
+            <br />
+            <br />
+
+            From expert hair styling and men's grooming
+            to personalised beauty care, we bring together
+            skilled professionals, modern techniques and
+            a refined salon experience designed for everyone.
           </p>
 
+          {/* BRAND VALUES */}
+
           <div className="brand-story-values">
+
             {brandValues.map((value) => {
               const Icon = value.icon;
 
@@ -143,26 +156,37 @@ function BrandStory() {
                   className="brand-story-value"
                   key={value.title}
                 >
+
                   <Icon
                     size={35}
                     strokeWidth={1.2}
                   />
+
                   <span>{value.title}</span>
+
                 </div>
               );
             })}
+
           </div>
+
+          {/* ABOUT CTA */}
 
           <Link
             to="/about"
             className="brand-story-button"
           >
+
             <span>DISCOVER OUR JOURNEY</span>
+
             <ArrowRight size={21} />
+
           </Link>
 
         </div>
+
       </div>
+
     </section>
   );
 }

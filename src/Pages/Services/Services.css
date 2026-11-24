@@ -875,3 +875,420 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* =========================================
+   AURELLE SERVICES GRID
+   PREMIUM CARD REDESIGN
+========================================= */
+
+.aurelle-services-page .services-list-section {
+  padding: 30px 0;
+  background: #f3f0ec;
+}
+
+.aurelle-services-page .services-grid {
+  width: min(1440px, calc(100% - 70px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* CARD */
+
+.aurelle-services-page .service-card {
+  position: relative;
+  min-width: 0;
+  min-height: 370px;
+  isolation: isolate;
+  overflow: hidden;
+  display: block;
+  border: 1px solid rgba(30, 30, 30, 0.16);
+  border-radius: 5px;
+  background: #151515;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.aurelle-services-page .service-card:hover {
+  transform: translateY(-7px);
+  border-color: #777;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+}
+
+.aurelle-services-page .service-card:focus-visible {
+  outline: 2px solid #080808;
+  outline-offset: 4px;
+}
+
+/* IMAGE */
+
+.aurelle-services-page .service-card-image {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #171717;
+  z-index: -1;
+}
+
+.aurelle-services-page .service-card-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(22%);
+  transform: scale(1);
+  transition:
+    transform 0.9s cubic-bezier(0.2, 0.65, 0.3, 1),
+    filter 0.6s ease;
+}
+
+.aurelle-services-page .service-card:hover .service-card-image img {
+  transform: scale(1.09);
+  filter: grayscale(0%);
+}
+
+/* IMAGE OVERLAY */
+
+.aurelle-services-page .service-card-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.02) 0%,
+      rgba(0, 0, 0, 0.12) 35%,
+      rgba(0, 0, 0, 0.76) 72%,
+      rgba(0, 0, 0, 0.96) 100%
+    );
+  transition: background 0.45s ease;
+}
+
+.aurelle-services-page .service-card:hover .service-card-overlay {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.2) 35%,
+      rgba(0, 0, 0, 0.82) 72%,
+      rgba(0, 0, 0, 0.98) 100%
+    );
+}
+
+/* ICON */
+
+.aurelle-services-page .service-card-icon {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  bottom: auto;
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(8, 8, 8, 0.48);
+  backdrop-filter: blur(10px);
+  transition:
+    background 0.35s ease,
+    transform 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.aurelle-services-page .service-card-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.aurelle-services-page .service-card:hover .service-card-icon {
+  background: rgba(255, 255, 255, 0.17);
+  border-color: #fff;
+  transform: rotate(-8deg);
+}
+
+/* CARD CONTENT */
+
+.aurelle-services-page .service-card-title {
+  position: absolute;
+  left: 17px;
+  right: 17px;
+  bottom: 19px;
+  z-index: 2;
+}
+
+.aurelle-services-page .service-card-title h2 {
+  margin: 0 0 9px;
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(19px, 1.55vw, 25px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.aurelle-services-page .service-card-title p {
+  max-width: 100%;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* ARROW */
+
+.aurelle-services-page .service-card-arrow {
+  position: absolute;
+  top: 19px;
+  right: 18px;
+  bottom: auto;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(8, 8, 8, 0.35);
+  transition:
+    color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.aurelle-services-page .service-card:hover .service-card-arrow {
+  color: #080808;
+  background: #fff;
+  transform: translateX(4px);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .aurelle-services-page .services-grid {
+    width: calc(100% - 40px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .aurelle-services-page .service-card {
+    min-height: 390px;
+  }
+
+  .aurelle-services-page .service-card-title h2 {
+    font-size: 25px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .aurelle-services-page .services-list-section {
+    padding: 20px 0;
+  }
+
+  .aurelle-services-page .services-grid {
+    width: calc(100% - 28px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+  }
+
+  .aurelle-services-page .service-card {
+    min-height: 300px;
+    border-radius: 4px;
+  }
+
+  .aurelle-services-page .service-card-image {
+    height: 100%;
+  }
+
+  .aurelle-services-page .service-card-icon {
+    top: 11px;
+    left: 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .aurelle-services-page .service-card-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .aurelle-services-page .service-card-arrow {
+    top: 11px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .aurelle-services-page .service-card-arrow svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .aurelle-services-page .service-card-title {
+    left: 10px;
+    right: 9px;
+    bottom: 12px;
+  }
+
+  .aurelle-services-page .service-card-title h2 {
+    margin-bottom: 6px;
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  .aurelle-services-page .service-card-title p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .aurelle-services-page .services-grid {
+    width: calc(100% - 20px);
+    gap: 8px;
+  }
+
+  .aurelle-services-page .service-card {
+    min-height: 270px;
+  }
+
+  .aurelle-services-page .service-card-title {
+    left: 8px;
+    right: 8px;
+    bottom: 10px;
+  }
+
+  .aurelle-services-page .service-card-title h2 {
+    font-size: 16px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .aurelle-services-page .service-card,
+  .aurelle-services-page .service-card-image img,
+  .aurelle-services-page .service-card-icon,
+  .aurelle-services-page .service-card-arrow {
+    transition: none !important;
+  }
+}
+/* =========================================
+   AURELLE SERVICES PAGE
+   FINAL BLACK THEME OVERRIDES
+========================================= */
+
+.aurelle-services-page {
+  --service-black: #080808;
+  --service-white: #ffffff;
+  --service-silver: #c0c0c0;
+  --service-cream: #c0c0c0;
+
+  background: #080808 !important;
+  color: #ffffff !important;
+}
+
+/* SERVICES SECTION */
+
+.aurelle-services-page .services-list-section,
+.aurelle-services-page .services-list-section {
+  background: #080808 !important;
+  color: #ffffff !important;
+}
+
+/* SERVICE CARDS */
+
+.aurelle-services-page .service-card {
+  background: #151515 !important;
+  border-color: rgba(192, 192, 192, 0.25);
+  color: #ffffff !important;
+}
+
+.aurelle-services-page .service-card-title h2 {
+  color: #ffffff !important;
+}
+
+.aurelle-services-page .service-card-title p {
+  color: #d0d0d0 !important;
+}
+
+/* BENEFITS */
+
+.aurelle-services-page .services-benefits {
+  background: #080808 !important;
+  color: #ffffff !important;
+}
+
+.aurelle-services-page .services-benefit h3 {
+  color: #ffffff !important;
+}
+
+.aurelle-services-page .services-benefit p {
+  color: #c5c5c5 !important;
+}
+
+/* CTA SECTION */
+
+.aurelle-services-page .services-cta {
+  background: #080808 !important;
+  color: #ffffff !important;
+}
+
+.aurelle-services-page .services-cta-button {
+  background: #c0c0c0 !important;
+  border-color: #c0c0c0 !important;
+  color: #080808 !important;
+}
+
+.aurelle-services-page .services-cta-button:hover {
+  background: transparent !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+/* SILVER DETAILS */
+
+.aurelle-services-page .services-eyebrow {
+  color: #c0c0c0 !important;
+}
+
+.aurelle-services-page .services-benefit {
+  border-color: rgba(192, 192, 192, 0.3);
+}
+
+/* RESPONSIVE BACKGROUND */
+
+@media (max-width: 700px) {
+  .aurelle-services-page .services-list-section {
+    background: #080808 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurelle-services-page *,
+  .aurelle-services-page *::before,
+  .aurelle-services-page *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -9,7 +9,8 @@ import {
   Sparkles,
   ArrowRight,
 } from "lucide-react";
-import physiohero from '../../assets/image/philohero.png'
+
+import physiohero from "../../assets/image/philohero.png";
 import "./BeautyPhilosophy.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -17,21 +18,21 @@ gsap.registerPlugin(ScrollTrigger);
 const philosophyItems = [
   {
     icon: Flower2,
-    title: "ENHANCE NATURAL BEAUTY",
+    title: "CELEBRATE YOUR STYLE",
     description:
-      "We highlight your unique features, not change them.",
+      "From contemporary haircuts to personal grooming, express your individuality with confidence.",
   },
   {
     icon: Heart,
-    title: "NURTURE SELF CARE",
+    title: "CARE BEYOND BEAUTY",
     description:
-      "A space to relax, refresh and focus on you.",
+      "Enjoy thoughtful treatments and a welcoming space designed around your comfort.",
   },
   {
     icon: Sparkles,
-    title: "INSPIRE CONFIDENCE",
+    title: "CONFIDENCE IN EVERY DETAIL",
     description:
-      "Beauty that makes you feel empowered every day.",
+      "Our expert professionals help you look your best and feel confident every day.",
   },
 ];
 
@@ -90,22 +91,21 @@ function BeautyPhilosophy() {
       <div className="philosophy-background" />
 
       <div className="philosophy-container">
-
-        {/* MODEL IMAGE */}
+        {/* SALON MODEL IMAGE */}
 
         <div className="philosophy-model">
           <div className="philosophy-model-frame">
             <img
               src={physiohero}
-              alt="AURELLE beauty philosophy model portrait"
+              alt="AURELLE luxury salon style and beauty"
               loading="lazy"
             />
 
             <div className="philosophy-model-shade" />
 
             <div className="philosophy-model-caption">
-              <span>AURELLE </span>
-              <small>BEAUTY BEGINS WITH YOU</small>
+              <span>AURELLE</span>
+              <small>STYLE BEYOND ORDINARY</small>
             </div>
           </div>
         </div>
@@ -113,15 +113,14 @@ function BeautyPhilosophy() {
         {/* PHILOSOPHY CONTENT */}
 
         <div className="philosophy-content">
-
           <div className="philosophy-eyebrow">
             <span />
-            OUR BEAUTY
+            THE AURELLE EXPERIENCE
             <span />
           </div>
 
           <h2>
-            BEAUTY <em>PHILOSOPHY</em>
+            OUR <em>PHILOSOPHY</em>
           </h2>
 
           <div className="philosophy-heading-line">
@@ -129,9 +128,10 @@ function BeautyPhilosophy() {
           </div>
 
           <p className="philosophy-intro">
-            At AURELLE, beauty goes beyond appearance.
-            It is about confidence, self care and feeling
-            truly good in your own skin.
+            At AURELLE, personal style is an expression of
+            individuality. We bring together expert hair
+            styling, men's grooming and beauty care to create
+            an experience that makes everyone feel confident.
           </p>
 
           <div className="philosophy-values">
@@ -165,13 +165,12 @@ function BeautyPhilosophy() {
               to="/about"
               className="philosophy-button"
             >
-              OUR PHILOSOPHY
+              DISCOVER AURELLE
               <ArrowRight size={21} />
             </Link>
 
             <span />
           </div>
-
         </div>
       </div>
     </section>

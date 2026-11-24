@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
+
 import "./Hero.css";
 
 export default function Hero() {
@@ -10,7 +11,9 @@ export default function Hero() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
-        defaults: { ease: "power3.out" },
+        defaults: {
+          ease: "power3.out",
+        },
       });
 
       tl.from(".hero-eyebrow", {
@@ -58,7 +61,9 @@ export default function Hero() {
 
       gsap.fromTo(
         ".hero-video",
-        { scale: 1.12 },
+        {
+          scale: 1.12,
+        },
         {
           scale: 1,
           duration: 3,
@@ -80,6 +85,9 @@ export default function Hero() {
 
   return (
     <section className="aurelle-hero" ref={heroRef}>
+
+      {/* BACKGROUND VIDEO */}
+
       <div className="hero-video-layer">
         <video
           className="hero-video"
@@ -90,38 +98,46 @@ export default function Hero() {
           preload="auto"
         >
           <source
-            src="/video/video3.mp4"
+            src="/video/video1.mp4"
             type="video/mp4"
           />
         </video>
       </div>
 
+      {/* OVERLAY */}
+
       <div className="hero-overlay" />
       <div className="hero-bottom-shade" />
 
+      {/* HERO CONTENT */}
+
       <div className="hero-inner">
         <div className="hero-copy">
+
           <div className="hero-eyebrow">
-            <span>PREMIUM BEAUTY STUDIO</span>
+            <span>LUXURY UNISEX SALON</span>
           </div>
 
           <span className="hero-small-line" />
 
           <h1 className="hero-heading">
-            <span>BEAUTY.</span>
             <span>STYLE.</span>
+            <span>GROOMING.</span>
             <span className="hero-italic">
               CONFIDENCE.
             </span>
           </h1>
 
           <p className="hero-description">
-            Experience the art of beauty and
+            Discover the art of personal style,
             <br className="desktop-break" />
-            personal care at AURELLE.
+            expert grooming and exceptional care at AURELLE.
           </p>
 
+          {/* ACTION BUTTONS */}
+
           <div className="hero-actions">
+
             <Link
               to="/booking"
               className="hero-cta hero-cta-primary"
@@ -136,26 +152,16 @@ export default function Hero() {
             >
               EXPLORE SERVICES
             </Link>
+
           </div>
+
         </div>
       </div>
 
-      <div className="hero-bottom">
-        <div className="hero-bottom-left">
-          <span className="bottom-line" />
-          <span>THE ART OF BEAUTY</span>
-        </div>
+      {/* BOTTOM INFORMATION */}
 
-        <div className="hero-scroll">
-          <span>SCROLL TO DISCOVER</span>
-          <span className="hero-scroll-icon">⌄</span>
-        </div>
+      
 
-        <div className="hero-bottom-right">
-          <span>EST. AURELLE</span>
-          <span className="bottom-line" />
-        </div>
-      </div>
     </section>
   );
 }

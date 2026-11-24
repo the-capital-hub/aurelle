@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  Flower2,
   Sparkles,
   UserRound,
   Gem,
@@ -12,8 +11,8 @@ import {
   Waves,
   Crown,
   ArrowUpRight,
+  Brush,
 } from "lucide-react";
-import { FaInstagram } from "react-icons/fa";
 
 import "./MeetOurExperts.css";
 
@@ -21,36 +20,33 @@ gsap.registerPlugin(ScrollTrigger);
 
 const experts = [
   {
-    name: "Dr. Ananya Sharma",
-    role: "BEAUTY & SKIN EXPERT",
-    image: "/images/expert/expert-ananya.jpg",
-    instagram: "#",
+    name: "GROOMING EXPERT",
+    role: "MEN'S GROOMING SPECIALIST",
+    image: "/images/expert/expert-grooming.jpg",
     services: [
-      { icon: Flower2, title: "Skin Rejuvenation" },
-      { icon: Sparkles, title: "Anti Aging Treatments" },
-      { icon: UserRound, title: "Personalized Skin Care" },
+      { icon: Scissors, title: "Men's Haircuts & Styling" },
+      { icon: UserRound, title: "Beard Styling & Grooming" },
+      { icon: Sparkles, title: "Personal Grooming" },
     ],
   },
   {
-    name: "Ritika Verma",
-    role: "MAKEUP ARTIST",
-    image: "/images/expert/expert-ritika.jpg",
-    instagram: "#",
+    name: "HAIR STYLIST",
+    role: "SENIOR HAIR STYLING EXPERT",
+    image: "/images/expert/expert-hairstylist.jpg",
     services: [
-      { icon: Gem, title: "Bridal & Event Makeup" },
-      { icon: Scissors, title: "HD & Airbrush Makeup" },
-      { icon: Sparkles, title: "Editorial & Glam Looks" },
-    ],
-  },
-  {
-    name: "Kavya Mehra",
-    role: "HAIR & STYLE EXPERT",
-    image: "/images/expert/expert-kavya.jpg",
-    instagram: "#",
-    services: [
-      { icon: Scissors, title: "Hair Styling & Cuts" },
+      { icon: Scissors, title: "Haircuts & Styling" },
       { icon: Waves, title: "Hair Care Treatments" },
-      { icon: Crown, title: "Color, Highlights & Styling" },
+      { icon: Gem, title: "Hair Colour & Highlights" },
+    ],
+  },
+  {
+    name: "MAKEUP ARTIST",
+    role: "MAKEUP & BEAUTY SPECIALIST",
+    image: "/images/expert/expert-makeup.jpg",
+    services: [
+      { icon: Brush, title: "Bridal & Event Makeup" },
+      { icon: Sparkles, title: "HD & Airbrush Makeup" },
+      { icon: Crown, title: "Premium Glam Looks" },
     ],
   },
 ];
@@ -106,6 +102,8 @@ function MeetOurExperts() {
     <section className="meet-experts" ref={sectionRef}>
       <div className="experts-container">
 
+        {/* SECTION HEADING */}
+
         <div className="experts-heading">
           <div className="experts-brand">
             <span />
@@ -114,7 +112,7 @@ function MeetOurExperts() {
           </div>
 
           <p className="experts-eyebrow">
-            OUR EXPERT TEAM
+            THE PEOPLE BEHIND YOUR STYLE
           </p>
 
           <h2>
@@ -122,11 +120,14 @@ function MeetOurExperts() {
           </h2>
 
           <p className="experts-intro">
-            A team of passionate beauty professionals dedicated
-            to creating personalized, high end beauty experiences
-            for you.
+            Meet the professionals behind AURELLE.
+            From men's grooming and expert hairstyling
+            to makeup and beauty care, discover services
+            crafted to bring out your personal style.
           </p>
         </div>
+
+        {/* EXPERT CARDS */}
 
         <div className="experts-grid">
           {experts.map((expert) => (
@@ -135,7 +136,7 @@ function MeetOurExperts() {
               <div className="expert-photo">
                 <img
                   src={expert.image}
-                  alt={expert.name}
+                  alt={`${expert.name}, AURELLE salon professional`}
                   loading="lazy"
                 />
 
@@ -166,25 +167,21 @@ function MeetOurExperts() {
                     );
                   })}
                 </div>
-
-                <a
-                  href={expert.instagram}
-                  className="expert-instagram"
-                  aria-label={`Instagram profile of ${expert.name}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaInstagram />
-                </a>
               </div>
+
             </article>
           ))}
         </div>
 
+        {/* BOOKING CTA */}
+
         <div className="experts-booking">
           <span className="booking-line" />
 
-          <Link to="/booking" className="experts-book-button">
+          <Link
+            to="/booking"
+            className="experts-book-button"
+          >
             BOOK YOUR APPOINTMENT
             <ArrowUpRight size={19} />
           </Link>

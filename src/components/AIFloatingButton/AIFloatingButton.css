@@ -577,3 +577,77 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* =========================================
+   AURELLE AI PREMIUM FINISHING
+========================================= */
+
+/* Remove unwanted default spacing */
+
+.aurelle-ai-header-info h3,
+.aurelle-ai-intro h4,
+.aurelle-ai-intro p,
+.aurelle-chat-message p {
+  margin-bottom: 0;
+}
+
+/* Smooth message scrolling */
+
+.aurelle-ai-messages {
+  scroll-behavior: smooth;
+}
+
+/* Premium input focus */
+
+.aurelle-ai-input-area input:focus {
+  outline: none;
+  border-color: #c0c0c0;
+  box-shadow: 0 0 0 2px rgba(192, 192, 192, 0.12);
+}
+
+/* Premium button focus */
+
+.aurelle-ai-floating:focus-visible,
+.aurelle-ai-close:focus-visible,
+.aurelle-ai-input-area button:focus-visible,
+.aurelle-ai-quick-actions a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* Message text readability */
+
+.aurelle-chat-message p {
+  overflow-wrap: anywhere;
+}
+
+/* Improved mobile experience */
+
+@media (max-width: 600px) {
+  .aurelle-ai-widget {
+    right: 16px;
+    bottom: 18px;
+  }
+
+  .aurelle-ai-panel {
+    max-width: calc(100vw - 32px);
+  }
+
+  .aurelle-ai-body {
+    padding: 14px;
+  }
+
+  .aurelle-ai-intro h4 {
+    font-size: 20px;
+  }
+}
+
+/* Reduced motion support */
+
+@media (prefers-reduced-motion: reduce) {
+  .aurelle-ai-panel,
+  .aurelle-ai-floating,
+  .aurelle-ai-tooltip {
+    transition: none;
+  }
+}

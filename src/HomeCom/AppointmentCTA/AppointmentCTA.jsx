@@ -8,11 +8,11 @@ import {
   Phone,
   UsersRound,
   Gem,
-  Flower2,
-  Leaf,
+  Scissors,
+  Sparkles,
   ArrowUpRight,
 } from "lucide-react";
-
+import physiohero from "../../assets/image/philohero.png";
 import "./AppointmentCTA.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -24,15 +24,15 @@ const features = [
   },
   {
     icon: Gem,
-    title: "Premium Care",
+    title: "Premium Products",
   },
   {
-    icon: Flower2,
-    title: "Personalised Experience",
+    icon: Scissors,
+    title: "Expert Hair & Grooming",
   },
   {
-    icon: Leaf,
-    title: "Luxury Ambience",
+    icon: Sparkles,
+    title: "Personalised Care",
   },
 ];
 
@@ -101,20 +101,21 @@ function AppointmentCTA() {
           </div>
 
           <p className="appointment-eyebrow">
-            BOOK YOUR APPOINTMENT
+            YOUR STYLE. YOUR EXPERIENCE.
           </p>
 
           <h2>
-            YOUR BEAUTY
+            YOUR STYLE
             <br />
-            JOURNEY
+            YOUR CONFIDENCE
             <br />
             <em>STARTS HERE</em>
           </h2>
 
           <p className="appointment-description">
-            Experience expert care, personalised services
-            and a luxurious beauty experience at AURELLE.
+            Discover expert hairstyling, premium men's grooming
+            and personalised beauty care at AURELLE.
+            Let our professionals bring out your best look.
           </p>
 
           <div className="appointment-buttons">
@@ -141,15 +142,13 @@ function AppointmentCTA() {
         <div className="appointment-visual">
           <img
             src="/images/ctamodel.png"
-            alt="AURELLE luxury beauty experience"
+            alt="AURELLE luxury unisex salon experience"
           />
 
           <div className="appointment-visual-shade" />
 
           <div className="appointment-visual-brand">
-            <Flower2 size={36} strokeWidth={1} />
-            <span>AURELLE</span>
-            <small>BEAUTY STUDIO</small>
+            
           </div>
         </div>
 

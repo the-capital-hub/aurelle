@@ -1,0 +1,1281 @@
+
+/* =========================================
+   AURELLE BEAUTY STUDIO
+   SERVICE DETAILS
+   MONOCHROME LUXURY DESIGN
+========================================= */
+
+.aurelle-service-details {
+  --black: #080808;
+  --dark: #111111;
+  --card: #171717;
+  --border: #303030;
+  --silver: #c0c0c0;
+  --muted: #a5a5a5;
+  --white: #ffffff;
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--black);
+  color: var(--white);
+  font-family: "DM Sans", sans-serif;
+}
+
+.aurelle-service-details *,
+.sd-not-found * {
+  box-sizing: border-box;
+}
+
+.aurelle-service-details img {
+  display: block;
+  width: 100%;
+}
+
+.aurelle-service-details a {
+  text-decoration: none;
+}
+
+.sd-container {
+  width: min(1240px, 92%);
+  margin: 0 auto;
+}
+
+.sd-section {
+  padding: 20px 0;
+}
+
+.sd-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 17px;
+  color: var(--silver);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.sd-eyebrow span {
+  width: 25px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--silver);
+}
+
+.sd-section-heading h2 {
+  margin: 0;
+  color: var(--white);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 49px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.sd-section-heading h2 em,
+.sd-treatment-heading h2 em,
+.sd-centered h2 em,
+.sd-difference-content h2 em,
+.sd-faq-heading h2 em {
+  color: #a9a9a9;
+  font-weight: 400;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.sd-button {
+  min-height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 0 23px;
+  border: 1px solid #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.sd-button-light {
+  background: #ffffff;
+  color: #080808;
+}
+
+.sd-button-light:hover {
+  background: transparent;
+  color: #ffffff;
+}
+
+.sd-button-outline {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.sd-button-outline:hover {
+  background: #ffffff;
+  color: #080808;
+}
+
+/* =========================================
+   01. HERO SECTION
+========================================= */
+
+.sd-hero {
+  position: relative;
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #080808;
+}
+
+.sd-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.sd-hero-image img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  filter: grayscale(100%);
+  opacity: 0.72;
+}
+
+.sd-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 8, 8, 0.98) 0%,
+      rgba(8, 8, 8, 0.86) 40%,
+      rgba(8, 8, 8, 0.25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 8, 8, 0.6),
+      transparent 55%
+    );
+}
+
+.sd-hero-inner {
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 45px;
+}
+
+.sd-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 35px;
+  color: #c0c0c0;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.sd-breadcrumb a {
+  color: #bdbdbd;
+  transition: color 0.3s ease;
+}
+
+.sd-breadcrumb a:hover {
+  color: #ffffff;
+}
+
+.sd-breadcrumb span:last-child {
+  color: #ffffff;
+}
+
+.sd-hero-content {
+  max-width: 720px;
+  animation: aurelleFadeUp 0.9s ease both;
+}
+
+.sd-hero-content h1 {
+  max-width: 700px;
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(44px, 6vw, 78px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -1px;
+}
+
+.sd-hero-content > p {
+  max-width: 550px;
+  margin: 0;
+  color: #d0d0d0;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.sd-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.sd-hero-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 55px;
+  color: #bdbdbd;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.sd-hero-note span {
+  width: 35px;
+  height: 1px;
+  background: #c0c0c0;
+}
+
+/* =========================================
+   02. INTRO SECTION
+========================================= */
+
+.sd-intro {
+  background: #080808;
+}
+
+.sd-intro-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.sd-intro-visual {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  background: #171717;
+}
+
+.sd-intro-visual img {
+  height: 480px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 0.8s ease;
+}
+
+.sd-intro-visual:hover img {
+  transform: scale(1.04);
+}
+
+.sd-image-caption {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 14px 18px;
+  background: rgba(8, 8, 8, 0.82);
+}
+
+.sd-image-caption span:first-child {
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 19px;
+  letter-spacing: 2px;
+}
+
+.sd-image-caption span:last-child {
+  color: #bdbdbd;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.sd-intro-content {
+  padding: 15px 0;
+}
+
+.sd-intro-content h2 {
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 50px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.sd-intro-description {
+  max-width: 550px;
+  margin: 0;
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.sd-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 27px;
+  border-top: 1px solid #383838;
+}
+
+.sd-highlight {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 10px;
+  border-bottom: 1px solid #383838;
+  color: #eeeeee;
+  font-size: 13px;
+  transition: background 0.3s ease;
+}
+
+.sd-highlight:nth-child(odd) {
+  border-right: 1px solid #383838;
+}
+
+.sd-highlight:hover {
+  background: #151515;
+}
+
+.sd-highlight-number {
+  color: #888888;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+}
+
+.sd-highlight svg {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: #999999;
+  transition: transform 0.3s ease;
+}
+
+.sd-highlight:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.sd-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: gap 0.3s ease;
+}
+
+.sd-text-link:hover {
+  gap: 18px;
+}
+
+/* =========================================
+   03. CATEGORIES
+========================================= */
+
+.sd-categories {
+  padding: 20px 0;
+  background: #111111;
+  border-top: 1px solid #303030;
+  border-bottom: 1px solid #303030;
+}
+
+.sd-categories-heading {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.sd-categories-heading h2 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(27px, 3vw, 38px);
+  font-weight: 400;
+}
+
+.sd-categories-heading .sd-eyebrow {
+  justify-content: center;
+}
+
+.sd-category-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sd-category-pill {
+  min-height: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  border: 1px solid #444444;
+  border-radius: 40px;
+  background: transparent;
+  color: #c8c8c8;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.sd-category-pill:hover {
+  background: #ffffff;
+  color: #080808;
+  border-color: #ffffff;
+}
+
+/* =========================================
+   04. TREATMENT SECTION
+========================================= */
+
+.sd-treatments {
+  background: #080808;
+}
+
+.sd-treatment-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 32px;
+}
+
+.sd-treatment-heading h2 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 4vw, 51px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.sd-treatment-heading > p {
+  max-width: 390px;
+  margin: 0 0 5px;
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.sd-treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.sd-treatment-card {
+  overflow: hidden;
+  background: #141414;
+  border: 1px solid #333333;
+  transition: border-color 0.35s ease, transform 0.35s ease;
+}
+
+.sd-treatment-card:hover {
+  border-color: #999999;
+  transform: translateY(-4px);
+}
+
+.sd-treatment-image {
+  position: relative;
+  height: 245px;
+  overflow: hidden;
+  background: #222222;
+}
+
+.sd-treatment-image img {
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 0.7s ease;
+}
+
+.sd-treatment-card:hover .sd-treatment-image img {
+  transform: scale(1.05);
+}
+
+.sd-treatment-index {
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  text-shadow: 0 2px 8px #000000;
+}
+
+.sd-treatment-arrow {
+  position: absolute;
+  right: 17px;
+  bottom: 17px;
+  width: 43px;
+  height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  color: #080808;
+  transition: all 0.3s ease;
+}
+
+.sd-treatment-arrow:hover {
+  background: #333333;
+  color: #ffffff;
+  transform: rotate(45deg);
+}
+
+.sd-treatment-info {
+  padding: 22px 22px 20px;
+}
+
+.sd-treatment-category {
+  color: #a9a9a9;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.sd-treatment-info h3 {
+  margin: 11px 0;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.sd-treatment-info > p {
+  min-height: 48px;
+  margin: 0;
+  color: #b7b7b7;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.sd-treatment-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding-top: 17px;
+  border-top: 1px solid #383838;
+}
+
+.sd-treatment-bottom > span {
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.sd-treatment-bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: gap 0.3s ease;
+}
+
+.sd-treatment-bottom a:hover {
+  gap: 13px;
+}
+
+/* =========================================
+   05. PROCESS SECTION
+========================================= */
+
+.sd-process {
+  background: #111111;
+}
+
+.sd-centered {
+  max-width: 680px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.sd-centered .sd-eyebrow {
+  justify-content: center;
+}
+
+.sd-centered h2 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.sd-centered > p {
+  max-width: 480px;
+  margin: 14px auto 0;
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.sd-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid #393939;
+}
+
+.sd-process-card {
+  min-height: 220px;
+  padding: 22px 19px;
+  border-right: 1px solid #393939;
+  transition: background 0.3s ease;
+}
+
+.sd-process-card:last-child {
+  border-right: none;
+}
+
+.sd-process-card:hover {
+  background: #1b1b1b;
+}
+
+.sd-process-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sd-process-top > span {
+  color: #888888;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+}
+
+.sd-process-top svg {
+  color: #d0d0d0;
+}
+
+.sd-process-line {
+  width: 35px;
+  height: 1px;
+  margin: 24px 0 17px;
+  background: #777777;
+}
+
+.sd-process-card h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.sd-process-card p {
+  margin: 0;
+  color: #b6b6b6;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   06. AURELLE DIFFERENCE
+========================================= */
+
+.sd-difference {
+  background: #080808;
+}
+
+.sd-difference-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.sd-difference-image {
+  position: relative;
+  min-height: 470px;
+  overflow: hidden;
+  background: #171717;
+}
+
+.sd-difference-image img {
+  height: 470px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 0.8s ease;
+}
+
+.sd-difference-image:hover img {
+  transform: scale(1.04);
+}
+
+.sd-difference-stamp {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 145px;
+  height: 145px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  background: rgba(8, 8, 8, 0.78);
+  color: #ffffff;
+}
+
+.sd-difference-stamp span {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.sd-difference-stamp strong {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.sd-difference-content h2 {
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.sd-difference-description {
+  margin: 0;
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.sd-benefits {
+  margin: 25px 0;
+  border-top: 1px solid #383838;
+}
+
+.sd-benefit {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-bottom: 1px solid #383838;
+  color: #eeeeee;
+  font-size: 13px;
+}
+
+.sd-benefit-check {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #555555;
+  border-radius: 50%;
+}
+
+.sd-benefit-number {
+  margin-left: auto;
+  color: #888888;
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+}
+
+/* =========================================
+   07. FAQ SECTION
+========================================= */
+
+.sd-faq {
+  background: #111111;
+}
+
+.sd-faq-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 65px;
+}
+
+.sd-faq-heading h2 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 45px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.sd-faq-heading > p {
+  margin: 17px 0;
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.sd-faq-heading .sd-text-link {
+  margin-top: 10px;
+}
+
+.sd-faq-list {
+  border-top: 1px solid #383838;
+}
+
+.sd-faq-item {
+  border-bottom: 1px solid #383838;
+}
+
+.sd-faq-question {
+  width: 100%;
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 15px 10px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sd-faq-number {
+  flex-shrink: 0;
+  color: #888888;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+}
+
+.sd-faq-question > span:nth-child(2) {
+  flex: 1;
+  color: #eeeeee;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.sd-faq-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #555555;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.sd-faq-item.active .sd-faq-icon {
+  background: #ffffff;
+  color: #080808;
+  border-color: #ffffff;
+}
+
+.sd-faq-answer {
+  padding: 0 55px 20px 44px;
+  animation: aurelleFadeUp 0.3s ease both;
+}
+
+.sd-faq-answer p {
+  margin: 0;
+  color: #bdbdbd;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   08. FINAL CTA
+========================================= */
+
+.sd-cta {
+  position: relative;
+  min-height: 310px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 85% 50%,
+      rgba(255, 255, 255, 0.1),
+      transparent 35%
+    ),
+    linear-gradient(110deg, #101010, #242424);
+}
+
+.sd-cta-decoration {
+  position: absolute;
+  right: 9%;
+  top: 50%;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Playfair Display", serif;
+  font-size: 125px;
+  font-weight: 400;
+  transform: translateY(-50%);
+}
+
+.sd-cta-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sd-cta-content .sd-eyebrow {
+  color: #c0c0c0;
+}
+
+.sd-cta-content h2 {
+  max-width: 700px;
+  margin: 0;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.sd-cta-content > p {
+  max-width: 570px;
+  margin: 17px 0 24px;
+  color: #c1c1c1;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.sd-not-found {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  background: #080808;
+  color: #ffffff;
+  text-align: center;
+}
+
+.sd-not-found h1 {
+  margin: 0 0 15px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(35px, 5vw, 55px);
+  font-weight: 400;
+}
+
+.sd-not-found p {
+  margin: 0 0 25px;
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes aurelleFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .sd-intro-grid,
+  .sd-difference-grid {
+    gap: 35px;
+  }
+
+  .sd-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sd-process-card:nth-child(2) {
+    border-right: none;
+  }
+
+  .sd-process-card:nth-child(1),
+  .sd-process-card:nth-child(2) {
+    border-bottom: 1px solid #393939;
+  }
+
+  .sd-faq-grid {
+    gap: 35px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .sd-hero,
+  .sd-hero-inner {
+    min-height: 590px;
+  }
+
+  .sd-hero-image img {
+    object-position: 60% center;
+  }
+
+  .sd-hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(8, 8, 8, 0.97),
+      rgba(8, 8, 8, 0.72)
+    );
+  }
+
+  .sd-hero-content h1 {
+    font-size: clamp(40px, 9vw, 58px);
+  }
+
+  .sd-hero-content > p {
+    font-size: 14px;
+  }
+
+  .sd-intro-grid,
+  .sd-difference-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .sd-intro-visual,
+  .sd-intro-visual img {
+    min-height: 350px;
+    height: 350px;
+  }
+
+  .sd-difference-image,
+  .sd-difference-image img {
+    min-height: 350px;
+    height: 350px;
+  }
+
+  .sd-treatment-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sd-treatment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sd-treatment-image {
+    height: 280px;
+  }
+
+  .sd-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .sd-cta-decoration {
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    font-size: 85px;
+  }
+
+  .sd-cta-content {
+    max-width: 75%;
+  }
+
+  .sd-cta-content h2 {
+    font-size: 40px;
+  }
+
+  .sd-category-list {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 5px 2px 12px;
+    scrollbar-width: none;
+  }
+
+  .sd-category-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sd-category-pill {
+    flex-shrink: 0;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+  .sd-container {
+    width: 90%;
+  }
+
+  .sd-hero,
+  .sd-hero-inner {
+    min-height: 560px;
+  }
+
+  .sd-hero-content h1 {
+    font-size: 42px;
+  }
+
+  .sd-breadcrumb {
+    margin-bottom: 25px;
+  }
+
+  .sd-hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .sd-hero-actions .sd-button {
+    width: 100%;
+  }
+
+  .sd-hero-note {
+    margin-top: 35px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .sd-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .sd-highlight:nth-child(odd) {
+    border-right: none;
+  }
+
+  .sd-treatment-image {
+    height: 225px;
+  }
+
+  .sd-treatment-info {
+    padding: 18px 15px;
+  }
+
+  .sd-treatment-info h3 {
+    font-size: 22px;
+  }
+
+  .sd-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sd-process-card {
+    min-height: 175px;
+    border-right: none;
+    border-bottom: 1px solid #393939;
+  }
+
+  .sd-process-card:nth-child(2) {
+    border-bottom: 1px solid #393939;
+  }
+
+  .sd-process-card:last-child {
+    border-bottom: none;
+  }
+
+  .sd-difference-stamp {
+    width: 110px;
+    height: 110px;
+  }
+
+  .sd-difference-stamp strong {
+    font-size: 13px;
+  }
+
+  .sd-faq-question {
+    min-height: 68px;
+    gap: 10px;
+    padding: 13px 4px;
+  }
+
+  .sd-faq-question > span:nth-child(2) {
+    font-size: 16px;
+  }
+
+  .sd-faq-answer {
+    padding: 0 42px 18px 35px;
+  }
+
+  .sd-cta {
+    min-height: 280px;
+  }
+
+  .sd-cta-decoration {
+    right: 4%;
+    width: 95px;
+    height: 95px;
+    font-size: 55px;
+  }
+
+  .sd-cta-content {
+    max-width: 85%;
+  }
+
+  .sd-cta-content h2 {
+    font-size: 35px;
+  }
+
+  .sd-treatment-bottom {
+    align-items: center;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .aurelle-service-details *,
+  .aurelle-service-details *::before,
+  .aurelle-service-details *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

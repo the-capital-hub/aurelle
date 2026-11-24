@@ -1,6 +1,7 @@
 
 /* =========================================
-   AURELLE PREMIUM NAVBAR
+   PK UNISEX SALON PREMIUM NAVBAR
+   LUXURY MONOCHROME THEME
 ========================================= */
 
 .aurelle-navbar {
@@ -68,10 +69,11 @@
 
 .brand-name {
   font-family: "Playfair Display", serif;
-  font-size: 37px;
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: 4px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  white-space: nowrap;
 
   color: #ffffff;
 }
@@ -82,7 +84,8 @@
   font-family: "DM Sans", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
+  white-space: nowrap;
 
   color: #c0c0c0;
 }
@@ -95,13 +98,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(15px, 2vw, 34px);
+  gap: clamp(15px, 1.6vw, 28px);
 
   flex: 1;
 }
 
 .aurelle-nav-link {
   position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 
   padding: 12px 0;
 
@@ -110,7 +117,7 @@
   font-family: "DM Sans", sans-serif;
   font-size: 13px;
   font-weight: 500;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
 
   white-space: nowrap;
@@ -142,6 +149,120 @@
 .aurelle-nav-link:hover::after,
 .aurelle-nav-link.active::after {
   width: 100%;
+}
+
+/* =========================================
+   PRICING DESKTOP DROPDOWN
+========================================= */
+
+.aurelle-nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-chevron {
+  transition: transform 0.3s ease;
+}
+
+.aurelle-nav-dropdown:hover .pricing-chevron,
+.aurelle-nav-dropdown:focus-within .pricing-chevron {
+  transform: rotate(180deg);
+}
+
+.aurelle-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+
+  width: 265px;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(12, 12, 12, 0.98);
+  border: 1px solid rgba(192, 192, 192, 0.2);
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translate(-50%, 12px);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+
+  z-index: 1100;
+}
+
+.aurelle-nav-dropdown:hover .aurelle-dropdown-menu,
+.aurelle-nav-dropdown:focus-within .aurelle-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translate(-50%, 0);
+}
+
+.aurelle-dropdown-link {
+  min-height: 43px;
+  padding: 11px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    padding 0.3s ease;
+}
+
+.aurelle-dropdown-link:last-child {
+  border-bottom: none;
+}
+
+.aurelle-dropdown-link svg {
+  opacity: 0;
+  flex-shrink: 0;
+
+  transform: translate(-4px, 4px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.aurelle-dropdown-link:hover,
+.aurelle-dropdown-link.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+  padding-left: 17px;
+}
+
+.aurelle-dropdown-link:hover svg,
+.aurelle-dropdown-link.active svg {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 /* =========================================
@@ -197,16 +318,19 @@
   width: 42px;
   height: 42px;
 
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
+
+  padding: 0;
+  border: none;
 
   color: #ffffff;
   background: transparent;
 
-  transition: color 0.3s ease;
+  cursor: pointer;
 
-  display: none;
+  transition: color 0.3s ease;
 }
 
 .aurelle-menu-toggle:hover {
@@ -325,6 +449,7 @@
 
 .mobile-nav-number {
   width: 25px;
+  flex-shrink: 0;
 
   color: #777777;
 
@@ -361,6 +486,145 @@
 }
 
 /* =========================================
+   MOBILE PRICING GROUP
+========================================= */
+
+.mobile-pricing-group {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.menu-visible .mobile-pricing-group {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-pricing-row {
+  width: 100%;
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-pricing-row .mobile-nav-link {
+  flex: 1;
+  min-width: 0;
+  border-bottom: none;
+}
+
+.mobile-pricing-toggle {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: transparent;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.mobile-pricing-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #c0c0c0;
+}
+
+.mobile-pricing-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.mobile-pricing-toggle.open svg {
+  transform: rotate(180deg);
+}
+
+.mobile-pricing-submenu {
+  max-height: 0;
+  overflow: hidden;
+
+  padding-left: 45px;
+
+  opacity: 0;
+
+  transition:
+    max-height 0.45s ease,
+    opacity 0.3s ease,
+    padding 0.3s ease;
+}
+
+.mobile-pricing-submenu.submenu-open {
+  max-height: 520px;
+  padding-top: 5px;
+  padding-bottom: 12px;
+
+  opacity: 1;
+}
+
+.mobile-pricing-link {
+  min-height: 43px;
+  padding: 10px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  text-decoration: none;
+
+  border-left: 1px solid rgba(192, 192, 192, 0.3);
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    padding 0.3s ease;
+}
+
+.mobile-pricing-link svg {
+  opacity: 0;
+  flex-shrink: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.mobile-pricing-link:hover,
+.mobile-pricing-link.active {
+  color: #ffffff;
+  border-left-color: #ffffff;
+  padding-left: 17px;
+}
+
+.mobile-pricing-link:hover svg,
+.mobile-pricing-link.active svg {
+  opacity: 1;
+}
+
+/* =========================================
    MOBILE MENU FOOTER
 ========================================= */
 
@@ -394,10 +658,19 @@
   letter-spacing: 1.5px;
 
   text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.mobile-book-btn:hover {
+  color: #ffffff;
+  background: #252525;
 }
 
 /* =========================================
-   RESPONSIVE
+   TABLET
 ========================================= */
 
 @media (max-width: 1250px) {
@@ -411,20 +684,21 @@
   }
 
   .brand-name {
-    font-size: 32px;
+    font-size: 26px;
+    letter-spacing: 1.5px;
   }
 
   .brand-subtitle {
-    letter-spacing: 4px;
+    letter-spacing: 2px;
   }
 
   .aurelle-navigation {
-    gap: 14px;
+    gap: 12px;
   }
 
   .aurelle-nav-link {
     font-size: 12px;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
   }
 
   .aurelle-actions {
@@ -435,6 +709,10 @@
     padding: 12px 14px;
   }
 }
+
+/* =========================================
+   MOBILE NAVIGATION BREAKPOINT
+========================================= */
 
 @media (max-width: 1050px) {
   .aurelle-navigation {
@@ -449,6 +727,10 @@
     width: 92%;
   }
 }
+
+/* =========================================
+   SMALL DEVICES
+========================================= */
 
 @media (max-width: 600px) {
   .aurelle-navbar {
@@ -469,13 +751,13 @@
   }
 
   .brand-name {
-    font-size: 29px;
-    letter-spacing: 3px;
+    font-size: 24px;
+    letter-spacing: 1px;
   }
 
   .brand-subtitle {
     font-size: 12px;
-    letter-spacing: 3px;
+    letter-spacing: 1.5px;
   }
 
   .aurelle-actions {
@@ -510,19 +792,40 @@
   .mobile-nav-link {
     min-height: 55px;
   }
+
+  .mobile-pricing-row {
+    min-height: 55px;
+  }
 }
+
+/* =========================================
+   EXTRA SMALL DEVICES
+========================================= */
 
 @media (max-width: 380px) {
   .brand-name {
-    font-size: 25px;
+    font-size: 20px;
+    letter-spacing: 0.5px;
   }
 
   .brand-subtitle {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 
   .aurelle-book-btn {
     padding: 12px 10px;
+  }
+
+  .aurelle-book-btn span {
+    font-size: 12px;
+  }
+
+  .aurelle-nav-container {
+    gap: 8px;
+  }
+
+  .mobile-pricing-submenu {
+    padding-left: 30px;
   }
 }
 
@@ -534,7 +837,9 @@
   .aurelle-navbar,
   .aurelle-mobile-menu,
   .aurelle-nav-link,
-  .mobile-nav-link {
+  .mobile-nav-link,
+  .aurelle-dropdown-menu,
+  .mobile-pricing-submenu {
     transition: none !important;
   }
 }

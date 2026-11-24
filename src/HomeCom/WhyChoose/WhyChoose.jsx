@@ -12,33 +12,34 @@ import {
 } from "lucide-react";
 
 import "./WhyChoose.css";
-import whyhero from '../../assets/image/whyhero.png'
+import whyhero from "../../assets/image/whyhero.png";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
     icon: UsersRound,
-    title: "EXPERT BEAUTY PROFESSIONALS",
+    title: "EXPERT STYLISTS",
     description:
-      "A skilled and passionate team with years of industry experience.",
+      "Experienced Indian beauty professionals dedicated to exceptional hair styling, grooming and beauty care.",
   },
   {
     icon: Gem,
     title: "PREMIUM PRODUCTS",
     description:
-      "We use high quality, trusted and skin friendly products.",
+      "We use carefully selected professional products to deliver quality results and exceptional care.",
   },
   {
     icon: Flower2,
-    title: "PERSONALISED EXPERIENCE",
+    title: "PERSONALISED CARE",
     description:
-      "Beauty solutions that are tailored to your unique needs.",
+      "Every service is tailored to your individual style, preferences and beauty requirements.",
   },
   {
     icon: Armchair,
-    title: "ELEGANT AMBIENCE",
+    title: "LUXURY AMBIENCE",
     description:
-      "A calm, luxurious and relaxing space designed for your comfort.",
+      "Enjoy a welcoming and relaxing salon experience in a thoughtfully designed modern space.",
   },
 ];
 
@@ -106,27 +107,24 @@ function WhyChoose() {
       <div className="why-choose-decoration" />
 
       <div className="why-choose-container">
-
         {/* LEFT SALON IMAGE */}
 
         <div className="why-visual">
           <div className="why-image-frame">
             <img
               src={whyhero}
-              alt="Luxury AURELLE beauty studio interior"
+              alt="AURELLE luxury unisex salon interior"
               loading="lazy"
             />
 
             <div className="why-image-shade" />
 
             <div className="why-image-brand">
-              <Flower2 size={42} strokeWidth={1} />
-              <span>AURELLE</span>
-              <small>BEAUTY STUDIO</small>
+              
             </div>
 
             <div className="why-image-caption">
-              THE ART OF BEAUTY
+              STYLE BEYOND ORDINARY
             </div>
           </div>
         </div>
@@ -134,11 +132,10 @@ function WhyChoose() {
         {/* RIGHT CONTENT */}
 
         <div className="why-content">
-
           <div className="why-heading">
             <div className="why-eyebrow">
               <span />
-              WHY CHOOSE
+              THE AURELLE DIFFERENCE
               <span />
             </div>
 
@@ -151,9 +148,10 @@ function WhyChoose() {
             </div>
 
             <p>
-              More than a beauty studio, AURELLE is a trusted
-              space where expertise, care and luxury come
-              together for a truly elevated experience.
+              More than just a salon, AURELLE is where personal
+              style meets expert care. From contemporary hair
+              styling and men's grooming to beauty treatments,
+              every experience is designed around you.
             </p>
           </div>
 
@@ -190,7 +188,6 @@ function WhyChoose() {
               <ArrowRight size={21} />
             </Link>
           </div>
-
         </div>
       </div>
     </section>

@@ -3,11 +3,12 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import {
-  Flower2,
   Scissors,
-  Brush,
+  UserRound,
   Sparkles,
+  Brush,
   ArrowRight,
 } from "lucide-react";
 
@@ -15,50 +16,59 @@ import "./SignatureServices.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* =====================================
+   AURELLE SIGNATURE SERVICES
+===================================== */
+
 const services = [
   {
     id: 1,
-    title: "SKIN CARE",
+    title: "HAIR & STYLING",
     description:
-      "Personalised facials and advanced skin treatments for healthy, radiant skin.",
-    image: "/images/service-makeup/service-skin.jpg",
-    icon: Flower2,
-    category: "skin",
-  },
-  {
-    id: 2,
-    title: "HAIR CARE",
-    description:
-      "Expert hair styling, colouring and care treatments for every look.",
+      "Expert haircuts, styling, colouring and professional hair care for every look.",
     image: "/images/service-makeup/service-hair.jpg",
     icon: Scissors,
     category: "hair",
   },
   {
-    id: 3,
-    title: "MAKEUP",
+    id: 2,
+    title: "MEN'S GROOMING",
     description:
-      "From everyday glam to bridal perfection, makeup that feels like you.",
+      "Premium men's haircuts, beard styling and personalised grooming experiences.",
+    image: "/images/service-makeup/service-grooming.png",
+    icon: UserRound,
+    category: "grooming",
+  },
+  {
+    id: 3,
+    title: "SKIN & FACIALS",
+    description:
+      "Personalised facials and professional skincare treatments for healthy, radiant skin.",
+    image: "/images/service-makeup/service-skin.jpg",
+    icon: Sparkles,
+    category: "skin",
+  },
+  {
+    id: 4,
+    title: "MAKEUP & BRIDAL",
+    description:
+      "Beautiful party and bridal makeup crafted to complement your individual style.",
     image: "/images/service-makeup/service-makeup.jpg",
     icon: Brush,
     category: "makeup",
   },
-  {
-    id: 4,
-    title: "NAIL CARE",
-    description:
-      "Professional nail care and artistic designs for a polished look.",
-    image: "/images/service-makeup/service-nails.jpg",
-    icon: Sparkles,
-    category: "nails",
-  },
 ];
+
+/* =====================================
+   SIGNATURE SERVICES COMPONENT
+===================================== */
 
 function SignatureServices() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+
       gsap.from(".signature-heading > *", {
         y: 30,
         opacity: 0,
@@ -96,6 +106,7 @@ function SignatureServices() {
           once: true,
         },
       });
+
     }, sectionRef);
 
     return () => ctx.revert();
@@ -106,11 +117,15 @@ function SignatureServices() {
       className="signature-services"
       ref={sectionRef}
     >
+
       <div className="signature-bg-decoration" />
 
       <div className="signature-container">
 
+        {/* SECTION HEADING */}
+
         <div className="signature-heading">
+
           <div className="signature-eyebrow">
             <span />
             OUR SIGNATURE
@@ -126,12 +141,17 @@ function SignatureServices() {
           </div>
 
           <p>
-            A curated range of premium beauty services designed
-            to rejuvenate, enhance and celebrate your natural beauty.
+            Discover exceptional hair, grooming and beauty
+            experiences crafted by our expert professionals.
+            Your style deserves nothing less than AURELLE.
           </p>
+
         </div>
 
+        {/* SERVICE CARDS */}
+
         <div className="signature-grid">
+
           {services.map((service) => {
             const Icon = service.icon;
 
@@ -140,16 +160,24 @@ function SignatureServices() {
                 to={`/services?category=${service.category}`}
                 className="signature-card"
                 key={service.id}
+                aria-label={`Explore ${service.title} services`}
               >
+
+                {/* IMAGE */}
+
                 <div className="signature-card-image">
+
                   <img
                     src={service.image}
-                    alt={service.title}
+                    alt={`${service.title} at AURELLE Luxury Unisex Salon`}
                     loading="lazy"
                   />
 
                   <div className="signature-card-image-shade" />
+
                 </div>
+
+                {/* CONTENT */}
 
                 <div className="signature-card-content">
 
@@ -165,16 +193,24 @@ function SignatureServices() {
                   <p>{service.description}</p>
 
                   <div className="signature-card-arrow">
-                    <ArrowRight size={27} strokeWidth={1.3} />
+                    <ArrowRight
+                      size={27}
+                      strokeWidth={1.3}
+                    />
                   </div>
 
                 </div>
+
               </Link>
             );
           })}
+
         </div>
 
+        {/* BOTTOM CTA */}
+
         <div className="signature-bottom">
+
           <span />
 
           <Link
@@ -182,13 +218,17 @@ function SignatureServices() {
             className="signature-explore-button"
           >
             EXPLORE ALL SERVICES
+
             <ArrowRight size={21} />
+
           </Link>
 
           <span />
+
         </div>
 
       </div>
+
     </section>
   );
 }

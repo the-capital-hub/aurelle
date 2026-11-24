@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  Flower2,
+  Scissors,
   Gem,
   Heart,
   Target,
   Eye,
   UsersRound,
-  Leaf,
+  Sparkles,
   Star,
   CalendarDays,
   ArrowRight,
@@ -22,8 +22,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const highlights = [
   {
-    icon: Flower2,
-    title: "EXPERT CARE",
+    icon: Scissors,
+    title: "EXPERT STYLING",
   },
   {
     icon: Gem,
@@ -31,7 +31,7 @@ const highlights = [
   },
   {
     icon: Heart,
-    title: "CLIENT FIRST",
+    title: "PERSONALISED CARE",
   },
 ];
 
@@ -40,25 +40,25 @@ const values = [
     icon: UsersRound,
     title: "Trust",
     description:
-      "Building lasting relationships through honesty and care.",
+      "Building lasting relationships through honesty, professionalism and genuine care.",
   },
   {
-    icon: Leaf,
-    title: "Care",
+    icon: Heart,
+    title: "Personalisation",
     description:
-      "A personalised and thoughtful approach for every client.",
+      "Understanding every client's individual style, preferences and grooming needs.",
   },
   {
     icon: Star,
     title: "Excellence",
     description:
-      "A commitment to quality in every service we offer.",
+      "Maintaining high standards through skilled professionals and attention to every detail.",
   },
   {
-    icon: Flower2,
-    title: "Wellness",
+    icon: Sparkles,
+    title: "Confidence",
     description:
-      "Beauty and self care that support your overall well being.",
+      "Creating experiences that help every individual look their best and feel confident.",
   },
 ];
 
@@ -127,7 +127,7 @@ function About() {
 
             <div className="about-eyebrow">
               <span />
-              ABOUT US
+              ABOUT AURELLE
               <span />
             </div>
 
@@ -137,17 +137,24 @@ function About() {
             </h1>
 
             <p>
-              A luxury beauty studio dedicated to enhancing
-              your natural beauty, nurturing self care and
-              inspiring confidence every day.
+              A luxury unisex salon where personal style,
+              expert craftsmanship and exceptional care
+              come together. We create elevated hair,
+              grooming and beauty experiences designed
+              around you.
             </p>
+
+            <Link to="/booking" className="about-hero-button">
+              DISCOVER YOUR STYLE
+              <ArrowRight size={19} />
+            </Link>
 
           </div>
 
           <div className="about-hero-image">
             <img
-              src="/images/about/hero.png"
-              alt="AURELLE beauty editorial portrait"
+              src="/images/ctamodel.png"
+              alt="Indian male and female models representing AURELLE Luxury Unisex Salon"
               fetchPriority="high"
             />
           </div>
@@ -163,14 +170,14 @@ function About() {
           <div className="about-studio-image about-reveal">
             <img
               src="/images/about/studio.png"
-              alt="AURELLE luxury beauty studio interior"
+              alt="Premium modern AURELLE unisex salon interior"
               loading="lazy"
             />
 
             <div className="about-studio-overlay">
-              <Flower2 size={43} strokeWidth={1} />
+              <Scissors size={43} strokeWidth={1} />
               <span>AURELLE</span>
-              <small>BEAUTY STUDIO</small>
+              <small>LUXURY UNISEX SALON</small>
             </div>
           </div>
 
@@ -184,14 +191,23 @@ function About() {
 
             <h2>
               More Than a
-              <em>Beauty Studio</em>
+              <em>Salon Experience</em>
             </h2>
 
             <p>
-              AURELLE is a modern beauty studio where
-              expertise, care and luxury come together.
-              We offer personalised beauty and wellness
-              experiences in a relaxing and elegant ambience.
+              AURELLE is a modern luxury unisex salon
+              dedicated to personal style and exceptional
+              grooming. From precision haircuts and
+              professional hairstyling to men's grooming,
+              bridal makeup and personalised beauty care,
+              every experience is thoughtfully crafted
+              by our professionals.
+            </p>
+
+            <p>
+              We believe great style goes beyond appearance.
+              It is about feeling comfortable, expressing
+              yourself and leaving with renewed confidence.
             </p>
 
             <div className="about-highlights">
@@ -233,6 +249,11 @@ function About() {
           <h2>
             Our Mission <em>& Vision</em>
           </h2>
+
+          <p>
+            The principles behind every style, service
+            and experience at AURELLE.
+          </p>
         </div>
 
         <div className="about-mission-grid">
@@ -245,9 +266,10 @@ function About() {
             <div>
               <h3>Our Mission</h3>
               <p>
-                To provide high quality, personalised beauty
-                solutions that help every individual look and
-                feel their best.
+                To deliver exceptional hair, grooming and
+                beauty services through professional expertise,
+                personalised attention and a premium salon
+                experience for every client.
               </p>
             </div>
           </article>
@@ -260,9 +282,9 @@ function About() {
             <div>
               <h3>Our Vision</h3>
               <p>
-                To be a trusted and preferred beauty destination
-                known for excellence, care and a truly
-                elevating experience.
+                To become a trusted destination for personal
+                style and grooming, recognised for creativity,
+                quality, innovation and exceptional client care.
               </p>
             </div>
           </article>
@@ -322,7 +344,7 @@ function About() {
 
           <div className="about-eyebrow">
             <span />
-            YOUR BEAUTY JOURNEY
+            STYLE BEYOND ORDINARY
             <span />
           </div>
 
@@ -331,8 +353,9 @@ function About() {
           </h2>
 
           <p>
-            Visit us and discover a space where beauty,
-            care and wellness come together.
+            Your style deserves expert attention.
+            Discover a personalised salon experience
+            crafted to bring out your best.
           </p>
 
           <Link
@@ -340,7 +363,7 @@ function About() {
             className="about-cta-button"
           >
             <CalendarDays size={20} />
-            <span>BOOK AN APPOINTMENT</span>
+            <span>BOOK YOUR APPOINTMENT</span>
             <ArrowRight size={20} />
           </Link>
 

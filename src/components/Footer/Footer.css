@@ -1,16 +1,34 @@
 
 /* =========================================
-   AURELLE LUXURY EDITORIAL FOOTER
+   AURELLE
+   LUXURY UNISEX SALON
+   PREMIUM EDITORIAL FOOTER
 ========================================= */
 
 .aurelle-footer {
+  --footer-black: #080808;
+  --footer-dark: #111111;
+  --footer-card: #171717;
+  --footer-silver: #c0c0c0;
+  --footer-white: #ffffff;
+  --footer-muted: #bdbdbd;
+
   position: relative;
   width: 100%;
   overflow: hidden;
   isolation: isolate;
 
-  color: #ffffff;
-  background: #080808;
+  color: var(--footer-white);
+  background: var(--footer-black);
+  font-family: "DM Sans", sans-serif;
+}
+
+.aurelle-footer * {
+  box-sizing: border-box;
+}
+
+.aurelle-footer a {
+  text-decoration: none;
 }
 
 /* =========================================
@@ -48,9 +66,12 @@
 ========================================= */
 
 .aurelle-footer-container {
+  position: relative;
+  z-index: 1;
+
   width: 92%;
   max-width: 1700px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .aurelle-footer-main {
@@ -72,10 +93,11 @@
 ========================================= */
 
 .aurelle-footer-brand {
-  padding-right: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  padding-right: 30px;
 }
 
 .aurelle-footer-logo {
@@ -83,8 +105,7 @@
   flex-direction: column;
   align-items: center;
 
-  color: #ffffff;
-  text-decoration: none;
+  color: var(--footer-white);
 
   font-family: "Playfair Display", serif;
   font-size: 48px;
@@ -96,12 +117,15 @@
 .aurelle-footer-logo span {
   margin-top: 7px;
 
-  color: #d0d0d0;
+  color: var(--footer-silver);
 
   font-family: "DM Sans", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 5px;
+  line-height: 1.5;
+  letter-spacing: 4px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .aurelle-footer-brand-line {
@@ -111,11 +135,13 @@
   margin-top: 20px;
   margin-bottom: 12px;
 
-  background: #c0c0c0;
+  background: var(--footer-silver);
 }
 
 .aurelle-footer-brand h3 {
-  color: #ffffff;
+  margin: 0;
+
+  color: var(--footer-white);
 
   font-family: "Playfair Display", serif;
   font-size: 22px;
@@ -126,10 +152,9 @@
 
 .aurelle-footer-description {
   max-width: 370px;
+  margin: 12px 0 0;
 
-  margin-top: 12px;
-
-  color: #c1c1c1;
+  color: var(--footer-muted);
   font-size: 14px;
   line-height: 1.8;
 }
@@ -154,8 +179,9 @@
   align-items: center;
   justify-content: center;
 
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: var(--footer-white);
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 50%;
 
   font-size: 15px;
@@ -163,12 +189,14 @@
   transition:
     background 0.4s ease,
     color 0.4s ease,
+    border-color 0.4s ease,
     transform 0.4s ease;
 }
 
 .aurelle-social-link:hover {
-  color: #080808;
-  background: #ffffff;
+  color: var(--footer-black);
+  background: var(--footer-white);
+  border-color: var(--footer-white);
 
   transform: translateY(-5px);
 }
@@ -178,6 +206,8 @@
 ========================================= */
 
 .aurelle-footer-column {
+  min-width: 0;
+
   padding-left: 30px;
   padding-right: 25px;
 
@@ -197,13 +227,15 @@
 }
 
 .aurelle-footer-heading h4 {
-  color: #ffffff;
+  margin: 0;
+
+  color: var(--footer-white);
 
   font-family: "DM Sans", sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 2.5px;
-  white-space: nowrap;
+  line-height: 1.5;
 }
 
 .aurelle-footer-heading span {
@@ -214,7 +246,7 @@
 
   margin-top: 12px;
 
-  background: #c0c0c0;
+  background: var(--footer-silver);
 }
 
 /* =========================================
@@ -226,36 +258,49 @@
   flex-direction: column;
   gap: 9px;
 
+  margin: 0;
+  padding: 0;
+
   list-style: none;
+}
+
+.aurelle-footer-list li {
+  margin: 0;
+  padding: 0;
 }
 
 .aurelle-footer-list li a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 5px;
+  gap: 8px;
 
-  color: #c1c1c1;
-  text-decoration: none;
+  color: var(--footer-muted);
 
   font-size: 14px;
   line-height: 1.5;
 
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    padding 0.3s ease;
 }
 
 .aurelle-footer-list li a:hover {
-  color: #ffffff;
+  color: var(--footer-white);
+  padding-left: 4px;
 }
 
 .aurelle-footer-list li a svg {
   width: 15px;
   height: 15px;
+  flex-shrink: 0;
 
   opacity: 0;
   transform: translate(-5px, 5px);
 
-  transition: all 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .aurelle-footer-list li a:hover svg {
@@ -284,7 +329,7 @@
   height: 22px;
   flex-shrink: 0;
 
-  color: #d0d0d0;
+  color: var(--footer-silver);
   stroke-width: 1.5;
 }
 
@@ -295,15 +340,18 @@
 }
 
 .aurelle-contact-item p {
-  color: #ffffff;
+  margin: 0;
+
+  color: var(--footer-white);
 
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1px;
+  line-height: 1.5;
 }
 
 .aurelle-contact-item span {
-  color: #c1c1c1;
+  color: var(--footer-muted);
 
   font-size: 13px;
   line-height: 1.6;
@@ -325,7 +373,7 @@
   justify-content: space-between;
   gap: 10px;
 
-  color: #ffffff;
+  color: var(--footer-white);
   background: transparent;
 
   border: 1px solid rgba(255, 255, 255, 0.8);
@@ -334,22 +382,24 @@
   font-weight: 600;
   letter-spacing: 1.5px;
 
-  text-decoration: none;
-
-  transition: all 0.4s ease;
+  transition:
+    color 0.4s ease,
+    background 0.4s ease,
+    border-color 0.4s ease;
 }
 
 .aurelle-footer-book svg {
   width: 19px;
   height: 19px;
+  flex-shrink: 0;
 
   transition: transform 0.4s ease;
 }
 
 .aurelle-footer-book:hover {
-  color: #080808;
-  background: #ffffff;
-  border-color: #ffffff;
+  color: var(--footer-black);
+  background: var(--footer-white);
+  border-color: var(--footer-white);
 }
 
 .aurelle-footer-book:hover svg {
@@ -375,33 +425,35 @@
 }
 
 .aurelle-footer-bottom > p {
-  color: #c1c1c1;
+  margin: 0;
+
+  color: var(--footer-muted);
 
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1.2px;
+  line-height: 1.6;
 }
 
 .aurelle-footer-legal {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 25px;
 }
 
 .aurelle-footer-legal a {
-  color: #c1c1c1;
+  color: var(--footer-muted);
 
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 1px;
 
-  text-decoration: none;
-
   transition: color 0.3s ease;
 }
 
 .aurelle-footer-legal a:hover {
-  color: #ffffff;
+  color: var(--footer-white);
 }
 
 /* =========================================
@@ -411,7 +463,7 @@
 @media (max-width: 1100px) {
   .aurelle-footer-main {
     grid-template-columns: 1fr 1fr;
-    row-gap: 20px;
+    row-gap: 25px;
   }
 
   .aurelle-footer-brand {
@@ -424,8 +476,8 @@
   }
 
   .aurelle-footer-column:nth-child(3) {
-    border-left: none;
     padding-left: 0;
+    border-left: none;
   }
 
   .aurelle-footer-bg {
@@ -446,10 +498,10 @@
     background-image:
       linear-gradient(
         90deg,
-        rgba(8, 8, 8, 0.82),
-        rgba(8, 8, 8, 0.94)
+        rgba(8, 8, 8, 0.88),
+        rgba(8, 8, 8, 0.96)
       ),
-      url("/images/aurelle-footer-bg.png");
+      url("/images/footer.png");
 
     background-position: 25% center;
   }
@@ -479,7 +531,7 @@
   }
 
   .aurelle-footer-contact {
-    border-bottom: none !important;
+    border-bottom: none;
   }
 
   .aurelle-footer-logo {
@@ -518,7 +570,6 @@
   }
 
   .aurelle-footer-legal {
-    flex-wrap: wrap;
     gap: 12px 18px;
   }
 }
@@ -530,6 +581,10 @@
 @media (max-width: 380px) {
   .aurelle-footer-logo {
     font-size: 36px;
+  }
+
+  .aurelle-footer-logo span {
+    letter-spacing: 3px;
   }
 
   .aurelle-footer-brand h3 {

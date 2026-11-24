@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+
 import {
   MapPin,
   Phone,
@@ -17,6 +18,10 @@ import {
 
 import "./Footer.css";
 
+/* =========================================
+   QUICK LINKS
+========================================= */
+
 const quickLinks = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
@@ -28,16 +33,24 @@ const quickLinks = [
   { name: "Contact", path: "/contact" },
 ];
 
+/* =========================================
+   UNISEX SALON SERVICES
+========================================= */
+
 const serviceLinks = [
-  "Hair Styling",
-  "Skin Care",
-  "Makeup",
-  "Bridal Makeup",
+  "Hair Styling & Haircuts",
+  "Men's Grooming",
+  "Skin Care & Facials",
+  "Makeup & Bridal",
   "Nail Care",
-  "Spa and Wellness",
+  "Waxing & Threading",
+  "Pedicure & Manicure",
   "Body Treatments",
-  "Beauty Packages",
 ];
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
 
 const socialLinks = [
   { icon: FaInstagram, label: "Instagram", url: "#" },
@@ -46,6 +59,10 @@ const socialLinks = [
   { icon: FaPinterestP, label: "Pinterest", url: "#" },
 ];
 
+/* =========================================
+   FOOTER COMPONENT
+========================================= */
+
 function Footer() {
   const year = new Date().getFullYear();
 
@@ -53,34 +70,42 @@ function Footer() {
     <footer className="aurelle-footer">
 
       {/* BACKGROUND IMAGE */}
+
       <div className="aurelle-footer-bg" />
 
       <div className="aurelle-footer-container">
 
         {/* MAIN FOOTER */}
+
         <div className="aurelle-footer-main">
 
-          {/* BRAND */}
+          {/* BRAND SECTION */}
+
           <div className="aurelle-footer-brand">
 
             <Link to="/" className="aurelle-footer-logo">
               AURELLE
-              <span>BEAUTY STUDIO</span>
+
+              <span>LUXURY UNISEX SALON</span>
             </Link>
 
             <div className="aurelle-footer-brand-line" />
 
             <h3>
-              Where Beauty Meets Elegance.
+              Style Beyond Ordinary.
             </h3>
 
             <p className="aurelle-footer-description">
-              A premium beauty studio offering expert
-              hair styling, skincare, makeup and
-              personalised beauty treatments.
+              Experience the art of exceptional hair styling,
+              beauty and grooming at AURELLE. Discover a refined
+              salon experience designed for everyone, where
+              expert care meets timeless elegance.
             </p>
 
+            {/* SOCIAL LINKS */}
+
             <div className="aurelle-footer-socials">
+
               {socialLinks.map((social) => {
                 const Icon = social.icon;
 
@@ -97,19 +122,22 @@ function Footer() {
                   </a>
                 );
               })}
+
             </div>
 
           </div>
 
           {/* QUICK LINKS */}
+
           <div className="aurelle-footer-column">
 
             <div className="aurelle-footer-heading">
-              <h4>QUICK LINKS</h4>
+              <h4>EXPLORE</h4>
               <span />
             </div>
 
             <ul className="aurelle-footer-list">
+
               {quickLinks.map((item) => (
                 <li key={item.name}>
                   <Link to={item.path}>
@@ -118,11 +146,13 @@ function Footer() {
                   </Link>
                 </li>
               ))}
+
             </ul>
 
           </div>
 
           {/* SERVICES */}
+
           <div className="aurelle-footer-column">
 
             <div className="aurelle-footer-heading">
@@ -131,6 +161,7 @@ function Footer() {
             </div>
 
             <ul className="aurelle-footer-list">
+
               {serviceLinks.map((service) => (
                 <li key={service}>
                   <Link to="/services">
@@ -139,11 +170,13 @@ function Footer() {
                   </Link>
                 </li>
               ))}
+
             </ul>
 
           </div>
 
           {/* CONTACT */}
+
           <div className="aurelle-footer-column aurelle-footer-contact">
 
             <div className="aurelle-footer-heading">
@@ -153,32 +186,44 @@ function Footer() {
 
             <div className="aurelle-contact-list">
 
+              {/* ADDRESS */}
+
               <div className="aurelle-contact-item">
                 <MapPin />
+
                 <div>
-                  <p>VISIT OUR STUDIO</p>
+                  <p>VISIT OUR SALON</p>
                   <span>Salon address coming soon</span>
                 </div>
               </div>
 
+              {/* PHONE */}
+
               <div className="aurelle-contact-item">
                 <Phone />
+
                 <div>
                   <p>CALL US</p>
                   <span>Contact number coming soon</span>
                 </div>
               </div>
 
+              {/* EMAIL */}
+
               <div className="aurelle-contact-item">
                 <Mail />
+
                 <div>
                   <p>EMAIL US</p>
                   <span>Email address coming soon</span>
                 </div>
               </div>
 
+              {/* OPENING HOURS */}
+
               <div className="aurelle-contact-item">
                 <Clock />
+
                 <div>
                   <p>OPENING HOURS</p>
                   <span>Monday to Sunday</span>
@@ -188,11 +233,13 @@ function Footer() {
 
             </div>
 
+            {/* BOOKING BUTTON */}
+
             <Link
               to="/booking"
               className="aurelle-footer-book"
             >
-              <span>BOOK APPOINTMENT</span>
+              <span>BOOK YOUR EXPERIENCE</span>
               <ArrowUpRight />
             </Link>
 
@@ -200,15 +247,17 @@ function Footer() {
 
         </div>
 
-        {/* BOTTOM FOOTER */}
+        {/* FOOTER BOTTOM */}
+
         <div className="aurelle-footer-bottom">
 
           <p>
-            © {year} AURELLE BEAUTY STUDIO.
+            © {year} AURELLE LUXURY UNISEX SALON.
             ALL RIGHTS RESERVED.
           </p>
 
           <div className="aurelle-footer-legal">
+
             <Link to="/privacy-policy">
               PRIVACY POLICY
             </Link>
@@ -220,11 +269,13 @@ function Footer() {
             <Link to="/booking-policy">
               BOOKING POLICY
             </Link>
+
           </div>
 
         </div>
 
       </div>
+
     </footer>
   );
 }

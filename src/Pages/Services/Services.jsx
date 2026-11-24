@@ -3,83 +3,132 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import {
-  Flower2,
   Scissors,
+  Flower2,
   Brush,
   Sparkles,
   Hand,
   Heart,
   ArrowRight,
   CalendarDays,
+  UserRound,
+  Gem,
 } from "lucide-react";
 
 import "./Services.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* =========================================
+   SERVICES DATA
+========================================= */
+
 const services = [
   {
     id: 1,
-    title: "Skin Care",
+    title: "Hair & Styling",
     description:
-      "Facials, cleanups and advanced skin treatments for healthy, radiant skin.",
-    image: "/images/service-makeup/service-skin.jpg",
-    icon: Flower2,
-    category: "skin",
+      "Professional haircuts, creative styling, hair colouring and personalised hair care for every look.",
+    image: "/images/services/01-hair-and-mens-grooming.jpg",
+    icon: Scissors,
+    category: "hair",
+    slug: "hair",
   },
   {
     id: 2,
-    title: "Hair Care",
+    title: "Men's Grooming",
     description:
-      "Haircuts, styling and colouring for beautiful, healthy hair.",
-    image: "/images/service-makeup/service-hair.jpg",
-    icon: Scissors,
-    category: "hair",
+      "Expert men's haircuts, beard styling and premium grooming experiences designed for modern men.",
+    image: "/images/services/02-mens-grooming.png",
+    icon: UserRound,
+    category: "grooming",
+    slug: "grooming",
   },
   {
     id: 3,
-    title: "Makeup",
+    title: "Skin & Facials",
     description:
-      "Bridal, party and occasion makeup for every special moment.",
-    image: "/images/service-makeup/service-makeup.jpg",
-    icon: Brush,
-    category: "makeup",
+      "Professional facials, cleanups and personalised skincare treatments for healthy looking skin.",
+    image: "/images/services/02-skin-care.jpg",
+    icon: Flower2,
+    category: "skin",
+    slug: "skin",
   },
   {
     id: 4,
-    title: "Nail Care",
+    title: "Makeup & Bridal",
     description:
-      "Manicure, pedicure and nail art to add a touch of elegance.",
-    image: "/images/service-makeup/service-nails.jpg",
-    icon: Hand,
-    category: "nails",
+      "Beautiful bridal, party and occasion makeup crafted to complement your personality and style.",
+    image: "/images/services/03-makeup-and-bridal.jpg",
+    icon: Brush,
+    category: "makeup",
+    slug: "makeup",
   },
   {
     id: 5,
-    title: "Special Treatments",
+    title: "Nail Studio",
     description:
-      "Premium beauty experiences for radiant skin and rejuvenation.",
-    image: "/images/services/service-treatments.png",
-    icon: Sparkles,
-    category: "treatments",
+      "Creative nail art, nail extensions and professional nail care for beautifully finished hands.",
+    image: "/images/services/04-nail-studio.jpg",
+    icon: Hand,
+    category: "nails",
+    slug: "nails",
   },
   {
     id: 6,
-    title: "Wellness",
+    title: "Waxing & Threading",
     description:
-      "Relax, rejuvenate and enjoy a refreshing beauty experience.",
-    image: "/images/services/service-wellness.png",
+      "Professional hair removal and precise grooming services for a smooth and polished look.",
+    image: "/images/services/05-waxing-and-threading.jpg",
+    icon: Sparkles,
+    category: "waxing-threading",
+    slug: "waxing",
+  },
+  {
+    id: 7,
+    title: "Manicure & Pedicure",
+    description:
+      "Relaxing hand and foot care with premium treatments for complete grooming and comfort.",
+    image: "/images/services/06-pedicure-and-manicure.jpg",
     icon: Heart,
-    category: "wellness",
+    category: "pedicure-manicure",
+    slug: "pedicure",
+  },
+  {
+    id: 8,
+    title: "Body Treatments",
+    description:
+      "Rejuvenating body care experiences designed to refresh your skin and help you unwind.",
+    image: "/images/services/07-body-treatments.jpg",
+    icon: Flower2,
+    category: "body-treatments",
+    slug: "body-spa",
+  },
+  {
+    id: 9,
+    title: "Bridal & Groom Packages",
+    description:
+      "Exclusive bridal and groom experiences for weddings, celebrations and special occasions.",
+    image: "/images/services/08-bridal-and-groom-packages.jpg",
+    icon: Gem,
+    category: "packages",
+    slug: "packages",
   },
 ];
+
+/* =========================================
+   SERVICES PAGE
+========================================= */
 
 function Services() {
   const pageRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      /* HERO ANIMATION */
+
       const heroTimeline = gsap.timeline();
 
       heroTimeline
@@ -101,6 +150,8 @@ function Services() {
           "-=0.7"
         );
 
+      /* SERVICE CARDS ANIMATION */
+
       gsap.from(".service-card", {
         opacity: 0,
         y: 35,
@@ -113,6 +164,23 @@ function Services() {
           once: true,
         },
       });
+
+      /* BENEFITS ANIMATION */
+
+      gsap.from(".services-benefit", {
+        opacity: 0,
+        y: 25,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".services-benefits",
+          start: "top 80%",
+          once: true,
+        },
+      });
+
+      /* CTA ANIMATION */
 
       gsap.from(".services-cta-content > *", {
         opacity: 0,
@@ -128,19 +196,21 @@ function Services() {
       });
     }, pageRef);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, []);
 
   return (
     <main className="aurelle-services-page" ref={pageRef}>
-
-      {/* HERO SECTION */}
+      {/* =====================================
+          HERO SECTION
+      ===================================== */}
 
       <section className="services-hero">
         <div className="services-hero-background" />
 
         <div className="services-hero-container">
-
           <div className="services-hero-content">
             <div className="services-eyebrow">
               <span />
@@ -149,30 +219,53 @@ function Services() {
             </div>
 
             <h1>
-              Beauty Care
+              Style & Care
               <em>Redefined</em>
             </h1>
 
             <p>
-              Premium services designed to enhance your
-              natural beauty and well being.
+              Discover exceptional hair styling, men's grooming
+              and beauty experiences crafted around your
+              personality and individual style.
             </p>
+
+            <Link to="/booking" className="services-hero-button">
+              <span>BOOK YOUR EXPERIENCE</span>
+              <ArrowRight size={19} />
+            </Link>
           </div>
 
           <div className="services-hero-image">
             <img
-              src="/images/services/hero.png"
-              alt="AURELLE luxury beauty editorial portrait"
+              src="/images/ctamodel.png"
+              alt="Luxury Indian unisex salon experience at AURELLE"
               fetchPriority="high"
             />
           </div>
-
         </div>
       </section>
 
-      {/* SERVICES GRID */}
+      {/* =====================================
+          SERVICES GRID
+      ===================================== */}
 
       <section className="services-list-section">
+        <div className="services-section-heading">
+          <div className="services-eyebrow">
+            <span />
+            EXPLORE OUR SERVICES
+            <span />
+          </div>
+
+          <h2>
+            The Art of <em>Personal Care</em>
+          </h2>
+
+          <p>
+            From everyday grooming to special occasion styling,
+            experience professional care for every version of you.
+          </p>
+        </div>
 
         <div className="services-grid">
           {services.map((service) => {
@@ -180,9 +273,10 @@ function Services() {
 
             return (
               <Link
-                to={`/booking?service=${service.category}`}
+                to={`/services/${service.slug}`}
                 className="service-card"
                 key={service.id}
+                aria-label={`Explore ${service.title}`}
               >
                 <div className="service-card-image">
                   <img
@@ -210,22 +304,22 @@ function Services() {
             );
           })}
         </div>
-
       </section>
 
-      {/* WHY CHOOSE AURELLE */}
+      {/* =====================================
+          WHY CHOOSE AURELLE
+      ===================================== */}
 
       <section className="services-benefits">
         <div className="services-benefits-image">
           <img
             src="/images/services/benifut.png"
-            alt="Elegant beauty studio experience"
+            alt="Professional Indian salon experts at AURELLE"
             loading="lazy"
           />
         </div>
 
         <div className="services-benefits-content">
-
           <div className="services-eyebrow">
             <span />
             THE AURELLE EXPERIENCE
@@ -236,75 +330,93 @@ function Services() {
             Why Choose <em>AURELLE</em>
           </h2>
 
-          <div className="services-benefits-grid">
+          <p className="services-benefits-intro">
+            We believe personal care is more than a service.
+            It is an experience built around expertise,
+            comfort and attention to every detail.
+          </p>
 
+          <div className="services-benefits-grid">
             <div className="services-benefit">
-              <GemIcon />
-              <h3>Expert Team</h3>
-              <p>Skilled beauty professionals with experience.</p>
+              <Gem size={30} strokeWidth={1.3} />
+
+              <h3>Expert Professionals</h3>
+
+              <p>
+                Skilled hair, grooming and beauty professionals
+                dedicated to quality.
+              </p>
             </div>
 
             <div className="services-benefit">
               <Heart size={30} strokeWidth={1.3} />
+
               <h3>Premium Products</h3>
-              <p>Carefully selected products from trusted brands.</p>
+
+              <p>
+                Carefully selected products for a quality
+                salon experience.
+              </p>
             </div>
 
             <div className="services-benefit">
               <Flower2 size={30} strokeWidth={1.3} />
-              <h3>Relaxing Ambience</h3>
-              <p>A calm and luxurious space designed for you.</p>
+
+              <h3>Luxury Ambience</h3>
+
+              <p>
+                A welcoming and comfortable space designed
+                for your personal care.
+              </p>
             </div>
 
             <div className="services-benefit">
               <Sparkles size={30} strokeWidth={1.3} />
-              <h3>Personalised Care</h3>
-              <p>Every service tailored to your unique needs.</p>
-            </div>
 
+              <h3>Personalised Care</h3>
+
+              <p>
+                Every experience is tailored to your needs
+                and individual preferences.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* =====================================
+          FINAL CTA
+      ===================================== */}
 
       <section className="services-cta">
         <div className="services-cta-background" />
 
         <div className="services-cta-content">
-
           <div className="services-eyebrow">
             <span />
-            YOUR BEAUTY JOURNEY
+            YOUR STYLE. YOUR EXPERIENCE.
             <span />
           </div>
 
           <h2>
-            Book Your Beauty <em>Experience</em>
+            Discover Your <em>AURELLE Experience</em>
           </h2>
 
           <p>
-            Step into a world of luxury, care and confidence.
+            Your next style transformation starts here.
+            Visit AURELLE and experience personal care
+            beyond the ordinary.
           </p>
 
-          <Link
-            to="/booking"
-            className="services-cta-button"
-          >
+          <Link to="/booking" className="services-cta-button">
             <CalendarDays size={21} />
             BOOK AN APPOINTMENT
             <ArrowRight size={21} />
           </Link>
-
         </div>
       </section>
-
     </main>
   );
-}
-
-function GemIcon() {
-  return <Sparkles size={30} strokeWidth={1.3} />;
 }
 
 export default Services;

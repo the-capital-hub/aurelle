@@ -10,51 +10,52 @@ gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
+    name: "Aarav Sharma",
+    category: "MEN'S GROOMING CLIENT",
+    image: "/images/testi/client-aarav.jpg",
+    review:
+      "The grooming experience at AURELLE is exceptional. The team understands exactly what suits my style, and the attention to detail is impressive.",
+  },
+  {
     name: "Priya Singh",
     category: "REGULAR CLIENT",
     image: "/images/testi/client-priya.jpg",
     review:
-      "An exceptional experience! The team at AURELLE truly understands beauty and personal care.",
+      "I had a wonderful experience at AURELLE. The hairstyling, hospitality and attention to detail made me feel truly special.",
+  },
+  {
+    name: "Rahul Verma",
+    category: "HAIR STYLING CLIENT",
+    image: "/images/testi/client-rahul.jpg",
+    review:
+      "From the consultation to the final haircut, everything was professional. I loved the result and would definitely recommend AURELLE.",
   },
   {
     name: "Neha Verma",
     category: "BRIDAL CLIENT",
     image: "/images/testi/client-neha.jpg",
     review:
-      "I loved my makeover! The attention to detail, professionalism and warm hospitality make AURELLE my favourite place.",
+      "My bridal makeover was exactly how I imagined it. The team understood my preferences and made my special day even more memorable.",
   },
   {
-    name: "Ritika Sharma",
-    category: "LOYAL CLIENT",
-    image: "/images/testi/client-ritika.jpg",
+    name: "Karan Singh",
+    category: "LOYAL GROOMING CLIENT",
+    image: "/images/testi/client-karan.jpg",
     review:
-      "From skincare to hair styling, every service is wonderful. I always leave feeling more confident and refreshed.",
+      "Great atmosphere, skilled professionals and excellent service. AURELLE has become my first choice for haircuts and grooming.",
   },
   {
     name: "Meera Kapoor",
-    category: "REGULAR CLIENT",
+    category: "BEAUTY CARE CLIENT",
     image: "/images/testi/client-meera.jpg",
     review:
-      "The atmosphere is beautiful and relaxing. Every visit feels special and the team takes wonderful care of me.",
-  },
-  {
-    name: "Ananya Roy",
-    category: "BRIDAL CLIENT",
-    image: "/images/testi/client-ananya.jpg",
-    review:
-      "My bridal look was exactly what I dreamed of. The team understood my style and made my special day memorable.",
-  },
-  {
-    name: "Simran Kaur",
-    category: "LOYAL CLIENT",
-    image: "/images/testi/client-simran.jpg",
-    review:
-      "Professional service, lovely people and beautiful results. AURELLE has become my favourite beauty destination.",
+      "Every visit feels relaxing and special. The staff is welcoming, the services are excellent and I always leave feeling confident.",
   },
 ];
 
 function ClientTestimonials() {
   const sectionRef = useRef(null);
+
   const [page, setPage] = useState(0);
   const [visibleCount, setVisibleCount] = useState(
     typeof window !== "undefined" && window.innerWidth <= 700 ? 1 : 3
@@ -62,7 +63,13 @@ function ClientTestimonials() {
 
   useEffect(() => {
     const updateVisibleCount = () => {
-      setVisibleCount(window.innerWidth <= 700 ? 1 : window.innerWidth <= 1000 ? 2 : 3);
+      setVisibleCount(
+        window.innerWidth <= 700
+          ? 1
+          : window.innerWidth <= 1000
+            ? 2
+            : 3
+      );
       setPage(0);
     };
 
@@ -74,6 +81,7 @@ function ClientTestimonials() {
 
   const totalPages = Math.ceil(testimonials.length / visibleCount);
   const startIndex = page * visibleCount;
+
   const visibleTestimonials = testimonials.slice(
     startIndex,
     startIndex + visibleCount
@@ -151,8 +159,10 @@ function ClientTestimonials() {
           </h2>
 
           <p className="testimonial-intro">
-            Real stories from our valued clients who trust AURELLE
-            for their beauty and self care journey.
+            Discover what our clients love about AURELLE.
+            From expert hairstyling and men's grooming to
+            personalised beauty care, every experience is
+            crafted around you.
           </p>
         </div>
 
@@ -174,7 +184,7 @@ function ClientTestimonials() {
                 <div className="testimonial-image">
                   <img
                     src={item.image}
-                    alt={item.name}
+                    alt={`${item.name}, AURELLE client`}
                     loading="lazy"
                   />
                   <div className="testimonial-image-shade" />

@@ -23,6 +23,7 @@ import WaxingPricing from './Pages/PricingSubPage/WaxingPricing/WaxingPricing'
 import PedicureManicurePricing from './Pages/PricingSubPage/PedicureManicurePricing/PedicureManicurePricing'
 import BodyTreatmentsPricing from './Pages/PricingSubPage/BodyTreatmentsPricing/BodyTreatmentsPricing'
 import PackagesPricing from './Pages/PricingSubPage/PackagesPricing/PackagesPricing'
+import ServiceDetails from './Pages/ServiceDetails/ServiceDetails'
 
 const App = () => {
   return (
@@ -63,6 +64,7 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/booking" element={<Booking />} />
               <Route path="/services/hair" element={<HairServices />} />
+              {/* <Route path="/services/:slug" element={<ServiceDetails />} /> */}
 
 
 
