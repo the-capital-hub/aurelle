@@ -1,0 +1,977 @@
+
+/* =========================================================
+   AURELLE LUXURY UNISEX SALON
+   CINEMATIC MASTER SERVICE DESIGN SYSTEM
+   Black | Silver | Luxury Editorial
+========================================================= */
+
+.aurelle-hair-page {
+  --hair-black: #080808;
+  --hair-dark: #101010;
+  --hair-card: #171717;
+  --hair-silver: #c8c8c8;
+  --hair-white: #ffffff;
+  --hair-muted: #b4b4b4;
+  --hair-border: rgba(255, 255, 255, 0.17);
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--hair-black);
+  color: var(--hair-white);
+  font-family: "DM Sans", sans-serif;
+}
+
+.aurelle-hair-page *,
+.aurelle-hair-page *::before,
+.aurelle-hair-page *::after {
+  box-sizing: border-box;
+}
+
+.aurelle-hair-page img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aurelle-hair-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.aurelle-hair-page h1,
+.aurelle-hair-page h2,
+.aurelle-hair-page h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+
+.aurelle-hair-page section {
+  position: relative;
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.aurelle-hair-page .hair-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 590px;
+  height: 65vh;
+  max-height: 740px;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--hair-black);
+}
+
+.aurelle-hair-page .hair-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.aurelle-hair-page .hair-hero-image img {
+  object-position: center 38%;
+  animation: aurelleHeroZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes aurelleHeroZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.055);
+  }
+}
+
+.aurelle-hair-page .hair-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 5, 5, 0.98) 0%,
+      rgba(5, 5, 5, 0.93) 28%,
+      rgba(5, 5, 5, 0.72) 48%,
+      rgba(5, 5, 5, 0.12) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.38),
+      transparent 45%
+    );
+}
+
+.aurelle-hair-page .hair-hero-content {
+  position: relative;
+  width: min(1200px, 90%);
+  padding: 35px 0;
+  animation: aurelleFadeUp 1s ease both;
+}
+
+@keyframes aurelleFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.aurelle-hair-page .hair-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  color: #d5d5d5;
+  font-size: 12px;
+}
+
+.aurelle-hair-page .hair-breadcrumb a {
+  transition: color 0.3s ease;
+}
+
+.aurelle-hair-page .hair-breadcrumb a:hover {
+  color: var(--hair-silver);
+}
+
+.aurelle-hair-page .hair-breadcrumb span:last-child {
+  color: var(--hair-silver);
+}
+
+.aurelle-hair-page .hair-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--hair-silver);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.aurelle-hair-page .hair-hero h1 {
+  max-width: 700px;
+  margin: 0 0 18px;
+  color: var(--hair-white);
+  font-size: clamp(50px, 6.2vw, 82px);
+  line-height: 1.02;
+  letter-spacing: -1.5px;
+}
+
+.aurelle-hair-page .hair-hero h1 span {
+  color: #d0d0d0;
+  font-style: italic;
+}
+
+.aurelle-hair-page .hair-hero-content > p {
+  max-width: 450px;
+  margin: 0;
+  color: #dedede;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.aurelle-hair-page .hair-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 25px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.aurelle-hair-page .hair-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 46px;
+  padding: 11px 22px;
+  border: 1px solid transparent;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+.aurelle-hair-page .hair-button-light {
+  border-color: var(--hair-white);
+  background: var(--hair-white);
+  color: var(--hair-black);
+}
+
+.aurelle-hair-page .hair-button-light:hover {
+  border-color: var(--hair-silver);
+  background: var(--hair-silver);
+  transform: translateY(-3px);
+}
+
+.aurelle-hair-page .hair-button-outline {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: transparent;
+  color: var(--hair-white);
+}
+
+.aurelle-hair-page .hair-button-outline:hover {
+  border-color: var(--hair-white);
+  background: var(--hair-white);
+  color: var(--hair-black);
+}
+
+/* =========================================================
+   CATEGORY NAVIGATION
+========================================================= */
+
+.aurelle-hair-page .hair-category-section {
+  border-top: 1px solid var(--hair-border);
+  border-bottom: 1px solid var(--hair-border);
+  background: #0c0c0c;
+}
+
+.aurelle-hair-page .hair-category-list {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.aurelle-hair-page .hair-category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 88px;
+  padding: 12px 6px;
+  border-right: 1px solid rgba(255, 255, 255, 0.13);
+  color: #dedede;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.aurelle-hair-page .hair-category-item:last-child {
+  border-right: none;
+}
+
+.aurelle-hair-page .hair-category-item svg {
+  color: #dedede;
+  transition: transform 0.3s ease;
+}
+
+.aurelle-hair-page .hair-category-item span {
+  max-width: 120px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.aurelle-hair-page .hair-category-item:hover {
+  background: #1b1b1b;
+  color: white;
+}
+
+.aurelle-hair-page .hair-category-item:hover svg {
+  transform: translateY(-3px);
+}
+
+.aurelle-hair-page .hair-category-item.active {
+  background: linear-gradient(135deg, #dedede, #a9a9a9);
+  color: #080808;
+}
+
+.aurelle-hair-page .hair-category-item.active svg {
+  color: #080808;
+}
+
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
+.aurelle-hair-page .hair-services-section {
+  padding: 65px 0 55px;
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(255, 255, 255, 0.035),
+      transparent 60%
+    ),
+    #080808;
+}
+
+.aurelle-hair-page .hair-section-heading {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 65px;
+  width: min(1200px, 90%);
+  margin: 0 auto 30px;
+}
+
+.aurelle-hair-page .hair-section-heading h2 {
+  margin: 0;
+  color: var(--hair-white);
+  font-size: clamp(37px, 4.3vw, 55px);
+  line-height: 1.08;
+}
+
+.aurelle-hair-page .hair-section-heading h2 span {
+  color: var(--hair-silver);
+  font-style: italic;
+}
+
+.aurelle-hair-page .hair-section-heading > p {
+  margin: 0;
+  padding-left: 27px;
+  border-left: 1px solid var(--hair-silver);
+  color: #c4c4c4;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.aurelle-hair-page .hair-service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.aurelle-hair-page .hair-service-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.19);
+  border-radius: 7px;
+  background: #151515;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.aurelle-hair-page .hair-service-card:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  transform: translateY(-5px);
+}
+
+.aurelle-hair-page .hair-service-image {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  background: #222;
+}
+
+.aurelle-hair-page .hair-service-image::after {
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.20));
+  content: "";
+  pointer-events: none;
+}
+
+.aurelle-hair-page .hair-service-image img {
+  filter: saturate(0.85);
+  transition: transform 0.7s ease, filter 0.7s ease;
+}
+
+.aurelle-hair-page .hair-service-card:hover .hair-service-image img {
+  filter: saturate(1);
+  transform: scale(1.07);
+}
+
+.aurelle-hair-page .hair-service-number {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 11px;
+}
+
+.aurelle-hair-page .hair-service-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 120px;
+  padding: 14px 13px;
+}
+
+.aurelle-hair-page .hair-service-info > div {
+  min-width: 0;
+}
+
+.aurelle-hair-page .hair-service-info h3 {
+  margin: 0 0 7px;
+  color: white;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.aurelle-hair-page .hair-service-info p {
+  margin: 0;
+  color: #c0c0c0;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.aurelle-hair-page .hair-card-arrow {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.aurelle-hair-page .hair-card-arrow:hover {
+  background: white;
+  color: black;
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   WHY CHOOSE AURELLE
+========================================================= */
+
+.aurelle-hair-page .hair-benefits-section {
+  display: grid;
+  grid-template-columns: 1.05fr 2.6fr;
+  align-items: center;
+  gap: 35px;
+  padding: 42px 5%;
+  border-top: 1px solid var(--hair-border);
+  border-bottom: 1px solid var(--hair-border);
+  background: #0c0c0c;
+}
+
+.aurelle-hair-page .hair-benefits-title {
+  padding-right: 28px;
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.aurelle-hair-page .hair-benefits-title .hair-eyebrow {
+  margin-bottom: 12px;
+}
+
+.aurelle-hair-page .hair-benefits-title h2 {
+  margin: 0;
+  color: white;
+  font-size: clamp(29px, 3.2vw, 42px);
+  line-height: 1.15;
+}
+
+.aurelle-hair-page .hair-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.aurelle-hair-page .hair-benefit-item {
+  text-align: center;
+}
+
+.aurelle-hair-page .hair-benefit-item svg {
+  margin-bottom: 12px;
+  color: var(--hair-silver);
+}
+
+.aurelle-hair-page .hair-benefit-item h3 {
+  margin: 0 0 8px;
+  color: white;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.aurelle-hair-page .hair-benefit-item p {
+  margin: 0;
+  color: #bcbcbc;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   SIGNATURE EXPERIENCE
+========================================================= */
+
+.aurelle-hair-page .hair-signature-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+height: 420px;
+  background: #101010;
+}
+
+.aurelle-hair-page .hair-signature-image {
+  min-height: 420px;
+  overflow: hidden;
+  background: #222;
+}
+
+.aurelle-hair-page .hair-signature-image img {
+  transition: transform 0.8s ease;
+}
+
+.aurelle-hair-page .hair-signature-section:hover
+.hair-signature-image img {
+  transform: scale(1.045);
+}
+
+.aurelle-hair-page .hair-signature-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 45px 9%;
+}
+
+.aurelle-hair-page .hair-signature-content h2 {
+  margin: 0 0 17px;
+  color: white;
+  font-size: clamp(39px, 4.4vw, 57px);
+  line-height: 1.1;
+}
+
+.aurelle-hair-page .hair-signature-content h2 span {
+  color: var(--hair-silver);
+  font-style: italic;
+}
+
+.aurelle-hair-page .hair-signature-content p {
+  max-width: 480px;
+  margin: 0 0 14px;
+  color: #c1c1c1;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.aurelle-hair-page .hair-final-cta {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      rgba(5, 5, 5, 0.83),
+      rgba(5, 5, 5, 0.91)
+    ),
+    url("/images/gallery/gallery-hair.jpg") center / cover no-repeat;
+}
+
+.aurelle-hair-page .hair-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  width: min(1200px, 90%);
+  min-height: 210px;
+  padding: 30px 0;
+}
+
+.aurelle-hair-page .hair-cta-content h2 {
+  margin: 0 0 10px;
+  color: white;
+  font-size: clamp(35px, 4vw, 48px);
+  font-style: italic;
+  line-height: 1.15;
+}
+
+.aurelle-hair-page .hair-cta-content p {
+  max-width: 560px;
+  margin: 0;
+  color: #d0d0d0;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .aurelle-hair-page .hair-category-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .aurelle-hair-page .hair-category-item {
+    border-right: none;
+  }
+
+  .aurelle-hair-page .hair-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+  }
+
+  .aurelle-hair-page .hair-benefits-section {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .aurelle-hair-page .hair-benefits-title {
+    padding: 0 0 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--hair-border);
+  }
+
+  .aurelle-hair-page .hair-section-heading {
+    gap: 30px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+  .aurelle-hair-page .hair-hero {
+    min-height: 560px;
+    height: 78vh;
+    align-items: flex-end;
+  }
+
+  .aurelle-hair-page .hair-hero-image img {
+    object-position: 62% center;
+  }
+
+  .aurelle-hair-page .hair-hero-overlay {
+    background: linear-gradient(
+      0deg,
+      rgba(5, 5, 5, 0.98) 0%,
+      rgba(5, 5, 5, 0.86) 48%,
+      rgba(5, 5, 5, 0.20) 100%
+    );
+  }
+
+  .aurelle-hair-page .hair-hero-content {
+    width: 90%;
+    padding: 35px 0;
+  }
+
+  .aurelle-hair-page .hair-breadcrumb {
+    margin-bottom: 24px;
+    font-size: 11px;
+  }
+
+  .aurelle-hair-page .hair-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .aurelle-hair-page .hair-hero h1 {
+    font-size: clamp(42px, 10vw, 59px);
+    letter-spacing: -0.5px;
+  }
+
+  .aurelle-hair-page .hair-hero-content > p {
+    font-size: 13px;
+  }
+
+  .aurelle-hair-page .hair-hero-actions {
+    gap: 9px;
+  }
+
+  .aurelle-hair-page .hair-button {
+    min-height: 44px;
+    padding: 10px 15px;
+    font-size: 11px;
+  }
+
+  .aurelle-hair-page .hair-category-list {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    padding: 11px 5%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .aurelle-hair-page .hair-category-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .aurelle-hair-page .hair-category-item {
+    flex: 0 0 108px;
+    min-height: 82px;
+    padding: 9px 5px;
+  }
+
+  .aurelle-hair-page .hair-category-item span {
+    font-size: 11px;
+  }
+
+  .aurelle-hair-page .hair-services-section {
+    padding: 48px 0;
+  }
+
+  .aurelle-hair-page .hair-section-heading {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 26px;
+  }
+
+  .aurelle-hair-page .hair-section-heading h2 {
+    font-size: 38px;
+  }
+
+  .aurelle-hair-page .hair-section-heading > p {
+    padding-left: 15px;
+    font-size: 12px;
+  }
+
+  .aurelle-hair-page .hair-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+    width: 92%;
+  }
+
+  .aurelle-hair-page .hair-service-image {
+    height: 170px;
+  }
+
+  .aurelle-hair-page .hair-service-info {
+    align-items: flex-start;
+    min-height: 125px;
+    padding: 12px 10px;
+  }
+
+  .aurelle-hair-page .hair-service-info h3 {
+    font-size: 16px;
+  }
+
+  .aurelle-hair-page .hair-service-info p {
+    font-size: 11px;
+  }
+
+  .aurelle-hair-page .hair-card-arrow {
+    width: 29px;
+    height: 29px;
+  }
+
+  .aurelle-hair-page .hair-card-arrow svg {
+    width: 15px;
+  }
+
+  .aurelle-hair-page .hair-benefits-section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 35px 6%;
+  }
+
+  .aurelle-hair-page .hair-benefits-title {
+    padding-bottom: 20px;
+  }
+
+  .aurelle-hair-page .hair-benefits-title h2 {
+    font-size: 34px;
+  }
+
+  .aurelle-hair-page .hair-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 27px 16px;
+  }
+
+  .aurelle-hair-page .hair-benefit-item h3 {
+    font-size: 14px;
+  }
+
+  .aurelle-hair-page .hair-signature-section {
+    grid-template-columns: 1fr;
+  }
+
+  .aurelle-hair-page .hair-signature-image {
+    min-height: 290px;
+    height: 290px;
+  }
+
+  .aurelle-hair-page .hair-signature-content {
+    padding: 38px 7%;
+  }
+
+  .aurelle-hair-page .hair-signature-content h2 {
+    font-size: 41px;
+  }
+
+  .aurelle-hair-page .hair-cta-content {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 22px;
+    padding: 36px 0;
+  }
+
+  .aurelle-hair-page .hair-cta-content h2 {
+    font-size: 36px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+  .aurelle-hair-page .hair-hero {
+    min-height: 530px;
+  }
+
+  .aurelle-hair-page .hair-hero h1 {
+    font-size: 40px;
+  }
+
+  .aurelle-hair-page .hair-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .aurelle-hair-page .hair-hero-actions .hair-button {
+    width: 100%;
+  }
+
+  .aurelle-hair-page .hair-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .aurelle-hair-page .hair-service-image {
+    height: 220px;
+  }
+
+  .aurelle-hair-page .hair-service-info {
+    min-height: 95px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .aurelle-hair-page *,
+  .aurelle-hair-page *::before,
+  .aurelle-hair-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* AURELLE VISUAL REFINEMENT */
+
+.aurelle-hair-page .hair-hero {
+  min-height: 590px;
+  height: 70vh;
+  max-height: 680px;
+}
+
+.aurelle-hair-page .hair-hero-content {
+  width: min(1200px, 90%);
+}
+
+.aurelle-hair-page .hair-hero h1 {
+  max-width: 600px;
+  font-size: clamp(52px, 6vw, 78px);
+}
+
+.aurelle-hair-page .hair-hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(5, 5, 5, 0.98) 0%,
+    rgba(5, 5, 5, 0.90) 30%,
+    rgba(5, 5, 5, 0.55) 52%,
+    rgba(5, 5, 5, 0.08) 100%
+  );
+}
+
+.aurelle-hair-page .hair-services-section {
+  padding: 55px 0;
+}
+
+.aurelle-hair-page .hair-section-heading {
+  margin-bottom: 25px;
+}
+
+.aurelle-hair-page .hair-service-grid {
+  width: min(1200px, 94%);
+  gap: 12px;
+}
+
+.aurelle-hair-page .hair-service-image {
+  height: 230px;
+}
+
+.aurelle-hair-page .hair-service-info {
+  min-height: 112px;
+  padding: 13px 12px;
+}
+
+.aurelle-hair-page .hair-benefits-section {
+  padding: 38px 5%;
+}
+
+.aurelle-hair-page .hair-signature-section {
+  min-height: 400px;
+}
+
+.aurelle-hair-page .hair-signature-image {
+  min-height: 400px;
+}
+
+.aurelle-hair-page .hair-final-cta {
+  background-position: center;
+  background-size: cover;
+}
+
+.aurelle-hair-page .hair-cta-content {
+  min-height: 220px;
+}
+
+/* TABLET */
+@media (max-width: 1050px) {
+  .aurelle-hair-page .hair-service-image {
+    height: 250px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .aurelle-hair-page .hair-hero {
+    min-height: 540px;
+    height: 75vh;
+  }
+
+  .aurelle-hair-page .hair-service-image {
+    height: 175px;
+  }
+
+  .aurelle-hair-page .hair-signature-image {
+    min-height: 290px;
+    height: 290px;
+  }
+}

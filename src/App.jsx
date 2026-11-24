@@ -24,6 +24,15 @@ import PedicureManicurePricing from './Pages/PricingSubPage/PedicureManicurePric
 import BodyTreatmentsPricing from './Pages/PricingSubPage/BodyTreatmentsPricing/BodyTreatmentsPricing'
 import PackagesPricing from './Pages/PricingSubPage/PackagesPricing/PackagesPricing'
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails'
+import HairStylingPage from './SubPage/HairStylingPage/HairStylingPage'
+import MensGroomingPage from './SubPage/MensGroomingPage/MensGroomingPage'
+import SkinFacialPage from './SubPage/SkinFacialPage/SkinFacialPage'
+import MakeupBridalPage from './SubPage/MakeupBridalPage/MakeupBridalPage'
+import NailStudioPage from './SubPage/NailStudioPage/NailStudioPage'
+import WaxingThreadingPage from './SubPage/WaxingThreadingPage/WaxingThreadingPage'
+import ManicurePedicurePage from './SubPage/ManicurePedicurePage/ManicurePedicurePage'
+import BodySpaPage from './SubPage/BodySpaPage/BodySpaPage'
+import BridalGroomPackagesPage from './SubPage/BridalGroomPackagesPage/BridalGroomPackagesPage'
 
 const App = () => {
   return (
@@ -63,7 +72,40 @@ const App = () => {
               <Route path="/offers" element={<Offers />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/booking" element={<Booking />} />
-              <Route path="/services/hair" element={<HairServices />} />
+              <Route
+  path="/services/hair"
+  element={<HairStylingPage />}
+/>
+<Route
+  path="/services/grooming"
+  element={<MensGroomingPage />}
+/>
+<Route
+  path="/services/skin"
+  element={<SkinFacialPage />}
+/>
+<Route
+  path="/services/makeup"
+  element={<MakeupBridalPage />}
+/>
+<Route
+  path="/services/nails"
+  element={<NailStudioPage />}
+/>
+<Route
+  path="/services/waxing"
+  element={<WaxingThreadingPage />}
+/>
+<Route
+  path="/services/pedicure"
+  element={<ManicurePedicurePage />}
+/>
+<Route
+  path="/services/body-spa"
+  element={<BodySpaPage />}
+/>
+
+              
               {/* <Route path="/services/:slug" element={<ServiceDetails />} /> */}
 
 

@@ -31,16 +31,19 @@ const navigation = [
    SERVICE LINKS
 ========================================= */
 
+
 const serviceLinks = [
   { name: "Hair & Styling", path: "/services/hair" },
-  { name: "Skin Care", path: "/services/skin" },
+  { name: "Men's Grooming", path: "/services/grooming" },
+  { name: "Skin & Facial Care", path: "/services/skin" },
   { name: "Makeup & Bridal", path: "/services/makeup" },
   { name: "Nail Studio", path: "/services/nails" },
-  { name: "Waxing & Threading", path: "/services/waxing-threading" },
-  { name: "Pedicure & Manicure", path: "/services/pedicure-manicure" },
-  { name: "Body Treatments", path: "/services/body-treatments" },
+  { name: "Waxing & Threading", path: "/services/waxing" },
+  { name: "Manicure & Pedicure", path: "/services/pedicure" },
+  { name: "Body & Spa", path: "/services/body-spa" },
   { name: "Bridal & Groom Packages", path: "/services/packages" },
 ];
+
 
 /* =========================================
    PRICING LINKS

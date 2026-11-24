@@ -98,7 +98,7 @@ export default function Hero() {
           preload="auto"
         >
           <source
-            src="/video/video1.mp4"
+            src="/video/video4.mp4"
             type="video/mp4"
           />
         </video>
