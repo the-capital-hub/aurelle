@@ -726,3 +726,71 @@
     font-size: 12px;
   }
 }
+
+/* =========================================
+   AURELLE MEN'S PRICING PAGE
+   RESPONSIVE IMPROVEMENTS
+========================================= */
+
+/* Hero spacing */
+.aurelle-mens-pricing .mgp-hero-inner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Better pricing row alignment */
+.aurelle-mens-pricing .mgp-price-row {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+}
+
+.aurelle-mens-pricing .mgp-price-name {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.aurelle-mens-pricing .mgp-price-row strong {
+  white-space: nowrap;
+}
+
+/* Long category names */
+.aurelle-mens-pricing .mgp-category-inner a {
+  overflow-wrap: anywhere;
+}
+
+/* Better package and information content */
+.aurelle-mens-pricing .mgp-info-content p {
+  overflow-wrap: anywhere;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .aurelle-mens-pricing .mgp-category-inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .aurelle-mens-pricing .mgp-service-details {
+    min-width: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .aurelle-mens-pricing .mgp-container {
+    width: calc(100% - 28px);
+  }
+
+  .aurelle-mens-pricing .mgp-price-row {
+    gap: 5px 8px;
+  }
+
+  .aurelle-mens-pricing .mgp-service-heading h3 {
+    font-size: 21px;
+  }
+
+  .aurelle-mens-pricing .mgp-info-content {
+    min-width: 0;
+  }
+}

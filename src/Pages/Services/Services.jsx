@@ -15,6 +15,7 @@ import {
   CalendarDays,
   UserRound,
   Gem,
+  Layers,
 } from "lucide-react";
 
 import "./Services.css";
@@ -22,98 +23,150 @@ import "./Services.css";
 gsap.registerPlugin(ScrollTrigger);
 
 /* =========================================
-   SERVICES DATA
+   WOMEN'S SERVICES
 ========================================= */
 
-const services = [
+const womenServices = [
   {
     id: 1,
     title: "Hair & Styling",
     description:
-      "Professional haircuts, creative styling, hair colouring and personalised hair care for every look.",
+      "Discover professional haircuts, styling, colouring, hair spa and specialised hair treatments.",
     image: "/images/services/01-hair-and-mens-grooming.jpg",
     icon: Scissors,
-    category: "hair",
+    slug: "hair",
+  },
+  {
+    id: 2,
+    title: "Skin & Facial Care",
+    description:
+      "Explore facial treatments, clean up and detan services for refreshed and healthy looking skin.",
+    image: "/images/services/02-skin-care.jpg",
+    icon: Flower2,
+    slug: "skin",
+  },
+  {
+    id: 3,
+    title: "Makeup & Bridal",
+    description:
+      "Professional party makeup, bridal makeup, hairstyling and occasion beauty services.",
+    image: "/images/services/03-makeup-and-bridal.jpg",
+    icon: Brush,
+    slug: "makeup",
+  },
+  {
+    id: 4,
+    title: "Nail Studio",
+    description:
+      "Explore gel polish, acrylic extensions, gel extensions and professional nail care.",
+    image: "/images/services/04-nail-studio.jpg",
+    icon: Gem,
+    slug: "nails",
+  },
+  {
+    id: 5,
+    title: "Waxing & Threading",
+    description:
+      "Professional Rica, Roll on and Brazilian waxing with detailed threading services.",
+    image: "/images/services/05-waxing-and-threading.jpg",
+    icon: Layers,
+    slug: "waxing",
+  },
+  {
+    id: 6,
+    title: "Manicure & Pedicure",
+    description:
+      "Discover Classic, Foot Logic, Ice Cream, Lotus Glow and Bubblegum Fresh treatments.",
+    image: "/images/services/06-pedicure-and-manicure.jpg",
+    icon: Hand,
+    slug: "pedicure",
+  },
+  {
+    id: 7,
+    title: "Body Treatments",
+    description:
+      "Professional full body massage and body polishing experiences.",
+    image: "/images/services/07-body-treatments.jpg",
+    icon: Sparkles,
+    slug: "body-spa",
+  },
+  {
+    id: 8,
+    title: "Pre Bridal Package",
+    description:
+      "A complete pre wedding beauty preparation experience with dedicated salon care.",
+    image: "/images/services/08-bridal-and-groom-packages.jpg",
+    icon: Heart,
+    slug: "packages",
+  },
+];
+
+/* =========================================
+   MEN'S SERVICES
+========================================= */
+
+const menServices = [
+  {
+    id: 1,
+    title: "Hair & Styling",
+    description:
+      "Professional haircuts, creative styling, hair colouring and personalised hair care.",
+    image: "/images/services/01-hair-and-mens-grooming.jpg",
+    icon: Scissors,
     slug: "hair",
   },
   {
     id: 2,
     title: "Men's Grooming",
     description:
-      "Expert men's haircuts, beard styling and premium grooming experiences designed for modern men.",
+      "Haircuts, beard trims, beard design, shaving and complete grooming services.",
     image: "/images/services/02-mens-grooming.png",
     icon: UserRound,
-    category: "grooming",
     slug: "grooming",
   },
   {
     id: 3,
-    title: "Skin & Facials",
+    title: "Skin & Facial Care",
     description:
-      "Professional facials, cleanups and personalised skincare treatments for healthy looking skin.",
+      "Professional facial treatments, clean up and detan services for men's skincare.",
     image: "/images/services/02-skin-care.jpg",
     icon: Flower2,
-    category: "skin",
     slug: "skin",
   },
   {
     id: 4,
-    title: "Makeup & Bridal",
-    description:
-      "Beautiful bridal, party and occasion makeup crafted to complement your personality and style.",
-    image: "/images/services/03-makeup-and-bridal.jpg",
-    icon: Brush,
-    category: "makeup",
-    slug: "makeup",
-  },
-  {
-    id: 5,
-    title: "Nail Studio",
-    description:
-      "Creative nail art, nail extensions and professional nail care for beautifully finished hands.",
-    image: "/images/services/04-nail-studio.jpg",
-    icon: Hand,
-    category: "nails",
-    slug: "nails",
-  },
-  {
-    id: 6,
-    title: "Waxing & Threading",
-    description:
-      "Professional hair removal and precise grooming services for a smooth and polished look.",
-    image: "/images/services/05-waxing-and-threading.jpg",
-    icon: Sparkles,
-    category: "waxing-threading",
-    slug: "waxing",
-  },
-  {
-    id: 7,
     title: "Manicure & Pedicure",
     description:
-      "Relaxing hand and foot care with premium treatments for complete grooming and comfort.",
+      "Classic, Foot Logic, Ice Cream, Lotus Glow and Bubblegum Fresh hand and foot care.",
     image: "/images/services/06-pedicure-and-manicure.jpg",
-    icon: Heart,
-    category: "pedicure-manicure",
+    icon: Hand,
     slug: "pedicure",
   },
   {
-    id: 8,
+    id: 5,
     title: "Body Treatments",
     description:
-      "Rejuvenating body care experiences designed to refresh your skin and help you unwind.",
+      "Full body massage and professional body polishing treatments.",
     image: "/images/services/07-body-treatments.jpg",
-    icon: Flower2,
-    category: "body-treatments",
+    icon: Sparkles,
     slug: "body-spa",
   },
   {
-    id: 9,
-    title: "Bridal & Groom Packages",
+    id: 6,
+    title: "Groom Makeup",
     description:
-      "Exclusive bridal and groom experiences for weddings, celebrations and special occasions.",
+      "Professional groom makeup for a refined and polished wedding look.",
+    image: "/images/services/03-makeup-and-bridal.jpg",
+    icon: Brush,
+    slug: "groom-makeup",
+  },
+  {
+    id: 7,
+    title: "Pre Groom Package",
+    description:
+      "A complete pre wedding grooming and personal care preparation experience.",
     image: "/images/services/08-bridal-and-groom-packages.jpg",
     icon: Gem,
-    category: "packages",
     slug: "packages",
   },
 ];
@@ -156,10 +209,10 @@ function Services() {
         opacity: 0,
         y: 35,
         duration: 0.85,
-        stagger: 0.12,
+        stagger: 0.08,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: ".services-grid",
+          trigger: ".services-collections",
           start: "top 80%",
           once: true,
         },
@@ -201,11 +254,85 @@ function Services() {
     };
   }, []);
 
+  /* REUSABLE SERVICE COLLECTION */
+
+  const renderServices = (items, audience) => (
+    <section className="services-list-section">
+      <div
+        className="services-section-heading"
+        style={{ margin: "20px" }}
+      >
+        <div className="services-eyebrow">
+          <span />
+          {audience === "women"
+            ? "WOMEN'S COLLECTION"
+            : "MEN'S COLLECTION"}
+          <span />
+        </div>
+
+        <h2>
+          {audience === "women" ? (
+            <>
+              Beauty & <em>Personal Care</em>
+            </>
+          ) : (
+            <>
+              Grooming & <em>Personal Care</em>
+            </>
+          )}
+        </h2>
+
+        <p>
+          {audience === "women"
+            ? "Discover our complete collection of women's beauty, hair, skin and personal care services."
+            : "Explore professional men's grooming, hair, skincare and personal care services."}
+        </p>
+      </div>
+
+      <div className="services-grid">
+        {items.map((service) => {
+          const Icon = service.icon;
+
+          return (
+            <Link
+              to={`/services/${audience}/${service.slug}`}
+              className="service-card"
+              key={`${audience}-${service.id}`}
+              aria-label={`Explore ${service.title}`}
+            >
+              <div className="service-card-image">
+                <img
+                  src={service.image}
+                  alt={`${service.title} at AURELLE`}
+                  loading="lazy"
+                />
+
+                <div className="service-card-overlay" />
+
+                <div className="service-card-icon">
+                  <Icon size={31} strokeWidth={1.3} />
+                </div>
+
+                <div className="service-card-title">
+                  <h2>{service.title}</h2>
+                  <p>{service.description}</p>
+                </div>
+
+                <div className="service-card-arrow">
+                  <ArrowRight size={25} />
+                </div>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+    </section>
+  );
+
   return (
     <main className="aurelle-services-page" ref={pageRef}>
-      {/* =====================================
-          HERO SECTION
-      ===================================== */}
+
+      {/* HERO SECTION */}
 
       <section className="services-hero">
         <div className="services-hero-background" />
@@ -224,12 +351,15 @@ function Services() {
             </h1>
 
             <p>
-              Discover exceptional hair styling, men's grooming
-              and beauty experiences crafted around your
-              personality and individual style.
+              Discover exceptional women's beauty services
+              and men's grooming experiences crafted around
+              your personality and individual style.
             </p>
 
-            <Link to="/booking" className="services-hero-button">
+            <Link
+              to="/booking"
+              className="services-hero-button"
+            >
               <span>BOOK YOUR EXPERIENCE</span>
               <ArrowRight size={19} />
             </Link>
@@ -245,70 +375,14 @@ function Services() {
         </div>
       </section>
 
-      {/* =====================================
-          SERVICES GRID
-      ===================================== */}
+      {/* WOMEN'S AND MEN'S COLLECTIONS */}
 
-      <section className="services-list-section">
-        <div className="services-section-heading" style={{margin:"20px"}}>
-          <div className="services-eyebrow">
-            <span />
-            EXPLORE OUR SERVICES
-            <span />
-          </div>
+      <div className="services-collections">
+        {renderServices(womenServices, "women")}
+        {renderServices(menServices, "men")}
+      </div>
 
-          <h2>
-            The Art of <em>Personal Care</em>
-          </h2>
-
-          <p>
-            From everyday grooming to special occasion styling,
-            experience professional care for every version of you.
-          </p>
-        </div>
-
-        <div className="services-grid">
-          {services.map((service) => {
-            const Icon = service.icon;
-
-            return (
-              <Link
-                to={`/services/${service.slug}`}
-                className="service-card"
-                key={service.id}
-                aria-label={`Explore ${service.title}`}
-              >
-                <div className="service-card-image">
-                  <img
-                    src={service.image}
-                    alt={`${service.title} at AURELLE`}
-                    loading="lazy"
-                  />
-
-                  <div className="service-card-overlay" />
-
-                  <div className="service-card-icon">
-                    <Icon size={31} strokeWidth={1.3} />
-                  </div>
-
-                  <div className="service-card-title">
-                    <h2>{service.title}</h2>
-                    <p>{service.description}</p>
-                  </div>
-
-                  <div className="service-card-arrow">
-                    <ArrowRight size={25} />
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* =====================================
-          WHY CHOOSE AURELLE
-      ===================================== */}
+      {/* WHY CHOOSE AURELLE */}
 
       <section className="services-benefits">
         <div className="services-benefits-image">
@@ -384,9 +458,7 @@ function Services() {
         </div>
       </section>
 
-      {/* =====================================
-          FINAL CTA
-      ===================================== */}
+      {/* FINAL CTA */}
 
       <section className="services-cta">
         <div className="services-cta-background" />
@@ -408,7 +480,10 @@ function Services() {
             beyond the ordinary.
           </p>
 
-          <Link to="/booking" className="services-cta-button">
+          <Link
+            to="/booking"
+            className="services-cta-button"
+          >
             <CalendarDays size={21} />
             BOOK AN APPOINTMENT
             <ArrowRight size={21} />

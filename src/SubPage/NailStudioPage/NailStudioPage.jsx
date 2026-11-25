@@ -16,10 +16,12 @@ import {
   ArrowRight,
   Palette,
   Fingerprint,
+  Paintbrush,
+  WandSparkles,
 } from "lucide-react";
 
+import "../HairStylingPage/HairStylingPage.css";
 
-import '../HairStylingPage/HairStylingPage.css'
 const serviceCategories = [
   { name: "Hair & Styling", slug: "hair", icon: Scissors },
   { name: "Men's Grooming", slug: "grooming", icon: UserRound },
@@ -35,35 +37,64 @@ const serviceCategories = [
 const nailServices = [
   {
     number: "01",
-    title: "Luxury Nail Art",
+    title: "Gel Polish",
     description:
-      "Creative nail designs with elegant details and personalised finishes.",
-    image: "/images/services/nails/nails-art.jpg",
-    alt: "Luxury artistic nail design",
+      "A polished nail finish with beautiful solid colour options.",
+    image: "/images/services/nails/nails-finish.jpg",
+    alt: "Professional gel polish nail finish",
+    icon: Palette,
+    services: [
+      "One Hand Gel Polish",
+    ],
   },
   {
     number: "02",
-    title: "Gel Nail Extensions",
+    title: "Acrylic Extensions",
     description:
-      "Beautifully shaped extensions with a smooth and polished appearance.",
+      "Professional acrylic nail extensions for a refined and elegant nail look.",
     image: "/images/services/nails/nails-extensions.jpg",
-    alt: "Professional gel nail extensions",
+    alt: "Professional acrylic nail extensions",
+    icon: Gem,
+    services: [
+      "One Hand Acrylic Extension",
+    ],
   },
   {
     number: "03",
-    title: "Classic Nail Care",
+    title: "Gel Extensions",
     description:
-      "Essential nail grooming with careful shaping and finishing.",
-    image: "/images/services/nails/nails-care.jpg",
-    alt: "Classic nail care treatment",
+      "Beautiful gel nail extensions with a smooth and polished appearance.",
+    image: "/images/services/nails/nails-extensions.jpg",
+    alt: "Professional gel nail extensions",
+    icon: WandSparkles,
+    services: [
+      "One Hand Gel Extension",
+    ],
   },
   {
     number: "04",
-    title: "Premium Nail Finish",
+    title: "Nail Polish Removal",
     description:
-      "A refined manicure experience with elegant colours and glossy finishes.",
-    image: "/images/services/nails/nails-finish.jpg",
-    alt: "Premium glossy nail finish",
+      "Professional removal service for existing gel polish.",
+    image: "/images/services/nails/nails-care.jpg",
+    alt: "Professional nail polish removal",
+    icon: Paintbrush,
+    services: [
+      "Gel Polish Remover",
+    ],
+  },
+  {
+    number: "05",
+    title: "Extension Removal",
+    description:
+      "Careful removal services for different types of nail extensions.",
+    image: "/images/services/nails/nails-care.jpg",
+    alt: "Professional nail extension removal",
+    icon: Scissors,
+    services: [
+      "Gel Extension Remover",
+      "Acrylic Extension Remover",
+    ],
   },
 ];
 
@@ -128,9 +159,9 @@ export default function NailStudioPage() {
           </h1>
 
           <p>
-            Discover elegant nail artistry, beautiful extensions
-            and personalised nail care crafted with precision
-            and creativity.
+            Discover professional gel polish, nail extensions
+            and removal services crafted with precision
+            and attention to detail.
           </p>
 
           <div className="hair-hero-actions">
@@ -192,46 +223,59 @@ export default function NailStudioPage() {
           </div>
 
           <p>
-            From understated elegance to creative nail designs,
-            explore professional nail services that combine
-            precision, creativity and personalised care.
+            Explore our nail menu, from gel polish and
+            professional extensions to specialised removal
+            services for your nail care needs.
           </p>
         </div>
 
         <div className="hair-service-grid">
-          {nailServices.map((service) => (
-            <article
-              className="hair-service-card"
-              key={service.number}
-            >
-              <div className="hair-service-image">
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  loading="lazy"
-                />
+          {nailServices.map((service) => {
+            const Icon = service.icon;
 
-                <span className="hair-service-number">
-                  {service.number}
-                </span>
-              </div>
+            return (
+              <article
+                className="hair-service-card"
+                key={service.number}
+              >
+                <div className="hair-service-image">
+                  <img
+                    src={service.image}
+                    alt={service.alt}
+                    loading="lazy"
+                  />
 
-              <div className="hair-service-info">
-                <div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                  <span className="hair-service-number">
+                    {service.number}
+                  </span>
                 </div>
 
-                <Link
-                  to="/booking"
-                  className="hair-card-arrow"
-                  aria-label={`Book ${service.title}`}
-                >
-                  <ArrowRight size={19} />
-                </Link>
-              </div>
-            </article>
-          ))}
+                <div className="hair-service-info">
+                  <div>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+
+                    <ul className="hair-service-list">
+                      {service.services.map((item) => (
+                        <li key={item}>
+                          <Icon size={14} strokeWidth={1.5} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Link
+                    to="/pricing/nails"
+                    className="hair-card-arrow"
+                    aria-label={`View ${service.title} pricing`}
+                  >
+                    <ArrowRight size={19} />
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -272,7 +316,7 @@ export default function NailStudioPage() {
         <div className="hair-signature-image">
           <img
             src="/images/services/nails/nails-signature.jpg"
-            alt="AURELLE signature nail experience"
+            alt="AURELLE professional nail care experience"
             loading="lazy"
           />
         </div>
@@ -289,16 +333,16 @@ export default function NailStudioPage() {
           </h2>
 
           <p>
-            Experience personalised nail artistry with
-            carefully selected colours, refined detailing
-            and a beautifully polished finish.
+            Experience personalised nail care with carefully
+            selected solid colours, professional extensions
+            and refined finishing options.
           </p>
 
           <Link
-            to="/booking"
+            to="/pricing/nails"
             className="hair-button hair-button-light"
           >
-            Explore Experience <ArrowRight size={17} />
+            Explore Nail Pricing <ArrowRight size={17} />
           </Link>
         </div>
       </section>

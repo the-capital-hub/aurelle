@@ -1,9 +1,13 @@
+
 import React from 'react'
+import { Route, Routes, Navigate } from 'react-router-dom'
+
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import AIFloatingButton from './components/AIFloatingButton/AIFloatingButton'
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton'
-import { Route, Routes } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+
 import Home from './Pages/Home/Home'
 import About from './Pages/About/About'
 import Services from './Pages/Services/Services'
@@ -13,8 +17,22 @@ import Pricing from './Pages/Pricing/Pricing'
 import Offers from './Pages/Offers/Offers'
 import Contact from './Pages/Contact/Contact'
 import Booking from './Pages/Booking/Booking'
-import HairServices from './SubPage/HairServices/HairServices'
-import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+
+// Women's service pages
+import HairStylingPage from './SubPage/HairStylingPage/HairStylingPage'
+import SkinFacialPage from './SubPage/SkinFacialPage/SkinFacialPage'
+import MakeupBridalPage from './SubPage/MakeupBridalPage/MakeupBridalPage'
+import NailStudioPage from './SubPage/NailStudioPage/NailStudioPage'
+import WaxingThreadingPage from './SubPage/WaxingThreadingPage/WaxingThreadingPage'
+import ManicurePedicurePage from './SubPage/ManicurePedicurePage/ManicurePedicurePage'
+import BodySpaPage from './SubPage/BodySpaPage/BodySpaPage'
+import BridalGroomPackagesPage from './SubPage/BridalGroomPackagesPage/BridalGroomPackagesPage'
+
+// Men's service pages
+import MensGroomingPage from './SubPage/MensGroomingPage/MensGroomingPage'
+import MensSkinCarePage from './SubPage/MensSkinCarePage/MensSkinCarePage'
+
+// Women's pricing pages
 import HairPricing from './Pages/PricingSubPage/HairPricing/HairPricing'
 import FacialPricing from './Pages/PricingSubPage/FacialPricing/FacialPricing'
 import MakeupPricing from './Pages/PricingSubPage/MakeupPricing/MakeupPricing'
@@ -23,116 +41,101 @@ import WaxingPricing from './Pages/PricingSubPage/WaxingPricing/WaxingPricing'
 import PedicureManicurePricing from './Pages/PricingSubPage/PedicureManicurePricing/PedicureManicurePricing'
 import BodyTreatmentsPricing from './Pages/PricingSubPage/BodyTreatmentsPricing/BodyTreatmentsPricing'
 import PackagesPricing from './Pages/PricingSubPage/PackagesPricing/PackagesPricing'
-import ServiceDetails from './Pages/ServiceDetails/ServiceDetails'
-import HairStylingPage from './SubPage/HairStylingPage/HairStylingPage'
-import MensGroomingPage from './SubPage/MensGroomingPage/MensGroomingPage'
-import SkinFacialPage from './SubPage/SkinFacialPage/SkinFacialPage'
-import MakeupBridalPage from './SubPage/MakeupBridalPage/MakeupBridalPage'
-import NailStudioPage from './SubPage/NailStudioPage/NailStudioPage'
-import WaxingThreadingPage from './SubPage/WaxingThreadingPage/WaxingThreadingPage'
-import ManicurePedicurePage from './SubPage/ManicurePedicurePage/ManicurePedicurePage'
-import BodySpaPage from './SubPage/BodySpaPage/BodySpaPage'
-import BridalGroomPackagesPage from './SubPage/BridalGroomPackagesPage/BridalGroomPackagesPage'
+
+// Men's pricing pages
 import MensGroomingPricing from './Pages/PricingSubPage/MensGroomingPricing/MensGroomingPricing'
-import MensSkinCarePage from './SubPage/MensSkinCarePage/MensSkinCarePage'
+import MensHairPage from './SubPage/MensHairPage/MensHairPage'
 
 const App = () => {
   return (
     <>
-    <Navbar/>
-    <ScrollToTop/>
+      <Navbar />
+      <ScrollToTop />
 
-    <main>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='about' element={<About/>}/>
+      <main>
+        <Routes>
+          {/* Main pages */}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-            <Route path="/team" element={<Team />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/pricing/hair" element={<HairPricing />} />
-              <Route
-  path="/pricing/grooming"
-  element={<MensGroomingPricing />}
-/>
-              <Route path="/pricing/skin" element={<FacialPricing />} />
-              <Route path="/pricing/makeup" element={<MakeupPricing />} />
-              <Route path="/pricing/nails" element={<NailPricing />} />
-              <Route
-  path="/pricing/waxing-threading"
-  element={<WaxingPricing />}
-/>
-<Route
-  path="/pricing/pedicure-manicure"
-  element={<PedicureManicurePricing />}
-/>
-<Route
-  path="/pricing/body-treatments"
-  element={<BodyTreatmentsPricing />}
+          <Route path="/team" element={<Team />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/booking" element={<Booking />} />
 
-/>
-<Route
-  path="/pricing/packages"
-  element={<PackagesPricing />}
-/>
-              <Route path="/offers" element={<Offers />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/booking" element={<Booking />} />
-              <Route
-  path="/services/hair"
-  element={<HairStylingPage />}
-/>
-<Route
-  path="/services/grooming"
-  element={<MensGroomingPage />}
-/>
-<Route
-  path="/services/mens-skin"
-  element={<MensSkinCarePage />}
-/>
-<Route
-  path="/services/skin"
-  element={<SkinFacialPage />}
-/>
-<Route
-  path="/services/makeup"
-  element={<MakeupBridalPage />}
-/>
-<Route
-  path="/services/nails"
-  element={<NailStudioPage />}
-/>
-<Route
-  path="/services/waxing"
-  element={<WaxingThreadingPage />}
-/>
-<Route
-  path="/services/pedicure"
-  element={<ManicurePedicurePage />}
-/>
-<Route
-  path="/services/body-spa"
-  element={<BodySpaPage />}
-/>
-<Route
-  path="/services/packages"
-  element={<BridalGroomPackagesPage />}
-/>
+          {/* WOMEN'S SERVICES */}
+          <Route path="/services/women/hair" element={<HairStylingPage />} />
+          <Route path="/services/women/skin" element={<SkinFacialPage />} />
+          <Route path="/services/women/makeup" element={<MakeupBridalPage />} />
+          <Route path="/services/women/nails" element={<NailStudioPage />} />
+          <Route path="/services/women/waxing" element={<WaxingThreadingPage />} />
+          <Route path="/services/women/pedicure" element={<ManicurePedicurePage />} />
+          <Route path="/services/women/body-spa" element={<BodySpaPage />} />
+          <Route path="/services/women/packages" element={<BridalGroomPackagesPage />} />
 
-              
-              {/* <Route path="/services/:slug" element={<ServiceDetails />} /> */}
+          {/* MEN'S SERVICES */}
+          <Route path="/services/men/hair" element={<MensGroomingPage />} />
+          <Route path="/services/men/grooming" element={<MensGroomingPage />} />
+          <Route path="/services/men/skin" element={<MensSkinCarePage />} />
+          <Route path="/services/men/pedicure" element={<ManicurePedicurePage />} />
+          <Route path="/services/men/body-spa" element={<BodySpaPage />} />
+          <Route path="/services/men/groom-makeup" element={<MakeupBridalPage />} />
+          <Route path="/services/men/packages" element={<BridalGroomPackagesPage />} />
 
+          {/* WOMEN'S PRICING */}
+          <Route path="/pricing/women/hair" element={<HairPricing />} />
+          <Route path="/pricing/women/skin" element={<FacialPricing />} />
+          <Route path="/pricing/women/makeup" element={<MakeupPricing />} />
+          <Route path="/pricing/women/nails" element={<NailPricing />} />
+          <Route path="/pricing/women/waxing-threading" element={<WaxingPricing />} />
+          <Route path="/pricing/women/pedicure-manicure" element={<PedicureManicurePricing />} />
+          <Route path="/pricing/women/body-treatments" element={<BodyTreatmentsPricing />} />
+          <Route path="/pricing/women/packages" element={<PackagesPricing />} />
 
+          {/* MEN'S PRICING */}
+          <Route path="/pricing/men/hair" element={<MensGroomingPricing />} />
+          <Route path="/services/men/hair" element={<MensHairPage />} />
 
-      </Routes>
-    </main>
+          <Route path="/pricing/men/grooming" element={<MensGroomingPricing />} />
+          <Route path="/pricing/men/skin" element={<FacialPricing />} />
+          <Route path="/pricing/men/pedicure-manicure" element={<PedicureManicurePricing />} />
+          <Route path="/pricing/men/body-treatments" element={<BodyTreatmentsPricing />} />
+          <Route path="/pricing/men/groom-makeup" element={<MakeupPricing />} />
+          <Route path="/pricing/men/packages" element={<PackagesPricing />} />
 
+          {/* OLD SERVICE URL REDIRECTS */}
+          <Route path="/services/hair" element={<Navigate to="/services/women/hair" replace />} />
+          <Route path="/services/grooming" element={<Navigate to="/services/men/grooming" replace />} />
+          <Route path="/services/mens-skin" element={<Navigate to="/services/men/skin" replace />} />
+          <Route path="/services/skin" element={<Navigate to="/services/women/skin" replace />} />
+          <Route path="/services/makeup" element={<Navigate to="/services/women/makeup" replace />} />
+          <Route path="/services/nails" element={<Navigate to="/services/women/nails" replace />} />
+          <Route path="/services/waxing" element={<Navigate to="/services/women/waxing" replace />} />
+          <Route path="/services/pedicure" element={<Navigate to="/services/women/pedicure" replace />} />
+          <Route path="/services/body-spa" element={<Navigate to="/services/women/body-spa" replace />} />
+          <Route path="/services/packages" element={<Navigate to="/services/women/packages" replace />} />
 
+          {/* OLD PRICING URL REDIRECTS */}
+          <Route path="/pricing/hair" element={<Navigate to="/pricing/women/hair" replace />} />
+          <Route path="/pricing/grooming" element={<Navigate to="/pricing/men/grooming" replace />} />
+          <Route path="/pricing/skin" element={<Navigate to="/pricing/women/skin" replace />} />
+          <Route path="/pricing/makeup" element={<Navigate to="/pricing/women/makeup" replace />} />
+          <Route path="/pricing/nails" element={<Navigate to="/pricing/women/nails" replace />} />
+          <Route path="/pricing/waxing-threading" element={<Navigate to="/pricing/women/waxing-threading" replace />} />
+          <Route path="/pricing/pedicure-manicure" element={<Navigate to="/pricing/women/pedicure-manicure" replace />} />
+          <Route path="/pricing/body-treatments" element={<Navigate to="/pricing/women/body-treatments" replace />} />
+          <Route path="/pricing/packages" element={<Navigate to="/pricing/women/packages" replace />} />
 
+          {/* Fallback */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
 
-    <AIFloatingButton/>
-    <Footer/>
-    <WhatsAppButton/>
+      <AIFloatingButton />
+      <Footer />
+      <WhatsAppButton />
     </>
   )
 }

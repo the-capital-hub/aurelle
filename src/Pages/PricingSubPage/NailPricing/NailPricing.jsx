@@ -13,6 +13,8 @@ import {
   Info,
   ChevronLeft,
   Fingerprint,
+  Scissors,
+  Brush,
 } from "lucide-react";
 
 import "./NailPricing.css";
@@ -44,45 +46,67 @@ const nailServices = [
   {
     id: "gel-polish",
     number: "01",
-    title: "Gel Polish",
+    title: "One Hand Gel Polish",
     label: "GLOSSY NAIL FINISH",
     description:
-      "Give your nails a smooth, glossy finish with a beautiful gel polish application.",
-    price: "₹800",
+      "Give your nails a smooth, glossy finish with a beautiful solid colour gel polish application.",
+    price: "₹600",
     image: "/images/pricing/gel-polish.jpg",
     icon: Sparkles,
   },
   {
     id: "acrylic-extension",
     number: "02",
-    title: "Acrylic Extension",
+    title: "One Hand Acrylic Extension",
     label: "LENGTH AND ELEGANCE",
     description:
       "Enhance your nail length and shape with professionally crafted acrylic extensions.",
-    price: "₹2,800",
+    price: "₹2,000",
     image: "/images/pricing/acrylic-extension.jpg",
     icon: Gem,
   },
   {
     id: "gel-extension",
     number: "03",
-    title: "Gel Extension",
+    title: "One Hand Gel Extension",
     label: "BEAUTIFUL NAIL LENGTH",
     description:
       "Achieve an elegant nail look with beautifully shaped gel extensions.",
-    price: "₹1,900",
+    price: "₹1,000",
     image: "/images/pricing/gel-extension.jpg",
     icon: Fingerprint,
   },
   {
-    id: "gel-overlay",
+    id: "gel-polish-remover",
     number: "04",
-    title: "Gel Overlay",
-    label: "NATURAL NAIL ENHANCEMENT",
+    title: "Gel Polish Remover",
+    label: "POLISH REMOVAL",
     description:
-      "Add a polished finish and an enhanced appearance to your natural nails.",
-    price: "₹1,500",
+      "Professional removal service for existing gel polish.",
+    price: "₹800",
     image: "/images/pricing/gel-overlay.jpg",
+    icon: Brush,
+  },
+  {
+    id: "gel-extension-remover",
+    number: "05",
+    title: "Gel Extension Remover",
+    label: "GEL EXTENSION REMOVAL",
+    description:
+      "Careful removal service for existing gel nail extensions.",
+    price: "₹1,000",
+    image: "/images/pricing/gel-extension.jpg",
+    icon: Scissors,
+  },
+  {
+    id: "acrylic-extension-remover",
+    number: "06",
+    title: "Acrylic Extension Remover",
+    label: "ACRYLIC EXTENSION REMOVAL",
+    description:
+      "Professional removal service for existing acrylic nail extensions.",
+    price: "₹1,500",
+    image: "/images/pricing/acrylic-extension.jpg",
     icon: Hand,
   },
 ];
@@ -121,7 +145,7 @@ function NailServiceCard({ service }) {
         <div className="nail-card-bottom">
           <strong>{service.price}</strong>
 
-          <a href="/contact" className="nail-book-link">
+          <a href="/booking" className="nail-book-link">
             Book Now
             <ArrowRight size={16} />
           </a>
@@ -150,7 +174,7 @@ export default function NailPricing() {
           <div className="nail-hero-content">
             <span className="nail-eyebrow">
               <span />
-              PK NAIL STUDIO
+              AURELLE NAIL STUDIO
             </span>
 
             <h1>
@@ -159,11 +183,15 @@ export default function NailPricing() {
             </h1>
 
             <p>
-              Discover beautiful nail styling, premium extensions
-              and elegant finishes crafted to complement your style.
+              Discover beautiful nail styling, professional
+              extensions and elegant finishes crafted to
+              complement your style.
             </p>
 
-            <a href="#nail-services" className="nail-primary-button">
+            <a
+              href="#nail-services"
+              className="nail-primary-button"
+            >
               Explore Nail Services
               <ArrowRight size={18} />
             </a>
@@ -213,8 +241,8 @@ export default function NailPricing() {
             </h2>
 
             <p>
-              Explore our nail studio services and find the
-              perfect finish for your personal style.
+              Explore our nail studio services, from gel polish
+              and professional extensions to specialised removal.
             </p>
           </div>
 
@@ -235,7 +263,7 @@ export default function NailPricing() {
             </div>
 
             <div>
-              <span>THE PK NAIL EXPERIENCE</span>
+              <span>THE AURELLE NAIL EXPERIENCE</span>
               <h3>Every Detail Deserves Attention</h3>
               <p>
                 From nail shape to the final finish, enjoy
@@ -255,13 +283,19 @@ export default function NailPricing() {
             <div className="nail-info-details">
               <p>
                 <Check size={16} />
-                All listed prices are subject to 18% GST.
+                Listed prices are for solid colours.
               </p>
 
               <p>
                 <Check size={16} />
-                Final nail design and customisation can be
-                discussed during your appointment.
+                Nail art, stones, chrome and matte finishing
+                may have additional charges.
+              </p>
+
+              <p>
+                <Check size={16} />
+                Please confirm your preferred design and
+                customisation before booking.
               </p>
             </div>
           </div>
@@ -289,10 +323,10 @@ export default function NailPricing() {
 
             <p>
               Book your nail appointment and discover
-              beautiful styling at PK Unisex Salon.
+              beautiful styling at AURELLE.
             </p>
 
-            <a href="/contact" className="nail-primary-button">
+            <a href="/booking" className="nail-primary-button">
               <CalendarDays size={18} />
               Book an Appointment
               <ArrowRight size={18} />

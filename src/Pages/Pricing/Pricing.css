@@ -620,3 +620,49 @@
     min-height: auto;
   }
 }
+
+/* =========================================
+   WOMEN AND MEN PRICING COLLECTIONS
+========================================= */
+
+.pk-pricing-category-group {
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.pk-pricing-category-group:last-of-type {
+  margin-bottom: 25px;
+}
+
+.pk-pricing-category-group .pk-pricing-section-heading {
+  margin-bottom: 25px;
+}
+
+.pk-pricing-category-group .pk-pricing-section-heading h2 {
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+
+.pk-pricing-category-group .pk-pricing-section-heading h2 em {
+  color: #c0c0c0;
+  font-weight: 400;
+}
+
+.pk-pricing-category-group .pk-pricing-section-heading p {
+  color: #c0c0c0;
+}
+
+.pk-pricing-category-group .pk-pricing-eyebrow {
+  color: #c0c0c0;
+}
+
+@media (max-width: 700px) {
+  .pk-pricing-category-group {
+    margin-bottom: 25px;
+  }
+
+  .pk-pricing-category-group .pk-pricing-section-heading {
+    margin-bottom: 18px;
+  }
+}

@@ -4,99 +4,130 @@ import {
   Scissors,
   UserRound,
   Sparkles,
-  Brush,
-  Gem,
-  Layers,
-  Hand,
-  Flower2,
-  Heart,
+  Droplets,
   ShieldCheck,
   Star,
   CalendarDays,
   ArrowRight,
-  Droplets,
+  Palette,
+  Wind,
+  Hand,
+  Flower2,
+  Gem,
 } from "lucide-react";
 
 import "../HairServices/HairServices.css";
 
+/* MEN'S CATEGORY NAVIGATION */
+
 const serviceCategories = [
-  
- 
+  { name: "Hair & Styling", slug: "hair", icon: Scissors },
+  { name: "Men's Grooming", slug: "grooming", icon: UserRound },
+  { name: "Skin & Facial", slug: "skin", icon: Sparkles },
+  { name: "Manicure & Pedicure", slug: "pedicure", icon: Hand },
+  { name: "Body Treatments", slug: "body-spa", icon: Flower2 },
+  { name: "Groom Makeup", slug: "groom-makeup", icon: Gem },
+  { name: "Pre Groom Package", slug: "packages", icon: Star },
 ];
+
+/* MEN'S SERVICE COLLECTION */
 
 const groomingServices = [
   {
     number: "01",
-    title: "Precision Haircut",
+    title: "Hair Cut & Style",
     description:
-      "Contemporary cuts and personalised styles for a sharp, confident look.",
+      "Kids Hair Cut, Hair Cut, Beard Trim, Beard Design, Shaving, Hair Cut & Beard, and Hair Wash & Setting.",
     image: "/images/services/grooming/grooming-haircut.jpg",
-    alt: "Indian man receiving a precision haircut",
+    alt: "Professional men's haircut at AURELLE",
+    icon: Scissors,
   },
   {
     number: "02",
-    title: "Beard Styling",
+    title: "Head Massage",
     description:
-      "Expert beard shaping, trimming and detailing for a refined finish.",
+      "Classic Head Massage, Relaxing Head Massage, Premium Hot Oil Massage and Moroccan Oil Massage.",
     image: "/images/services/grooming/grooming-beard.jpg",
-    alt: "Professional beard styling",
+    alt: "Relaxing professional head massage experience",
+    icon: UserRound,
   },
   {
     number: "03",
-    title: "Hair & Scalp Care",
+    title: "Hair Spa",
     description:
-      "Refreshing treatments focused on scalp care and healthy looking hair.",
+      "Spa Essence, Tribond, Luxe Rejuvenation, Reborn, Royal Bliss, Moroccan Oil and Korean Hair Spa, along with scalp care treatments.",
     image: "/images/services/grooming/grooming-hairspa.jpg",
-    alt: "Men's hair and scalp treatment",
+    alt: "Premium men's hair spa treatment",
+    icon: Droplets,
   },
   {
     number: "04",
-    title: "Complete Grooming",
+    title: "Hair Rebonding",
     description:
-      "A coordinated grooming experience for your everyday and special occasions.",
+      "Straightening & Smoothening, Permanent Blowdry, Keratin Treatment, Nanoplastia and Botox Treatment.",
     image: "/images/services/grooming/grooming-complete.jpg",
-    alt: "Premium men's grooming experience",
+    alt: "Professional men's hair rebonding treatment",
+    icon: Wind,
+  },
+  {
+    number: "05",
+    title: "Hair Colouring",
+    description:
+      "Per Streak, Global Colour, Global Colour Without Ammonia, Highlights and Beard Colouring.",
+    image: "/images/services/grooming/grooming-haircut.jpg",
+    alt: "Professional men's hair colouring",
+    icon: Palette,
   },
 ];
+
+/* BENEFITS */
 
 const benefits = [
   {
     icon: Star,
-    title: "Skilled Barbers",
-    description: "Professional grooming with attention to every detail.",
+    title: "Skilled Professionals",
+    description:
+      "Professional hair and grooming care with attention to detail.",
   },
   {
     icon: Scissors,
     title: "Precision Styling",
-    description: "Haircuts shaped around your features and preferences.",
+    description:
+      "Haircuts and styling designed around your preferences.",
   },
   {
     icon: Droplets,
-    title: "Quality Products",
-    description: "Professional products for hair, beard and scalp care.",
+    title: "Professional Care",
+    description:
+      "Hair spa and scalp treatments for your hair care needs.",
   },
   {
     icon: ShieldCheck,
-    title: "Clean Experience",
-    description: "A comfortable salon environment and careful hygiene.",
+    title: "Clean Environment",
+    description:
+      "A comfortable salon experience with careful hygiene.",
   },
   {
     icon: UserRound,
-    title: "Personalised Care",
-    description: "Grooming services tailored to your individual style.",
+    title: "Personalised Service",
+    description:
+      "Choose services according to your individual requirements.",
   },
 ];
+
+/* MEN'S GROOMING PAGE */
 
 export default function MensGroomingPage() {
   return (
     <main className="aurelle-hair-page">
 
       {/* HERO SECTION */}
+
       <section className="hair-hero">
         <div className="hair-hero-image">
           <img
             src="/images/services/grooming/grooming-hero.jpg"
-            alt="AURELLE men's luxury grooming"
+            alt="AURELLE men's grooming collection"
           />
         </div>
 
@@ -120,13 +151,18 @@ export default function MensGroomingPage() {
           </h1>
 
           <p>
-            Precision haircuts, refined beard styling and
-            personalised grooming for a confident, polished look.
+            Discover professional haircuts, premium hair spa,
+            scalp care, hair colouring and personalised
+            grooming experiences at AURELLE.
           </p>
 
           <div className="hair-hero-actions">
-            <Link to="/booking" className="hair-button hair-button-light">
-              Book This Service <ArrowRight size={17} />
+            <Link
+              to="/booking"
+              className="hair-button hair-button-light"
+            >
+              Book This Service
+              <ArrowRight size={17} />
             </Link>
 
             <a
@@ -140,6 +176,7 @@ export default function MensGroomingPage() {
       </section>
 
       {/* CATEGORY NAVIGATION */}
+
       <section className="hair-category-section">
         <div className="hair-category-list">
           {serviceCategories.map((category) => {
@@ -148,7 +185,7 @@ export default function MensGroomingPage() {
             return (
               <Link
                 key={category.slug}
-                to={`/services/${category.slug}`}
+                to={`/services/men/${category.slug}`}
                 className={`hair-category-item ${
                   category.slug === "grooming" ? "active" : ""
                 }`}
@@ -161,7 +198,8 @@ export default function MensGroomingPage() {
         </div>
       </section>
 
-      {/* GROOMING SERVICES */}
+      {/* SERVICE COLLECTION */}
+
       <section
         className="hair-services-section"
         id="grooming-services"
@@ -169,61 +207,72 @@ export default function MensGroomingPage() {
         <div className="hair-section-heading">
           <div>
             <span className="hair-eyebrow">
-              THE ART OF MEN'S GROOMING
+              THE AURELLE MEN'S COLLECTION
             </span>
 
             <h2>
-              Refined Grooming
+              Professional Care
               <br />
               <span>Made Personal</span>
             </h2>
           </div>
 
           <p>
-            From precision haircuts to detailed beard styling,
-            discover professional grooming services designed
-            around your features, lifestyle and personal style.
+            From everyday haircuts to advanced hair treatments,
+            explore our complete range of men's hair and
+            grooming services.
           </p>
         </div>
 
         <div className="hair-service-grid">
-          {groomingServices.map((service) => (
-            <article
-              className="hair-service-card"
-              key={service.number}
-            >
-              <div className="hair-service-image">
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  loading="lazy"
-                />
+          {groomingServices.map((service) => {
+            const Icon = service.icon;
 
-                <span className="hair-service-number">
-                  {service.number}
-                </span>
-              </div>
+            return (
+              <article
+                className="hair-service-card"
+                key={service.number}
+              >
+                <div className="hair-service-image">
+                  <img
+                    src={service.image}
+                    alt={service.alt}
+                    loading="lazy"
+                  />
 
-              <div className="hair-service-info">
-                <div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                  <span className="hair-service-number">
+                    {service.number}
+                  </span>
                 </div>
 
-                <Link
-                  to="/booking"
-                  className="hair-card-arrow"
-                  aria-label={`Book ${service.title}`}
-                >
-                  <ArrowRight size={19} />
-                </Link>
-              </div>
-            </article>
-          ))}
+                <div className="hair-service-info">
+                  <div>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                  </div>
+
+                  <span className="hair-card-arrow">
+                    <Icon size={19} />
+                  </span>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="hair-pricing-link">
+          <Link
+            to="/pricing/men/grooming"
+            className="hair-button hair-button-light"
+          >
+            View Men's Price Menu
+            <ArrowRight size={17} />
+          </Link>
         </div>
       </section>
 
       {/* WHY CHOOSE AURELLE */}
+
       <section className="hair-benefits-section">
         <div className="hair-benefits-title">
           <span className="hair-eyebrow">
@@ -256,11 +305,12 @@ export default function MensGroomingPage() {
       </section>
 
       {/* SIGNATURE GROOMING */}
+
       <section className="hair-signature-section">
         <div className="hair-signature-image">
           <img
             src="/images/services/grooming/grooming-signature.jpg"
-            alt="AURELLE signature men's grooming"
+            alt="AURELLE signature men's grooming experience"
             loading="lazy"
           />
         </div>
@@ -277,21 +327,23 @@ export default function MensGroomingPage() {
           </h2>
 
           <p>
-            A considered grooming experience combining
-            precision styling, beard detailing and refreshing
-            care to help you look and feel your best.
+            Experience professional hair care and grooming
+            in a refined salon environment. Discover services
+            selected around your personal style and needs.
           </p>
 
           <Link
             to="/booking"
             className="hair-button hair-button-light"
           >
-            Explore Experience <ArrowRight size={17} />
+            Book Your Experience
+            <ArrowRight size={17} />
           </Link>
         </div>
       </section>
 
       {/* FINAL CTA */}
+
       <section className="hair-final-cta">
         <div className="hair-cta-content">
           <div>
@@ -302,8 +354,8 @@ export default function MensGroomingPage() {
             <h2>Make Every Detail Count.</h2>
 
             <p>
-              Experience professional men's grooming
-              at AURELLE. Your next look starts here.
+              Discover professional men's grooming
+              at AURELLE. Your next experience starts here.
             </p>
           </div>
 

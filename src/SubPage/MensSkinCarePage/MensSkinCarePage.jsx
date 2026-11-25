@@ -9,54 +9,97 @@ import {
   Layers,
   Hand,
   Flower2,
-  Heart,
-  ShieldCheck,
   Star,
   CalendarDays,
   ArrowRight,
   Droplets,
-  Sun,
-  Waves,
+  ShieldCheck,
 } from "lucide-react";
 
 import "../HairServices/HairServices.css";
 
 const serviceCategories = [
-  
+  { name: "Hair & Styling", slug: "hair", icon: Scissors },
+  { name: "Men's Grooming", slug: "grooming", icon: UserRound },
+  { name: "Skin & Facial", slug: "skin", icon: Sparkles },
+  { name: "Manicure & Pedicure", slug: "pedicure", icon: Hand },
+  { name: "Body Treatments", slug: "body-spa", icon: Flower2 },
+  { name: "Groom Makeup", slug: "groom-makeup", icon: Brush },
+  { name: "Pre Groom Package", slug: "packages", icon: Gem },
 ];
 
 const mensSkinServices = [
   {
     number: "01",
-    title: "Men's Deep Cleansing Facial",
+    title: "Refreshing Glow Facial",
     description:
-      "A refreshing facial experience designed to cleanse, refresh and improve the appearance of men's skin.",
+      "A refreshing facial experience designed to enhance the appearance of your skin and leave it looking radiant.",
     image: "/images/services/mens-skin/mens-deep-cleansing.jpg",
-    alt: "Indian man receiving a professional deep cleansing facial",
+    alt: "Professional refreshing glow facial treatment",
   },
   {
     number: "02",
-    title: "Charcoal Detox Facial",
+    title: "O3 Radiance Glow",
     description:
-      "A refreshing skincare treatment designed for a deep cleansing experience and a revitalised appearance.",
+      "A premium facial experience designed to refresh the skin and enhance its natural looking radiance.",
     image: "/images/services/mens-skin/mens-charcoal-facial.jpg",
-    alt: "Man receiving a charcoal facial treatment",
+    alt: "Professional O3 radiance facial treatment",
   },
   {
     number: "03",
-    title: "Tan Removal Treatment",
+    title: "Skin Lightening Whitening",
     description:
-      "A targeted skincare experience designed to improve the appearance of sun exposed and uneven looking skin.",
+      "A specialised facial experience focused on improving the appearance of uneven skin tone.",
     image: "/images/services/mens-skin/mens-tan-removal.jpg",
-    alt: "Professional tan removal facial treatment for men",
+    alt: "Professional skin lightening facial treatment",
   },
   {
     number: "04",
-    title: "Hydrating Men's Facial",
+    title: "Hydra Facial",
     description:
-      "A nourishing facial experience designed to replenish moisture and leave skin feeling refreshed.",
+      "A hydrating skincare experience designed to leave your skin feeling refreshed and nourished.",
     image: "/images/services/mens-skin/mens-hydrating-facial.jpg",
-    alt: "Man enjoying a hydrating facial treatment",
+    alt: "Professional Hydra facial treatment",
+  },
+  {
+    number: "05",
+    title: "Hydra Frequency",
+    description:
+      "A specialised facial experience designed to support a refreshed and revitalised skin appearance.",
+    image: "/images/services/mens-skin/mens-deep-cleansing.jpg",
+    alt: "Professional Hydra Frequency facial treatment",
+  },
+  {
+    number: "06",
+    title: "Korean Glass Facial",
+    description:
+      "A premium skincare experience inspired by the smooth, luminous look of glass skin.",
+    image: "/images/services/mens-skin/mens-charcoal-facial.jpg",
+    alt: "Korean glass facial treatment",
+  },
+  {
+    number: "07",
+    title: "Double Chin Treatment (RF)",
+    description:
+      "A targeted treatment focused on the appearance of the double chin area.",
+    image: "/images/services/mens-skin/mens-tan-removal.jpg",
+    alt: "Professional double chin treatment",
+  },
+  {
+    number: "08",
+    title: "Jawline Shape Treatment",
+    description:
+      "A specialised treatment focused on enhancing the appearance of the jawline.",
+    image: "/images/services/mens-skin/mens-hydrating-facial.jpg",
+    alt: "Professional jawline treatment",
+  },
+  {
+    number: "09",
+    title: "Under Eye (Dark Circle) Treatment",
+    description:
+      "A targeted skincare experience designed for the delicate under eye area.",
+    image: "/images/services/mens-skin/mens-deep-cleansing.jpg",
+    alt: "Professional under eye treatment",
   },
 ];
 
@@ -65,7 +108,7 @@ const benefits = [
     icon: Star,
     title: "Skilled Skin Experts",
     description:
-      "Professional skincare services with attention to men's individual needs.",
+      "Professional skincare services with attention to individual skin care needs.",
   },
   {
     icon: Droplets,
@@ -89,7 +132,7 @@ const benefits = [
     icon: UserRound,
     title: "Men's Skin Care",
     description:
-      "Dedicated facial and skincare experiences designed for men.",
+      "Dedicated facial and skincare experiences for men.",
   },
 ];
 
@@ -127,8 +170,8 @@ export default function MensSkinCarePage() {
 
           <p>
             Refresh your appearance with professional
-            facials, deep cleansing and personalised
-            skincare experiences designed for modern men.
+            facials and personalised skincare experiences
+            designed for modern men.
           </p>
 
           <div className="hair-hero-actions">
@@ -158,7 +201,7 @@ export default function MensSkinCarePage() {
             return (
               <Link
                 key={category.slug}
-                to={`/services/${category.slug}`}
+                to={`/services/men/${category.slug}`}
                 className={`hair-category-item ${
                   category.slug === "skin" ? "active" : ""
                 }`}
@@ -190,9 +233,9 @@ export default function MensSkinCarePage() {
           </div>
 
           <p>
-            From deep cleansing facials to refreshing
-            skincare treatments, discover professional
-            experiences designed around men's skincare needs.
+            From refreshing glow facials to specialised
+            skincare experiences, discover professional
+            treatments designed around your skincare needs.
           </p>
         </div>
 
@@ -230,6 +273,15 @@ export default function MensSkinCarePage() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="hair-hero-actions">
+          <Link
+            to="/pricing/men/skin"
+            className="hair-button hair-button-light"
+          >
+            View Facial Pricing <ArrowRight size={17} />
+          </Link>
         </div>
       </section>
 
@@ -288,8 +340,8 @@ export default function MensSkinCarePage() {
 
           <p>
             Experience a personalised skincare ritual
-            combining deep cleansing, refreshing facial
-            care and professional attention to detail.
+            combining professional facial care and
+            attention to detail.
           </p>
 
           <Link

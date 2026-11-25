@@ -15,11 +15,9 @@ import {
   CalendarDays,
   ArrowRight,
   Droplets,
-  Footprints,
-  Waves,
 } from "lucide-react";
 
-import '../HairStylingPage/HairStylingPage.css'
+import "../HairStylingPage/HairStylingPage.css";
 
 const serviceCategories = [
   { name: "Hair & Styling", slug: "hair", icon: Scissors },
@@ -36,35 +34,75 @@ const serviceCategories = [
 const manicureServices = [
   {
     number: "01",
-    title: "Luxury Manicure",
+    title: "Classic Pedicure & Manicure",
     description:
-      "A refreshing hand care experience with nail shaping and a polished finish.",
+      "A complete hand and foot care experience with cleansing, exfoliation, nail grooming and relaxation.",
     image: "/images/services/pedicure/pedicure-manicure.jpg",
-    alt: "Luxury professional manicure",
+    alt: "Classic pedicure and manicure treatment",
   },
   {
     number: "02",
-    title: "Spa Pedicure",
+    title: "Foot Logic Pedicure & Manicure",
     description:
-      "A relaxing foot care experience with cleansing and gentle exfoliation.",
+      "A specialised hand and foot care ritual designed to refresh, smooth and rejuvenate.",
     image: "/images/services/pedicure/pedicure-spa.jpg",
-    alt: "Luxury spa pedicure",
+    alt: "Foot Logic pedicure and manicure treatment",
   },
   {
     number: "03",
-    title: "Nail Care & Grooming",
+    title: "Foot Logic Manicure",
     description:
-      "Professional nail shaping, cuticle care and essential grooming.",
+      "A specialised hand care treatment focused on nail grooming, cleansing and a refreshed finish.",
     image: "/images/services/pedicure/pedicure-nailcare.jpg",
-    alt: "Professional nail grooming",
+    alt: "Foot Logic manicure treatment",
   },
   {
     number: "04",
-    title: "Foot Care Ritual",
+    title: "Ice Cream Pedicure & Manicure",
     description:
-      "A soothing foot care experience designed for comfort and relaxation.",
+      "An indulgent hand and foot care experience for beautifully refreshed and pampered skin.",
+    image: "/images/services/pedicure/pedicure-spa.jpg",
+    alt: "Ice Cream pedicure and manicure treatment",
+  },
+  {
+    number: "05",
+    title: "Ice Cream Manicure",
+    description:
+      "A soothing manicure experience that leaves your hands feeling soft, clean and refreshed.",
+    image: "/images/services/pedicure/pedicure-nailcare.jpg",
+    alt: "Ice Cream manicure treatment",
+  },
+  {
+    number: "06",
+    title: "Lotus Glow Pedicure & Manicure",
+    description:
+      "A premium hand and foot care ritual focused on deep cleansing, exfoliation and a radiant finish.",
     image: "/images/services/pedicure/pedicure-footcare.jpg",
-    alt: "Relaxing professional foot care",
+    alt: "Lotus Glow pedicure and manicure treatment",
+  },
+  {
+    number: "07",
+    title: "Lotus Glow Manicure",
+    description:
+      "A luxurious hand care treatment designed to nourish, refresh and enhance the natural beauty of your hands.",
+    image: "/images/services/pedicure/pedicure-nailcare.jpg",
+    alt: "Lotus Glow manicure treatment",
+  },
+  {
+    number: "08",
+    title: "Bubblegum Fresh Pedicure & Manicure",
+    description:
+      "A refreshing hand and foot care experience for soft, clean and beautifully cared for skin.",
+    image: "/images/services/pedicure/pedicure-spa.jpg",
+    alt: "Bubblegum Fresh pedicure and manicure treatment",
+  },
+  {
+    number: "09",
+    title: "Bubblegum Fresh Manicure",
+    description:
+      "A refreshing manicure ritual that gives your hands a clean, soft and beautifully groomed finish.",
+    image: "/images/services/pedicure/pedicure-footcare.jpg",
+    alt: "Bubblegum Fresh manicure treatment",
   },
 ];
 
@@ -194,8 +232,8 @@ export default function ManicurePedicurePage() {
 
           <p>
             Give your hands and feet the care they deserve.
-            Explore professional manicure, pedicure and
-            grooming experiences in a relaxing environment.
+            Explore our signature manicure and pedicure
+            treatments in a relaxing environment.
           </p>
         </div>
 

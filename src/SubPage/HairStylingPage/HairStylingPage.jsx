@@ -2,7 +2,6 @@
 import { Link } from "react-router-dom";
 import {
   Scissors,
-  UserRound,
   Sparkles,
   Brush,
   Droplets,
@@ -15,54 +14,113 @@ import {
   CalendarDays,
   ArrowRight,
   Gem,
+  Wind,
 } from "lucide-react";
 
 import "./HairStylingPage.css";
 
 const serviceCategories = [
   { name: "Hair & Styling", slug: "hair", icon: Scissors },
-  { name: "Men's Grooming", slug: "grooming", icon: UserRound },
   { name: "Skin & Facial Care", slug: "skin", icon: Sparkles },
   { name: "Makeup & Bridal", slug: "makeup", icon: Brush },
   { name: "Nail Studio", slug: "nails", icon: Gem },
   { name: "Waxing & Threading", slug: "waxing", icon: Layers },
   { name: "Manicure & Pedicure", slug: "pedicure", icon: Hand },
   { name: "Body & Spa", slug: "body-spa", icon: Flower2 },
-  { name: "Bridal & Groom Packages", slug: "packages", icon: Heart },
+  { name: "Bridal Packages", slug: "packages", icon: Heart },
 ];
 
 const hairServices = [
   {
     number: "01",
-    title: "Haircut & Styling",
+    title: "Hair Cut & Style",
     description:
-      "Personalised cuts and modern styling for men and women.",
+      "Discover professional haircuts and styling experiences designed to complement your personality and create a beautiful finish.",
+    services: [
+      "Kids Hair Cut",
+      "Creative Cut",
+      "Classic Cut",
+      "Normal Hair Wash & Dry",
+      "Hair Wash & Straight Setting",
+      "Blowdry Curls Setting",
+      "Ironing",
+      "Tong Curls Setting",
+      "Bollywood Curls Setting",
+    ],
     image: "/images/services/hair/aurelle-gallery-hair.jpg",
-    alt: "Professional haircut and styling",
+    alt: "Professional women's haircut and styling",
+    icon: Scissors,
   },
   {
     number: "02",
-    title: "Hair Colouring",
+    title: "Hair Spa",
     description:
-      "Rich, long lasting colour with a natural looking finish.",
-    image: "/images/services/hair/aurelle-gallery-haircolour.jpg",
-    alt: "Professional hair colouring",
+      "Nourishing hair spa experiences and specialised treatments created to care for your hair and scalp.",
+    services: [
+      "Spa Essence",
+      "Tribond Hair Spa",
+      "Luxe Rejuvenation",
+      "Reborn Hair Spa",
+      "Royal Bliss Hair Spa",
+      "Moroccan Oil Hair Spa",
+      "Anti Dandruff & Hair Loss",
+      "Anti Dandruff Treatment",
+      "Anti Hair Loss Treatment",
+      "Laser Anti Dandruff & Hair Loss",
+      "Laser Anti Dandruff Treatment",
+      "Laser Anti Hair Loss",
+      "Korean Hair Spa",
+    ],
+    image: "/images/services/hair/aurelle-gallery-hairstyle.jpg",
+    alt: "Luxury women's hair spa treatment",
+    icon: Droplets,
   },
   {
     number: "03",
-    title: "Hair Treatments",
+    title: "Head Massage",
     description:
-      "Nourishing care to repair, strengthen and add shine.",
-    image: "/images/services/hair/aurelle-gallery-hairstyle.jpg",
-    alt: "Luxury hair treatment",
+      "Relax and refresh with soothing head massage experiences and nourishing oil treatments.",
+    services: [
+      "Classic Head Massage",
+      "Relaxing Head Massage",
+      "Premium Hot Oil Massage + Hair Wash & Blowdry Setting",
+    ],
+    image: "/images/services/hair/aurelle-service-hair.jpg",
+    alt: "Relaxing head massage experience",
+    icon: Flower2,
   },
   {
     number: "04",
-    title: "Occasion Styling",
+    title: "Hair Rebonding & Treatments",
     description:
-      "Professional styling for parties, events and celebrations.",
+      "Professional hair transformation treatments for a smooth, sleek and manageable hair finish.",
+    services: [
+      "Straightening & Smoothening",
+      "Permanent Blowdry",
+      "Keratin Treatment",
+      "Nanoplastia",
+      "Botox Treatment",
+    ],
     image: "/images/services/hair/aurelle-service-hair.jpg",
-    alt: "Elegant occasion hairstyle",
+    alt: "Professional hair smoothening treatment",
+    icon: Wind,
+  },
+  {
+    number: "05",
+    title: "Hair Colouring",
+    description:
+      "Explore professional colouring techniques to refresh your look with beautiful shades and colour effects.",
+    services: [
+      "Per Streaks",
+      "Root Touchup",
+      "Root Touchup Without Ammonia",
+      "Global Hair Colour",
+      "Highlights",
+      "Ombre Balayage",
+    ],
+    image: "/images/services/hair/aurelle-gallery-haircolour.jpg",
+    alt: "Professional women's hair colouring",
+    icon: Brush,
   },
 ];
 
@@ -103,7 +161,7 @@ export default function HairStylingPage() {
         <div className="hair-hero-image">
           <img
             src="/images/service-makeup/service-hair.jpg"
-            alt="AURELLE luxury hair styling"
+            alt="AURELLE women's luxury hair styling"
           />
         </div>
 
@@ -115,7 +173,7 @@ export default function HairStylingPage() {
             <span>›</span>
             <Link to="/services">Services</Link>
             <span>›</span>
-            <span>Hair & Styling</span>
+            <span>Women's Hair & Styling</span>
           </div>
 
           <span className="hair-eyebrow">
@@ -127,23 +185,30 @@ export default function HairStylingPage() {
           </h1>
 
           <p>
-            Modern cuts, expert styling and advanced hair care
-            for a look that feels uniquely you.
+            Discover premium haircuts, styling, colouring,
+            rejuvenating spa experiences and professional
+            hair treatments created for your individual style.
           </p>
 
           <div className="hair-hero-actions">
-            <Link to="/booking" className="hair-button hair-button-light">
+            <Link
+              to="/booking"
+              className="hair-button hair-button-light"
+            >
               Book This Service <ArrowRight size={17} />
             </Link>
 
-            <a href="#hair-services" className="hair-button hair-button-outline">
+            <a
+              href="#hair-services"
+              className="hair-button hair-button-outline"
+            >
               Explore Services
             </a>
           </div>
         </div>
       </section>
 
-      {/* SERVICE CATEGORY NAVIGATION */}
+      {/* WOMEN'S CATEGORY NAVIGATION */}
       <section className="hair-category-section">
         <div className="hair-category-list">
           {serviceCategories.map((category) => {
@@ -152,7 +217,7 @@ export default function HairStylingPage() {
             return (
               <Link
                 key={category.slug}
-                to={`/services/${category.slug}`}
+                to={`/services/women/${category.slug}`}
                 className={`hair-category-item ${
                   category.slug === "hair" ? "active" : ""
                 }`}
@@ -165,11 +230,14 @@ export default function HairStylingPage() {
         </div>
       </section>
 
-      {/* HAIR SERVICES */}
+      {/* WOMEN'S HAIR SERVICES */}
       <section className="hair-services-section" id="hair-services">
         <div className="hair-section-heading">
           <div>
-            <span className="hair-eyebrow">OUR HAIR SERVICES</span>
+            <span className="hair-eyebrow">
+              WOMEN'S HAIR SERVICES
+            </span>
+
             <h2>
               Complete Hair Care
               <br />
@@ -178,45 +246,70 @@ export default function HairStylingPage() {
           </div>
 
           <p>
-            From precision haircuts to transformative colour
-            and nourishing treatments, our hair experts create
-            styles that complement your personality and lifestyle.
+            Explore our women's hair collection, from beautiful
+            everyday styling and professional colouring to
+            specialised hair treatments and relaxing spa experiences.
           </p>
         </div>
 
         <div className="hair-service-grid">
-          {hairServices.map((service) => (
-            <article className="hair-service-card" key={service.number}>
-              <div className="hair-service-image">
-                <img src={service.image} alt={service.alt} loading="lazy" />
-                <span className="hair-service-number">
-                  {service.number}
-                </span>
-              </div>
+          {hairServices.map((service) => {
+            const Icon = service.icon;
 
-              <div className="hair-service-info">
-                <div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+            return (
+              <article
+                className="hair-service-card"
+                key={service.number}
+              >
+                <div className="hair-service-image">
+                  <img
+                    src={service.image}
+                    alt={service.alt}
+                    loading="lazy"
+                  />
+
+                  <span className="hair-service-number">
+                    {service.number}
+                  </span>
                 </div>
 
-                <Link
-                  to="/booking"
-                  className="hair-card-arrow"
-                  aria-label={`Book ${service.title}`}
-                >
-                  <ArrowRight size={19} />
-                </Link>
-              </div>
-            </article>
-          ))}
+                <div className="hair-service-info">
+                  <div>
+                    <h3>{service.title}</h3>
+
+                    <p>{service.description}</p>
+
+                    <ul className="hair-service-list">
+                      {service.services.map((item) => (
+                        <li key={item}>
+                          <Icon size={14} strokeWidth={1.5} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Link
+                    to="/pricing/women/hair"
+                    className="hair-card-arrow"
+                    aria-label={`View ${service.title} pricing`}
+                  >
+                    <ArrowRight size={19} />
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
       {/* WHY CHOOSE AURELLE */}
       <section className="hair-benefits-section">
         <div className="hair-benefits-title">
-          <span className="hair-eyebrow">THE AURELLE EXPERIENCE</span>
+          <span className="hair-eyebrow">
+            THE AURELLE EXPERIENCE
+          </span>
+
           <h2>
             Why Choose AURELLE
             <br />
@@ -229,9 +322,14 @@ export default function HairStylingPage() {
             const Icon = benefit.icon;
 
             return (
-              <div className="hair-benefit-item" key={benefit.title}>
+              <div
+                className="hair-benefit-item"
+                key={benefit.title}
+              >
                 <Icon size={29} strokeWidth={1.3} />
+
                 <h3>{benefit.title}</h3>
+
                 <p>{benefit.description}</p>
               </div>
             );
@@ -239,33 +337,39 @@ export default function HairStylingPage() {
         </div>
       </section>
 
-      {/* SIGNATURE TREATMENT */}
+      {/* HAIR CARE EXPERIENCE */}
       <section className="hair-signature-section">
         <div className="hair-signature-image">
           <img
             src="/images/services/hair/aurelle-service-hair.jpg"
-            alt="AURELLE signature hair care treatment"
+            alt="AURELLE professional women's hair care experience"
             loading="lazy"
           />
         </div>
 
         <div className="hair-signature-content">
-          <span className="hair-eyebrow">SIGNATURE TREATMENT</span>
+          <span className="hair-eyebrow">
+            PERSONAL HAIR CARE
+          </span>
 
           <h2>
-            AURELLE
+            Your Hair
             <br />
-            <span>Hair Revival</span>
+            <span>Deserves Expert Care</span>
           </h2>
 
           <p>
-            A nourishing hair care experience designed to improve
-            softness, shine and manageability while giving your
-            hair the attention it deserves.
+            Explore our professional women's hair services
+            and discover the right treatment for your individual
+            hair needs. Our team is here to help you choose
+            your experience.
           </p>
 
-          <Link to="/booking" className="hair-button hair-button-light">
-            Explore Treatment <ArrowRight size={17} />
+          <Link
+            to="/pricing/women/hair"
+            className="hair-button hair-button-light"
+          >
+            Explore Hair Pricing <ArrowRight size={17} />
           </Link>
         </div>
       </section>
@@ -274,15 +378,22 @@ export default function HairStylingPage() {
       <section className="hair-final-cta">
         <div className="hair-cta-content">
           <div>
-            <span className="hair-eyebrow">YOUR NEXT LOOK STARTS HERE</span>
+            <span className="hair-eyebrow">
+              YOUR NEXT LOOK STARTS HERE
+            </span>
+
             <h2>Ready for a New Look?</h2>
+
             <p>
-              Book your Hair & Styling session at AURELLE and
-              let our experts create a style that truly suits you.
+              Book your women's hair styling session at AURELLE
+              and let our experts create a look that complements you.
             </p>
           </div>
 
-          <Link to="/booking" className="hair-button hair-button-light">
+          <Link
+            to="/booking"
+            className="hair-button hair-button-light"
+          >
             <CalendarDays size={18} />
             Book Appointment
             <ArrowRight size={17} />

@@ -8,25 +8,34 @@ const treatments = [
     title: "Full Body Massage",
     category: "Relaxation",
     description:
-      "A deeply relaxing massage that helps relieve muscle tension, improve circulation and rejuvenate your body.",
+      "A relaxing full body massage experience designed to ease tension and provide comfort.",
     price: "₹1,999",
     image: "/images/pricing/full-body-massage.jpg",
   },
   {
     id: 2,
-    title: "Full Body Polishing",
+    title: "Premium Full Body Massage",
+    category: "Premium Care",
+    description:
+      "An elevated full body massage experience with attentive care and a relaxing atmosphere.",
+    price: "₹3,500",
+    image: "/images/pricing/full-body-massage.jpg",
+  },
+  {
+    id: 3,
+    title: "Classic Body Polishing",
     category: "Skin Care",
     description:
-      "A revitalising skin treatment that exfoliates dead skin cells, smoothens texture and brings a healthy glow.",
+      "A professional body polishing treatment focused on exfoliation and smoother looking skin.",
     price: "₹2,500",
     image: "/images/pricing/full-body-polishing.jpg",
   },
   {
-    id: 3,
+    id: 4,
     title: "Premium Full Body Polishing",
     category: "Premium Care",
     description:
-      "An advanced polishing ritual with nourishing care for brighter, smoother and radiant looking skin.",
+      "A premium body polishing experience designed to leave your skin feeling smooth and refreshed.",
     price: "₹5,999",
     image: "/images/pricing/premium-body-polishing.jpg",
   },
@@ -36,17 +45,17 @@ const benefits = [
   {
     icon: "♧",
     title: "Deep Relaxation",
-    description: "Relieves stress and fatigue",
+    description: "A relaxing body care experience",
   },
   {
     icon: "✧",
     title: "Skin Renewal",
-    description: "Improves texture and glow",
+    description: "Professional body polishing care",
   },
   {
     icon: "♢",
-    title: "Body Detox",
-    description: "Cleanses and refreshes skin",
+    title: "Body Care",
+    description: "Treatments for a refreshed feeling",
   },
   {
     icon: "◇",
@@ -56,13 +65,14 @@ const benefits = [
 ];
 
 const BodyTreatmentsPricing = () => {
-  const whatsappNumber = ""; // Add salon WhatsApp number with country code
+  const whatsappNumber = "";
 
   const bookingLink = (service) => {
-    const message = `Hello PK UNISEX SALON, I would like to enquire about ${service}.`;
+    const message = `Hello AURELLE Beauty Studio, I would like to enquire about ${service}.`;
+
     return whatsappNumber
       ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
-      : "#";
+      : "/booking";
   };
 
   return (
@@ -73,7 +83,7 @@ const BodyTreatmentsPricing = () => {
         <div className="bt-hero-image">
           <img
             src="/images/pricing/body-treatment-hero.jpg"
-            alt="Luxury body massage at PK Unisex Salon"
+            alt="Luxury body massage at AURELLE Beauty Studio"
           />
         </div>
 
@@ -88,7 +98,7 @@ const BodyTreatmentsPricing = () => {
             <span>Body Treatments</span>
           </div>
 
-          <span className="bt-eyebrow">BODY TREATMENTS</span>
+          <span className="bt-eyebrow">AURELLE BODY TREATMENTS</span>
 
           <h1>
             Relax. Renew.
@@ -96,7 +106,7 @@ const BodyTreatmentsPricing = () => {
           </h1>
 
           <p>
-            Indulge in luxurious body care treatments designed to
+            Indulge in professional body care treatments designed to
             relax your body, refresh your skin and restore your natural glow.
           </p>
 
@@ -128,13 +138,13 @@ const BodyTreatmentsPricing = () => {
           <h2>Signature Body Care</h2>
 
           <p>
-            Thoughtfully curated treatments for total relaxation,
-            skin nourishment and an all over refreshing experience.
+            Thoughtfully curated treatments for relaxation,
+            professional body care and a refreshing experience.
           </p>
         </div>
 
         <div className="bt-service-grid">
-          {treatments.map((item, index) => (
+          {treatments.map((item) => (
             <article className="bt-service-card" key={item.id}>
               <div className="bt-card-image">
                 <img
@@ -182,7 +192,7 @@ const BodyTreatmentsPricing = () => {
         </div>
 
         <div className="bt-experience-content">
-          <span className="bt-eyebrow">THE PK EXPERIENCE</span>
+          <span className="bt-eyebrow">THE AURELLE EXPERIENCE</span>
 
           <h2>
             More Than
@@ -190,8 +200,9 @@ const BodyTreatmentsPricing = () => {
           </h2>
 
           <p>
-            A complete body care experience that relaxes your senses,
-            nourishes your skin and leaves you feeling refreshed from within.
+            A complete body care experience that helps you
+            take a moment for yourself, enjoy professional
+            treatments and leave feeling refreshed.
           </p>
 
           <div className="bt-experience-points">
@@ -234,8 +245,8 @@ const BodyTreatmentsPricing = () => {
           </h2>
 
           <p>
-            Experience personalised body care at PK Unisex Salon
-            and feel the difference in every session.
+            Experience professional body care at AURELLE
+            Beauty Studio and enjoy a refreshing salon experience.
           </p>
 
           <a

@@ -1292,3 +1292,67 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* =========================================
+   WOMEN AND MEN SERVICE COLLECTIONS
+========================================= */
+
+.aurelle-services-page .services-collections {
+  width: 100%;
+  background: #080808;
+}
+
+.aurelle-services-page .services-list-section {
+  padding: 20px 0;
+  background: #080808 !important;
+  color: #ffffff;
+}
+
+.aurelle-services-page .services-section-heading {
+  width: min(1440px, calc(100% - 70px));
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.aurelle-services-page .services-section-heading .services-eyebrow {
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.aurelle-services-page .services-section-heading h2 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 3.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.aurelle-services-page .services-section-heading p {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #c0c0c0;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.aurelle-services-page .services-grid {
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .aurelle-services-page .services-section-heading {
+    width: calc(100% - 28px);
+    margin-bottom: 16px;
+  }
+
+  .aurelle-services-page .services-section-heading h2 {
+    font-size: 30px;
+  }
+
+  .aurelle-services-page .services-section-heading p {
+    font-size: 12px;
+  }
+}

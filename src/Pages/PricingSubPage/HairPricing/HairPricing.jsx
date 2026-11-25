@@ -20,7 +20,7 @@ const hairCategories = [
   { id: "haircut", title: "Hair Cut & Styling", icon: Scissors },
   { id: "hairspa", title: "Hair Spa", icon: Droplet },
   { id: "colouring", title: "Hair Colouring", icon: Palette },
-  { id: "rebonding", title: "Rebonding", icon: Waves },
+  { id: "rebonding", title: "Hair Rebonding", icon: Waves },
   { id: "treatments", title: "Hair Treatments", icon: Leaf },
   { id: "massage", title: "Head Massage", icon: Hand },
 ];
@@ -32,13 +32,17 @@ const hairServices = [
     title: "Hair Cut & Styling",
     subtitle: "A style that defines your personality.",
     description:
-      "Refresh your look with professional cuts and styling designed around your personality.",
+      "Refresh your look with professional cuts, beard grooming and styling services.",
     image: "/images/pricing/haircut.jpg",
     icon: Scissors,
     services: [
       { name: "Hair Cut", price: "₹399" },
       { name: "Kids Hair Cut", price: "₹299" },
       { name: "Beard Trim", price: "₹200" },
+      { name: "Beard Design", price: "₹200" },
+      { name: "Shaving", price: "₹200" },
+      { name: "Hair Cut & Beard", price: "₹500" },
+      { name: "Hair Wash & Setting", price: "₹200" },
     ],
   },
   {
@@ -51,12 +55,13 @@ const hairServices = [
     image: "/images/pricing/hair-spa.jpg",
     icon: Droplet,
     services: [
-      { name: "Spa Essence", price: "₹1,200" },
-      { name: "Tribond Hair Spa", price: "₹2,499" },
-      { name: "Luxe Rejuvenation", price: "₹3,499" },
-      { name: "Reborn Hair Spa", price: "₹3,999" },
-      { name: "Royal Bliss", price: "₹4,499" },
-      { name: "Moroccan Oil Hair Spa", price: "₹5,559" },
+      { name: "Spa Essence", price: "Confirm Price" },
+      { name: "Tribond Hair Spa", price: "Confirm Price" },
+      { name: "Luxe Rejuvenation", price: "Confirm Price" },
+      { name: "Reborn Hair Spa", price: "Confirm Price" },
+      { name: "Royal Bliss", price: "Confirm Price" },
+      { name: "Moroccan Oil Spa", price: "Confirm Price" },
+      { name: "Korean Hair Spa", price: "₹3,499" },
     ],
   },
   {
@@ -70,11 +75,10 @@ const hairServices = [
     icon: Palette,
     services: [
       { name: "Per Streak", price: "₹500" },
-      { name: "Root Touchup", price: "₹1,500" },
-      { name: "Root Touchup Without Ammonia", price: "₹2,000" },
-      { name: "Global Hair Colour", price: "₹5,499" },
-      { name: "Highlights", price: "₹5,999" },
-      { name: "Ombre Balayage", price: "₹6,999" },
+      { name: "Global Colour", price: "Confirm Price" },
+      { name: "Global Colour Without Ammonia", price: "₹1,600" },
+      { name: "Highlights", price: "Confirm Price" },
+      { name: "Beard Colouring", price: "₹499" },
     ],
   },
   {
@@ -87,11 +91,45 @@ const hairServices = [
     image: "/images/pricing/hair-rebonding.jpg",
     icon: Waves,
     services: [
-      { name: "Straightening & Smoothening", price: "₹4,999" },
-      { name: "Permanent Blowdry", price: "₹4,999" },
-      { name: "Keratin Treatment", price: "₹4,999" },
-      { name: "Nanoplastia", price: "₹7,999" },
-      { name: "Botox Treatment", price: "₹6,999" },
+      { name: "Straightening", price: "Confirm Price" },
+      { name: "Permanent Blowdry", price: "Confirm Price" },
+      { name: "Keratin", price: "Confirm Price" },
+      { name: "Nanoplastia", price: "Confirm Price" },
+      { name: "Botox", price: "Confirm Price" },
+    ],
+  },
+  {
+    id: "treatments",
+    number: "05",
+    title: "Hair Treatments",
+    subtitle: "Targeted care for healthier looking hair.",
+    description:
+      "Specialised scalp and hair treatments designed to address dandruff and hair fall concerns.",
+    image: "/images/pricing/hair-spa.jpg",
+    icon: Leaf,
+    services: [
+      { name: "Anti Dandruff & Hairfall Treatment", price: "₹2,500" },
+      { name: "Anti Dandruff Treatment", price: "₹1,699" },
+      { name: "Anti Hairloss Treatment", price: "₹1,699" },
+      { name: "Laser Anti Dandruff & Hairloss Treatment", price: "₹3,000" },
+      { name: "Laser Anti Dandruff Treatment", price: "₹1,999" },
+      { name: "Laser Anti Hairloss Treatment", price: "₹1,999" },
+    ],
+  },
+  {
+    id: "massage",
+    number: "06",
+    title: "Head Massage",
+    subtitle: "Relax, refresh and unwind.",
+    description:
+      "Enjoy relaxing head massage experiences with nourishing oils and professional care.",
+    image: "/images/pricing/hair-spa.jpg",
+    icon: Hand,
+    services: [
+      { name: "Classic Head Massage", price: "₹399" },
+      { name: "Relaxing Head Massage", price: "₹799" },
+      { name: "Premium Hot Oil Massage", price: "₹999" },
+      { name: "Moroccan Oil Massage", price: "₹1,499" },
     ],
   },
 ];
@@ -121,7 +159,7 @@ function HairServiceCard({ service, reverse }) {
           </div>
 
           <div>
-            <span className="hp-service-kicker">PK HAIR STUDIO</span>
+            <span className="hp-service-kicker">AURELLE HAIR STUDIO</span>
             <h3>{service.title}</h3>
             <p>{service.subtitle}</p>
           </div>
@@ -140,7 +178,7 @@ function HairServiceCard({ service, reverse }) {
           ))}
         </div>
 
-        <a href="/contact" className="hp-book-button">
+        <a href="/booking" className="hp-book-button">
           Book This Service
           <ArrowRight size={17} />
         </a>
@@ -167,7 +205,7 @@ export default function HairPricing() {
           <div className="hp-hero-copy">
             <span className="hp-eyebrow">
               <span />
-              PK HAIR STUDIO
+              AURELLE HAIR STUDIO
             </span>
 
             <h1>
@@ -240,52 +278,6 @@ export default function HairPricing() {
             ))}
           </div>
 
-          {/* ADDITIONAL SERVICES */}
-
-          <div className="hp-extra-grid">
-
-            <article
-              className="hp-extra-card hp-treatment"
-              id="treatments"
-            >
-              <div className="hp-extra-shade" />
-
-              <div className="hp-extra-content">
-                <Leaf size={29} strokeWidth={1.4} />
-                <span>PERSONALISED CARE</span>
-                <h3>Hair Treatments</h3>
-                <p>
-                  Specialised care designed around your hair needs.
-                </p>
-                <a href="/contact">
-                  Consultation Required
-                  <ArrowRight size={16} />
-                </a>
-              </div>
-            </article>
-
-            <article
-              className="hp-extra-card hp-massage"
-              id="massage"
-            >
-              <div className="hp-extra-shade" />
-
-              <div className="hp-extra-content">
-                <Hand size={29} strokeWidth={1.4} />
-                <span>RELAX AND REFRESH</span>
-                <h3>Head Massage</h3>
-                <p>
-                  Relaxing and nourishing head massage experiences.
-                </p>
-                <a href="/contact">
-                  From ₹399
-                  <ArrowRight size={16} />
-                </a>
-              </div>
-            </article>
-
-          </div>
-
           {/* INFORMATION */}
 
           <div className="hp-information">
@@ -297,7 +289,8 @@ export default function HairPricing() {
             <div className="hp-info-content">
               <p>
                 <Check size={16} />
-                All listed prices are subject to 18% GST.
+                Prices marked Confirm Price require confirmation
+                from the salon before publishing.
               </p>
 
               <p>
@@ -333,7 +326,7 @@ export default function HairPricing() {
               that feels uniquely yours.
             </p>
 
-            <a href="/contact" className="hp-primary-button">
+            <a href="/booking" className="hp-primary-button">
               <CalendarDays size={18} />
               Book an Appointment
               <ArrowRight size={18} />

@@ -12,93 +12,133 @@ import {
   Info,
   ChevronLeft,
   Heart,
+  Sun,
 } from "lucide-react";
 
 import "./FacialPricing.css";
 
-const skinServices = [
+const facialServices = [
   {
     name: "Refreshing Glow Facial",
-    description: "A refreshing facial experience for clean, hydrated and radiant looking skin.",
+    description:
+      "A refreshing facial experience for clean, hydrated and radiant looking skin.",
     price: "₹1,200",
     image: "/images/pricing/skin-refreshing.jpg",
     icon: Sparkles,
   },
   {
     name: "O3 Radiance Glow",
-    description: "A premium facial experience designed to refresh and brighten your skin.",
-    price: "₹2,500",
+    description:
+      "A premium facial experience designed to refresh and brighten your skin.",
+    price: "₹3,000",
     image: "/images/pricing/skin-o3.jpg",
     icon: Sparkles,
   },
   {
     name: "Skin Lightening & Whitening",
-    description: "A specialised skin care treatment for a brighter and more even looking complexion.",
+    description:
+      "A specialised skincare treatment for a brighter and more even looking complexion.",
     price: "₹4,000",
     image: "/images/pricing/skin-lightening.jpg",
     icon: Leaf,
   },
   {
     name: "Hydra Facial",
-    description: "Deep cleansing and hydration for smooth, refreshed and glowing skin.",
-    price: "₹3,999",
+    description:
+      "Deep cleansing and hydration for smooth, refreshed and glowing skin.",
+    price: "₹5,000",
     image: "/images/pricing/skin-hydra.jpg",
     icon: Droplet,
   },
   {
     name: "Hydra Frequency",
-    description: "A specialised skin care experience for refreshed and revitalised looking skin.",
+    description:
+      "A specialised skincare experience for refreshed and revitalised looking skin.",
     price: "₹7,500",
     image: "/images/pricing/skin-frequency.jpg",
     icon: Droplet,
   },
   {
     name: "Korean Glass Facial",
-    description: "A premium facial experience inspired by the fresh glass skin look.",
+    description:
+      "A premium facial experience inspired by the fresh glass skin look.",
     price: "₹6,000",
     image: "/images/pricing/skin-korean.jpg",
     icon: Gem,
   },
   {
-    name: "Double Chin Treatment",
-    description: "A focused aesthetic treatment for the chin and lower face area.",
+    name: "Double Chin RF",
+    description:
+      "A focused aesthetic treatment for the chin and lower face area.",
     price: "₹1,600",
     image: "/images/pricing/skin-double-chin.jpg",
     icon: Heart,
   },
   {
-    name: "Jawline Shape Treatment",
-    description: "A targeted treatment focused on the appearance of the jawline.",
+    name: "Jawline Shape",
+    description:
+      "A targeted treatment focused on the appearance of the jawline.",
     price: "₹1,700",
     image: "/images/pricing/skin-jawline.jpg",
     icon: ShieldCheck,
   },
   {
-    name: "Under Eye Treatment",
-    description: "Focused care for the delicate under eye area.",
+    name: "Under Eye Dark Circle",
+    description:
+      "Focused care for the delicate under eye area.",
     price: "₹2,000",
     image: "/images/pricing/skin-under-eye.jpg",
     icon: Sparkles,
   },
+];
+
+const cleanUpServices = [
   {
-    name: "Clean Up & Detan",
-    description: "Explore cleansing and detan options for refreshed looking skin.",
-    price: "See Menu",
+    name: "Whitening Clean Up",
+    description:
+      "A refreshing cleansing experience for brighter looking skin.",
+    price: "₹999",
     image: "/images/pricing/skin-cleanup.jpg",
+    icon: Sparkles,
+  },
+  {
+    name: "Tanning & Whitening Clean Up",
+    description:
+      "A cleansing experience focused on tanning care and skin brightness.",
+    price: "₹1,499",
+    image: "/images/pricing/skin-cleanup.jpg",
+    icon: Sun,
+  },
+  {
+    name: "Radiance Glow Clean Up",
+    description:
+      "A refreshing skin cleansing service for a radiant looking finish.",
+    price: "₹1,999",
+    image: "/images/pricing/skin-refreshing.jpg",
     icon: Leaf,
   },
+];
+
+const detanAreas = [
+  { area: "Face", classic: "₹500", premium: "₹600" },
+  { area: "Face & Neck", classic: "₹700", premium: "₹800" },
+  { area: "Face Arms", classic: "₹1,000", premium: "₹1,200" },
+  { area: "Feet", classic: "₹500", premium: "₹600" },
+  { area: "Full Back & Front", classic: "₹1,500", premium: "₹1,600" },
+  { area: "Full Body", classic: "₹3,500", premium: "₹3,700" },
+  { area: "Under Arms", classic: "₹500", premium: "₹600" },
 ];
 
 const skinHighlights = [
   {
     icon: Leaf,
     title: "Advanced Treatments",
-    text: "Professional skin care services",
+    text: "Professional skincare services",
   },
   {
     icon: Gem,
     title: "Premium Products",
-    text: "Quality focused skin care",
+    text: "Quality focused skincare",
   },
   {
     icon: ShieldCheck,
@@ -107,7 +147,7 @@ const skinHighlights = [
   },
   {
     icon: Sparkles,
-    title: "Skin Care Experience",
+    title: "Skincare Experience",
     text: "Care designed around your needs",
   },
 ];
@@ -137,7 +177,7 @@ function SkinServiceCard({ service }) {
         <div className="skin-card-bottom">
           <strong>{service.price}</strong>
 
-          <a href="/contact" className="skin-book-link">
+          <a href="/booking" className="skin-book-link">
             Book Now
             <ArrowRight size={15} />
           </a>
@@ -157,7 +197,6 @@ export default function FacialPricing() {
         <div className="skin-hero-background" />
 
         <div className="skin-container skin-hero-inner">
-
           <a href="/pricing" className="skin-back-link">
             <ChevronLeft size={16} />
             All Pricing Categories
@@ -166,7 +205,7 @@ export default function FacialPricing() {
           <div className="skin-hero-content">
             <span className="skin-eyebrow">
               <span />
-              SKIN CARE EXPERTS
+              AURELLE SKIN CARE
             </span>
 
             <h1>
@@ -175,16 +214,18 @@ export default function FacialPricing() {
             </h1>
 
             <p>
-              Discover advanced facial treatments and personalised
-              skin care experiences designed to refresh your natural glow.
+              Discover facial treatments, refreshing clean ups
+              and detan services designed around your skincare needs.
             </p>
 
-            <a href="/contact" className="skin-primary-button">
-              Book a Skin Consultation
+            <a
+              href="#skin-services"
+              className="skin-primary-button"
+            >
+              Explore Skin Services
               <ArrowRight size={18} />
             </a>
           </div>
-
         </div>
       </section>
 
@@ -209,35 +250,107 @@ export default function FacialPricing() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* FACIAL SERVICES */}
 
-      <section className="skin-services-section">
+      <section
+        className="skin-services-section"
+        id="skin-services"
+      >
         <div className="skin-container">
 
           <div className="skin-section-heading">
             <span className="skin-eyebrow skin-centered">
               <span />
-              OUR SKIN CARE SERVICES
+              OUR FACIAL SERVICES
               <span />
             </span>
 
             <h2>
-              Explore Facial &amp; <em>Skin Treatments</em>
+              Facial Treatments &amp; <em>Skin Care</em>
             </h2>
 
             <p>
-              Explore our facial therapies and skin care services
-              to find the right experience for your needs.
+              Explore our professional facial treatments and
+              choose the experience that suits your skincare needs.
             </p>
           </div>
 
           <div className="skin-services-grid">
-            {skinServices.map((service) => (
+            {facialServices.map((service) => (
               <SkinServiceCard
                 service={service}
                 key={service.name}
               />
             ))}
+          </div>
+
+          {/* CLEAN UP SERVICES */}
+
+          <div className="skin-section-heading skin-subsection-heading">
+            <span className="skin-eyebrow skin-centered">
+              <span />
+              REFRESHING SKIN CARE
+              <span />
+            </span>
+
+            <h2>
+              Clean Up <em>Services</em>
+            </h2>
+
+            <p>
+              Professional cleansing options for refreshed
+              and radiant looking skin.
+            </p>
+          </div>
+
+          <div className="skin-services-grid">
+            {cleanUpServices.map((service) => (
+              <SkinServiceCard
+                service={service}
+                key={service.name}
+              />
+            ))}
+          </div>
+
+          {/* DETAN PACK */}
+
+          <div className="skin-section-heading skin-subsection-heading">
+            <span className="skin-eyebrow skin-centered">
+              <span />
+              CLASSIC & PREMIUM CARE
+              <span />
+            </span>
+
+            <h2>
+              Detan <em>Pack</em>
+            </h2>
+
+            <p>
+              Choose the treatment area and the detan option
+              that suits your preference.
+            </p>
+          </div>
+
+          <div className="skin-detan-table-wrap">
+            <table className="skin-detan-table">
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th>Classic</th>
+                  <th>Premium</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {detanAreas.map((item) => (
+                  <tr key={item.area}>
+                    <td>{item.area}</td>
+                    <td>{item.classic}</td>
+                    <td>{item.premium}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
 
           {/* INFORMATION */}
@@ -251,13 +364,13 @@ export default function FacialPricing() {
             <div className="skin-info-details">
               <p>
                 <Check size={16} />
-                All listed prices are subject to 18% GST.
+                Prices are displayed according to the salon menu.
               </p>
 
               <p>
                 <Check size={16} />
-                Final treatment selection and pricing may depend
-                on skin type and consultation.
+                Final treatment selection may depend on skin type
+                and consultation.
               </p>
             </div>
           </div>
@@ -283,11 +396,14 @@ export default function FacialPricing() {
             </h2>
 
             <p>
-              Let our skin care experts help you choose
+              Let our skincare experts help you choose
               the right treatment for your needs.
             </p>
 
-            <a href="/contact" className="skin-primary-button">
+            <a
+              href="/booking"
+              className="skin-primary-button"
+            >
               <CalendarDays size={18} />
               Book an Appointment
               <ArrowRight size={18} />

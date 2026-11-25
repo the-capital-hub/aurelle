@@ -21,90 +21,151 @@ import {
 import "./Pricing.css";
 
 /* =========================================
-   PRICING CATEGORIES
+   WOMEN'S PRICING CATEGORIES
 ========================================= */
 
-const categories = [
+const womenCategories = [
   {
-    id: "hair",
-    title: "Hair Styling",
+    id: "women-hair",
+    title: "Hair Styling & Treatments",
     description:
-      "Professional haircuts, hair spa, colouring, rebonding and personalised hair treatments for everyone.",
+      "Haircuts, styling, hair spa, colouring, rebonding and professional hair treatments.",
     image: "/images/pricing/hair-services.jpg",
     icon: Scissors,
-    link: "/pricing/hair",
+    link: "/pricing/women/hair",
   },
   {
-    id: "grooming",
-    title: "Men's Grooming",
-    description:
-      "Men's haircuts, beard styling, shaving, hair treatments and complete grooming services.",
-    image: "/images/pricing/mens-grooming.png",
-    icon: UserRound,
-    link: "/pricing/grooming",
-  },
-  {
-    id: "skin",
+    id: "women-skin",
     title: "Skin & Facial Care",
     description:
-      "Professional facials, cleanups, detan, hydra facial and personalised skincare treatments.",
+      "Premium facials, cleanups, detan packs and specialised skincare treatments.",
     image: "/images/pricing/skin-care.jpg",
     icon: Sparkles,
-    link: "/pricing/skin",
+    link: "/pricing/women/skin",
   },
   {
-    id: "makeup",
+    id: "women-makeup",
     title: "Makeup & Bridal",
     description:
-      "Professional party makeup, bridal makeup, hairstyling and occasion ready looks.",
+      "Party makeup, bridal makeup, professional hair styling and saree draping.",
     image: "/images/pricing/makeup.jpg",
     icon: Palette,
-    link: "/pricing/makeup",
+    link: "/pricing/women/makeup",
   },
   {
-    id: "nails",
+    id: "women-nails",
     title: "Nail Studio",
     description:
-      "Gel polish, acrylic extensions, gel extensions, overlays and creative nail art.",
+      "Gel polish, acrylic extensions, gel extensions, overlays and nail finishing.",
     image: "/images/pricing/nail-studio.jpg",
     icon: Gem,
-    link: "/pricing/nails",
+    link: "/pricing/women/nails",
   },
   {
-    id: "waxing",
+    id: "women-waxing",
     title: "Waxing & Threading",
     description:
-      "Professional waxing, face waxing and precise threading services.",
+      "Rica, roll on and Brazilian waxing along with professional threading services.",
     image: "/images/pricing/waxing.jpg",
     icon: Feather,
-    link: "/pricing/waxing-threading",
+    link: "/pricing/women/waxing-threading",
   },
   {
-    id: "pedicure",
+    id: "women-pedicure",
     title: "Manicure & Pedicure",
     description:
-      "Classic and premium hand and foot care treatments for a refreshed experience.",
+      "Classic, Foot Logic, Ice Cream, Lotus Glow and Bubblegum Fresh treatments.",
     image: "/images/pricing/pedicure.jpg",
     icon: Footprints,
-    link: "/pricing/pedicure-manicure",
+    link: "/pricing/women/pedicure-manicure",
   },
   {
-    id: "body",
+    id: "women-body",
     title: "Body & Spa Treatments",
     description:
-      "Relaxing body massages, body polishing and rejuvenating spa experiences.",
+      "Full body massage, premium massage and relaxing body polishing experiences.",
     image: "/images/pricing/body-treatment.jpg",
     icon: Flower2,
-    link: "/pricing/body-treatments",
+    link: "/pricing/women/body-treatments",
   },
   {
-    id: "packages",
-    title: "Bridal & Groom Packages",
+    id: "women-packages",
+    title: "Pre Bridal Package",
     description:
-      "Specially curated bridal and groom packages for weddings and memorable occasions.",
+      "A curated pre bridal experience with consultation, hair spa, facial and body care.",
     image: "/images/pricing/bridal-groom.jpg",
     icon: Crown,
-    link: "/pricing/packages",
+    link: "/pricing/women/packages",
+  },
+];
+
+/* =========================================
+   MEN'S PRICING CATEGORIES
+========================================= */
+
+const menCategories = [
+  {
+    id: "men-grooming",
+    title: "Hair Styling & Grooming",
+    description:
+      "Haircuts, beard styling, shaving, hair wash, head massage and grooming services.",
+    image: "/images/pricing/mens-grooming.png",
+    icon: UserRound,
+    link: "/pricing/men/grooming",
+  },
+  {
+    id: "men-hair-spa",
+    title: "Hair Spa & Treatments",
+    description:
+      "Professional hair spa, anti dandruff, hair loss and advanced hair treatments.",
+    image: "/images/pricing/hair-services.jpg",
+    icon: Scissors,
+    link: "/pricing/men/hair",
+  },
+  {
+    id: "men-skin",
+    title: "Skin & Facial Care",
+    description:
+      "Facials, cleanups, detan packs and specialised skincare treatments.",
+    image: "/images/pricing/skin-care.jpg",
+    icon: Sparkles,
+    link: "/pricing/men/skin",
+  },
+  {
+    id: "men-pedicure",
+    title: "Manicure & Pedicure",
+    description:
+      "Classic, Foot Logic, Ice Cream, Lotus Glow and Bubblegum Fresh treatments.",
+    image: "/images/pricing/pedicure.jpg",
+    icon: Footprints,
+    link: "/pricing/men/pedicure-manicure",
+  },
+  {
+    id: "men-body",
+    title: "Body & Spa Treatments",
+    description:
+      "Full body massage, premium massage and professional body polishing.",
+    image: "/images/pricing/body-treatment.jpg",
+    icon: Flower2,
+    link: "/pricing/men/body-treatments",
+  },
+  {
+    id: "men-makeup",
+    title: "Groom Makeup",
+    description:
+      "Professional groom makeup for wedding celebrations and special occasions.",
+    image: "/images/pricing/makeup.jpg",
+    icon: Palette,
+    link: "/pricing/men/groom-makeup",
+  },
+  {
+    id: "men-packages",
+    title: "Pre Groom Package",
+    description:
+      "A complete pre groom experience with grooming, skincare, hair spa and body care.",
+    image: "/images/pricing/bridal-groom.jpg",
+    icon: Crown,
+    link: "/pricing/men/packages",
   },
 ];
 
@@ -117,15 +178,12 @@ function PricingCategoryCard({ category }) {
 
   return (
     <article className="pk-pricing-card">
-
       <Link
         to={category.link}
         className="pk-pricing-card-link"
         aria-label={`Explore ${category.title} pricing`}
       >
-
         <div className="pk-pricing-card-image">
-
           <img
             src={category.image}
             alt={`${category.title} at AURELLE`}
@@ -133,11 +191,9 @@ function PricingCategoryCard({ category }) {
           />
 
           <div className="pk-pricing-card-image-overlay" />
-
         </div>
 
         <div className="pk-pricing-card-content">
-
           <div className="pk-pricing-card-icon">
             <Icon size={30} strokeWidth={1.5} />
           </div>
@@ -150,12 +206,46 @@ function PricingCategoryCard({ category }) {
             View Pricing
             <ArrowRight size={17} />
           </span>
+        </div>
+      </Link>
+    </article>
+  );
+}
 
+/* =========================================
+   REUSABLE CATEGORY SECTION
+========================================= */
+
+function PricingCategorySection({
+  eyebrow,
+  title,
+  description,
+  categories,
+  id,
+}) {
+  return (
+    <section className="pk-pricing-category-group" id={id}>
+      <div className="pk-pricing-section-heading">
+        <div className="pk-pricing-eyebrow centered">
+          <span />
+          {eyebrow}
+          <span />
         </div>
 
-      </Link>
+        <h2>{title}</h2>
 
-    </article>
+        <p>{description}</p>
+      </div>
+
+      <div className="pk-pricing-grid">
+        {categories.map((category) => (
+          <PricingCategoryCard
+            category={category}
+            key={category.id}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -167,18 +257,13 @@ export default function Pricing() {
   return (
     <main className="pk-pricing-page">
 
-      {/* =====================================
-          HERO SECTION
-      ===================================== */}
+      {/* HERO SECTION */}
 
       <section className="pk-pricing-hero">
-
         <div className="pk-pricing-hero-bg" />
 
         <div className="pk-pricing-container pk-pricing-hero-inner">
-
           <div className="pk-pricing-hero-content">
-
             <div className="pk-pricing-eyebrow">
               <span />
               AURELLE PRICE MENU
@@ -190,10 +275,9 @@ export default function Pricing() {
             </h1>
 
             <p>
-              Discover our range of premium salon services
-              with transparent pricing. From expert hair
-              styling and men's grooming to skincare,
-              makeup and complete beauty experiences.
+              Explore the AURELLE price menu for women and men.
+              Discover professional beauty, hair care, grooming
+              and wellness services.
             </p>
 
             <a
@@ -203,116 +287,93 @@ export default function Pricing() {
               Explore Our Services
               <ArrowRight size={19} />
             </a>
-
           </div>
-
         </div>
-
       </section>
 
-      {/* =====================================
-          CATEGORY SECTION
-      ===================================== */}
+      {/* PRICING CATEGORIES */}
 
       <section
         className="pk-pricing-categories"
         id="pricing-categories"
       >
-
         <div className="pk-pricing-container">
 
-          <div className="pk-pricing-section-heading">
+          {/* WOMEN'S COLLECTION */}
 
-            <div className="pk-pricing-eyebrow centered">
-              <span />
-              EXPLORE OUR SERVICES
-              <span />
-            </div>
+          <PricingCategorySection
+            id="women-pricing"
+            eyebrow="WOMEN'S PRICE MENU"
+            title={
+              <>
+                Women's <em>Services</em>
+              </>
+            }
+            description="Explore our complete range of women's beauty, hair, skin, nail and wellness services."
+            categories={womenCategories}
+          />
 
-            <h2>
-              Find Your Perfect <em>Experience</em>
-            </h2>
+          {/* MEN'S COLLECTION */}
 
-            <p>
-              Explore our service categories and discover
-              the treatments designed around your personal
-              style and grooming needs.
-            </p>
+          <PricingCategorySection
+            id="men-pricing"
+            eyebrow="MEN'S PRICE MENU"
+            title={
+              <>
+                Men's <em>Services</em>
+              </>
+            }
+            description="Discover professional men's grooming, hair care, skincare and wellness services."
+            categories={menCategories}
+          />
 
-          </div>
-
-          {/* SERVICE CATEGORY GRID */}
-
-          <div className="pk-pricing-grid">
-
-            {categories.map((category) => (
-              <PricingCategoryCard
-                category={category}
-                key={category.id}
-              />
-            ))}
-
-          </div>
-
-          {/* =====================================
-              PRICING INFORMATION
-          ===================================== */}
+          {/* PRICING INFORMATION */}
 
           <div className="pk-pricing-information">
-
             <div className="pk-pricing-info-title">
-
               <Info size={25} strokeWidth={1.5} />
-
               <h3>Important Information</h3>
-
             </div>
 
             <div className="pk-pricing-info-details">
-
               <p>
                 <Check size={16} />
-                Prices are subject to applicable taxes as per the salon menu.
+                18% GST is applicable as stated in the salon menu.
               </p>
 
               <p>
                 <Check size={16} />
-                Final service pricing may vary depending on hair length, density and treatment requirements.
+                Hair treatment prices may vary depending on hair length and density.
               </p>
 
               <p>
                 <Check size={16} />
-                Our professionals can help you select the right service during consultation.
+                Additional nail art, stones, chrome and matte finishing are charged separately.
               </p>
 
+              <p>
+                <Check size={16} />
+                Please confirm the final service price and package inclusions during consultation.
+              </p>
             </div>
-
           </div>
 
         </div>
-
       </section>
 
-      {/* =====================================
-          APPOINTMENT CTA
-      ===================================== */}
+      {/* APPOINTMENT CTA */}
 
       <section className="pk-pricing-cta">
-
         <div className="pk-pricing-cta-bg" />
 
         <div className="pk-pricing-container pk-pricing-cta-inner">
-
           <div className="pk-pricing-cta-content">
-
             <div className="pk-pricing-eyebrow">
               <span />
               STYLE BEYOND ORDINARY
             </div>
 
-            <h2>
-              Your AURELLE Experience Awaits
-            </h2>
+            <h2>Your AURELLE Experience Awaits</h2>
 
             <p>
               Enjoy expert styling, personalised grooming
@@ -328,11 +389,8 @@ export default function Pricing() {
               Book Your Appointment
               <ArrowRight size={18} />
             </Link>
-
           </div>
-
         </div>
-
       </section>
 
     </main>

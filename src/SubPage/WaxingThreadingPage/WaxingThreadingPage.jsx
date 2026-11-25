@@ -16,9 +16,11 @@ import {
   ArrowRight,
   Feather,
   Droplets,
+  Smile,
+  Sun,
 } from "lucide-react";
-import '../HairStylingPage/HairStylingPage.css'
 
+import "../HairStylingPage/HairStylingPage.css";
 
 const serviceCategories = [
   { name: "Hair & Styling", slug: "hair", icon: Scissors },
@@ -35,35 +37,93 @@ const serviceCategories = [
 const waxingServices = [
   {
     number: "01",
-    title: "Full Body Waxing",
+    title: "Face Waxing",
     description:
-      "Professional hair removal with a careful and personalised approach.",
-    image: "/images/services/waxing/waxing-fullbody.jpg",
-    alt: "Professional full body waxing service",
+      "Professional facial waxing services for a neat and well groomed appearance.",
+    image: "/images/services/waxing/waxing-facial.jpg",
+    alt: "Professional facial waxing service",
+    icon: Smile,
+    services: [
+      "Upper Lip",
+      "Side Wax",
+      "Round Neck",
+      "Full Face",
+    ],
   },
   {
     number: "02",
-    title: "Face & Eyebrow Threading",
+    title: "Arms & Underarms Waxing",
     description:
-      "Precise facial hair removal and eyebrow shaping for a refined look.",
-    image: "/images/services/waxing/waxing-threading.jpg",
-    alt: "Professional eyebrow threading",
+      "Professional waxing services for arms and underarms with a smooth finish.",
+    image: "/images/services/waxing/waxing-armslegs.jpg",
+    alt: "Professional arms and underarms waxing",
+    icon: Hand,
+    services: [
+      "Underarms",
+      "Half Arms",
+      "Full Arms",
+    ],
   },
   {
     number: "03",
-    title: "Arms & Legs Waxing",
+    title: "Leg Waxing",
     description:
-      "Carefully performed waxing for smooth and well-groomed skin.",
+      "Carefully performed waxing services for smooth and well groomed legs.",
     image: "/images/services/waxing/waxing-armslegs.jpg",
-    alt: "Professional arms and legs waxing",
+    alt: "Professional leg waxing service",
+    icon: Feather,
+    services: [
+      "Half Legs",
+      "Full Legs",
+    ],
   },
   {
     number: "04",
-    title: "Facial Hair Removal",
+    title: "Body & Bikini Waxing",
     description:
-      "Gentle and detailed facial hair removal tailored to your preferences.",
-    image: "/images/services/waxing/waxing-facial.jpg",
-    alt: "Facial hair removal treatment",
+      "Professional body waxing options for personalised grooming preferences.",
+    image: "/images/services/waxing/waxing-fullbody.jpg",
+    alt: "Professional body waxing service",
+    icon: Sparkles,
+    services: [
+      "Full Back",
+      "Full Front",
+      "Bikini Line",
+      "Bikini Wax",
+      "Full Body Wax",
+    ],
+  },
+  {
+    number: "05",
+    title: "Specialised Waxing",
+    description:
+      "Choose from professional waxing options according to your preference.",
+    image: "/images/services/waxing/waxing-fullbody.jpg",
+    alt: "Professional salon waxing products",
+    icon: Droplets,
+    services: [
+      "Rica Wax",
+      "Roll-on Wax",
+      "Brazilian Wax",
+    ],
+  },
+  {
+    number: "06",
+    title: "Threading Services",
+    description:
+      "Precise threading services for eyebrow shaping and detailed facial grooming.",
+    image: "/images/services/waxing/waxing-threading.jpg",
+    alt: "Professional eyebrow and facial threading",
+    icon: Scissors,
+    services: [
+      "Eyebrow",
+      "Forehead",
+      "Upper Lip",
+      "Lower Lip",
+      "Chin",
+      "Side Face",
+      "Full Face",
+    ],
   },
 ];
 
@@ -173,7 +233,7 @@ export default function WaxingThreadingPage() {
         </div>
       </section>
 
-      {/* WAXING SERVICES */}
+      {/* WAXING AND THREADING SERVICES */}
       <section
         className="hair-services-section"
         id="waxing-services"
@@ -199,39 +259,52 @@ export default function WaxingThreadingPage() {
         </div>
 
         <div className="hair-service-grid">
-          {waxingServices.map((service) => (
-            <article
-              className="hair-service-card"
-              key={service.number}
-            >
-              <div className="hair-service-image">
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  loading="lazy"
-                />
+          {waxingServices.map((service) => {
+            const Icon = service.icon;
 
-                <span className="hair-service-number">
-                  {service.number}
-                </span>
-              </div>
+            return (
+              <article
+                className="hair-service-card"
+                key={service.number}
+              >
+                <div className="hair-service-image">
+                  <img
+                    src={service.image}
+                    alt={service.alt}
+                    loading="lazy"
+                  />
 
-              <div className="hair-service-info">
-                <div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                  <span className="hair-service-number">
+                    {service.number}
+                  </span>
                 </div>
 
-                <Link
-                  to="/booking"
-                  className="hair-card-arrow"
-                  aria-label={`Book ${service.title}`}
-                >
-                  <ArrowRight size={19} />
-                </Link>
-              </div>
-            </article>
-          ))}
+                <div className="hair-service-info">
+                  <div>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+
+                    <ul className="hair-service-list">
+                      {service.services.map((item) => (
+                        <li key={item}>
+                          <Icon size={14} strokeWidth={1.5} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Link
+                    to="/pricing/waxing-threading"
+                    className="hair-card-arrow"
+                    aria-label={`View ${service.title} pricing`}
+                  >
+                    <ArrowRight size={19} />
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -272,20 +345,20 @@ export default function WaxingThreadingPage() {
         <div className="hair-signature-image">
           <img
             src="/images/services/waxing/waxing-signature.jpg"
-            alt="AURELLE signature waxing experience"
+            alt="AURELLE professional beauty care experience"
             loading="lazy"
           />
         </div>
 
         <div className="hair-signature-content">
           <span className="hair-eyebrow">
-            SIGNATURE BEAUTY EXPERIENCE
+            PROFESSIONAL BEAUTY CARE
           </span>
 
           <h2>
             AURELLE
             <br />
-            <span>Silky Care Ritual</span>
+            <span>Personal Care Experience</span>
           </h2>
 
           <p>
@@ -295,10 +368,10 @@ export default function WaxingThreadingPage() {
           </p>
 
           <Link
-            to="/booking"
+            to="/pricing/waxing-threading"
             className="hair-button hair-button-light"
           >
-            Explore Experience <ArrowRight size={17} />
+            Explore Pricing <ArrowRight size={17} />
           </Link>
         </div>
       </section>

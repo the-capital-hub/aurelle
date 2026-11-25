@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import {
   Scissors,
-  VenetianMask,
+  UserRound,
   Palette,
   Droplet,
   Gift,
@@ -15,127 +15,255 @@ import {
   ChevronLeft,
   ShieldCheck,
   Leaf,
-  UserRound,
   Star,
+  Sparkles,
+  Footprints,
+  Heart,
+  Flower2,
 } from "lucide-react";
 
 import "./MensGroomingPricing.css";
 
+/* =========================================
+   MEN'S PRICE CATEGORIES
+========================================= */
+
 const groomingCategories = [
-  { id: "haircut", title: "Haircut & Styling", icon: Scissors },
-  { id: "beard", title: "Beard Styling", icon: VenetianMask },
-  { id: "shaving", title: "Shaving", icon: Leaf },
-  { id: "colour", title: "Hair Colour", icon: Palette },
-  { id: "spa", title: "Hair Spa & Treatments", icon: Droplet },
-  { id: "packages", title: "Grooming Packages", icon: Gift },
+  { id: "haircut", title: "Hair Cut & Style", icon: Scissors },
+  { id: "head-massage", title: "Head Massage", icon: UserRound },
+  { id: "hair-spa", title: "Hair Spa", icon: Droplet },
+  { id: "rebonding", title: "Hair Rebonding", icon: Sparkles },
+  { id: "colour", title: "Hair Colouring", icon: Palette },
+  { id: "facial", title: "Facial", icon: Heart },
+  { id: "cleanup", title: "Clean Up", icon: Sparkles },
+  { id: "detan", title: "Detan Pack", icon: Droplet },
+  { id: "body", title: "Body Polishing & Massage", icon: Flower2 },
+  { id: "pedicure", title: "Pedicure & Manicure", icon: Footprints },
+  { id: "makeup", title: "Groom Makeup", icon: UserRound },
+  { id: "packages", title: "Pre Groom Package", icon: Gift },
 ];
+
+/* =========================================
+   MEN'S SERVICES AND PRICES
+========================================= */
 
 const groomingServices = [
   {
     id: "haircut",
     number: "01",
-    title: "Haircut & Styling",
-    subtitle: "Classic, modern and personalised looks.",
-    description:
-      "Discover precision haircuts and professional styling designed to complement your personality.",
+    title: "Hair Cut & Style",
+    subtitle: "Professional haircuts and grooming.",
+    description: "Choose from professional haircut, beard styling, shaving and hair setting services.",
     image: "/images/pricing/mens-haircut.jpg",
     icon: Scissors,
     services: [
-      { name: "Men's Hair Cut", price: "₹499" },
-      { name: "Style Cut & Finish", price: "₹699" },
-      { name: "Kids Hair Cut (Boys)", price: "₹399" },
+      { name: "Combo: Hair Cut + Beard Trim or Shaving + Hair Wash & Setting + Classic Head Massage + Eyebrow Threading", price: "₹899" },
+      { name: "Kids Hair Cut", price: "₹299" },
+      { name: "Hair Cut", price: "₹399" },
+      { name: "Beard Trim", price: "₹200" },
+      { name: "Beard Design", price: "₹200" },
+      { name: "Shaving", price: "₹200" },
+      { name: "Hair Cut & Beard", price: "₹500" },
+      { name: "Hair Wash & Setting", price: "₹200" },
     ],
   },
   {
-    id: "beard",
+    id: "head-massage",
     number: "02",
-    title: "Beard Styling",
-    subtitle: "Sharp, clean and well-defined looks.",
-    description:
-      "Keep your beard looking its best with expert trimming, shaping and personalised grooming.",
-    image: "/images/pricing/mens-beard.jpg",
-    icon: VenetianMask,
+    title: "Head Massage",
+    subtitle: "Relaxing head and hair care.",
+    description: "Relax with classic, premium and oil based head massage experiences.",
+    image: "/images/pricing/mens-hair-spa.jpg",
+    icon: UserRound,
     services: [
-      { name: "Beard Trim", price: "₹299" },
-      { name: "Beard Shaping", price: "₹399" },
-      { name: "Beard Styling with Spa", price: "₹699" },
+      { name: "Classic Head Massage", price: "₹399" },
+      { name: "Relaxing Head Massage", price: "₹799" },
+      { name: "Premium Hot Oil Massage", price: "₹999" },
+      { name: "Moroccan Oil Massage", price: "₹1,499" },
     ],
   },
   {
-    id: "shaving",
+    id: "hair-spa",
     number: "03",
-    title: "Shaving",
-    subtitle: "A close, comfortable and refreshing shave.",
-    description:
-      "Enjoy a refined shaving experience with professional techniques and soothing aftercare.",
-    image: "/images/pricing/mens-shaving.jpg",
-    icon: Leaf,
+    title: "Hair Spa & Treatments",
+    subtitle: "Professional hair and scalp care.",
+    description: "Explore nourishing hair spa and specialised scalp treatment options.",
+    image: "/images/pricing/mens-hair-spa.jpg",
+    icon: Droplet,
     services: [
-      { name: "Classic Shave", price: "₹299" },
-      { name: "Premium Shave with Steam", price: "₹499" },
-      { name: "Royal Shave with Mask", price: "₹699" },
+      { name: "Spa Essence", price: "₹799" },
+      { name: "Tribond Hair Spa", price: "₹1,200" },
+      { name: "Luxe Rejuvenation", price: "₹1,499" },
+      { name: "Reborn Hair Spa", price: "₹1,899" },
+      { name: "Royal Bliss Hair Spa", price: "₹2,399" },
+      { name: "Moroccan Oil Hair Spa", price: "₹2,699" },
+      { name: "Anti Dandruff & Hairfall Treatment", price: "₹2,500" },
+      { name: "Anti Dandruff Treatment", price: "₹1,699" },
+      { name: "Anti Hair Loss Treatment", price: "₹1,699" },
+      { name: "Laser Anti Dandruff & Hairloss Treatment", price: "₹3,000" },
+      { name: "Laser Anti Dandruff Treatment", price: "₹1,999" },
+      { name: "Laser Anti Hair Treatment", price: "₹1,999" },
+      { name: "Korean Hair Spa", price: "₹3,499" },
+    ],
+  },
+  {
+    id: "rebonding",
+    number: "04",
+    title: "Hair Rebonding & Treatments",
+    subtitle: "Advanced hair transformation.",
+    description: "Professional smoothening and hair treatment services.",
+    image: "/images/pricing/mens-haircut.jpg",
+    icon: Sparkles,
+    services: [
+      { name: "Straightening & Smoothening", price: "₹1,999" },
+      { name: "Permanent Blowdry", price: "₹1,999" },
+      { name: "Keratin Treatment", price: "₹2,599" },
+      { name: "Nanoplastia", price: "₹3,000" },
+      { name: "Botox Treatment", price: "₹3,499" },
     ],
   },
   {
     id: "colour",
-    number: "04",
-    title: "Hair Colour",
-    subtitle: "Subtle to bold shades for a refreshed look.",
-    description:
-      "Refresh your appearance with professional colour services and carefully selected shades.",
+    number: "05",
+    title: "Hair Colouring",
+    subtitle: "Professional colour and highlights.",
+    description: "Refresh your look with professional hair and beard colouring.",
     image: "/images/pricing/mens-hair-colour.jpg",
     icon: Palette,
     services: [
-      { name: "Hair Colour (Per Application)", price: "₹1,799" },
-      { name: "Grey Coverage", price: "₹1,299" },
-      { name: "Highlights (Partial)", price: "₹2,499" },
-      { name: "Highlights (Global)", price: "₹3,999" },
+      { name: "Per Streak", price: "₹250" },
+      { name: "Global Colour", price: "₹1,300" },
+      { name: "Global Colour Without Ammonia", price: "₹1,600" },
+      { name: "Highlights", price: "₹2,399" },
+      { name: "Beard Colouring", price: "₹499" },
     ],
   },
   {
-    id: "spa",
-    number: "05",
-    title: "Hair Spa & Treatments",
-    subtitle: "Nourishment, strength and hair health.",
-    description:
-      "Give your hair and scalp specialised care with nourishing spa rituals and restorative treatments.",
-    image: "/images/pricing/mens-hair-spa.jpg",
+    id: "facial",
+    number: "06",
+    title: "Facial",
+    subtitle: "Premium skincare experiences.",
+    description: "Discover professional facial and specialised skincare treatments.",
+    image: "/images/services/mens-skin/mens-deep-cleansing.jpg",
+    icon: Heart,
+    services: [
+      { name: "Refreshing Glow Facial", price: "₹1,200" },
+      { name: "O3 Radiance Glow", price: "₹3,000" },
+      { name: "Skin Lightening Whitening", price: "₹4,000" },
+      { name: "Hydra Facial", price: "₹5,000" },
+      { name: "Hydra Frequency", price: "₹7,500" },
+      { name: "Korean Glass Facial", price: "₹6,000" },
+      { name: "Double Chin Treatment (RF)", price: "₹1,600" },
+      { name: "Jawline Shape Treatment", price: "₹1,700" },
+      { name: "Under Eye (Dark Circle) Treatment", price: "₹2,000" },
+    ],
+  },
+  {
+    id: "cleanup",
+    number: "07",
+    title: "Clean Up",
+    subtitle: "Refreshing skin cleansing.",
+    description: "Choose a cleansing experience designed to refresh your skin.",
+    image: "/images/services/mens-skin/mens-charcoal-facial.jpg",
+    icon: Sparkles,
+    services: [
+      { name: "Whitening Clean Up", price: "₹999" },
+      { name: "Tanning & Whitening Clean Up", price: "₹1,499" },
+      { name: "Radiance Glow Clean Up", price: "₹1,999" },
+    ],
+  },
+  {
+    id: "detan",
+    number: "08",
+    title: "Detan Pack",
+    subtitle: "Classic and premium detan care.",
+    description: "Choose the treatment area and preferred detan option.",
+    image: "/images/services/mens-skin/mens-tan-removal.jpg",
     icon: Droplet,
     services: [
-      { name: "Hair Spa", price: "₹1,299" },
-      { name: "Anti Hair Fall Treatment", price: "₹2,499" },
-      { name: "Repair & Nourish Treatment", price: "₹2,999" },
-      { name: "Scalp Detox Treatment", price: "₹3,499" },
+      { name: "Face", price: "Classic ₹500 | Premium ₹600" },
+      { name: "Face & Neck", price: "Classic ₹700 | Premium ₹800" },
+      { name: "Face Arms", price: "Classic ₹1,000 | Premium ₹1,200" },
+      { name: "Feet", price: "Classic ₹500 | Premium ₹600" },
+      { name: "Full Back & Front", price: "Classic ₹1,500 | Premium ₹1,600" },
+      { name: "Full Body", price: "Classic ₹3,500 | Premium ₹3,700" },
+      { name: "Under Arms", price: "Classic ₹500 | Premium ₹600" },
+    ],
+  },
+  {
+    id: "body",
+    number: "09",
+    title: "Body Polishing & Massage",
+    subtitle: "Relaxation and body care.",
+    description: "Enjoy professional massage and body polishing experiences.",
+    image: "/images/pricing/mens-hair-spa.jpg",
+    icon: Flower2,
+    services: [
+      { name: "Full Body Massage", price: "₹1,999" },
+      { name: "Full Body Polishing Classic", price: "₹2,500" },
+      { name: "Full Premium Body Polishing", price: "₹5,999" },
+      { name: "Premium Full Body Massage", price: "₹3,500" },
+    ],
+  },
+  {
+    id: "pedicure",
+    number: "10",
+    title: "Pedicure & Manicure",
+    subtitle: "Complete hand and foot care.",
+    description: "Choose from five professional hand and foot care collections.",
+    image: "/images/services/mens-skin/mens-hydrating-facial.jpg",
+    icon: Footprints,
+    services: [
+      { name: "Classic Pedicure & Manicure", price: "₹1,500" },
+      { name: "Classic Pedicure", price: "₹899" },
+      { name: "Classic Manicure", price: "₹750" },
+      { name: "Foot Logic Pedicure & Manicure", price: "₹1,700" },
+      { name: "Foot Logic Pedicure", price: "₹999" },
+      { name: "Foot Logic Manicure", price: "₹850" },
+      { name: "Ice Cream Pedicure & Manicure", price: "₹2,300" },
+      { name: "Ice Cream Pedicure", price: "₹1,350" },
+      { name: "Ice Cream Manicure", price: "₹1,150" },
+      { name: "Lotus Glow Pedicure & Manicure", price: "₹2,800" },
+      { name: "Lotus Glow Pedicure", price: "₹1,550" },
+      { name: "Lotus Glow Manicure", price: "₹1,399" },
+      { name: "Bubblegum Fresh Pedicure & Manicure", price: "₹3,200" },
+      { name: "Bubblegum Fresh Pedicure", price: "₹1,799" },
+      { name: "Bubblegum Fresh Manicure", price: "₹1,599" },
+    ],
+  },
+  {
+    id: "makeup",
+    number: "11",
+    title: "Groom Makeup",
+    subtitle: "Professional occasion makeup.",
+    description: "A professional makeup experience for groom celebrations.",
+    image: "/images/services/mens-skin/mens-charcoal-facial.jpg",
+    icon: UserRound,
+    services: [
+      { name: "Groom Makeup", price: "₹8,000" },
     ],
   },
   {
     id: "packages",
-    number: "06",
-    title: "Grooming Packages",
-    subtitle: "Complete care, curated for men.",
-    description:
-      "Enjoy a complete grooming experience with thoughtfully combined salon services.",
+    number: "12",
+    title: "Pre Groom Package",
+    subtitle: "A curated grooming experience.",
+    description: "A complete pre groom package with consultation, grooming, skincare and body care.",
     image: "/images/pricing/mens-grooming-package.jpg",
     icon: Gift,
     services: [
       {
-        name: "Essential Grooming Package",
-        detail: "Hair Cut + Beard Trim + Classic Shave",
-        price: "₹1,499",
-      },
-      {
-        name: "Premium Grooming Package",
-        detail: "Hair Cut + Beard Spa + Hair Spa",
-        price: "₹2,499",
-      },
-      {
-        name: "Royal Grooming Package",
-        detail: "Hair Cut + Beard Styling + Facial + Hair Spa",
-        price: "₹3,999",
+        name: "Pre Groom Package",
+        detail: "Free Consultation, Pedicure, Manicure, Cleanup, Detan Neck, Face & Neck, Premium Facial, Korean Hair Spa, Full Premium Body Polishing, Hair Cut and Beard Trim or Shaving.",
+        price: "₹16,272",
       },
     ],
   },
 ];
+
+/* =========================================
+   SERVICE CARD
+========================================= */
 
 function GroomingServiceCard({ service, reverse }) {
   const Icon = service.icon;
@@ -153,6 +281,7 @@ function GroomingServiceCard({ service, reverse }) {
         />
 
         <div className="mgp-image-shade" />
+
         <span className="mgp-service-number">
           {service.number}
         </span>
@@ -166,7 +295,7 @@ function GroomingServiceCard({ service, reverse }) {
 
           <div>
             <span className="mgp-service-kicker">
-              AURELLE GROOMING
+              AURELLE MEN'S COLLECTION
             </span>
 
             <h3>{service.title}</h3>
@@ -194,8 +323,6 @@ function GroomingServiceCard({ service, reverse }) {
           ))}
         </div>
 
-        {/* CONNECTED BOOKING BUTTON */}
-
         <Link
           to={`/booking?gender=men&service=mens-grooming&item=${service.id}`}
           className="mgp-book-button"
@@ -207,6 +334,10 @@ function GroomingServiceCard({ service, reverse }) {
     </article>
   );
 }
+
+/* =========================================
+   MEN'S PRICING PAGE
+========================================= */
 
 export default function MensGroomingPricing() {
   return (
@@ -226,18 +357,18 @@ export default function MensGroomingPricing() {
           <div className="mgp-hero-copy">
             <span className="mgp-eyebrow">
               <span />
-              AURELLE
+              AURELLE MEN'S COLLECTION
               <span />
             </span>
 
             <h1>
-              Men’s
-              <em>Grooming</em>
+              Men's
+              <em>Price Menu</em>
             </h1>
 
             <p>
-              Expert grooming services for the modern man,
-              from stylish haircuts to complete grooming rituals.
+              Explore professional men's grooming, hair care,
+              skincare, massage and wellness services at AURELLE.
             </p>
 
             <Link
@@ -284,12 +415,12 @@ export default function MensGroomingPricing() {
             </span>
 
             <h2>
-              Men’s Grooming <em>Services & Pricing</em>
+              Men's Grooming <em>Services & Pricing</em>
             </h2>
 
             <p>
-              Premium grooming experiences tailored for
-              the modern gentleman.
+              Explore our complete men's service catalogue
+              and choose your preferred experience.
             </p>
           </div>
 
@@ -308,38 +439,22 @@ export default function MensGroomingPricing() {
           <div className="mgp-benefits">
             <div className="mgp-benefit-item">
               <ShieldCheck size={30} strokeWidth={1.4} />
-              <span>
-                Hygienic & Safe
-                <br />
-                Tools
-              </span>
+              <span>Hygienic & Safe<br />Tools</span>
             </div>
 
             <div className="mgp-benefit-item">
               <Leaf size={30} strokeWidth={1.4} />
-              <span>
-                Premium
-                <br />
-                Products
-              </span>
+              <span>Professional<br />Products</span>
             </div>
 
             <div className="mgp-benefit-item">
               <UserRound size={30} strokeWidth={1.4} />
-              <span>
-                Expert
-                <br />
-                Professionals
-              </span>
+              <span>Expert<br />Professionals</span>
             </div>
 
             <div className="mgp-benefit-item">
               <Star size={30} strokeWidth={1.4} />
-              <span>
-                Personalised
-                <br />
-                Grooming
-              </span>
+              <span>Personalised<br />Care</span>
             </div>
           </div>
 
@@ -354,13 +469,17 @@ export default function MensGroomingPricing() {
             <div className="mgp-info-content">
               <p>
                 <Check size={16} />
-                All listed prices are subject to 18% GST.
+                18% GST is applicable as stated in the salon catalogue.
               </p>
 
               <p>
                 <Check size={16} />
-                Final pricing may vary according to hair length,
-                service requirements and consultation.
+                Hair rebonding prices may vary according to hair length and density.
+              </p>
+
+              <p>
+                <Check size={16} />
+                Please confirm treatment details and final pricing during consultation.
               </p>
             </div>
           </div>
@@ -386,8 +505,8 @@ export default function MensGroomingPricing() {
             </h2>
 
             <p>
-              Book your men’s grooming service today and
-              experience the AURELLE difference.
+              Discover professional men's grooming
+              and personalised care at AURELLE.
             </p>
 
             <Link

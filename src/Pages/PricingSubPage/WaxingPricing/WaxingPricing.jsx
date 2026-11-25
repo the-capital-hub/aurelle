@@ -4,7 +4,6 @@ import {
   Sparkles,
   ShieldCheck,
   Hand,
-  Footprints,
   Smile,
   Heart,
   ArrowRight,
@@ -14,6 +13,8 @@ import {
   ChevronLeft,
   Droplet,
   Scissors,
+  Sun,
+  Flower2,
 } from "lucide-react";
 
 import "./WaxingPricing.css";
@@ -43,73 +44,103 @@ const serviceHighlights = [
 
 const waxingServices = [
   {
-    id: "full-body-waxing",
-    number: "01",
-    title: "Full Body Waxing",
-    label: "COMPLETE BODY CARE",
-    description:
-      "A complete waxing experience for smooth and well groomed skin.",
-    image: "/images/pricing/full-body-waxing.jpg",
-    icon: Sparkles,
-    price: "Ask for Price",
-  },
-  {
-    id: "hand-leg-waxing",
-    number: "02",
-    title: "Hand & Leg Waxing",
-    label: "SMOOTH SKIN CARE",
-    description:
-      "Professional waxing services for hands and legs with a neat finish.",
-    image: "/images/pricing/hand-leg-waxing.jpg",
-    icon: Hand,
-    price: "Ask for Price",
-  },
-  {
-    id: "underarms-waxing",
-    number: "03",
-    title: "Underarms Waxing",
-    label: "GENTLE GROOMING",
-    description:
-      "Focused grooming care for a clean and comfortable finish.",
-    image: "/images/pricing/underarms-waxing.jpg",
-    icon: Droplet,
-    price: "Ask for Price",
-  },
-  {
     id: "face-waxing",
-    number: "04",
+    number: "01",
     title: "Face Waxing",
     label: "FACIAL GROOMING",
     description:
-      "Detailed facial waxing for a neat and well groomed appearance.",
+      "Professional facial waxing services for a neat and well groomed appearance.",
     image: "/images/pricing/face-waxing.jpg",
     icon: Smile,
-    price: "Ask for Price",
+    services: [
+      { name: "Upper Lip", price: "Confirm Price" },
+      { name: "Side Wax", price: "Confirm Price" },
+      { name: "Round Neck", price: "Confirm Price" },
+      { name: "Full Face", price: "Confirm Price" },
+    ],
+  },
+  {
+    id: "arms-waxing",
+    number: "02",
+    title: "Arms & Underarms Waxing",
+    label: "SMOOTH SKIN CARE",
+    description:
+      "Professional waxing services for arms and underarms with a neat finish.",
+    image: "/images/pricing/hand-leg-waxing.jpg",
+    icon: Hand,
+    services: [
+      { name: "Underarms", price: "Confirm Price" },
+      { name: "Half Arms", price: "Confirm Price" },
+      { name: "Full Arms", price: "Confirm Price" },
+    ],
+  },
+  {
+    id: "legs-waxing",
+    number: "03",
+    title: "Leg Waxing",
+    label: "SMOOTH FINISH",
+    description:
+      "Personal grooming services for smooth and well cared for legs.",
+    image: "/images/pricing/hand-leg-waxing.jpg",
+    icon: Sparkles,
+    services: [
+      { name: "Half Legs", price: "Confirm Price" },
+      { name: "Full Legs", price: "Confirm Price" },
+    ],
+  },
+  {
+    id: "body-waxing",
+    number: "04",
+    title: "Body & Bikini Waxing",
+    label: "COMPLETE BODY CARE",
+    description:
+      "Professional body waxing options for personalised grooming needs.",
+    image: "/images/pricing/full-body-waxing.jpg",
+    icon: Flower2,
+    services: [
+      { name: "Full Back", price: "Confirm Price" },
+      { name: "Full Front", price: "Confirm Price" },
+      { name: "Bikini Line", price: "Confirm Price" },
+      { name: "Bikini Wax", price: "Confirm Price" },
+      { name: "Full Body Wax", price: "Confirm Price" },
+    ],
+  },
+  {
+    id: "waxing-types",
+    number: "05",
+    title: "Specialised Waxing",
+    label: "PROFESSIONAL WAX OPTIONS",
+    description:
+      "Choose from different professional waxing options according to your preference.",
+    image: "/images/pricing/full-body-waxing.jpg",
+    icon: Droplet,
+    services: [
+      { name: "Rica Wax", price: "Confirm Price" },
+      { name: "Roll-on Wax", price: "Confirm Price" },
+      { name: "Brazilian Wax", price: "Confirm Price" },
+    ],
   },
 ];
 
 const threadingServices = [
   {
-    id: "eyebrow-threading",
-    number: "05",
-    title: "Eyebrow Threading",
-    label: "BROW DEFINITION",
+    id: "threading-services",
+    number: "06",
+    title: "Threading Services",
+    label: "PRECISE FACIAL GROOMING",
     description:
-      "Shape and define your brows with precise professional threading.",
+      "Professional threading services for precise shaping and a neat facial finish.",
     image: "/images/pricing/eyebrow-threading.jpg",
     icon: Scissors,
-    price: "Ask for Price",
-  },
-  {
-    id: "upper-lip-chin",
-    number: "06",
-    title: "Upper Lip & Chin",
-    label: "DETAILED FACIAL CARE",
-    description:
-      "Precise threading for a neat and well groomed facial finish.",
-    image: "/images/pricing/upper-lip-chin.jpg",
-    icon: Smile,
-    price: "Ask for Price",
+    services: [
+      { name: "Eyebrow", price: "Confirm Price" },
+      { name: "Forehead", price: "Confirm Price" },
+      { name: "Upper Lip", price: "Confirm Price" },
+      { name: "Lower Lip", price: "Confirm Price" },
+      { name: "Chin", price: "Confirm Price" },
+      { name: "Side Face", price: "Confirm Price" },
+      { name: "Full Face", price: "Confirm Price" },
+    ],
   },
 ];
 
@@ -144,11 +175,18 @@ function BeautyServiceCard({ service }) {
 
         <p>{service.description}</p>
 
-        <div className="wax-card-bottom">
-          <strong>{service.price}</strong>
+        <div className="wax-service-prices">
+          {service.services.map((item) => (
+            <div className="wax-service-price-row" key={item.name}>
+              <span>{item.name}</span>
+              <strong>{item.price}</strong>
+            </div>
+          ))}
+        </div>
 
-          <a href="/contact" className="wax-book-link">
-            Enquire Now
+        <div className="wax-card-bottom">
+          <a href="/booking" className="wax-book-link">
+            Book Now
             <ArrowRight size={16} />
           </a>
         </div>
@@ -175,7 +213,7 @@ export default function WaxingPricing() {
           <div className="wax-hero-content">
             <span className="wax-eyebrow">
               <span />
-              PK BEAUTY STUDIO
+              AURELLE BEAUTY STUDIO
             </span>
 
             <h1>
@@ -288,7 +326,7 @@ export default function WaxingPricing() {
             </div>
 
             <div>
-              <span>THE PK BEAUTY EXPERIENCE</span>
+              <span>THE AURELLE BEAUTY EXPERIENCE</span>
               <h3>Care In Every Detail</h3>
               <p>
                 Enjoy attentive service, personalised care
@@ -308,13 +346,13 @@ export default function WaxingPricing() {
             <div className="wax-info-details">
               <p>
                 <Check size={16} />
-                All confirmed service prices will be subject to 18% GST.
+                Prices marked Confirm Price require salon confirmation.
               </p>
 
               <p>
                 <Check size={16} />
-                Please contact the salon for service availability
-                and individual pricing.
+                Waxing options and service availability may vary.
+                Please confirm the preferred option before booking.
               </p>
             </div>
           </div>
@@ -341,10 +379,10 @@ export default function WaxingPricing() {
 
             <p>
               Book your grooming session with the beauty
-              professionals at PK Unisex Salon.
+              professionals at AURELLE.
             </p>
 
-            <a href="/contact" className="wax-primary-button">
+            <a href="/booking" className="wax-primary-button">
               <CalendarDays size={18} />
               Book an Appointment
               <ArrowRight size={18} />

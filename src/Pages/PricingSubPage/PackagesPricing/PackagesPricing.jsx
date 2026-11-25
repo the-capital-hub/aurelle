@@ -6,81 +6,52 @@ const packages = [
   {
     id: 1,
     number: "01",
-    title: "Bridal Makeup",
-    category: "THE BRIDE",
+    title: "Pre Bridal Package",
+    category: "BRIDAL PREPARATION",
     description:
-      "A complete bridal beauty experience designed to make your wedding look unforgettable.",
+      "Prepare for your special day with the AURELLE Pre Bridal Package. Connect with our team for details about the package inclusions.",
     features: [
-      "Professional Bridal Makeup",
-      "Bridal Hairstyling",
-      "Saree or Dupatta Draping",
-      "Finishing and Touch Up",
+      "Pre Bridal Beauty Package",
+      "Professional Salon Care",
+      "Personalised Consultation",
+      "Package Details on Enquiry",
     ],
-    price: "Ask for Price",
-    image: "/images/pricing/bridal-makeup-package.jpg",
+    price: "₹18,072",
+    offer: "25% OFF INCLUDED",
+    image: "/images/pricing/pre-bridal-package.jpg",
   },
   {
     id: 2,
     number: "02",
-    title: "Pre Bridal Package",
-    category: "BRIDAL PREPARATION",
+    title: "Pre Groom Package",
+    category: "GROOM PREPARATION",
     description:
-      "A thoughtful beauty preparation experience for a radiant and confident bridal look.",
+      "Get ready for your wedding celebrations with the AURELLE Pre Groom Package. Contact our team to discuss the package details.",
     features: [
-      "Skin Care Treatments",
-      "Hair Care Session",
-      "Hand and Foot Care",
-      "Beauty Consultation",
+      "Pre Groom Beauty Package",
+      "Professional Salon Care",
+      "Personalised Consultation",
+      "Package Details on Enquiry",
     ],
-    price: "Ask for Price",
-    image: "/images/pricing/pre-bridal-package.jpg",
+    price: "₹16,272",
+    offer: "25% OFF INCLUDED",
+    image: "/images/pricing/groom-package.jpg",
   },
   {
     id: 3,
     number: "03",
-    title: "Groom Grooming",
+    title: "Groom Makeup",
     category: "THE GROOM",
     description:
-      "Refined grooming and styling to help the groom look his best on every wedding occasion.",
+      "A professional makeup service designed to create a refined and polished look for your special occasion.",
     features: [
       "Professional Groom Makeup",
-      "Hair Styling",
-      "Skin Preparation",
-      "Final Grooming Touch Up",
-    ],
-    price: "Ask for Price",
-    image: "/images/pricing/groom-package.jpg",
-  },
-  {
-    id: 4,
-    number: "04",
-    title: "Couple Package",
-    category: "TOGETHER",
-    description:
-      "A coordinated beauty and grooming experience for the bride and groom.",
-    features: [
-      "Bridal Beauty Session",
-      "Groom Grooming Session",
-      "Hair Styling",
+      "Wedding Ready Look",
       "Personalised Consultation",
+      "Professional Finishing",
     ],
-    price: "Ask for Price",
-    image: "/images/pricing/couple-package.jpg",
-  },
-  {
-    id: 5,
-    number: "05",
-    title: "Premium Wedding Package",
-    category: "THE SIGNATURE EXPERIENCE",
-    description:
-      "An elevated wedding beauty experience with personalised care for your special celebrations.",
-    features: [
-      "Premium Bridal Makeup",
-      "Premium Groom Grooming",
-      "Hair Styling and Draping",
-      "Personalised Beauty Planning",
-    ],
-    price: "Ask for Price",
+    price: "₹8,000",
+    offer: "",
     image: "/images/pricing/premium-wedding-package.jpg",
   },
 ];
@@ -88,30 +59,30 @@ const packages = [
 const weddingMoments = [
   {
     number: "01",
-    title: "The Bridal Look",
-    description: "Beauty that celebrates your special moment.",
+    title: "The Bridal Preparation",
+    description: "Prepare for your special day with dedicated beauty care.",
   },
   {
     number: "02",
-    title: "The Groom Edit",
-    description: "Refined styling with attention to every detail.",
+    title: "The Groom Preparation",
+    description: "A refined preparation experience for the groom.",
   },
   {
     number: "03",
-    title: "The Perfect Pair",
-    description: "A coordinated experience for two.",
+    title: "The Perfect Wedding Look",
+    description: "Professional finishing for your special celebration.",
   },
 ];
 
 const PackagesPricing = () => {
-  const whatsappNumber = ""; // Add salon WhatsApp number with country code
+  const whatsappNumber = "";
 
   const getBookingLink = (packageName) => {
-    const message = `Hello PK UNISEX SALON, I would like to enquire about the ${packageName}.`;
+    const message = `Hello AURELLE Beauty Studio, I would like to enquire about ${packageName}.`;
 
     return whatsappNumber
       ? `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
-      : "#packages";
+      : "/booking";
   };
 
   return (
@@ -146,8 +117,8 @@ const PackagesPricing = () => {
 
           <p>
             Celebrate your special moments with personalised bridal
-            beauty, groom grooming and premium wedding experiences
-            at PK UNISEX SALON.
+            preparation, groom care and professional wedding makeup
+            experiences at AURELLE Beauty Studio.
           </p>
 
           <a href="#packages" className="pkg-primary-btn">
@@ -156,7 +127,7 @@ const PackagesPricing = () => {
         </div>
 
         <div className="pkg-hero-caption">
-          PK UNISEX SALON · WEDDING COLLECTION
+          AURELLE BEAUTY STUDIO · WEDDING COLLECTION
         </div>
       </section>
 
@@ -172,10 +143,10 @@ const PackagesPricing = () => {
 
         <div className="pkg-intro-right">
           <p>
-            Your wedding deserves more than an ordinary beauty
-            appointment. Discover thoughtfully designed experiences
-            that bring together professional styling, personal care
-            and timeless elegance.
+            Your wedding deserves special attention. Discover
+            our bridal preparation, groom preparation and
+            professional makeup services designed for your
+            memorable celebrations.
           </p>
         </div>
       </section>
@@ -186,8 +157,8 @@ const PackagesPricing = () => {
           <span className="pkg-eyebrow">CURATED FOR YOUR CELEBRATION</span>
           <h2>Wedding Packages</h2>
           <p>
-            Find the experience that makes your special day feel
-            even more memorable.
+            Explore our wedding collection and choose the
+            experience that suits your special occasion.
           </p>
         </div>
 
@@ -207,6 +178,7 @@ const PackagesPricing = () => {
 
               <div className="pkg-card-content">
                 <h3>{item.title}</h3>
+
                 <p className="pkg-card-description">
                   {item.description}
                 </p>
@@ -224,6 +196,11 @@ const PackagesPricing = () => {
                   <div>
                     <span className="pkg-price-label">PACKAGE PRICE</span>
                     <strong>{item.price}</strong>
+                    {item.offer && (
+                      <span className="pkg-price-label">
+                        {item.offer}
+                      </span>
+                    )}
                   </div>
 
                   <a
@@ -252,7 +229,7 @@ const PackagesPricing = () => {
         </div>
 
         <div className="pkg-experience-content">
-          <span className="pkg-eyebrow">THE PK WEDDING EXPERIENCE</span>
+          <span className="pkg-eyebrow">THE AURELLE WEDDING EXPERIENCE</span>
 
           <h2>
             Made for your
@@ -260,9 +237,9 @@ const PackagesPricing = () => {
           </h2>
 
           <p>
-            From the first beauty consultation to the final finishing
-            touches, our wedding collection is designed around your
-            personal style and celebration.
+            From bridal preparation to groom makeup, explore
+            professional beauty services for your wedding
+            celebrations at AURELLE.
           </p>
 
           <div className="pkg-moments">
@@ -300,8 +277,8 @@ const PackagesPricing = () => {
           </h2>
 
           <p>
-            Connect with PK UNISEX SALON to discuss your wedding
-            beauty and grooming requirements.
+            Connect with AURELLE Beauty Studio to discuss
+            your wedding beauty and grooming requirements.
           </p>
 
           <a

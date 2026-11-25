@@ -975,3 +975,120 @@ height: 420px;
     height: 290px;
   }
 }
+
+/* HAIR SERVICE LIST */
+
+.hair-service-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+}
+
+.hair-service-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.hair-service-list li svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+@media (max-width: 600px) {
+  .hair-service-list {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+}
+
+/* SKIN AND FACIAL SERVICE LIST */
+
+.hair-service-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+}
+
+.hair-service-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.hair-service-list li svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+@media (max-width: 600px) {
+  .hair-service-list {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+}
+
+/* WAXING AND THREADING SERVICE LIST */
+
+.hair-service-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+}
+
+.hair-service-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.hair-service-list li svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+@media (max-width: 600px) {
+  .hair-service-list {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+}
+
+.hair-pricing-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.hair-pricing-link .hair-button {
+  min-width: 230px;
+  justify-content: center;
+}
+
+.hair-card-arrow {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(192, 192, 192, 0.6);
+  border-radius: 50%;
+  color: #ffffff;
+}
+

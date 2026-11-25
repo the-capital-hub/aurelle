@@ -16,9 +16,9 @@ import {
   ArrowRight,
   Waves,
   Droplets,
-  Flame,
 } from "lucide-react";
-import '../HairStylingPage/HairStylingPage.css'
+
+import "../HairStylingPage/HairStylingPage.css";
 
 const serviceCategories = [
   { name: "Hair & Styling", slug: "hair", icon: Scissors },
@@ -35,62 +35,62 @@ const serviceCategories = [
 const spaServices = [
   {
     number: "01",
-    title: "Relaxing Body Massage",
+    title: "Full Body Massage",
     description:
-      "A soothing massage experience designed for relaxation and comfort.",
+      "A relaxing full body massage experience designed to ease tension and provide comfort.",
     image: "/images/services/body-spa/body-massage.jpg",
-    alt: "Luxury relaxing body massage",
+    alt: "Full body massage treatment",
   },
   {
     number: "02",
-    title: "Aromatherapy",
+    title: "Premium Full Body Massage",
     description:
-      "A calming spa experience with aromatic oils and relaxing ambience.",
+      "An elevated full body massage experience with attentive care and a relaxing atmosphere.",
     image: "/images/services/body-spa/body-aromatherapy.jpg",
-    alt: "Luxury aromatherapy spa experience",
+    alt: "Premium full body massage experience",
   },
   {
     number: "03",
-    title: "Body Polishing",
+    title: "Classic Body Polishing",
     description:
-      "A professional exfoliating experience for smoother looking skin.",
+      "A professional body polishing treatment focused on exfoliation and smoother looking skin.",
     image: "/images/services/body-spa/body-polishing.jpg",
-    alt: "Professional body polishing treatment",
+    alt: "Classic body polishing treatment",
   },
   {
     number: "04",
-    title: "Luxury Spa Ritual",
+    title: "Premium Full Body Polishing",
     description:
-      "A personalised spa experience combining soothing care and relaxation.",
+      "A premium body polishing experience designed to leave your skin feeling smooth and refreshed.",
     image: "/images/services/body-spa/body-ritual.jpg",
-    alt: "Luxury spa ritual",
+    alt: "Premium full body polishing treatment",
   },
 ];
 
 const benefits = [
   {
     icon: Star,
-    title: "Professional Therapists",
-    description: "Careful attention from trained spa professionals.",
+    title: "Professional Care",
+    description: "Attentive care throughout your body treatment.",
   },
   {
     icon: Droplets,
     title: "Quality Products",
-    description: "Carefully selected products for spa treatments.",
+    description: "Carefully selected products for body treatments.",
   },
   {
     icon: Heart,
-    title: "Personalised Experience",
-    description: "Experiences tailored to your comfort and preferences.",
+    title: "Relaxing Experience",
+    description: "Enjoy a comfortable and refreshing salon visit.",
   },
   {
     icon: ShieldCheck,
     title: "Clean Environment",
-    description: "A comfortable and hygienic spa setting.",
+    description: "A comfortable and hygienic salon setting.",
   },
   {
     icon: Waves,
-    title: "Relaxing Ambience",
+    title: "Personal Care",
     description: "A calm environment for your personal care time.",
   },
 ];
@@ -120,7 +120,7 @@ export default function BodySpaPage() {
           </div>
 
           <span className="hair-eyebrow">
-            AURELLE WELLNESS COLLECTION
+            AURELLE BODY CARE COLLECTION
           </span>
 
           <h1>
@@ -128,9 +128,9 @@ export default function BodySpaPage() {
           </h1>
 
           <p>
-            Step into a calming world of professional body
-            care, relaxing spa rituals and personalised
-            experiences designed around your comfort.
+            Discover professional body massage and polishing
+            treatments designed to bring relaxation, comfort
+            and a refreshed feeling.
           </p>
 
           <div className="hair-hero-actions">
@@ -181,7 +181,7 @@ export default function BodySpaPage() {
         <div className="hair-section-heading">
           <div>
             <span className="hair-eyebrow">
-              THE ART OF RELAXATION
+              THE ART OF BODY CARE
             </span>
 
             <h2>
@@ -192,9 +192,9 @@ export default function BodySpaPage() {
           </div>
 
           <p>
-            Discover thoughtfully designed spa experiences
-            that combine professional body care, soothing
-            techniques and a peaceful salon atmosphere.
+            Explore our body care collection, featuring
+            professional massage and body polishing
+            treatments in a peaceful salon atmosphere.
           </p>
         </div>
 
@@ -272,26 +272,26 @@ export default function BodySpaPage() {
         <div className="hair-signature-image">
           <img
             src="/images/services/body-spa/body-signature.jpg"
-            alt="AURELLE signature spa ritual"
+            alt="AURELLE signature body care experience"
             loading="lazy"
           />
         </div>
 
         <div className="hair-signature-content">
           <span className="hair-eyebrow">
-            SIGNATURE SPA EXPERIENCE
+            SIGNATURE BODY CARE
           </span>
 
           <h2>
             AURELLE
             <br />
-            <span>Serenity Ritual</span>
+            <span>Serenity Experience</span>
           </h2>
 
           <p>
-            Enjoy a thoughtfully curated spa experience
-            with relaxing body care, soothing ambience
-            and personalised attention.
+            Take time for yourself with professional body
+            massage and polishing treatments, delivered
+            with attentive care in a relaxing setting.
           </p>
 
           <Link
@@ -314,8 +314,8 @@ export default function BodySpaPage() {
             <h2>Relax. Recharge. Reconnect.</h2>
 
             <p>
-              Discover a more relaxing salon experience
-              with professional spa care at AURELLE.
+              Discover a refreshing body care experience
+              with professional treatments at AURELLE.
             </p>
           </div>
 

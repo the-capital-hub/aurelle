@@ -5,55 +5,82 @@ import "./PedicureManicurePricing.css";
 const services = [
   {
     id: 1,
-    name: "Classic Pedicure",
+    name: "Classic Pedicure & Manicure",
     description:
-      "A refreshing foot care experience with cleansing, exfoliation, nail care and relaxation.",
-    price: "₹899",
+      "A complete hand and foot care experience with cleansing, exfoliation, nail grooming and relaxation.",
+    price: "₹1,500",
     image: "/images/pricing/classic-pedicure.jpg",
     tag: "Essential Care",
   },
   {
     id: 2,
-    name: "Classic Manicure",
+    name: "Foot Logic Pedicure & Manicure",
     description:
-      "Complete hand and nail grooming with cleansing, shaping, cuticle care and a polished finish.",
-    price: "₹750",
-    image: "/images/pricing/classic-manicure.jpg",
-    tag: "Essential Care",
-  },
-  {
-    id: 3,
-    name: "Foot Logic Pedicure",
-    description:
-      "A specialised foot care ritual designed to leave your feet feeling smooth, refreshed and renewed.",
-    price: "Ask for Price",
+      "A specialised hand and foot care ritual designed to refresh, smooth and rejuvenate.",
+    price: "₹1,700",
     image: "/images/pricing/foot-logic.jpg",
     tag: "Specialised Care",
   },
   {
-    id: 4,
-    name: "Ice Cream Pedicure",
+    id: 3,
+    name: "Foot Logic Manicure",
     description:
-      "An indulgent pedicure experience with a soothing treatment for soft and refreshed feet.",
-    price: "Ask for Price",
+      "A specialised hand care treatment focused on nail grooming, cleansing and a refreshed finish.",
+    price: "₹850",
+    image: "/images/pricing/classic-manicure.jpg",
+    tag: "Specialised Care",
+  },
+  {
+    id: 4,
+    name: "Ice Cream Pedicure & Manicure",
+    description:
+      "An indulgent hand and foot care experience for beautifully refreshed and pampered skin.",
+    price: "₹2,300",
     image: "/images/pricing/ice-cream-pedicure.jpg",
     tag: "Luxury Ritual",
   },
   {
     id: 5,
-    name: "Lotus Glow Pedicure",
+    name: "Ice Cream Manicure",
     description:
-      "A luxurious foot care ritual focused on cleansing, exfoliation and a radiant finish.",
-    price: "Ask for Price",
+      "A soothing manicure experience that leaves your hands feeling soft, clean and refreshed.",
+    price: "₹1,150",
+    image: "/images/pricing/ice-cream-pedicure.jpg",
+    tag: "Luxury Ritual",
+  },
+  {
+    id: 6,
+    name: "Lotus Glow Pedicure & Manicure",
+    description:
+      "A premium hand and foot care ritual focused on deep cleansing, exfoliation and a radiant finish.",
+    price: "₹2,800",
     image: "/images/pricing/lotus-glow.jpg",
     tag: "Premium Ritual",
   },
   {
-    id: 6,
-    name: "Bubblegum Fresh Pedicure",
+    id: 7,
+    name: "Lotus Glow Manicure",
     description:
-      "A playful and refreshing foot care experience for soft, clean and beautifully cared for feet.",
-    price: "Ask for Price",
+      "A luxurious hand care treatment designed to nourish, refresh and enhance the natural beauty of your hands.",
+    price: "₹1,399",
+    image: "/images/pricing/lotus-glow.jpg",
+    tag: "Premium Ritual",
+  },
+  {
+    id: 8,
+    name: "Bubblegum Fresh Pedicure & Manicure",
+    description:
+      "A refreshing hand and foot care experience for soft, clean and beautifully cared for skin.",
+    price: "₹3,200",
+    image: "/images/pricing/bubblegum-fresh.jpg",
+    tag: "Refreshing Care",
+  },
+  {
+    id: 9,
+    name: "Bubblegum Fresh Manicure",
+    description:
+      "A refreshing manicure ritual that gives your hands a clean, soft and beautifully groomed finish.",
+    price: "₹1,599",
     image: "/images/pricing/bubblegum-fresh.jpg",
     tag: "Refreshing Care",
   },
@@ -75,7 +102,7 @@ const PedicureManicurePricing = () => {
         <div className="pm-hero-overlay"></div>
 
         <div className="pm-hero-content">
-          <span className="pm-eyebrow">PK UNISEX SALON</span>
+          <span className="pm-eyebrow">AURELLE BEAUTY STUDIO</span>
 
           <h1>
             The Art of
@@ -92,7 +119,7 @@ const PedicureManicurePricing = () => {
           </a>
         </div>
 
-        <div className="pm-hero-number">01 / 06</div>
+        <div className="pm-hero-number">01 / 09</div>
       </section>
 
       {/* INTRO SECTION */}
@@ -140,7 +167,7 @@ const PedicureManicurePricing = () => {
                 />
 
                 <span className="pm-service-number">
-                  0{index + 1}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
                 <span className="pm-service-tag">
@@ -159,12 +186,10 @@ const PedicureManicurePricing = () => {
                 <p>{service.description}</p>
 
                 <a
-                  href="https://wa.me/"
+                  href="/booking"
                   className="pm-service-link"
-                  target="_blank"
-                  rel="noreferrer"
                 >
-                  ENQUIRE NOW <span>↗</span>
+                  BOOK NOW <span>↗</span>
                 </a>
               </div>
             </article>
@@ -183,7 +208,7 @@ const PedicureManicurePricing = () => {
         </div>
 
         <div className="pm-experience-content">
-          <span className="pm-eyebrow">THE PK EXPERIENCE</span>
+          <span className="pm-eyebrow">THE AURELLE EXPERIENCE</span>
 
           <h2>
             A little luxury.
@@ -240,9 +265,7 @@ const PedicureManicurePricing = () => {
           </p>
 
           <a
-            href="https://wa.me/"
-            target="_blank"
-            rel="noreferrer"
+            href="/booking"
             className="pm-primary-btn"
           >
             BOOK YOUR APPOINTMENT <span>↗</span>

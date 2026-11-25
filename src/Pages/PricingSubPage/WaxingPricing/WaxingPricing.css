@@ -779,3 +779,51 @@
     font-size: 12px;
   }
 }
+
+/* WAXING AND THREADING PRICE LIST */
+
+.wax-service-prices {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.wax-service-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(180, 180, 180, 0.2);
+}
+
+.wax-service-price-row:last-child {
+  border-bottom: none;
+}
+
+.wax-service-price-row span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.wax-service-price-row strong {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.wax-card-bottom {
+  margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .wax-service-price-row {
+    gap: 8px;
+  }
+
+  .wax-service-price-row span {
+    font-size: 13px;
+  }
+}

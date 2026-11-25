@@ -19,8 +19,8 @@ import {
   Leaf,
 } from "lucide-react";
 
+import "../HairStylingPage/HairStylingPage.css";
 
-import '../HairStylingPage/HairStylingPage.css'
 const serviceCategories = [
   { name: "Hair & Styling", slug: "hair", icon: Scissors },
   { name: "Men's Grooming", slug: "grooming", icon: UserRound },
@@ -36,35 +36,55 @@ const serviceCategories = [
 const skinServices = [
   {
     number: "01",
-    title: "Luxury Facial",
+    title: "Facial",
     description:
-      "A refreshing facial experience designed to cleanse and nourish your skin.",
+      "Professional facial services and specialised skincare experiences for different skin care needs.",
     image: "/images/services/skin/skin-facial.jpg",
-    alt: "Luxury facial treatment",
+    alt: "Professional facial treatment",
+    icon: Sparkles,
+    services: [
+      "Refreshing Glow Facial",
+      "O3 Radiance Glow",
+      "Skin Lightening & Whitening",
+      "Hydra Facial",
+      "Hydra Frequency",
+      "Korean Glass Facial",
+      "Double Chin RF",
+      "Jawline Shape",
+      "Under Eye Dark Circle",
+    ],
   },
   {
     number: "02",
-    title: "Deep Cleansing",
+    title: "Clean Up",
     description:
-      "A detailed cleansing experience to remove impurities and refresh your skin.",
+      "Refreshing cleansing experiences designed to cleanse the skin and enhance its natural appearance.",
     image: "/images/services/skin/skin-cleansing.jpg",
-    alt: "Professional deep cleansing facial",
+    alt: "Professional skin clean up treatment",
+    icon: Droplets,
+    services: [
+      "Whitening Clean Up",
+      "Tanning & Whitening Clean Up",
+      "Radiance Glow Clean Up",
+    ],
   },
   {
     number: "03",
-    title: "Skin Hydration",
+    title: "Detan Pack",
     description:
-      "Nourishing skincare focused on softness, hydration and a healthy appearance.",
-    image: "/images/services/skin/skin-hydration.jpg",
-    alt: "Hydrating skin treatment",
-  },
-  {
-    number: "04",
-    title: "Glow Treatment",
-    description:
-      "A personalised skincare experience for a fresh and radiant looking complexion.",
+      "Classic and premium detan options for different areas of the body.",
     image: "/images/services/skin/skin-glow.jpg",
-    alt: "Radiance facial treatment",
+    alt: "Professional detan skincare treatment",
+    icon: Sun,
+    services: [
+      "Face",
+      "Face & Neck",
+      "Face Arms",
+      "Feet",
+      "Full Back & Front",
+      "Full Body",
+      "Under Arms",
+    ],
   },
 ];
 
@@ -129,13 +149,15 @@ export default function SkinFacialPage() {
           </h1>
 
           <p>
-            Discover personalised skincare and refreshing facial
-            experiences designed to leave your skin feeling
-            nourished, refreshed and beautifully cared for.
+            Discover facial treatments, refreshing clean ups and
+            detan services designed around your skincare needs.
           </p>
 
           <div className="hair-hero-actions">
-            <Link to="/booking" className="hair-button hair-button-light">
+            <Link
+              to="/booking"
+              className="hair-button hair-button-light"
+            >
               Book This Service <ArrowRight size={17} />
             </Link>
 
@@ -190,47 +212,59 @@ export default function SkinFacialPage() {
           </div>
 
           <p>
-            Give your skin the attention it deserves with
-            personalised facial and skincare experiences.
-            Our approach focuses on comfort, nourishment
-            and professional care.
+            Explore our facial, clean up and detan services.
+            Choose from the treatments available in our
+            professional skincare menu.
           </p>
         </div>
 
         <div className="hair-service-grid">
-          {skinServices.map((service) => (
-            <article
-              className="hair-service-card"
-              key={service.number}
-            >
-              <div className="hair-service-image">
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  loading="lazy"
-                />
+          {skinServices.map((service) => {
+            const Icon = service.icon;
 
-                <span className="hair-service-number">
-                  {service.number}
-                </span>
-              </div>
+            return (
+              <article
+                className="hair-service-card"
+                key={service.number}
+              >
+                <div className="hair-service-image">
+                  <img
+                    src={service.image}
+                    alt={service.alt}
+                    loading="lazy"
+                  />
 
-              <div className="hair-service-info">
-                <div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                  <span className="hair-service-number">
+                    {service.number}
+                  </span>
                 </div>
 
-                <Link
-                  to="/booking"
-                  className="hair-card-arrow"
-                  aria-label={`Book ${service.title}`}
-                >
-                  <ArrowRight size={19} />
-                </Link>
-              </div>
-            </article>
-          ))}
+                <div className="hair-service-info">
+                  <div>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+
+                    <ul className="hair-service-list">
+                      {service.services.map((item) => (
+                        <li key={item}>
+                          <Icon size={14} strokeWidth={1.5} />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Link
+                    to="/pricing/skin"
+                    className="hair-card-arrow"
+                    aria-label={`View ${service.title} pricing`}
+                  >
+                    <ArrowRight size={19} />
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -266,38 +300,39 @@ export default function SkinFacialPage() {
         </div>
       </section>
 
-      {/* SIGNATURE TREATMENT */}
+      {/* SKINCARE EXPERIENCE */}
       <section className="hair-signature-section">
         <div className="hair-signature-image">
           <img
             src="/images/services/skin/skin-signature.jpg"
-            alt="AURELLE signature facial experience"
+            alt="AURELLE professional skincare experience"
             loading="lazy"
           />
         </div>
 
         <div className="hair-signature-content">
           <span className="hair-eyebrow">
-            SIGNATURE SKIN EXPERIENCE
+            PERSONAL SKINCARE
           </span>
 
           <h2>
-            AURELLE
+            Care That
             <br />
-            <span>Radiance Ritual</span>
+            <span>Feels Like You</span>
           </h2>
 
           <p>
-            Enjoy a thoughtfully personalised facial experience
-            with cleansing, nourishing care and a relaxing finish
-            designed around your skin preferences.
+            Explore our skincare menu and choose a facial,
+            clean up or detan service that suits your
+            preferences. Our team can help you understand
+            the available treatments.
           </p>
 
           <Link
-            to="/booking"
+            to="/pricing/skin"
             className="hair-button hair-button-light"
           >
-            Explore Treatment <ArrowRight size={17} />
+            Explore Skin Pricing <ArrowRight size={17} />
           </Link>
         </div>
       </section>
@@ -313,8 +348,8 @@ export default function SkinFacialPage() {
             <h2>Make Time for Your Glow.</h2>
 
             <p>
-              Book your personalised skincare experience
-              at AURELLE and enjoy professional care.
+              Book your skincare experience at AURELLE
+              and enjoy professional care.
             </p>
           </div>
 
