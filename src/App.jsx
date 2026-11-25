@@ -45,6 +45,10 @@ import PackagesPricing from './Pages/PricingSubPage/PackagesPricing/PackagesPric
 // Men's pricing pages
 import MensGroomingPricing from './Pages/PricingSubPage/MensGroomingPricing/MensGroomingPricing'
 import MensHairPage from './SubPage/MensHairPage/MensHairPage'
+import MensPedicurePage from './SubPage/MensPedicurePage/MensPedicurePage'
+import MensBodyTreatmentsPage from './SubPage/MensBodyTreatmentsPage/MensBodyTreatmentsPage'
+import MensGroomMakeupPage from './SubPage/MensGroomMakeupPage/MensGroomMakeupPage'
+import MensPreGroomPackagePage from './SubPage/MensPreGroomPackagePage/MensPreGroomPackagePage'
 
 const App = () => {
   return (
@@ -79,10 +83,26 @@ const App = () => {
           <Route path="/services/men/hair" element={<MensGroomingPage />} />
           <Route path="/services/men/grooming" element={<MensGroomingPage />} />
           <Route path="/services/men/skin" element={<MensSkinCarePage />} />
-          <Route path="/services/men/pedicure" element={<ManicurePedicurePage />} />
-          <Route path="/services/men/body-spa" element={<BodySpaPage />} />
-          <Route path="/services/men/groom-makeup" element={<MakeupBridalPage />} />
-          <Route path="/services/men/packages" element={<BridalGroomPackagesPage />} />
+          <Route
+  path="/services/men/pedicure"
+  element={<MensPedicurePage />}
+/>
+<Route
+  path="/services/men/body-spa"
+  element={<MensBodyTreatmentsPage />}
+/>
+<Route
+  path="/services/men/groom-makeup"
+  element={<MensGroomMakeupPage />}
+/>
+<Route
+  path="/services/men/packages"
+  element={<MensPreGroomPackagePage />}
+/>
+          
+          
+          
+          
 
           {/* WOMEN'S PRICING */}
           <Route path="/pricing/women/hair" element={<HairPricing />} />

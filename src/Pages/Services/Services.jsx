@@ -111,7 +111,7 @@ const menServices = [
     title: "Hair & Styling",
     description:
       "Professional haircuts, creative styling, hair colouring and personalised hair care.",
-    image: "/images/services/01-hair-and-mens-grooming.jpg",
+    image: "/images/services/grooming/grooming-haircut.jpg",
     icon: Scissors,
     slug: "hair",
   },
@@ -129,7 +129,7 @@ const menServices = [
     title: "Skin & Facial Care",
     description:
       "Professional facial treatments, clean up and detan services for men's skincare.",
-    image: "/images/services/02-skin-care.jpg",
+    image: "/images/services/mens-skin/mens-deep-cleansing.jpg",
     icon: Flower2,
     slug: "skin",
   },
@@ -138,7 +138,7 @@ const menServices = [
     title: "Manicure & Pedicure",
     description:
       "Classic, Foot Logic, Ice Cream, Lotus Glow and Bubblegum Fresh hand and foot care.",
-    image: "/images/services/06-pedicure-and-manicure.jpg",
+    image: "/images/services/pedicure1/pedicure-signature.jpg",
     icon: Hand,
     slug: "pedicure",
   },
@@ -147,7 +147,7 @@ const menServices = [
     title: "Body Treatments",
     description:
       "Full body massage and professional body polishing treatments.",
-    image: "/images/services/07-body-treatments.jpg",
+    image: "/images/services/body-treatments/premium-body-massage.jpg",
     icon: Sparkles,
     slug: "body-spa",
   },
@@ -156,7 +156,7 @@ const menServices = [
     title: "Groom Makeup",
     description:
       "Professional groom makeup for a refined and polished wedding look.",
-    image: "/images/services/03-makeup-and-bridal.jpg",
+    image: "/images/services/groom-makeup/groom-makeup.jpg",
     icon: Brush,
     slug: "groom-makeup",
   },
@@ -165,7 +165,7 @@ const menServices = [
     title: "Pre Groom Package",
     description:
       "A complete pre wedding grooming and personal care preparation experience.",
-    image: "/images/services/08-bridal-and-groom-packages.jpg",
+    image: "/images/services/pre-groom-package/pre-groom-experience.jpg",
     icon: Gem,
     slug: "packages",
   },

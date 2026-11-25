@@ -10,9 +10,7 @@ import {
 import gsap from "gsap";
 import "./Navbar.css";
 
-/* =========================================
-   MAIN NAVIGATION
-========================================= */
+/* MAIN NAVIGATION */
 
 const navigation = [
   { name: "Home", path: "/" },
@@ -25,63 +23,91 @@ const navigation = [
   { name: "Contact", path: "/contact" },
 ];
 
-/* =========================================
-   SERVICES: MEN'S & WOMEN'S
-========================================= */
+/* SERVICES DROPDOWN */
 
 const serviceGroups = [
   {
     title: "MEN'S SERVICES",
     links: [
-      { name: "Men's Grooming", path: "/services/grooming" },
-      
-      { name: "Skin & Facial Care", path: "/services/mens-skin" },
+      { name: "Hair & Styling", path: "/services/men/hair" },
+      { name: "Men's Grooming", path: "/services/men/grooming" },
+      { name: "Skin & Facial Care", path: "/services/men/skin" },
+      { name: "Manicure & Pedicure", path: "/services/men/pedicure" },
+      { name: "Body Treatments", path: "/services/men/body-spa" },
+      { name: "Groom Makeup", path: "/services/men/groom-makeup" },
+      { name: "Pre Groom Package", path: "/services/men/packages" },
     ],
   },
   {
     title: "WOMEN'S SERVICES",
     links: [
-      { name: "Hair & Styling", path: "/services/hair" },
-      { name: "Skin & Facial Care", path: "/services/skin" },
-      { name: "Makeup & Bridal", path: "/services/makeup" },
-      { name: "Nail Studio", path: "/services/nails" },
-      { name: "Waxing & Threading", path: "/services/waxing" },
-      { name: "Manicure & Pedicure", path: "/services/pedicure" },
-      { name: "Body & Spa", path: "/services/body-spa" },
-      { name: "Bridal & Groom Packages", path: "/services/packages" },
+      { name: "Hair & Styling", path: "/services/women/hair" },
+      { name: "Skin & Facial Care", path: "/services/women/skin" },
+      { name: "Makeup & Bridal", path: "/services/women/makeup" },
+      { name: "Nail Studio", path: "/services/women/nails" },
+      { name: "Waxing & Threading", path: "/services/women/waxing" },
+      { name: "Manicure & Pedicure", path: "/services/women/pedicure" },
+      { name: "Body & Spa", path: "/services/women/body-spa" },
+      { name: "Bridal Packages", path: "/services/women/packages" },
     ],
   },
 ];
 
-/* =========================================
-   PRICING: MEN'S & WOMEN'S
-========================================= */
+/* PRICING DROPDOWN */
 
 const pricingGroups = [
   {
     title: "MEN'S PRICING",
     links: [
-      { name: "Men's Grooming", path: "/pricing/grooming" },
+      { name: "Hair & Styling", path: "/pricing/men/hair" },
+      { name: "Men's Grooming", path: "/pricing/men/grooming" },
+      { name: "Skin & Facial Care", path: "/pricing/men/skin" },
+      {
+        name: "Manicure & Pedicure",
+        path: "/pricing/men/pedicure-manicure",
+      },
+      {
+        name: "Body Treatments",
+        path: "/pricing/men/body-treatments",
+      },
+      {
+        name: "Groom Makeup",
+        path: "/pricing/men/groom-makeup",
+      },
+      {
+        name: "Pre Groom Package",
+        path: "/pricing/men/packages",
+      },
     ],
   },
   {
     title: "WOMEN'S PRICING",
     links: [
-      { name: "Hair Services", path: "/pricing/hair" },
-      { name: "Skin Care", path: "/pricing/skin" },
-      { name: "Makeup", path: "/pricing/makeup" },
-      { name: "Nail Studio", path: "/pricing/nails" },
-      { name: "Waxing & Threading", path: "/pricing/waxing-threading" },
-      { name: "Pedicure & Manicure", path: "/pricing/pedicure-manicure" },
-      { name: "Body Treatments", path: "/pricing/body-treatments" },
-      { name: "Bridal & Groom Packages", path: "/pricing/packages" },
+      { name: "Hair Services", path: "/pricing/women/hair" },
+      { name: "Skin Care", path: "/pricing/women/skin" },
+      { name: "Makeup", path: "/pricing/women/makeup" },
+      { name: "Nail Studio", path: "/pricing/women/nails" },
+      {
+        name: "Waxing & Threading",
+        path: "/pricing/women/waxing-threading",
+      },
+      {
+        name: "Pedicure & Manicure",
+        path: "/pricing/women/pedicure-manicure",
+      },
+      {
+        name: "Body Treatments",
+        path: "/pricing/women/body-treatments",
+      },
+      {
+        name: "Bridal Packages",
+        path: "/pricing/women/packages",
+      },
     ],
   },
 ];
 
-/* =========================================
-   REUSABLE DESKTOP DROPDOWN
-========================================= */
+/* REUSABLE DESKTOP MEGA MENU */
 
 const DesktopMegaMenu = ({ groups }) => {
   return (
@@ -95,17 +121,17 @@ const DesktopMegaMenu = ({ groups }) => {
             {group.title}
           </h4>
 
-          {group.links.map((subItem) => (
+          {group.links.map((item) => (
             <NavLink
-              key={subItem.path}
-              to={subItem.path}
+              key={item.path}
+              to={item.path}
               className={({ isActive }) =>
                 `aurelle-dropdown-link ${
                   isActive ? "active" : ""
                 }`
               }
             >
-              <span>{subItem.name}</span>
+              <span>{item.name}</span>
               <ArrowUpRight
                 size={14}
                 strokeWidth={1.5}
@@ -118,9 +144,7 @@ const DesktopMegaMenu = ({ groups }) => {
   );
 };
 
-/* =========================================
-   REUSABLE MOBILE GROUPS
-========================================= */
+/* REUSABLE MOBILE MEGA MENU */
 
 const MobileMegaMenu = ({
   groups,
@@ -141,10 +165,10 @@ const MobileMegaMenu = ({
         >
           <h4>{group.title}</h4>
 
-          {group.links.map((subItem) => (
+          {group.links.map((item) => (
             <NavLink
-              key={subItem.path}
-              to={subItem.path}
+              key={item.path}
+              to={item.path}
               tabIndex={menuOpen && isOpen ? 0 : -1}
               className={({ isActive }) =>
                 `mobile-pricing-link ${
@@ -152,7 +176,7 @@ const MobileMegaMenu = ({
                 }`
               }
             >
-              <span>{subItem.name}</span>
+              <span>{item.name}</span>
               <ArrowUpRight
                 size={16}
                 strokeWidth={1.4}
@@ -165,9 +189,7 @@ const MobileMegaMenu = ({
   );
 };
 
-/* =========================================
-   NAVBAR COMPONENT
-========================================= */
+/* NAVBAR COMPONENT */
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -256,6 +278,8 @@ const Navbar = () => {
     };
   }, []);
 
+  /* ACTIVE ROUTES */
+
   const servicesActive =
     location.pathname === "/services" ||
     location.pathname.startsWith("/services/");
@@ -264,9 +288,7 @@ const Navbar = () => {
     location.pathname === "/pricing" ||
     location.pathname.startsWith("/pricing/");
 
-  /* =========================================
-     RENDER
-  ========================================= */
+  /* RENDER */
 
   return (
     <>
@@ -295,7 +317,6 @@ const Navbar = () => {
 
           <nav className="aurelle-navigation">
             {navigation.map((item) => {
-
               if (item.name === "Services") {
                 return (
                   <div
@@ -398,9 +419,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* =====================================
-          MOBILE NAVIGATION
-      ===================================== */}
+      {/* MOBILE NAVIGATION */}
 
       <div
         className={`aurelle-mobile-menu ${
@@ -416,7 +435,6 @@ const Navbar = () => {
           </div>
 
           <nav className="mobile-navigation">
-
             {navigation.map((item, index) => {
 
               /* MOBILE SERVICES */
