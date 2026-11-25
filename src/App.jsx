@@ -34,6 +34,7 @@ import ManicurePedicurePage from './SubPage/ManicurePedicurePage/ManicurePedicur
 import BodySpaPage from './SubPage/BodySpaPage/BodySpaPage'
 import BridalGroomPackagesPage from './SubPage/BridalGroomPackagesPage/BridalGroomPackagesPage'
 import MensGroomingPricing from './Pages/PricingSubPage/MensGroomingPricing/MensGroomingPricing'
+import MensSkinCarePage from './SubPage/MensSkinCarePage/MensSkinCarePage'
 
 const App = () => {
   return (
@@ -84,6 +85,10 @@ const App = () => {
 <Route
   path="/services/grooming"
   element={<MensGroomingPage />}
+/>
+<Route
+  path="/services/mens-skin"
+  element={<MensSkinCarePage />}
 />
 <Route
   path="/services/skin"

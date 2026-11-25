@@ -22,15 +22,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    id: 1,
-    title: "HAIR & STYLING",
-    description:
-      "Expert haircuts, styling, colouring and professional hair care for every look.",
-    image: "/images/service-makeup/service-hair.jpg",
-    icon: Scissors,
-    category: "hair",
-  },
-  {
     id: 2,
     title: "MEN'S GROOMING",
     description:
@@ -39,6 +30,16 @@ const services = [
     icon: UserRound,
     category: "grooming",
   },
+  {
+    id: 1,
+    title: "HAIR & STYLING",
+    description:
+      "Expert haircuts, styling, colouring and professional hair care for every look.",
+    image: "/images/service-makeup/service-hair.jpg",
+    icon: Scissors,
+    category: "hair",
+  },
+  
   {
     id: 3,
     title: "SKIN & FACIALS",

@@ -34,8 +34,8 @@ const serviceGroups = [
     title: "MEN'S SERVICES",
     links: [
       { name: "Men's Grooming", path: "/services/grooming" },
-      { name: "Hair & Styling", path: "/services/hair" },
-      { name: "Skin & Facial Care", path: "/services/skin" },
+      
+      { name: "Skin & Facial Care", path: "/services/mens-skin" },
     ],
   },
   {

@@ -20,15 +20,8 @@ import {
 import "../HairServices/HairServices.css";
 
 const serviceCategories = [
-  { name: "Hair & Styling", slug: "hair", icon: Scissors },
-  { name: "Men's Grooming", slug: "grooming", icon: UserRound },
-  { name: "Skin & Facial Care", slug: "skin", icon: Sparkles },
-  { name: "Makeup & Bridal", slug: "makeup", icon: Brush },
-  { name: "Nail Studio", slug: "nails", icon: Gem },
-  { name: "Waxing & Threading", slug: "waxing", icon: Layers },
-  { name: "Manicure & Pedicure", slug: "pedicure", icon: Hand },
-  { name: "Body & Spa", slug: "body-spa", icon: Flower2 },
-  { name: "Bridal & Groom Packages", slug: "packages", icon: Heart },
+  
+ 
 ];
 
 const groomingServices = [
