@@ -41,7 +41,7 @@ const galleryItems = [
   {
     id: 4,
     category: "Men's Grooming",
-    image: "/images/beauty/gallery-grooming.jpg",
+    image: "/images/beauty/gallery-bride.jpg",
     alt: "Indian man with premium haircut and beard styling",
     size: "tall",
   },
@@ -141,9 +141,7 @@ function BeautyGallery() {
             <span />
           </div>
 
-          <p className="gallery-eyebrow">
-            THE AURELLE COLLECTION
-          </p>
+          
 
           <h2>
             A GLIMPSE OF <em>OUR WORK</em>

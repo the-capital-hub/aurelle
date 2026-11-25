@@ -250,7 +250,7 @@ function Services() {
       ===================================== */}
 
       <section className="services-list-section">
-        <div className="services-section-heading">
+        <div className="services-section-heading" style={{margin:"20px"}}>
           <div className="services-eyebrow">
             <span />
             EXPLORE OUR SERVICES

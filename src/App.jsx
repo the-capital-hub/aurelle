@@ -33,6 +33,7 @@ import WaxingThreadingPage from './SubPage/WaxingThreadingPage/WaxingThreadingPa
 import ManicurePedicurePage from './SubPage/ManicurePedicurePage/ManicurePedicurePage'
 import BodySpaPage from './SubPage/BodySpaPage/BodySpaPage'
 import BridalGroomPackagesPage from './SubPage/BridalGroomPackagesPage/BridalGroomPackagesPage'
+import MensGroomingPricing from './Pages/PricingSubPage/MensGroomingPricing/MensGroomingPricing'
 
 const App = () => {
   return (
@@ -49,6 +50,10 @@ const App = () => {
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/pricing/hair" element={<HairPricing />} />
+              <Route
+  path="/pricing/grooming"
+  element={<MensGroomingPricing />}
+/>
               <Route path="/pricing/skin" element={<FacialPricing />} />
               <Route path="/pricing/makeup" element={<MakeupPricing />} />
               <Route path="/pricing/nails" element={<NailPricing />} />
@@ -103,6 +108,10 @@ const App = () => {
 <Route
   path="/services/body-spa"
   element={<BodySpaPage />}
+/>
+<Route
+  path="/services/packages"
+  element={<BridalGroomPackagesPage />}
 />
 
               

@@ -270,7 +270,7 @@ function Offers() {
           <div className="offers-hero-image">
 
             <img
-              src="/images/offer/hero.png"
+              src="/images/ctamodel.png"
               alt="AURELLE luxury unisex salon experience"
               fetchPriority="high"
             />

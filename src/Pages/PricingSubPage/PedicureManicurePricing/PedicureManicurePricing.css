@@ -37,7 +37,7 @@
   height: min(780px, 85vh);
   display: flex;
   align-items: center;
-  padding: 20px 8%;
+  padding: 70px 8%;
   overflow: hidden;
   background: #111;
 }

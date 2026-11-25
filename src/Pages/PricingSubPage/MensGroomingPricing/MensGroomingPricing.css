@@ -1,0 +1,728 @@
+
+/* =========================================
+   AURELLE LUXURY UNISEX SALON
+   MEN'S GROOMING PRICING PAGE
+   CINEMATIC MONOCHROME
+========================================= */
+
+.aurelle-mens-pricing {
+  --mgp-black: #080808;
+  --mgp-panel: #151515;
+  --mgp-white: #fff;
+  --mgp-silver: #c0c0c0;
+  --mgp-muted: #bdbdbd;
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--mgp-black);
+  color: var(--mgp-white);
+  font-family: "DM Sans", sans-serif;
+}
+
+.aurelle-mens-pricing *,
+.aurelle-mens-pricing *::before,
+.aurelle-mens-pricing *::after {
+  box-sizing: border-box;
+}
+
+.aurelle-mens-pricing a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.aurelle-mens-pricing h1,
+.aurelle-mens-pricing h2,
+.aurelle-mens-pricing h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.aurelle-mens-pricing p {
+  margin: 0;
+}
+
+.mgp-container {
+  width: min(1380px, calc(100% - 60px));
+  margin: auto;
+}
+
+/* EYEBROW */
+
+.mgp-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #eee;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.mgp-eyebrow > span {
+  width: 25px;
+  height: 1px;
+  background: var(--mgp-silver);
+}
+
+.mgp-centered {
+  justify-content: center;
+}
+
+/* HERO */
+
+.mgp-hero {
+  position: relative;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  border-bottom: 1px solid #3b3b3b;
+}
+
+.mgp-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .98) 0%,
+      rgba(0, 0, 0, .87) 32%,
+      rgba(0, 0, 0, .34) 70%,
+      rgba(0, 0, 0, .12) 100%
+    ),
+    url("/images/pricing/mens-grooming-hero.jpg")
+    center 38% / cover no-repeat;
+}
+
+.mgp-hero-inner {
+  padding-top: 70px;
+  padding-bottom: 20px;
+}
+
+.mgp-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 17px;
+  color: #d4d4d4 !important;
+  font-size: 12px;
+  transition: color .3s ease;
+}
+
+.mgp-back-link:hover {
+  color: #fff !important;
+}
+
+.mgp-hero-copy {
+  max-width: 510px;
+}
+
+.mgp-hero-copy h1 {
+  margin: 12px 0;
+  font-size: clamp(48px, 5.5vw, 74px);
+  line-height: .98;
+  letter-spacing: -2px;
+}
+
+.mgp-hero-copy h1 em {
+  display: block;
+  font-weight: 400;
+}
+
+.mgp-hero-copy > p {
+  max-width: 420px;
+  margin-bottom: 18px;
+  color: #dedede;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mgp-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-height: 42px;
+  padding: 10px 21px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  background: #fff;
+  color: #080808 !important;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.mgp-primary-button:hover {
+  background: transparent;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* CATEGORY NAVIGATION */
+
+.mgp-category-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+  background: rgba(8, 8, 8, .96);
+  backdrop-filter: blur(15px);
+}
+
+.mgp-category-inner {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.mgp-category-inner a {
+  min-height: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid #555;
+  border-radius: 12px;
+  color: #eee;
+  text-align: center;
+  font-size: 12px;
+  transition: .3s ease;
+}
+
+.mgp-category-inner a:hover {
+  color: #080808;
+  border-color: #fff;
+  background: #fff;
+}
+
+/* SERVICE SECTION */
+
+.mgp-services-section {
+  padding: 20px 0;
+  background:
+    radial-gradient(
+      ellipse at top,
+      #202020 0%,
+      #111 45%,
+      #080808 100%
+    );
+}
+
+.mgp-section-heading {
+  max-width: 760px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.mgp-section-heading h2 {
+  margin: 8px 0;
+  font-size: clamp(32px, 4vw, 47px);
+  line-height: 1.12;
+}
+
+.mgp-section-heading h2 em {
+  font-weight: 400;
+}
+
+.mgp-section-heading > p {
+  color: #c7c7c7;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* SERVICE CARDS */
+
+.mgp-service-card {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  min-height: 205px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border: 1px solid #5d5d5d;
+  border-radius: 16px;
+  background: #111;
+  transition: border-color .3s ease;
+  scroll-margin-top: 105px;
+}
+
+.mgp-service-card:hover {
+  border-color: #aaa;
+}
+
+.mgp-service-card.mgp-reverse {
+  grid-template-columns: 58% 42%;
+}
+
+.mgp-service-card.mgp-reverse .mgp-service-image {
+  order: 2;
+}
+
+.mgp-service-image {
+  position: relative;
+  min-height: 205px;
+  overflow: hidden;
+  background: #222;
+}
+
+.mgp-service-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 205px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform .7s ease, filter .5s ease;
+}
+
+.mgp-service-card:hover .mgp-service-image img {
+  transform: scale(1.05);
+  filter: grayscale(40%);
+}
+
+.mgp-image-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 45%,
+    rgba(0, 0, 0, .45)
+  );
+  pointer-events: none;
+}
+
+.mgp-service-number {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  color: rgba(255,255,255,.8);
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+}
+
+.mgp-service-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 22px;
+}
+
+.mgp-service-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 7px;
+}
+
+.mgp-service-icon {
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.mgp-service-kicker {
+  display: block;
+  margin-bottom: 3px;
+  color: #aaa;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.mgp-service-heading h3 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.mgp-service-heading p {
+  margin-top: 4px;
+  color: #c6c6c6;
+  font-size: 12px;
+}
+
+.mgp-service-description {
+  max-width: 530px;
+  margin-bottom: 8px !important;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.mgp-price-list {
+  max-width: 520px;
+  width: 100%;
+}
+
+.mgp-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  color: #e5e5e5;
+  font-size: 13px;
+}
+
+.mgp-price-name {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.mgp-price-name small {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.mgp-price-row strong {
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mgp-book-button {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 11px;
+  padding: 9px 17px;
+  border-radius: 40px;
+  background: #fff;
+  color: #080808 !important;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.mgp-book-button:hover {
+  background: #c0c0c0;
+  transform: translateX(3px);
+}
+
+/* BENEFITS */
+
+.mgp-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 18px 0 13px;
+  padding: 10px 0;
+}
+
+.mgp-benefit-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 48px;
+  color: #eee;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.mgp-benefit-item:not(:last-child) {
+  border-right: 1px solid #555;
+}
+
+.mgp-benefit-item svg {
+  flex-shrink: 0;
+  color: #fff;
+}
+
+/* INFORMATION */
+
+.mgp-information {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  align-items: center;
+  gap: 15px;
+  margin-top: 13px;
+  padding: 13px 20px;
+  border: 1px solid #666;
+  border-radius: 14px;
+  background: #111;
+}
+
+.mgp-info-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.mgp-info-heading h3 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.mgp-info-content {
+  padding-left: 20px;
+  border-left: 1px solid #666;
+}
+
+.mgp-info-content p {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 4px 0;
+  color: #ddd;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.mgp-info-content svg {
+  flex-shrink: 0;
+}
+
+/* FINAL CTA */
+
+.mgp-final-cta {
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid #333;
+  isolation: isolate;
+}
+
+.mgp-final-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.18),
+      rgba(0,0,0,.84) 45%,
+      rgba(0,0,0,.96)
+    ),
+    url("/images/pricing/mens-grooming-cta.jpg")
+    center / cover no-repeat;
+}
+
+.mgp-final-inner {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mgp-final-content {
+  width: 55%;
+  max-width: 620px;
+}
+
+.mgp-final-content h2 {
+  margin: 9px 0;
+  font-size: clamp(34px, 4vw, 48px);
+  line-height: 1.08;
+}
+
+.mgp-final-content h2 em {
+  display: block;
+  font-weight: 400;
+}
+
+.mgp-final-content > p {
+  max-width: 390px;
+  margin-bottom: 13px;
+  color: #ddd;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .mgp-category-inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mgp-service-card,
+  .mgp-service-card.mgp-reverse {
+    grid-template-columns: 40% 60%;
+  }
+
+  .mgp-service-card.mgp-reverse .mgp-service-image {
+    order: 0;
+  }
+
+  .mgp-service-details {
+    padding: 12px;
+  }
+
+  .mgp-service-heading h3 {
+    font-size: 21px;
+  }
+
+  .mgp-information {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .mgp-info-content {
+    padding-left: 0;
+    border: 0;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .mgp-container {
+    width: calc(100% - 28px);
+  }
+
+  .mgp-hero {
+    min-height: 350px;
+  }
+
+  .mgp-hero-bg {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.94),
+        rgba(0,0,0,.65)
+      ),
+      url("/images/pricing/mens-grooming-hero.jpg")
+      center / cover no-repeat;
+  }
+
+  .mgp-hero-copy h1 {
+    font-size: 48px;
+  }
+
+  .mgp-hero-copy > p {
+    font-size: 13px;
+  }
+
+  .mgp-category-inner {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .mgp-category-inner::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mgp-category-inner a {
+    flex: 0 0 115px;
+    min-height: 65px;
+    font-size: 12px;
+  }
+
+  .mgp-services-section {
+    padding: 20px 0;
+  }
+
+  .mgp-section-heading {
+    margin-bottom: 15px;
+  }
+
+  .mgp-section-heading h2 {
+    font-size: 32px;
+  }
+
+  .mgp-section-heading > p {
+    font-size: 12px;
+  }
+
+  .mgp-service-card,
+  .mgp-service-card.mgp-reverse {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 11px;
+  }
+
+  .mgp-service-card.mgp-reverse .mgp-service-image {
+    order: 0;
+  }
+
+  .mgp-service-image {
+    height: 180px;
+    min-height: 180px;
+  }
+
+  .mgp-service-image img {
+    min-height: 180px;
+  }
+
+  .mgp-service-details {
+    padding: 12px;
+  }
+
+  .mgp-service-heading h3 {
+    font-size: 21px;
+  }
+
+  .mgp-service-description {
+    font-size: 12px;
+  }
+
+  .mgp-price-row,
+  .mgp-price-row strong {
+    font-size: 12px;
+  }
+
+  .mgp-benefits {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 8px;
+  }
+
+  .mgp-benefit-item {
+    justify-content: flex-start;
+    padding: 5px 8px;
+  }
+
+  .mgp-benefit-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .mgp-information {
+    padding: 12px;
+  }
+
+  .mgp-info-heading h3 {
+    font-size: 17px;
+  }
+
+  .mgp-final-cta {
+    min-height: 230px;
+  }
+
+  .mgp-final-bg {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,0,0,.84),
+        rgba(0,0,0,.95)
+      ),
+      url("/images/pricing/mens-grooming-cta.jpg")
+      center / cover no-repeat;
+  }
+
+  .mgp-final-inner {
+    justify-content: flex-start;
+  }
+
+  .mgp-final-content {
+    width: 100%;
+  }
+
+  .mgp-final-content h2 {
+    font-size: 36px;
+  }
+
+  .mgp-final-content > p {
+    font-size: 12px;
+  }
+}

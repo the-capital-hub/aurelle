@@ -232,7 +232,7 @@ function Team() {
 
           <div className="team-hero-image">
             <img
-              src="/images/team/hero.png"
+              src="/images/ctamodel.png"
               alt="Indian male and female professionals at AURELLE"
               fetchPriority="high"
             />

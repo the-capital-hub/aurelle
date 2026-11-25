@@ -114,9 +114,7 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-copy">
 
-          <div className="hero-eyebrow">
-            <span>LUXURY UNISEX SALON</span>
-          </div>
+          
 
           <span className="hero-small-line" />
 

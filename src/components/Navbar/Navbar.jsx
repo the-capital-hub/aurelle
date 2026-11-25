@@ -1,14 +1,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
-
 import {
   Menu,
   X,
   ArrowUpRight,
   ChevronDown,
 } from "lucide-react";
-
 import gsap from "gsap";
 import "./Navbar.css";
 
@@ -28,37 +26,144 @@ const navigation = [
 ];
 
 /* =========================================
-   SERVICE LINKS
+   SERVICES: MEN'S & WOMEN'S
 ========================================= */
 
-
-const serviceLinks = [
-  { name: "Hair & Styling", path: "/services/hair" },
-  { name: "Men's Grooming", path: "/services/grooming" },
-  { name: "Skin & Facial Care", path: "/services/skin" },
-  { name: "Makeup & Bridal", path: "/services/makeup" },
-  { name: "Nail Studio", path: "/services/nails" },
-  { name: "Waxing & Threading", path: "/services/waxing" },
-  { name: "Manicure & Pedicure", path: "/services/pedicure" },
-  { name: "Body & Spa", path: "/services/body-spa" },
-  { name: "Bridal & Groom Packages", path: "/services/packages" },
+const serviceGroups = [
+  {
+    title: "MEN'S SERVICES",
+    links: [
+      { name: "Men's Grooming", path: "/services/grooming" },
+      { name: "Hair & Styling", path: "/services/hair" },
+      { name: "Skin & Facial Care", path: "/services/skin" },
+    ],
+  },
+  {
+    title: "WOMEN'S SERVICES",
+    links: [
+      { name: "Hair & Styling", path: "/services/hair" },
+      { name: "Skin & Facial Care", path: "/services/skin" },
+      { name: "Makeup & Bridal", path: "/services/makeup" },
+      { name: "Nail Studio", path: "/services/nails" },
+      { name: "Waxing & Threading", path: "/services/waxing" },
+      { name: "Manicure & Pedicure", path: "/services/pedicure" },
+      { name: "Body & Spa", path: "/services/body-spa" },
+      { name: "Bridal & Groom Packages", path: "/services/packages" },
+    ],
+  },
 ];
-
 
 /* =========================================
-   PRICING LINKS
+   PRICING: MEN'S & WOMEN'S
 ========================================= */
 
-const pricingLinks = [
-  { name: "Hair Services", path: "/pricing/hair" },
-  { name: "Skin Care", path: "/pricing/skin" },
-  { name: "Makeup", path: "/pricing/makeup" },
-  { name: "Nail Studio", path: "/pricing/nails" },
-  { name: "Waxing & Threading", path: "/pricing/waxing-threading" },
-  { name: "Pedicure & Manicure", path: "/pricing/pedicure-manicure" },
-  { name: "Body Treatments", path: "/pricing/body-treatments" },
-  { name: "Bridal & Groom Packages", path: "/pricing/packages" },
+const pricingGroups = [
+  {
+    title: "MEN'S PRICING",
+    links: [
+      { name: "Men's Grooming", path: "/pricing/grooming" },
+    ],
+  },
+  {
+    title: "WOMEN'S PRICING",
+    links: [
+      { name: "Hair Services", path: "/pricing/hair" },
+      { name: "Skin Care", path: "/pricing/skin" },
+      { name: "Makeup", path: "/pricing/makeup" },
+      { name: "Nail Studio", path: "/pricing/nails" },
+      { name: "Waxing & Threading", path: "/pricing/waxing-threading" },
+      { name: "Pedicure & Manicure", path: "/pricing/pedicure-manicure" },
+      { name: "Body Treatments", path: "/pricing/body-treatments" },
+      { name: "Bridal & Groom Packages", path: "/pricing/packages" },
+    ],
+  },
 ];
+
+/* =========================================
+   REUSABLE DESKTOP DROPDOWN
+========================================= */
+
+const DesktopMegaMenu = ({ groups }) => {
+  return (
+    <div className="aurelle-dropdown-menu aurelle-mega-menu">
+      {groups.map((group) => (
+        <div
+          className="aurelle-dropdown-column"
+          key={group.title}
+        >
+          <h4 className="aurelle-dropdown-heading">
+            {group.title}
+          </h4>
+
+          {group.links.map((subItem) => (
+            <NavLink
+              key={subItem.path}
+              to={subItem.path}
+              className={({ isActive }) =>
+                `aurelle-dropdown-link ${
+                  isActive ? "active" : ""
+                }`
+              }
+            >
+              <span>{subItem.name}</span>
+              <ArrowUpRight
+                size={14}
+                strokeWidth={1.5}
+              />
+            </NavLink>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+/* =========================================
+   REUSABLE MOBILE GROUPS
+========================================= */
+
+const MobileMegaMenu = ({
+  groups,
+  isOpen,
+  menuOpen,
+}) => {
+  return (
+    <div
+      className={`mobile-pricing-submenu ${
+        isOpen ? "submenu-open" : ""
+      }`}
+      aria-hidden={!isOpen}
+    >
+      {groups.map((group) => (
+        <div
+          className="mobile-category-group"
+          key={group.title}
+        >
+          <h4>{group.title}</h4>
+
+          {group.links.map((subItem) => (
+            <NavLink
+              key={subItem.path}
+              to={subItem.path}
+              tabIndex={menuOpen && isOpen ? 0 : -1}
+              className={({ isActive }) =>
+                `mobile-pricing-link ${
+                  isActive ? "active" : ""
+                }`
+              }
+            >
+              <span>{subItem.name}</span>
+              <ArrowUpRight
+                size={16}
+                strokeWidth={1.4}
+              />
+            </NavLink>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+};
 
 /* =========================================
    NAVBAR COMPONENT
@@ -67,7 +172,6 @@ const pricingLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
   const [pricingOpen, setPricingOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
 
@@ -134,6 +238,32 @@ const Navbar = () => {
     };
   }, [menuOpen]);
 
+  /* ESCAPE KEY */
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        setServicesOpen(false);
+        setPricingOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  const servicesActive =
+    location.pathname === "/services" ||
+    location.pathname.startsWith("/services/");
+
+  const pricingActive =
+    location.pathname === "/pricing" ||
+    location.pathname.startsWith("/pricing/");
+
   /* =========================================
      RENDER
   ========================================= */
@@ -156,7 +286,6 @@ const Navbar = () => {
             aria-label="AURELLE Luxury Unisex Salon Home"
           >
             <span className="brand-name">AURELLE</span>
-
             <span className="brand-subtitle">
               LUXURY UNISEX SALON
             </span>
@@ -165,10 +294,7 @@ const Navbar = () => {
           {/* DESKTOP NAVIGATION */}
 
           <nav className="aurelle-navigation">
-
             {navigation.map((item) => {
-
-              /* SERVICES DROPDOWN */
 
               if (item.name === "Services") {
                 return (
@@ -179,50 +305,23 @@ const Navbar = () => {
                     <NavLink
                       to="/services"
                       end
-                      className={({ isActive }) =>
+                      className={() =>
                         `aurelle-nav-link ${
-                          isActive ||
-                          location.pathname.startsWith("/services/")
-                            ? "active"
-                            : ""
+                          servicesActive ? "active" : ""
                         }`
                       }
                     >
                       Services
-
                       <ChevronDown
                         size={14}
                         className="services-chevron"
                       />
                     </NavLink>
 
-                    <div className="aurelle-dropdown-menu">
-
-                      {serviceLinks.map((subItem) => (
-                        <NavLink
-                          key={subItem.path}
-                          to={subItem.path}
-                          className={({ isActive }) =>
-                            `aurelle-dropdown-link ${
-                              isActive ? "active" : ""
-                            }`
-                          }
-                        >
-                          <span>{subItem.name}</span>
-
-                          <ArrowUpRight
-                            size={14}
-                            strokeWidth={1.5}
-                          />
-                        </NavLink>
-                      ))}
-
-                    </div>
+                    <DesktopMegaMenu groups={serviceGroups} />
                   </div>
                 );
               }
-
-              /* PRICING DROPDOWN */
 
               if (item.name === "Pricing") {
                 return (
@@ -231,48 +330,25 @@ const Navbar = () => {
                     key={item.name}
                   >
                     <NavLink
-                      to={item.path}
-                      className={({ isActive }) =>
+                      to="/pricing"
+                      end
+                      className={() =>
                         `aurelle-nav-link ${
-                          isActive ? "active" : ""
+                          pricingActive ? "active" : ""
                         }`
                       }
                     >
                       Pricing
-
                       <ChevronDown
                         size={14}
                         className="pricing-chevron"
                       />
                     </NavLink>
 
-                    <div className="aurelle-dropdown-menu">
-
-                      {pricingLinks.map((subItem) => (
-                        <NavLink
-                          key={subItem.path}
-                          to={subItem.path}
-                          className={({ isActive }) =>
-                            `aurelle-dropdown-link ${
-                              isActive ? "active" : ""
-                            }`
-                          }
-                        >
-                          <span>{subItem.name}</span>
-
-                          <ArrowUpRight
-                            size={14}
-                            strokeWidth={1.5}
-                          />
-                        </NavLink>
-                      ))}
-
-                    </div>
+                    <DesktopMegaMenu groups={pricingGroups} />
                   </div>
                 );
               }
-
-              /* NORMAL NAVIGATION LINKS */
 
               return (
                 <NavLink
@@ -289,19 +365,16 @@ const Navbar = () => {
                 </NavLink>
               );
             })}
-
           </nav>
 
           {/* RIGHT ACTIONS */}
 
           <div className="aurelle-actions aurelle-animate">
-
             <Link
               to="/booking"
               className="aurelle-book-btn"
             >
               <span>BOOK NOW</span>
-
               <ArrowUpRight
                 size={16}
                 strokeWidth={1.5}
@@ -309,8 +382,9 @@ const Navbar = () => {
             </Link>
 
             <button
+              type="button"
               className="aurelle-menu-toggle"
-              onClick={() => setMenuOpen(!menuOpen)}
+              onClick={() => setMenuOpen((prev) => !prev)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
             >
@@ -320,9 +394,7 @@ const Navbar = () => {
                 <Menu size={28} strokeWidth={1.4} />
               )}
             </button>
-
           </div>
-
         </div>
       </header>
 
@@ -347,13 +419,9 @@ const Navbar = () => {
 
             {navigation.map((item, index) => {
 
-              /* MOBILE SERVICES DROPDOWN */
+              /* MOBILE SERVICES */
 
               if (item.name === "Services") {
-                const servicesActive =
-                  location.pathname === "/services" ||
-                  location.pathname.startsWith("/services/");
-
                 return (
                   <div
                     className="mobile-pricing-group"
@@ -364,9 +432,7 @@ const Navbar = () => {
                         : "0ms",
                     }}
                   >
-
                     <div className="mobile-pricing-row">
-
                       <NavLink
                         to="/services"
                         end
@@ -380,7 +446,6 @@ const Navbar = () => {
                         <span className="mobile-nav-number">
                           03
                         </span>
-
                         <span className="mobile-nav-name">
                           Services
                         </span>
@@ -392,7 +457,7 @@ const Navbar = () => {
                           servicesOpen ? "open" : ""
                         }`}
                         onClick={() =>
-                          setServicesOpen(!servicesOpen)
+                          setServicesOpen((prev) => !prev)
                         }
                         aria-label="Toggle service categories"
                         aria-expanded={servicesOpen}
@@ -400,48 +465,20 @@ const Navbar = () => {
                       >
                         <ChevronDown size={20} />
                       </button>
-
                     </div>
 
-                    <div
-                      className={`mobile-pricing-submenu ${
-                        servicesOpen ? "submenu-open" : ""
-                      }`}
-                    >
-                      {serviceLinks.map((subItem) => (
-                        <NavLink
-                          key={subItem.path}
-                          to={subItem.path}
-                          tabIndex={
-                            menuOpen && servicesOpen ? 0 : -1
-                          }
-                          className={({ isActive }) =>
-                            `mobile-pricing-link ${
-                              isActive ? "active" : ""
-                            }`
-                          }
-                        >
-                          <span>{subItem.name}</span>
-
-                          <ArrowUpRight
-                            size={16}
-                            strokeWidth={1.4}
-                          />
-                        </NavLink>
-                      ))}
-                    </div>
-
+                    <MobileMegaMenu
+                      groups={serviceGroups}
+                      isOpen={servicesOpen}
+                      menuOpen={menuOpen}
+                    />
                   </div>
                 );
               }
 
-              /* MOBILE PRICING DROPDOWN */
+              /* MOBILE PRICING */
 
               if (item.name === "Pricing") {
-                const pricingActive =
-                  location.pathname === "/pricing" ||
-                  location.pathname.startsWith("/pricing/");
-
                 return (
                   <div
                     className="mobile-pricing-group"
@@ -452,9 +489,7 @@ const Navbar = () => {
                         : "0ms",
                     }}
                   >
-
                     <div className="mobile-pricing-row">
-
                       <NavLink
                         to="/pricing"
                         end
@@ -468,7 +503,6 @@ const Navbar = () => {
                         <span className="mobile-nav-number">
                           06
                         </span>
-
                         <span className="mobile-nav-name">
                           Pricing
                         </span>
@@ -480,7 +514,7 @@ const Navbar = () => {
                           pricingOpen ? "open" : ""
                         }`}
                         onClick={() =>
-                          setPricingOpen(!pricingOpen)
+                          setPricingOpen((prev) => !prev)
                         }
                         aria-label="Toggle pricing categories"
                         aria-expanded={pricingOpen}
@@ -488,37 +522,13 @@ const Navbar = () => {
                       >
                         <ChevronDown size={20} />
                       </button>
-
                     </div>
 
-                    <div
-                      className={`mobile-pricing-submenu ${
-                        pricingOpen ? "submenu-open" : ""
-                      }`}
-                    >
-                      {pricingLinks.map((subItem) => (
-                        <NavLink
-                          key={subItem.path}
-                          to={subItem.path}
-                          tabIndex={
-                            menuOpen && pricingOpen ? 0 : -1
-                          }
-                          className={({ isActive }) =>
-                            `mobile-pricing-link ${
-                              isActive ? "active" : ""
-                            }`
-                          }
-                        >
-                          <span>{subItem.name}</span>
-
-                          <ArrowUpRight
-                            size={16}
-                            strokeWidth={1.4}
-                          />
-                        </NavLink>
-                      ))}
-                    </div>
-
+                    <MobileMegaMenu
+                      groups={pricingGroups}
+                      isOpen={pricingOpen}
+                      menuOpen={menuOpen}
+                    />
                   </div>
                 );
               }
@@ -532,7 +542,7 @@ const Navbar = () => {
                   end={item.path === "/"}
                   tabIndex={menuOpen ? 0 : -1}
                   className={({ isActive }) =>
-                    `mobile-nav-link ${
+                    `mobile-nav-link mobile-standard-link ${
                       isActive ? "active" : ""
                     }`
                   }
@@ -558,13 +568,11 @@ const Navbar = () => {
                 </NavLink>
               );
             })}
-
           </nav>
 
           {/* MOBILE BOOKING */}
 
           <div className="mobile-menu-bottom">
-
             <span>YOUR STYLE. YOUR EXPERIENCE.</span>
 
             <Link
@@ -573,12 +581,9 @@ const Navbar = () => {
               tabIndex={menuOpen ? 0 : -1}
             >
               BOOK YOUR EXPERIENCE
-
               <ArrowUpRight size={17} />
             </Link>
-
           </div>
-
         </div>
       </div>
     </>

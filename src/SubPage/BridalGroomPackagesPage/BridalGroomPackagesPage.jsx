@@ -1,76 +1,107 @@
 
-import React from "react";
 import { Link } from "react-router-dom";
-import '../HairStylingPage/HairStylingPage.css'
-import "./BridalGroomPackagesPage.css";
+import {
+  Scissors,
+  UserRound,
+  Sparkles,
+  Brush,
+  Gem,
+  Layers,
+  Hand,
+  Flower2,
+  Heart,
+  ShieldCheck,
+  Star,
+  CalendarDays,
+  ArrowRight,
+  Crown,
+  Camera,
+  WandSparkles,
+  Clock,
+} from "lucide-react";
+import "../HairStylingPage/HairStylingPage.css";
 
 const serviceCategories = [
-  { name: "Hair & Styling", slug: "hair" },
-  { name: "Men's Grooming", slug: "grooming" },
-  { name: "Skin & Facial", slug: "skin" },
-  { name: "Makeup & Bridal", slug: "makeup" },
-  { name: "Nail Studio", slug: "nails" },
-  { name: "Waxing & Threading", slug: "waxing" },
-  { name: "Manicure & Pedicure", slug: "pedicure" },
-  { name: "Body & Spa", slug: "body-spa" },
-  { name: "Bridal & Groom Packages", slug: "packages" },
+  { name: "Hair & Styling", slug: "hair", icon: Scissors },
+  { name: "Men's Grooming", slug: "grooming", icon: UserRound },
+  { name: "Skin & Facial Care", slug: "skin", icon: Sparkles },
+  { name: "Makeup & Bridal", slug: "makeup", icon: Brush },
+  { name: "Nail Studio", slug: "nails", icon: Gem },
+  { name: "Waxing & Threading", slug: "waxing", icon: Layers },
+  { name: "Manicure & Pedicure", slug: "pedicure", icon: Hand },
+  { name: "Body & Spa", slug: "body-spa", icon: Flower2 },
+  { name: "Bridal & Groom Packages", slug: "packages", icon: Heart },
 ];
 
-const packages = [
+const weddingPackages = [
   {
     number: "01",
-    title: "Bridal Beauty",
+    title: "The Bridal Signature",
+    category: "BRIDAL COLLECTION",
     description:
-      "A complete bridal beauty experience with professional makeup, hairstyling and elegant finishing touches for your special day.",
-    image: "/images/services/packages/packages-bridal.jpg",
-    tag: "For The Bride",
+      "A complete bridal beauty experience designed to make your special day truly unforgettable.",
+    image: "/images/services/packages/packages-prewedding.jpg",
+    alt: "Luxury Indian bridal makeup and styling",
   },
   {
     number: "02",
-    title: "Groom Styling",
+    title: "The Pre Bridal Glow",
+    category: "BRIDAL PREPARATION",
     description:
-      "Look your best on your wedding day with expert grooming, hairstyle detailing and a polished personal look.",
-    image: "/images/services/packages/packages-groom.jpg",
-    tag: "For The Groom",
+      "A thoughtfully curated beauty journey with skin care, hair care and relaxing treatments.",
+    image: "/images/services/packages/packages-consultation.jpg",
+    alt: "Indian bride enjoying a pre bridal beauty treatment",
   },
   {
     number: "03",
-    title: "Pre Wedding Glow",
+    title: "The Groom Signature",
+    category: "GROOM COLLECTION",
     description:
-      "Prepare for every celebration with carefully planned skin, hair and beauty sessions before the big day.",
-    image: "/images/services/packages/packages-prewedding.jpg",
-    tag: "Before The Wedding",
+      "A refined grooming experience featuring professional styling and personalised skin care.",
+    image: "/images/services/packages/packages-bridal.jpg",
+    alt: "Indian groom with premium hairstyle and beard styling",
   },
   {
     number: "04",
-    title: "Personal Beauty Consultation",
+    title: "The Wedding Duo",
+    category: "COUPLE COLLECTION",
     description:
-      "A personalised consultation to understand your preferences and create a beauty plan that complements your occasion.",
-    image: "/images/services/packages/packages-consultation.jpg",
-    tag: "Made For You",
+      "A coordinated beauty and grooming experience for the bride and groom before their big day.",
+    image: "/images/services/packages/packages-groom.jpg",
+    alt: "Indian bride and groom in elegant wedding attire",
   },
 ];
 
 const benefits = [
   {
-    number: "01",
-    title: "Personalised Planning",
-    text: "Every look is planned around your preferences, outfit and special occasion.",
+    icon: Crown,
+    title: "Personalised Styling",
+    description:
+      "Beauty and grooming experiences tailored to your wedding look.",
   },
   {
-    number: "02",
-    title: "Professional Artists",
-    text: "Experienced beauty professionals focused on detail, comfort and finish.",
+    icon: Star,
+    title: "Expert Professionals",
+    description:
+      "Professional artists and stylists dedicated to every detail.",
   },
   {
-    number: "03",
-    title: "Complete Experience",
-    text: "Hair, makeup, grooming and beauty services brought together in one place.",
+    icon: Sparkles,
+    title: "Premium Products",
+    description:
+      "Carefully selected products for a refined beauty experience.",
   },
   {
-    number: "04",
-    title: "Attention To Detail",
-    text: "Thoughtful finishing touches to help you feel confident on your special day.",
+    icon: ShieldCheck,
+    title: "Attention to Detail",
+    description:
+      "Thoughtful preparation for a confident and beautiful appearance.",
+  },
+  {
+    icon: Heart,
+    title: "Wedding Day Ready",
+    description:
+      "A comfortable and memorable salon experience for both of you.",
   },
 ];
 
@@ -78,120 +109,141 @@ export default function BridalGroomPackagesPage() {
   return (
     <main className="aurelle-hair-page">
 
-      {/* HERO */}
+      {/* HERO SECTION */}
       <section className="hair-hero">
         <div className="hair-hero-image">
           <img
             src="/images/services/packages/packages-hero.jpg"
-            alt="Luxury bridal and groom styling at AURELLE"
+            alt="AURELLE luxury bride and groom wedding experience"
           />
         </div>
 
-        <div className="hair-hero-overlay"></div>
+        <div className="hair-hero-overlay" />
 
         <div className="hair-hero-content">
+          <div className="hair-breadcrumb">
+            <Link to="/">Home</Link>
+            <span>›</span>
+            <Link to="/services">Services</Link>
+            <span>›</span>
+            <span>Bridal & Groom Packages</span>
+          </div>
+
           <span className="hair-eyebrow">
-            AURELLE LUXURY UNISEX SALON
+            AURELLE WEDDING COLLECTION
           </span>
 
-          <p className="hair-breadcrumb">
-            <Link to="/">Home</Link> /{" "}
-            <Link to="/services">Services</Link> / Packages
-          </p>
-
           <h1>
-            Your Day.
-            <br />
-            <span>Your Signature Look.</span>
+            Bride <span>&</span> Groom
           </h1>
 
           <p>
-            Celebrate your special moments with thoughtfully curated
-            bridal and groom beauty experiences, personalised just for you.
+            Celebrate your most beautiful moments with
+            thoughtfully curated bridal and groom
+            experiences, designed to make every detail
+            of your wedding look unforgettable.
           </p>
 
-          <Link to="/contact" className="hair-primary-btn">
-            Plan Your Experience <span>↗</span>
-          </Link>
-        </div>
+          <div className="hair-hero-actions">
+            <Link
+              to="/booking"
+              className="hair-button hair-button-light"
+            >
+              Book Your Experience <ArrowRight size={17} />
+            </Link>
 
-        <div className="hair-hero-side-text">
-          BEAUTY FOR YOUR BIG MOMENTS
+            <a
+              href="#wedding-packages"
+              className="hair-button hair-button-outline"
+            >
+              Explore Packages
+            </a>
+          </div>
         </div>
       </section>
 
       {/* CATEGORY NAVIGATION */}
       <section className="hair-category-section">
-        <div className="hair-category-inner">
-          <span className="hair-category-label">EXPLORE SERVICES</span>
+        <div className="hair-category-list">
+          {serviceCategories.map((category) => {
+            const Icon = category.icon;
 
-          <div className="hair-category-nav">
-            {serviceCategories.map((category) => (
+            return (
               <Link
                 key={category.slug}
                 to={`/services/${category.slug}`}
-                className={
-                  category.slug === "packages"
-                    ? "hair-category-link active"
-                    : "hair-category-link"
-                }
+                className={`hair-category-item ${
+                  category.slug === "packages" ? "active" : ""
+                }`}
               >
-                {category.name}
-                <span>↗</span>
+                <Icon size={27} strokeWidth={1.3} />
+                <span>{category.name}</span>
               </Link>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="hair-intro-section">
-        <div className="hair-section-label">YOUR SPECIAL OCCASION</div>
-
-        <div className="hair-intro-grid">
-          <h2>
-            Moments That Deserve
-            <br />
-            <span>Something Extraordinary.</span>
-          </h2>
-
-          <p>
-            From wedding celebrations to pre wedding preparations,
-            AURELLE brings together professional beauty services and
-            personalised attention to help you feel your absolute best.
-          </p>
-        </div>
-      </section>
-
-      {/* PACKAGES */}
-      <section className="hair-services-section">
+      {/* WEDDING PACKAGES */}
+      <section
+        className="hair-services-section"
+        id="wedding-packages"
+      >
         <div className="hair-section-heading">
           <div>
-            <span className="hair-section-label">THE AURELLE EXPERIENCE</span>
-            <h2>Curated For Your Big Day</h2>
+            <span className="hair-eyebrow">
+              YOUR WEDDING, YOUR SIGNATURE LOOK
+            </span>
+
+            <h2>
+              The Art of
+              <br />
+              <span>Looking Extraordinary</span>
+            </h2>
           </div>
 
           <p>
-            Thoughtful beauty experiences designed around your
-            celebration and personal style.
+            From the bride's complete beauty preparation
+            to the groom's signature styling, discover
+            curated experiences for your most special
+            celebration.
           </p>
         </div>
 
-        <div className="hair-services-grid">
-          {packages.map((item) => (
-            <article className="hair-service-card" key={item.number}>
+        <div className="hair-service-grid">
+          {weddingPackages.map((service) => (
+            <article
+              className="hair-service-card"
+              key={service.number}
+            >
               <div className="hair-service-image">
-                <img src={item.image} alt={item.title} />
-                <span className="hair-service-number">{item.number}</span>
+                <img
+                  src={service.image}
+                  alt={service.alt}
+                  loading="lazy"
+                />
+
+                <span className="hair-service-number">
+                  {service.number}
+                </span>
               </div>
 
-              <div className="hair-service-content">
-                <span className="hair-service-tag">{item.tag}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+              <div className="hair-service-info">
+                <div>
+                  <span className="hair-eyebrow">
+                    {service.category}
+                  </span>
 
-                <Link to="/contact" className="hair-text-link">
-                  Enquire Now <span>↗</span>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+
+                <Link
+                  to="/booking"
+                  className="hair-card-arrow"
+                  aria-label={`Book ${service.title}`}
+                >
+                  <ArrowRight size={19} />
                 </Link>
               </div>
             </article>
@@ -199,94 +251,99 @@ export default function BridalGroomPackagesPage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
-      <section className="hair-why-section">
-        <div className="hair-why-header">
-          <span className="hair-section-label">WHY AURELLE</span>
+      {/* WHY CHOOSE AURELLE */}
+      <section className="hair-benefits-section">
+        <div className="hair-benefits-title">
+          <span className="hair-eyebrow">
+            THE AURELLE DIFFERENCE
+          </span>
+
           <h2>
-            Every Detail.
+            Every Detail
             <br />
-            <span>Thoughtfully Perfected.</span>
+            Made Special
           </h2>
-          <p>
-            Your special day deserves more than a service.
-            It deserves an experience that feels personal from start to finish.
-          </p>
         </div>
 
         <div className="hair-benefits-grid">
-          {benefits.map((benefit) => (
-            <div className="hair-benefit-card" key={benefit.number}>
-              <span>{benefit.number}</span>
-              <h3>{benefit.title}</h3>
-              <p>{benefit.text}</p>
-            </div>
-          ))}
+          {benefits.map((benefit) => {
+            const Icon = benefit.icon;
+
+            return (
+              <div
+                className="hair-benefit-item"
+                key={benefit.title}
+              >
+                <Icon size={29} strokeWidth={1.3} />
+                <h3>{benefit.title}</h3>
+                <p>{benefit.description}</p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* SIGNATURE EXPERIENCE */}
+      {/* SIGNATURE WEDDING EXPERIENCE */}
       <section className="hair-signature-section">
         <div className="hair-signature-image">
           <img
-            src="/images/services/packages/packages-signature.jpg"
-            alt="AURELLE signature bridal beauty experience"
+            src="/images/services/03-makeup-and-bridal.jpg"
+            alt="AURELLE signature wedding beauty experience"
+            loading="lazy"
           />
         </div>
 
         <div className="hair-signature-content">
-          <span className="hair-section-label">THE SIGNATURE EXPERIENCE</span>
+          <span className="hair-eyebrow">
+            THE SIGNATURE WEDDING EXPERIENCE
+          </span>
 
           <h2>
-            The Beginning Of
+            Your Day.
             <br />
-            <span>Your Beautiful Story.</span>
+            <span>Your Forever Look.</span>
           </h2>
 
           <p>
-            Your wedding journey is uniquely yours. Our team works with
-            you to understand your vision, preferences and celebration
-            requirements before planning your beauty experience.
+            Let our professionals help you prepare for
+            your special day with personalised beauty
+            and grooming experiences crafted around
+            your style and preferences.
           </p>
 
-          <p>
-            From the first consultation to the final finishing touch,
-            every detail is approached with care and creativity.
-          </p>
-
-          <Link to="/contact" className="hair-primary-btn">
-            Book A Consultation <span>↗</span>
+          <Link
+            to="/booking"
+            className="hair-button hair-button-light"
+          >
+            Discover Your Package <ArrowRight size={17} />
           </Link>
         </div>
       </section>
 
       {/* FINAL CTA */}
       <section className="hair-final-cta">
-        <div className="hair-final-cta-bg">
-          <img
-            src="/images/packages/packages-bridal.jpg"
-            alt=""
-          />
-        </div>
+        <div className="hair-cta-content">
+          <div>
+            <span className="hair-eyebrow">
+              YOUR BEAUTIFUL BEGINNING STARTS HERE
+            </span>
 
-        <div className="hair-final-cta-overlay"></div>
+            <h2>Make Every Wedding Moment Unforgettable.</h2>
 
-        <div className="hair-final-cta-content">
-          <span className="hair-section-label">YOUR MOMENT STARTS HERE</span>
+            <p>
+              Plan your bridal and groom experience
+              with AURELLE and get ready to celebrate
+              your special day with confidence.
+            </p>
+          </div>
 
-          <h2>
-            Let's Create
-            <br />
-            <span>Your Perfect Look.</span>
-          </h2>
-
-          <p>
-            Tell us about your special occasion and let AURELLE
-            help you plan your beauty experience.
-          </p>
-
-          <Link to="/contact" className="hair-primary-btn">
-            Get In Touch <span>↗</span>
+          <Link
+            to="/booking"
+            className="hair-button hair-button-light"
+          >
+            <CalendarDays size={18} />
+            Book Your Consultation
+            <ArrowRight size={17} />
           </Link>
         </div>
       </section>

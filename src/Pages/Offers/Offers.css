@@ -204,6 +204,7 @@
 }
 
 .offers-exclusive-grid {
+  padding:20px;
   width: min(1450px, calc(100% - 60px));
   margin: 20px auto 0;
   display: grid;

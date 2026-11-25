@@ -108,7 +108,7 @@
   position: relative;
   isolation: isolate;
   min-height: 440px;
-  padding: 50px 0;
+  padding: 70px 0;
   overflow: hidden;
   background: var(--about-black);
 }
@@ -763,7 +763,7 @@
 
 @media (max-width: 760px) {
   .about-hero {
-    padding: 20px 0;
+    padding: 70px 0;
   }
 
   .about-hero-container {

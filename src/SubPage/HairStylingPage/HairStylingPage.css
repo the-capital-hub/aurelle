@@ -816,7 +816,7 @@ height: 420px;
   }
 
   .aurelle-hair-page .hair-signature-content h2 {
-    font-size: 41px;
+    font-size: 30px;
   }
 
   .aurelle-hair-page .hair-cta-content {
@@ -838,7 +838,7 @@ height: 420px;
 
 @media (max-width: 390px) {
   .aurelle-hair-page .hair-hero {
-    min-height: 530px;
+    min-height: 430px;
   }
 
   .aurelle-hair-page .hair-hero h1 {
@@ -963,7 +963,7 @@ height: 420px;
 @media (max-width: 700px) {
   .aurelle-hair-page .hair-hero {
     min-height: 540px;
-    height: 75vh;
+    height: 40vh;
   }
 
   .aurelle-hair-page .hair-service-image {

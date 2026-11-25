@@ -39,7 +39,7 @@
   height: min(690px, 82vh);
   display: flex;
   align-items: center;
-  padding: 20px 7%;
+  padding: 90px 7%;
   overflow: hidden;
   background: #111;
 }
