@@ -13,68 +13,171 @@ import {
   ChevronLeft,
   ChevronRight,
   Flower2,
-  Sparkles,
   Phone,
   LockKeyhole,
   Star,
+  User,
 } from "lucide-react";
 import "./Booking.css";
 
-const services = [
-  {
-    name: "Hair Services",
-    price: 1499,
-    image: "/images/service-makeup/service-hair.jpg",
-    description: "Hair styling and treatments",
-  },
-  {
-    name: "Skin Care",
-    price: 1199,
-    image: "/images/service-makeup/service-skin.jpg",
-    description: "Facials and skin treatments",
-  },
-  {
-    name: "Makeup",
-    price: 2499,
-    image: "/images/service-makeup/service-makeup.jpg",
-    description: "Professional makeup services",
-  },
-  {
-    name: "Nail Care",
-    price: 899,
-    image: "/images/service-makeup/service-nails.jpg",
-    description: "Nail art and care",
-  },
-  {
-    name: "Bridal Services",
-    price: 5999,
-    image: "/images/gallery/gallery-bridal.jpg",
-    description: "Luxury bridal experience",
-  },
-];
+/* =========================================
+   SERVICES
+========================================= */
 
-const experts = [
-  {
-    name: "Priya Sharma",
-    role: "Hair Specialist",
-    image: "/images/expert/expert-ananya.jpg",
-  },
-  {
-    name: "Ananya Verma",
-    role: "Skin Expert",
-    image: "/images/expert/expert-kavya.jpg",
-  },
-  {
-    name: "Riya Malhotra",
-    role: "Makeup Artist",
-    image: "/images/expert/expert-ritika.jpg",
-  },
-  {
-    name: "Neha Singh",
-    role: "Nail Specialist",
-    image: "/images/team/expert-kritika.jpg",
-  },
-];
+const serviceGroups = {
+  Men: [
+    {
+      id: "mens-grooming",
+      name: "Men's Grooming",
+      description: "Haircuts, beard styling and complete grooming",
+      image: "/images/services/grooming/grooming-hero.jpg",
+    },
+    {
+      id: "mens-skin",
+      name: "Skin & Facial Care",
+      description: "Deep cleansing, charcoal and hydration treatments",
+      image: "/images/services/mens-skin/mens-skin-hero.jpg",
+    },
+    {
+      id: "groom-packages",
+      name: "Groom Packages",
+      description: "Premium grooming for your special occasion",
+      image: "/images/services/packages/packages-groom.jpg",
+    },
+  ],
+
+  Women: [
+    {
+      id: "hair-styling",
+      name: "Hair & Styling",
+      description: "Haircuts, styling and professional hair treatments",
+      image: "/images/service-makeup/service-hair.jpg",
+    },
+    {
+      id: "skin-facial",
+      name: "Skin & Facial Care",
+      description: "Facials and personalised skin treatments",
+      image: "/images/services/skin/skin-hero.jpg",
+    },
+    {
+      id: "makeup-bridal",
+      name: "Makeup & Bridal",
+      description: "Professional makeup and bridal beauty",
+      image: "/images/service-makeup/service-makeup.jpg",
+    },
+    {
+      id: "nail-studio",
+      name: "Nail Studio",
+      description: "Beautiful nail care and nail art",
+      image: "/images/service-makeup/service-nails.jpg",
+    },
+    {
+      id: "waxing-threading",
+      name: "Waxing & Threading",
+      description: "Professional waxing and threading services",
+      image: "/images/services/waxing/waxing-hero.jpg",
+    },
+    {
+      id: "manicure-pedicure",
+      name: "Manicure & Pedicure",
+      description: "Relaxing hand, nail and foot care",
+      image: "/images/services/pedicure/pedicure-hero.jpg",
+    },
+    {
+      id: "body-spa",
+      name: "Body & Spa",
+      description: "Relaxing body therapies and spa rituals",
+      image: "/images/services/body-spa/body-hero.jpg",
+    },
+    {
+      id: "bridal-packages",
+      name: "Bridal Packages",
+      description: "Exclusive bridal and pre wedding experiences",
+      image: "/images/services/packages/packages-bridal.jpg",
+    },
+  ],
+};
+
+/* =========================================
+   EXPERTS
+   Replace placeholder names and image paths
+   with your actual salon team details.
+========================================= */
+
+const expertGroups = {
+  Men: [
+    {
+      id: "men-grooming-expert",
+      name: "Men's Grooming Expert",
+      role: "Professional Barber & Grooming Specialist",
+      image: "/images/team/expert-grooming.jpg",
+      services: ["mens-grooming"],
+    },
+    {
+      id: "men-skin-expert",
+      name: "AURELLE Skin Specialist",
+      role: "Men's Skin & Facial Expert",
+      image: "/images/experts/mens-skin-expert.jpg",
+      services: ["mens-skin"],
+    },
+    {
+      id: "groom-consultant",
+      name: "AURELLE Groom Consultant",
+      role: "Wedding Groom Specialist",
+      image: "/images/experts/mens-groom-package-expert.jpg",
+      services: ["groom-packages"],
+    },
+  ],
+
+  Women: [
+    {
+      id: "priya-sharma",
+      name: "Priya Sharma",
+      role: "Hair Specialist",
+      image: "/images/expert/expert-ananya.jpg",
+      services: ["hair-styling"],
+    },
+    {
+      id: "ananya-verma",
+      name: "Ananya Verma",
+      role: "Skin Expert",
+      image: "/images/expert/expert-kavya.jpg",
+      services: ["skin-facial"],
+    },
+    {
+      id: "riya-malhotra",
+      name: "Riya Malhotra",
+      role: "Makeup Artist",
+      image: "/images/expert/expert-ritika.jpg",
+      services: ["makeup-bridal", "bridal-packages"],
+    },
+    {
+      id: "neha-singh",
+      name: "Neha Singh",
+      role: "Nail Specialist",
+      image: "/images/team/expert-kritika.jpg",
+      services: ["nail-studio", "manicure-pedicure"],
+    },
+    {
+      id: "waxing-specialist",
+      name: "AURELLE Beauty Specialist",
+      role: "Waxing & Threading Expert",
+      image: "/images/experts/womens-waxing-expert.jpg",
+      services: ["waxing-threading"],
+    },
+    {
+      id: "spa-therapist",
+      name: "AURELLE Spa Therapist",
+      role: "Body & Spa Specialist",
+      image: "/images/experts/womens-spa-expert.jpg",
+      services: ["body-spa"],
+    },
+  ],
+};
+
+/* =========================================
+   TIME SLOTS
+========================================= */
 
 const timeSlots = [
   "10:00 AM",
@@ -85,19 +188,47 @@ const timeSlots = [
   "05:30 PM",
 ];
 
+/* =========================================
+   BOOKING COMPONENT
+========================================= */
+
 function Booking() {
-  const [selectedService, setSelectedService] = useState(services[0]);
-  const [selectedExpert, setSelectedExpert] = useState(experts[0]);
+  const [selectedGender, setSelectedGender] = useState("Men");
+
+  const [selectedService, setSelectedService] = useState(
+    serviceGroups.Women[0]
+  );
+
+  const [selectedExpert, setSelectedExpert] = useState(
+    expertGroups.Women[0]
+  );
+
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
   const [monthDate, setMonthDate] = useState(new Date());
+
   const [form, setForm] = useState({
     name: "",
     phone: "",
     email: "",
     message: "",
   });
+
   const [submitted, setSubmitted] = useState(false);
+
+  /* AVAILABLE SERVICES */
+
+  const availableServices = serviceGroups[selectedGender];
+
+  /* AVAILABLE EXPERTS */
+
+  const availableExperts = useMemo(() => {
+    return expertGroups[selectedGender].filter((expert) =>
+      expert.services.includes(selectedService.id)
+    );
+  }, [selectedGender, selectedService]);
+
+  /* CALENDAR */
 
   const monthName = monthDate.toLocaleString("en-US", {
     month: "long",
@@ -107,12 +238,13 @@ function Booking() {
   const calendarDays = useMemo(() => {
     const year = monthDate.getFullYear();
     const month = monthDate.getMonth();
+
     const firstDay = new Date(year, month, 1).getDay();
     const totalDays = new Date(year, month + 1, 0).getDate();
 
     return [
       ...Array(firstDay).fill(null),
-      ...Array.from({ length: totalDays }, (_, i) => i + 1),
+      ...Array.from({ length: totalDays }, (_, index) => index + 1),
     ];
   }, [monthDate]);
 
@@ -125,7 +257,12 @@ function Booking() {
       monthDate.getMonth(),
       day
     );
-    return date.toISOString().split("T")[0];
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const dateDay = String(date.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${dateDay}`;
   };
 
   const changeMonth = (direction) => {
@@ -138,12 +275,53 @@ function Booking() {
     );
   };
 
-  const updateForm = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  /* CATEGORY CHANGE */
+
+  const changeGender = (gender) => {
+    setSelectedGender(gender);
+    setSelectedService(serviceGroups[gender][0]);
+    setSelectedExpert(expertGroups[gender][0]);
+    setSelectedDate("");
+    setSelectedTime("");
   };
 
-  const handleBooking = (e) => {
-    e.preventDefault();
+  /* SERVICE CHANGE */
+
+  const changeService = (service) => {
+    setSelectedService(service);
+
+    const matchingExperts = expertGroups[selectedGender].filter(
+      (expert) => expert.services.includes(service.id)
+    );
+
+    setSelectedExpert(matchingExperts[0] || null);
+  };
+
+  /* FORM UPDATE */
+
+  const updateForm = (event) => {
+    const { name, value } = event.target;
+
+    setForm((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
+  };
+
+  /* SUBMIT BOOKING */
+
+  const handleBooking = (event) => {
+    event.preventDefault();
+
+    if (!selectedService) {
+      alert("Please select a service.");
+      return;
+    }
+
+    if (!selectedExpert) {
+      alert("No expert is currently assigned to this service.");
+      return;
+    }
 
     if (!selectedDate || !selectedTime) {
       alert("Please select your preferred date and time.");
@@ -160,12 +338,25 @@ function Booking() {
     setSubmitted(true);
   };
 
+  /* RESET BOOKING */
+
   const resetBooking = () => {
     setSubmitted(false);
-    setForm({ name: "", phone: "", email: "", message: "" });
+
+    setForm({
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+
     setSelectedDate("");
     setSelectedTime("");
   };
+
+  /* =========================================
+     RENDER
+  ========================================= */
 
   return (
     <div className="booking-page">
@@ -183,12 +374,12 @@ function Booking() {
 
           <h1>
             Schedule Your
-            <em> Beauty Appointment</em>
+            <em> AURELLE Experience</em>
           </h1>
 
           <p>
-            Choose your service, expert and preferred time.
-            Your personalised beauty experience awaits at AURELLE.
+            Choose your preferred service, expert and appointment
+            time. Enjoy a personalised luxury salon experience.
           </p>
 
           <div className="booking-hero-features">
@@ -204,7 +395,7 @@ function Booking() {
               <Gem />
               <span>
                 <strong>Expert Services</strong>
-                <small>By certified professionals</small>
+                <small>Professional care</small>
               </span>
             </div>
 
@@ -212,7 +403,7 @@ function Booking() {
               <ShieldCheck />
               <span>
                 <strong>Personalised Care</strong>
-                <small>Tailored to your needs</small>
+                <small>Made around you</small>
               </span>
             </div>
           </div>
@@ -222,76 +413,173 @@ function Booking() {
       {/* BOOKING CONTENT */}
 
       <section className="booking-main">
-        <form className="booking-form-card" onSubmit={handleBooking}>
 
-          {/* SERVICE */}
+        <form
+          className="booking-form-card"
+          onSubmit={handleBooking}
+        >
+
+          {/* CATEGORY SELECTION */}
 
           <div className="booking-step">
             <div className="booking-step-heading">
               <div className="step-title">
                 <span className="step-number">1</span>
-                <h2>Select a Service</h2>
+                <h2>Choose Your Category</h2>
               </div>
-              <p>Choose the service you want to book.</p>
+
+              <p>Select the services you are looking for.</p>
             </div>
 
-            <div className="service-selection">
-              {services.map((service) => (
-                <button
-                  type="button"
-                  key={service.name}
-                  className={`service-option ${
-                    selectedService.name === service.name ? "active" : ""
-                  }`}
-                  onClick={() => setSelectedService(service)}
-                >
-                  <div className="service-option-image">
-                    <img src={service.image} alt={service.name} />
-                    {selectedService.name === service.name && (
-                      <span className="selection-check">
-                        <Check size={15} />
-                      </span>
-                    )}
-                  </div>
-                  <strong>{service.name}</strong>
-                </button>
-              ))}
+            <div className="booking-gender-selection">
+
+              <button
+                type="button"
+                className={
+                  selectedGender === "Men"
+                    ? "booking-gender-option active"
+                    : "booking-gender-option"
+                }
+                onClick={() => changeGender("Men")}
+              >
+                <User size={22} />
+
+                <span>
+                  <strong>Men</strong>
+                  <small>Men's Services</small>
+                </span>
+
+                {selectedGender === "Men" && (
+                  <Check className="gender-check" size={18} />
+                )}
+              </button>
+
+              <button
+                type="button"
+                className={
+                  selectedGender === "Women"
+                    ? "booking-gender-option active"
+                    : "booking-gender-option"
+                }
+                onClick={() => changeGender("Women")}
+              >
+                <Flower2 size={22} />
+
+                <span>
+                  <strong>Women</strong>
+                  <small>Women's Services</small>
+                </span>
+
+                {selectedGender === "Women" && (
+                  <Check className="gender-check" size={18} />
+                )}
+              </button>
+
             </div>
           </div>
 
-          {/* EXPERT */}
+          {/* SERVICE SELECTION */}
 
           <div className="booking-step">
             <div className="booking-step-heading">
               <div className="step-title">
                 <span className="step-number">2</span>
+                <h2>Select a Service</h2>
+              </div>
+
+              <p>
+                Explore {selectedGender.toLowerCase()}'s services.
+              </p>
+            </div>
+
+            <div className="service-selection">
+
+              {availableServices.map((service) => (
+                <button
+                  type="button"
+                  key={service.id}
+                  className={`service-option ${
+                    selectedService.id === service.id ? "active" : ""
+                  }`}
+                  onClick={() => changeService(service)}
+                >
+                  <div className="service-option-image">
+                    <img
+                      src={service.image}
+                      alt={service.name}
+                      loading="lazy"
+                    />
+
+                    {selectedService.id === service.id && (
+                      <span className="selection-check">
+                        <Check size={15} />
+                      </span>
+                    )}
+                  </div>
+
+                  <strong>{service.name}</strong>
+
+                  <small className="service-option-description">
+                    {service.description}
+                  </small>
+                </button>
+              ))}
+
+            </div>
+          </div>
+
+          {/* EXPERT SELECTION */}
+
+          <div className="booking-step">
+            <div className="booking-step-heading">
+              <div className="step-title">
+                <span className="step-number">3</span>
                 <h2>Choose Your Expert</h2>
               </div>
-              <p>Book with your preferred beauty expert.</p>
+
+              <p>
+                Select your preferred {selectedGender.toLowerCase()}'s
+                service professional.
+              </p>
             </div>
 
             <div className="expert-selection">
-              {experts.map((expert) => (
+
+              {availableExperts.map((expert) => (
                 <button
                   type="button"
-                  key={expert.name}
+                  key={expert.id}
                   className={`expert-option ${
-                    selectedExpert.name === expert.name ? "active" : ""
+                    selectedExpert?.id === expert.id ? "active" : ""
                   }`}
                   onClick={() => setSelectedExpert(expert)}
                 >
                   <div className="expert-image">
-                    <img src={expert.image} alt={expert.name} />
-                    {selectedExpert.name === expert.name && (
+                    <img
+                      src={expert.image}
+                      alt={expert.name}
+                      loading="lazy"
+                    />
+
+                    {selectedExpert?.id === expert.id && (
                       <span className="selection-check">
                         <Check size={14} />
                       </span>
                     )}
                   </div>
+
                   <strong>{expert.name}</strong>
                   <small>{expert.role}</small>
                 </button>
               ))}
+
+              {availableExperts.length === 0 && (
+                <p className="expert-unavailable">
+                  No expert is currently assigned to this service.
+                  Please contact our team.
+                </p>
+              )}
+
             </div>
           </div>
 
@@ -300,18 +588,25 @@ function Booking() {
           <div className="booking-step">
             <div className="booking-step-heading">
               <div className="step-title">
-                <span className="step-number">3</span>
+                <span className="step-number">4</span>
                 <h2>Select Date and Time</h2>
               </div>
-              <p>Pick a date and a convenient time slot.</p>
+
+              <p>Choose a convenient appointment slot.</p>
             </div>
 
             <div className="date-time-layout">
+
               <div className="booking-calendar">
                 <div className="calendar-header">
+
                   <button
                     type="button"
                     onClick={() => changeMonth(-1)}
+                    disabled={
+                      monthDate.getFullYear() === today.getFullYear() &&
+                      monthDate.getMonth() === today.getMonth()
+                    }
                     aria-label="Previous month"
                   >
                     <ChevronLeft />
@@ -326,9 +621,11 @@ function Booking() {
                   >
                     <ChevronRight />
                   </button>
+
                 </div>
 
                 <div className="calendar-grid">
+
                   {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
                     (day) => (
                       <span className="calendar-weekday" key={day}>
@@ -343,12 +640,14 @@ function Booking() {
                     }
 
                     const dateValue = formatDate(day);
-                    const isPast =
-                      new Date(
-                        monthDate.getFullYear(),
-                        monthDate.getMonth(),
-                        day
-                      ) < today;
+
+                    const currentDay = new Date(
+                      monthDate.getFullYear(),
+                      monthDate.getMonth(),
+                      day
+                    );
+
+                    const isPast = currentDay < today;
 
                     return (
                       <button
@@ -364,6 +663,7 @@ function Booking() {
                       </button>
                     );
                   })}
+
                 </div>
               </div>
 
@@ -371,18 +671,23 @@ function Booking() {
                 <h3>Available Time Slots</h3>
 
                 <div className="time-slot-grid">
+
                   {timeSlots.map((time) => (
                     <button
                       type="button"
                       key={time}
-                      className={selectedTime === time ? "selected" : ""}
+                      className={
+                        selectedTime === time ? "selected" : ""
+                      }
                       onClick={() => setSelectedTime(time)}
                     >
                       {time}
                     </button>
                   ))}
+
                 </div>
               </div>
+
             </div>
           </div>
 
@@ -391,15 +696,18 @@ function Booking() {
           <div className="booking-step last-step">
             <div className="booking-step-heading">
               <div className="step-title">
-                <span className="step-number">4</span>
+                <span className="step-number">5</span>
                 <h2>Your Details</h2>
               </div>
-              <p>Share your details to confirm the booking.</p>
+
+              <p>Share your details for the appointment request.</p>
             </div>
 
             <div className="booking-input-grid">
+
               <label>
                 Full Name *
+
                 <input
                   type="text"
                   name="name"
@@ -412,6 +720,7 @@ function Booking() {
 
               <label>
                 Phone Number *
+
                 <input
                   type="tel"
                   name="phone"
@@ -424,6 +733,7 @@ function Booking() {
 
               <label>
                 Email Address
+
                 <input
                   type="email"
                   name="email"
@@ -435,6 +745,7 @@ function Booking() {
 
               <label>
                 Special Requests
+
                 <textarea
                   name="message"
                   placeholder="Any preference or note for our team?"
@@ -443,59 +754,87 @@ function Booking() {
                   rows="2"
                 />
               </label>
+
             </div>
           </div>
 
           <button className="booking-submit-mobile" type="submit">
-            Confirm Appointment <ArrowRight size={18} />
+            Confirm Appointment
+            <ArrowRight size={18} />
           </button>
+
         </form>
 
         {/* BOOKING SUMMARY */}
 
         <aside className="booking-summary">
+
           <h2>Booking Summary</h2>
 
           <div className="summary-divider" />
 
           <div className="summary-item">
-            <span className="summary-icon"><Scissors /></span>
+            <span className="summary-icon">
+              <UserRound />
+            </span>
+
+            <div>
+              <small>Category</small>
+              <strong>{selectedGender}'s Services</strong>
+            </div>
+          </div>
+
+          <div className="summary-item">
+            <span className="summary-icon">
+              <Scissors />
+            </span>
+
             <div>
               <small>Service</small>
               <strong>{selectedService.name}</strong>
             </div>
-            <b>₹{selectedService.price.toLocaleString("en-IN")}</b>
           </div>
 
           <div className="summary-item">
-            <span className="summary-icon"><UserRound /></span>
+            <span className="summary-icon">
+              <UserRound />
+            </span>
+
             <div>
               <small>Expert</small>
-              <strong>{selectedExpert.name}</strong>
+              <strong>
+                {selectedExpert?.name || "Not assigned"}
+              </strong>
             </div>
           </div>
 
           <div className="summary-item">
-            <span className="summary-icon"><CalendarDays /></span>
+            <span className="summary-icon">
+              <CalendarDays />
+            </span>
+
             <div>
               <small>Date</small>
+
               <strong>
                 {selectedDate
-                  ? new Date(`${selectedDate}T00:00:00`).toLocaleDateString(
-                      "en-IN",
-                      {
-                        day: "numeric",
-                        month: "long",
-                        year: "numeric",
-                      }
-                    )
+                  ? new Date(
+                      `${selectedDate}T00:00:00`
+                    ).toLocaleDateString("en-IN", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })
                   : "Not selected"}
               </strong>
             </div>
           </div>
 
           <div className="summary-item">
-            <span className="summary-icon"><Clock3 /></span>
+            <span className="summary-icon">
+              <Clock3 />
+            </span>
+
             <div>
               <small>Time</small>
               <strong>{selectedTime || "Not selected"}</strong>
@@ -505,8 +844,8 @@ function Booking() {
           <div className="summary-divider" />
 
           <div className="summary-total">
-            <strong>Estimated Total</strong>
-            <b>₹{selectedService.price.toLocaleString("en-IN")}</b>
+            <strong>Estimated Price</strong>
+            <b>On Consultation</b>
           </div>
 
           <button
@@ -518,7 +857,8 @@ function Booking() {
                 ?.requestSubmit();
             }}
           >
-            Confirm Appointment <ArrowRight size={19} />
+            Confirm Appointment
+            <ArrowRight size={19} />
           </button>
 
           <p className="secure-note">
@@ -529,7 +869,10 @@ function Booking() {
           <div className="summary-divider" />
 
           <div className="booking-help">
-            <span className="help-icon"><Headset /></span>
+            <span className="help-icon">
+              <Headset />
+            </span>
+
             <div>
               <h3>Need Help with Booking?</h3>
               <p>Our team is here to assist you.</p>
@@ -549,14 +892,18 @@ function Booking() {
             href="tel:+919876543210"
             className="summary-contact-button"
           >
-            <Phone size={16} /> Call Now
+            <Phone size={16} />
+            Call Now
           </a>
+
         </aside>
+
       </section>
 
       {/* WHY BOOK WITH US */}
 
       <section className="booking-benefits">
+
         <div className="benefits-heading">
           <span />
           <h2>Why Book with AURELLE?</h2>
@@ -564,6 +911,7 @@ function Booking() {
         </div>
 
         <div className="benefits-grid">
+
           <div className="benefit-item">
             <CalendarDays />
             <h3>Flexible Scheduling</h3>
@@ -587,6 +935,7 @@ function Booking() {
             <h3>Premium Care</h3>
             <p>Luxury services and expert support.</p>
           </div>
+
         </div>
       </section>
 
@@ -594,27 +943,44 @@ function Booking() {
 
       {submitted && (
         <div className="booking-success-overlay">
+
           <div className="booking-success-modal">
-            <span className="success-icon"><Check size={30} /></span>
+
+            <span className="success-icon">
+              <Check size={30} />
+            </span>
+
             <h2>Thank You, {form.name}!</h2>
+
             <p>
               Your appointment request has been prepared.
               Our team will contact you to confirm availability.
             </p>
 
             <div className="success-details">
+
+              <strong>{selectedGender}'s Services</strong>
+
               <strong>{selectedService.name}</strong>
-              <span>{selectedExpert.name}</span>
-              <span>{selectedDate} at {selectedTime}</span>
-              <b>₹{selectedService.price.toLocaleString("en-IN")}</b>
+
+              <span>{selectedExpert?.name}</span>
+
+              <span>
+                {selectedDate} at {selectedTime}
+              </span>
+
+              <b>Price on Consultation</b>
+
             </div>
 
             <button onClick={resetBooking}>
               Done
             </button>
+
           </div>
         </div>
       )}
+
     </div>
   );
 }

@@ -1020,3 +1020,322 @@
     line-height: 1.5;
   }
 }
+
+/* GENDER CATEGORY SELECTION */
+
+.booking-gender-selection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.booking-gender-option {
+  min-height: 65px;
+  padding: 13px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  border: 1px solid #505050;
+  border-radius: 12px;
+  background: #1b1b1b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.booking-gender-option:hover,
+.booking-gender-option.active {
+  border-color: #eee5d5;
+  background: #292929;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.booking-gender-option.active > svg:last-child {
+  position: absolute;
+  right: 15px;
+  color: #eee5d5;
+}
+
+.booking-gender-option > svg:first-child {
+  color: #c0c0c0;
+}
+
+/* SERVICE DESCRIPTION */
+
+.service-option-description {
+  display: block;
+  padding: 0 7px 10px;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.service-option {
+  min-width: 0;
+}
+
+.service-option > strong {
+  padding-bottom: 4px;
+}
+
+/* EXPERT MESSAGE */
+
+.booking-expert-note {
+  padding: 17px;
+  border: 1px solid #505050;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  color: #c0c0c0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* PRICE SUMMARY */
+
+.summary-total b {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 760px) {
+  .booking-gender-selection {
+    gap: 10px;
+  }
+
+  .booking-gender-option {
+    min-height: 58px;
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-gender-option {
+    min-height: 55px;
+    gap: 7px;
+  }
+
+  .service-option-description {
+    padding-bottom: 9px;
+  }
+}
+
+/* =========================================
+   GENDER CATEGORY SELECTION
+========================================= */
+
+.booking-gender-selection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.booking-gender-option {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  color: #fff;
+  text-align: left;
+  transition: 0.25s ease;
+}
+
+.booking-gender-option:hover,
+.booking-gender-option.active {
+  border-color: #c0c0c0;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.booking-gender-option > svg {
+  color: #c0c0c0;
+  flex-shrink: 0;
+}
+
+.booking-gender-option span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.booking-gender-option strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.booking-gender-option small {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.booking-gender-option .gender-check {
+  margin-left: auto;
+  color: #fff;
+}
+
+.service-option-description {
+  display: block;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.service-option {
+  min-width: 0;
+}
+
+.service-option > strong {
+  line-height: 1.4;
+}
+
+/* PRICE SUMMARY */
+
+.summary-total b {
+  font-size: 13px;
+  color: #c0c0c0;
+  text-align: right;
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .booking-gender-selection {
+    gap: 10px;
+  }
+
+  .booking-gender-option {
+    min-height: 70px;
+    padding: 12px 10px;
+    gap: 9px;
+  }
+
+  .booking-gender-option strong {
+    font-size: 13px;
+  }
+
+  .booking-gender-option small {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================
+   GENDER CATEGORY SELECTION
+========================================= */
+
+.booking-gender-selection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.booking-gender-option {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  color: #fff;
+  text-align: left;
+  transition: 0.25s ease;
+}
+
+.booking-gender-option:hover,
+.booking-gender-option.active {
+  border-color: #c0c0c0;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.booking-gender-option > svg {
+  color: #c0c0c0;
+  flex-shrink: 0;
+}
+
+.booking-gender-option span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.booking-gender-option strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.booking-gender-option small {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.booking-gender-option .gender-check {
+  margin-left: auto;
+  color: #fff;
+}
+
+.service-option-description {
+  display: block;
+  color: #aaa;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.service-option {
+  min-width: 0;
+}
+
+.service-option > strong {
+  line-height: 1.4;
+}
+
+.summary-total b {
+  font-size: 13px;
+  color: #c0c0c0;
+  text-align: right;
+}
+
+.expert-unavailable {
+  color: #aaa;
+  font-size: 13px;
+  padding: 15px 0;
+}
+
+@media (max-width: 480px) {
+  .booking-gender-selection {
+    gap: 10px;
+  }
+
+  .booking-gender-option {
+    min-height: 70px;
+    padding: 12px 10px;
+    gap: 9px;
+  }
+
+  .booking-gender-option strong {
+    font-size: 13px;
+  }
+
+  .booking-gender-option small {
+    font-size: 12px;
+  }
+}

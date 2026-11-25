@@ -1,9 +1,10 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
+
 import {
   Scissors,
   VenetianMask,
-  
   Palette,
   Droplet,
   Gift,
@@ -150,8 +151,11 @@ function GroomingServiceCard({ service, reverse }) {
           alt={service.title}
           loading="lazy"
         />
+
         <div className="mgp-image-shade" />
-        <span className="mgp-service-number">{service.number}</span>
+        <span className="mgp-service-number">
+          {service.number}
+        </span>
       </div>
 
       <div className="mgp-service-details">
@@ -161,7 +165,10 @@ function GroomingServiceCard({ service, reverse }) {
           </div>
 
           <div>
-            <span className="mgp-service-kicker">AURELLE GROOMING</span>
+            <span className="mgp-service-kicker">
+              AURELLE GROOMING
+            </span>
+
             <h3>{service.title}</h3>
             <p>{service.subtitle}</p>
           </div>
@@ -176,19 +183,26 @@ function GroomingServiceCard({ service, reverse }) {
             <div className="mgp-price-row" key={item.name}>
               <div className="mgp-price-name">
                 <span>{item.name}</span>
+
                 {item.detail && (
                   <small>{item.detail}</small>
                 )}
               </div>
+
               <strong>{item.price}</strong>
             </div>
           ))}
         </div>
 
-        <a href="/contact" className="mgp-book-button">
+        {/* CONNECTED BOOKING BUTTON */}
+
+        <Link
+          to={`/booking?gender=men&service=mens-grooming&item=${service.id}`}
+          className="mgp-book-button"
+        >
           Book This Service
           <ArrowRight size={16} />
-        </a>
+        </Link>
       </div>
     </article>
   );
@@ -204,10 +218,10 @@ export default function MensGroomingPricing() {
         <div className="mgp-hero-bg" />
 
         <div className="mgp-container mgp-hero-inner">
-          <a href="/pricing" className="mgp-back-link">
+          <Link to="/pricing" className="mgp-back-link">
             <ChevronLeft size={16} />
             All Pricing Categories
-          </a>
+          </Link>
 
           <div className="mgp-hero-copy">
             <span className="mgp-eyebrow">
@@ -226,10 +240,13 @@ export default function MensGroomingPricing() {
               from stylish haircuts to complete grooming rituals.
             </p>
 
-            <a href="#grooming-service-list" className="mgp-primary-button">
+            <Link
+              to="/booking?gender=men&service=mens-grooming"
+              className="mgp-primary-button"
+            >
               Book Your Grooming
               <ArrowRight size={18} />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -291,22 +308,38 @@ export default function MensGroomingPricing() {
           <div className="mgp-benefits">
             <div className="mgp-benefit-item">
               <ShieldCheck size={30} strokeWidth={1.4} />
-              <span>Hygienic & Safe<br />Tools</span>
+              <span>
+                Hygienic & Safe
+                <br />
+                Tools
+              </span>
             </div>
 
             <div className="mgp-benefit-item">
               <Leaf size={30} strokeWidth={1.4} />
-              <span>Premium<br />Products</span>
+              <span>
+                Premium
+                <br />
+                Products
+              </span>
             </div>
 
             <div className="mgp-benefit-item">
               <UserRound size={30} strokeWidth={1.4} />
-              <span>Expert<br />Professionals</span>
+              <span>
+                Expert
+                <br />
+                Professionals
+              </span>
             </div>
 
             <div className="mgp-benefit-item">
               <Star size={30} strokeWidth={1.4} />
-              <span>Personalised<br />Grooming</span>
+              <span>
+                Personalised
+                <br />
+                Grooming
+              </span>
             </div>
           </div>
 
@@ -357,11 +390,14 @@ export default function MensGroomingPricing() {
               experience the AURELLE difference.
             </p>
 
-            <a href="/contact" className="mgp-primary-button">
+            <Link
+              to="/booking?gender=men&service=mens-grooming"
+              className="mgp-primary-button"
+            >
               <CalendarDays size={18} />
               Book an Appointment
               <ArrowRight size={18} />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
